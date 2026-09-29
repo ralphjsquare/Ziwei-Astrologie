@@ -31,7 +31,8 @@
       "license": "",
       "licenseVerified": false,
       "edition": "文渊阁四库全书本",
-      "joinLines": true
+      "joinLines": true,
+      "_note": "下载被限流中断，未下载；如需卷十至十二再做"
     },
     {
       "id": "dts",
@@ -41,7 +42,8 @@
       "includeSubpages": true,
       "license": "",
       "licenseVerified": false,
-      "edition": ""
+      "edition": "",
+      "_note": "已于 2026-09-29 下载全部 34 页（滴天髓輯要，题刘伯温著、陈之遴辑）；尚未核对逐页许可与底本，未入库（v1.1 备选八字方法用）"
     },
     {
       "id": "qtbj",
@@ -51,7 +53,8 @@
       "includeSubpages": true,
       "license": "",
       "licenseVerified": false,
-      "edition": ""
+      "edition": "",
+      "_note": "下载被限流中断，未下载；v1.1 再做"
     },
     {
       "id": "yhzp",
