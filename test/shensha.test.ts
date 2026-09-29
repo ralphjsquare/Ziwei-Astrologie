@@ -241,12 +241,84 @@ describe('神煞第三批（ADR-017）：天德、文昌、太极、红鸾天喜
   });
   it('来源分级：所有神煞规则都有 sourceClass；modern_shensha 无引文；文昌、太极有异文注记', () => {
     const all = [...RULES.bazi].filter((r) => r.id.startsWith('bz.shensha.') || r.id.startsWith('modern_shensha.'));
-    expect(all.length).toBe(34);
+    expect(all.length).toBe(41);
     for (const r of all) expect(r.sourceClass, r.id).toBeDefined();
     for (const r of all.filter((x) => x.id.startsWith('modern_shensha.'))) { expect(r.sourceClass).toBe('MODERN_COMMON'); expect(r.classical).toHaveLength(0); }
     const wc = RULES.byId.get('bz.shensha.文昌贵人')!, tj = RULES.byId.get('bz.shensha.太极贵人')!;
     expect(wc.classical.some((q) => q.variant?.includes('甲人蛇口'))).toBe(true);
     expect(tj.classical.some((q) => q.variant?.includes('先得申而生'))).toBe(true);
+    expect(validateRules(RULES)).toEqual([]);
+  });
+});
+
+describe('学堂词馆专题（ADR-018）', () => {
+  const S = (c: string) => STEMS.indexOf(c as (typeof STEMS)[number]);
+  const P = (gz: string) => st(B(gz[1]), S(gz[0]));
+  const chart = (y: string, m: string, d: string, h: string) => ({ year: P(y), month: P(m), day: P(d), hour: P(h) });
+  const has = (hits: ReturnType<typeof computeShenSha>, name: string, pillar: PillarKey) => hits.filter((x) => x.name === name && x.pillar === pillar);
+  it('原文举例：金命见辛巳为学堂、壬申为词馆；己酉人得丙子日、壬午人得辛卯时为学堂会贵', () => {
+    const a = computeShenSha(chart('甲子', '戊寅', '辛巳', '壬申')); // 甲子海中金，金命
+    expect(has(a, '正学堂', 'day').length).toBe(1);
+    expect(has(a, '正词馆', 'hour').length).toBe(1);
+    const b = computeShenSha(chart('己酉', '甲子', '丙子', '戊子'));
+    expect(has(b, '学堂会贵', 'day').length).toBe(1);
+    const c = computeShenSha(chart('壬午', '甲辰', '丙午', '辛卯'));
+    expect(has(c, '学堂会贵', 'hour').length).toBe(1);
+    // 只查日、时：月柱是丙子也不算
+    expect(has(computeShenSha(chart('己酉', '丙子', '甲午', '戊辰')), '学堂会贵', 'month').length).toBe(0);
+  });
+  it('官星学堂：甲乙辛亥、丙丁壬寅、戊己甲申、庚辛丁巳；壬癸戊申为据规律反推（标注）', () => {
+    const cells: [string, string, boolean][] = [['甲', '辛亥', false], ['乙', '辛亥', false], ['丙', '壬寅', false], ['丁', '壬寅', false], ['戊', '甲申', false], ['己', '甲申', false], ['庚', '丁巳', false], ['辛', '丁巳', false], ['壬', '戊申', true], ['癸', '戊申', true]];
+    for (const [ds, gz, derived] of cells) {
+      const h = computeShenSha(chart('甲子', '丙寅', ds + '子', gz)).filter((x) => x.name === '官星学堂' && x.pillar === 'hour');
+      expect(h.length, `${ds}日 ${gz}`).toBeGreaterThan(0);
+      expect(h.some((x) => x.basis.includes('反推')) === derived, `${ds} 反推标注`).toBe(true);
+    }
+  });
+  it('食神学堂：甲丙寅、乙丁巳、丙戊申（原文），其余反推为丁己亥、戊庚申、己辛巳、庚壬申、辛癸亥、壬甲寅、癸乙亥', () => {
+    const cells: [string, string][] = [['甲', '丙寅'], ['乙', '丁巳'], ['丙', '戊申'], ['丁', '己亥'], ['戊', '庚申'], ['己', '辛巳'], ['庚', '壬申'], ['辛', '癸亥'], ['壬', '甲寅'], ['癸', '乙亥']];
+    for (const [ds, gz] of cells) {
+      const h = computeShenSha(chart('甲子', '丙寅', ds + '子', gz)).filter((x) => x.name === '食神学堂' && x.pillar === 'hour');
+      expect(h.length, `${ds}日 ${gz}`).toBeGreaterThan(0);
+      expect(h.some((x) => x.basis.includes('反推')), ds).toBe('甲乙丙'.includes(ds) ? false : true);
+    }
+  });
+  it('成色：落空亡、逢冲则 qualified=false，不列出成色问题则 true（原文“切不要犯空亡及冲破”）', () => {
+    // 年柱壬子（桑柘木，木命），时柱己亥（平地木，亥为木长生）
+    const bad = computeShenSha(chart('壬子', '丙寅', '甲子', '己亥')).filter((x) => x.name === '正学堂' && x.pillar === 'hour'); // 甲子日旬空戌亥
+    expect(bad.length).toBe(1); expect(bad[0].qualified).toBe(false); expect(bad[0].basis).toContain('落空亡');
+    const chong = computeShenSha(chart('壬子', '丙寅', '甲午', '己亥')).filter((x) => x.name === '正学堂' && x.pillar === 'hour'); // 甲午旬空辰巳；月支寅、无巳；亥冲巳，无巳
+    expect(chong[0].qualified).toBe(true);
+    const cl = computeShenSha(chart('壬子', '丁巳', '甲午', '己亥')).filter((x) => x.name === '正学堂' && x.pillar === 'hour'); // 月支巳冲亥
+    expect(cl[0].qualified).toBe(false); expect(cl[0].basis).toContain('逢冲');
+  });
+  it('与 bazi-lite 比对 1500 盘：正学堂、正词馆（年柱纳音）一致；官贵学堂、官贵词馆（日干基准）一致；学堂会贵（日、时柱）一致', () => {
+    const r = rng(1234);
+    const bad: string[] = [];
+    for (let k = 0; k < 1500; k++) {
+      const y = r.int(1902, 2099), m = r.int(1, 12), d = r.int(1, 28), h = r.int(0, 23), g = k % 2 ? 'F' : 'M';
+      const c = computeCharts(solarInput(y, m, d, h, 10, g)).bazi;
+      const gg = g === 'M' ? GENDER.MALE : GENDER.FEMALE;
+      const b = BaziChart.fromZonedTime(new ZonedTime({ year: y, month: m, day: d, hour: h, minute: 10, second: 0, offsetMinutes: 480 }), new BaziOptions({ gender: gg, mode: 'china-astronomical', pillarHistoricalMode: 'off' } as never));
+      const o = collectNatalShenSha(b as never, { gender: gg } as never) as unknown as Record<PillarKey, bigint>;
+      for (const pk of ['year', 'month', 'day', 'hour'] as PillarKey[]) {
+        const theirs = new Set(shenShaNames(o[pk]));
+        const mine = c.shensha.filter((x) => x.pillar === pk);
+        const has2 = (n: string, dayOnly = false) => mine.some((x) => x.name === n && (!dayOnly || x.basis.startsWith('日干')));
+        for (const n of ['正学堂', '正词馆']) if (has2(n) !== theirs.has(n)) bad.push(`${y}-${m}-${d} ${h} ${pk} ${n}`);
+        for (const n of ['官贵学堂', '官贵词馆']) if (has2(n, true) !== theirs.has(n)) bad.push(`${y}-${m}-${d} ${h} ${pk} ${n}`);
+        if (pk === 'day' || pk === 'hour') if (has2('学堂会贵') !== theirs.has('学堂会贵')) bad.push(`${y}-${m}-${d} ${h} ${pk} 学堂会贵`);
+      }
+    }
+    expect(bad.slice(0, 5)).toEqual([]);
+  });
+  it('规则：七条学堂词馆规则都带引文与来源分级；反推类标 DERIVED_FROM_TEXT', () => {
+    for (const n of ['正学堂', '正词馆', '官贵学堂', '官贵词馆', '官星学堂', '食神学堂', '学堂会贵']) {
+      const r = RULES.byId.get(`bz.shensha.${n}`)!;
+      expect(r.classical.length, n).toBeGreaterThan(0);
+      expect(r.plain).toContain('并不代表');
+    }
+    for (const n of ['官星学堂', '食神学堂', '学堂会贵']) expect(RULES.byId.get(`bz.shensha.${n}`)!.sourceClass).toBe('DERIVED_FROM_TEXT');
     expect(validateRules(RULES)).toEqual([]);
   });
 });

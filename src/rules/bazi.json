@@ -3483,5 +3483,277 @@
    "history": []
   },
   "basis": "textbook"
+ },
+ {
+  "id": "bz.shensha.正学堂",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "正学堂"
+  },
+  "title": "神煞：正学堂",
+  "plain": "“学堂”取人命（以出生年柱纳音五行计）的“长生”位，如金命长生在巳、木在亥、水土在申、火在寅；要求该柱干支的纳音也属同一五行。《三命通会》比作“读书之在学堂”，传统上与学业相联系，并提醒不要犯空亡和冲破，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱，并注明是否落空亡、逢冲等成色情况。",
+  "evidenceType": "school",
+  "sourceClass": "PRIMARY_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论学堂词馆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "夫学堂者，如人读书之在学堂；词馆者，如今官翰林，谓之词馆，取其学业精专，文章出类"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "长生乃学堂之正位，如金命见辛巳，金长生在巳；辛巳，纳音又属金是也"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.正词馆",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "正词馆"
+  },
+  "title": "神煞：正词馆",
+  "plain": "“词馆”取人命（出生年柱纳音五行）的“临官”位，如金命在申、木在寅、水土在亥、火在巳；要求该柱干支的纳音也属同一五行。《三命通会》比作“官翰林”，传统上与文章、学业相联系，也提醒不要犯空亡和冲破，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱，并注明是否落空亡、逢冲等成色情况。",
+  "evidenceType": "school",
+  "sourceClass": "PRIMARY_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论学堂词馆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "临官乃词馆正位，如金命壬申，金临官在申；壬申，纳音又属金是也",
+    "variant": "文渊阁四库本作“金命见壬申”，多一“见”字，语义一致，不影响证据作用"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.官贵学堂",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "官贵学堂"
+  },
+  "title": "神煞：官贵学堂",
+  "plain": "官贵学堂（又称“学堂会禄”）按日干（或年干）所属五行的“官星”五行来定：官星五行的“长生”地支即为学堂，如甲乙木以金为官，金长生在巳。传统上与学业、仕途相联系，也要留意空亡与冲破。本项目对日干、年干两个基准分别列出并注明，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱，并注明是否落空亡、逢冲等成色情况。",
+  "evidenceType": "school",
+  "sourceClass": "PRIMARY_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论学堂词馆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "诸家说有学堂会禄，如金长生巳，临官申，甲乙人得之；水土长生申，临官亥，丙丁壬癸人得之；木长生亥，临官寅，戊己人得之；火长生寅，临官巳，庚辛人得之"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "又名官贵学堂，以官贵长生之位为学堂，官贵临官之位为词馆也"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.官贵词馆",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "官贵词馆"
+  },
+  "title": "神煞：官贵词馆",
+  "plain": "官贵词馆按日干（或年干）所属五行的“官星”五行来定：官星五行的“临官”地支即为词馆，如甲乙木以金为官，金临官在申。传统上与文章、仕途相联系，也要留意空亡与冲破。本项目对日干、年干两个基准分别列出并注明，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱，并注明是否落空亡、逢冲等成色情况。",
+  "evidenceType": "school",
+  "sourceClass": "PRIMARY_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论学堂词馆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "诸家说有学堂会禄，如金长生巳，临官申，甲乙人得之；水土长生申，临官亥，丙丁壬癸人得之；木长生亥，临官寅，戊己人得之；火长生寅，临官巳，庚辛人得之"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "又名官贵学堂，以官贵长生之位为学堂，官贵临官之位为词馆也"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.官星学堂",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "官星学堂"
+  },
+  "title": "神煞：官星学堂",
+  "plain": "官星学堂是“生处见克”：日干（或年干）五行的长生位，加一个克它的天干，原文列为甲乙人辛亥、丙丁人壬寅、戊己人甲申、庚辛人丁巳。壬癸（水）原文未列，本项目据同一规律反推为戊申（与另一开源实现一致），命中时会注明“据规律反推”。传统上与科名相联系，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱，并注明是否落空亡、逢冲等成色情况。",
+  "evidenceType": "school",
+  "sourceClass": "DERIVED_FROM_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论学堂词馆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "有生处见克，如甲乙人辛亥，丁丙人壬寅，戊己人甲申，庚辛人丁巳，谓之官星学堂"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.食神学堂",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "食神学堂"
+  },
+  "title": "神煞：食神学堂",
+  "plain": "食神学堂（学堂会食）是日干的食神天干配上其五行长生位，原文举例甲食丙得丙寅、乙食丁得丁巳、丙食戊得戊申。其余日干本项目据这些例子反推：食神干配其五行长生位，阴阳不相配、成不了干支时取临官位。命中时会注明是原文所列还是反推。传统上视为学业与福禄相联系，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱，并注明是否落空亡、逢冲等成色情况。",
+  "evidenceType": "school",
+  "sourceClass": "DERIVED_FROM_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论学堂词馆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "有学堂会食，如甲食丙，得丙寅；乙食丁，得丁巳；丙食戊，得戊申之类"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.学堂会贵",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "学堂会贵"
+  },
+  "title": "神煞：学堂会贵",
+  "plain": "学堂会贵是年柱纳音见“帝旺”之位，而该位又是年干或日干的天乙贵人所在，原文举例“己酉人得丙子、庚子日时，壬午人得辛卯日时”。因例子落在日、时，本项目只在日柱、时柱查找，这是据例子的反推。传统上视为清贵的组合，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱，并注明是否落空亡、逢冲等成色情况。",
+  "evidenceType": "school",
+  "sourceClass": "DERIVED_FROM_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论学堂词馆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "有纳音见帝旺之位而逢天乙贵处其上，如己酉人得丙子、庚子日、时、壬午人得辛卯日时之类，谓之学堂会贵，主清贵"
+   },
+   {
+    "corpusRef": "smtht/卷三#9",
+    "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
  }
 ]

@@ -5,9 +5,9 @@ import crJson from './cross.json';
 import srcJson from './sources.json';
 import corpusJson from './corpus.json';
 
-/** 来源分级（神煞等结构化规则）：原文明确／转录异文经其他传本校读／古籍二手引述／现代通行整理／仅有软件实现支持 */
-export type SourceClass = 'PRIMARY_TEXT' | 'TEXTUAL_VARIANT' | 'CLASSICAL_SECONDARY' | 'MODERN_COMMON' | 'IMPLEMENTATION_ONLY';
-export const SOURCE_CLASSES: SourceClass[] = ['PRIMARY_TEXT', 'TEXTUAL_VARIANT', 'CLASSICAL_SECONDARY', 'MODERN_COMMON', 'IMPLEMENTATION_ONLY'];
+/** 来源分级（神煞等结构化规则）：原文明确／转录异文经其他传本校读／古籍二手引述／现代通行整理／仅有软件实现支持／原文只给例子、判据由例子反推 */
+export type SourceClass = 'PRIMARY_TEXT' | 'TEXTUAL_VARIANT' | 'CLASSICAL_SECONDARY' | 'MODERN_COMMON' | 'IMPLEMENTATION_ONLY' | 'DERIVED_FROM_TEXT';
+export const SOURCE_CLASSES: SourceClass[] = ['PRIMARY_TEXT', 'TEXTUAL_VARIANT', 'CLASSICAL_SECONDARY', 'MODERN_COMMON', 'IMPLEMENTATION_ONLY', 'DERIVED_FROM_TEXT'];
 export type EvidenceType = 'classical' | 'school' | 'modern' | 'structural';
 export type ReviewStatus = 'draft' | 'reviewed' | 'approved' | 'rejected';
 export const EVIDENCE_LABEL: Record<EvidenceType, string> = { classical: '古籍原文', school: '流派观点', modern: '现代整理', structural: '算法结构' };

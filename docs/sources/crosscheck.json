@@ -1,8 +1,8 @@
 {
  "book": "三命通会",
  "secondSource": "Kanripo KR3g0042（文渊阁四库全书本 WYG）",
- "total": 158,
- "found": 149,
+ "total": 175,
+ "found": 165,
  "rows": [
   {
    "ruleId": "bz.stem.甲",
@@ -942,6 +942,107 @@
    "ruleId": "bz.shensha.太极贵人",
    "quote": "壬癸水先得则生，后得巳而纳",
    "found": false
+  },
+  {
+   "ruleId": "bz.shensha.正学堂",
+   "quote": "夫学堂者，如人读书之在学堂；词馆者，如今官翰林，谓之词馆，取其学业精专，文章出类",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.正学堂",
+   "quote": "长生乃学堂之正位，如金命见辛巳，金长生在巳；辛巳，纳音又属金是也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.正学堂",
+   "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.正词馆",
+   "quote": "临官乃词馆正位，如金命壬申，金临官在申；壬申，纳音又属金是也",
+   "found": false
+  },
+  {
+   "ruleId": "bz.shensha.正词馆",
+   "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.官贵学堂",
+   "quote": "诸家说有学堂会禄，如金长生巳，临官申，甲乙人得之；水土长生申，临官亥，丙丁壬癸人得之；木长生亥，临官寅，戊己人得之；火长生寅，临官巳，庚辛人得之",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.官贵学堂",
+   "quote": "又名官贵学堂，以官贵长生之位为学堂，官贵临官之位为词馆也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.官贵学堂",
+   "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.官贵词馆",
+   "quote": "诸家说有学堂会禄，如金长生巳，临官申，甲乙人得之；水土长生申，临官亥，丙丁壬癸人得之；木长生亥，临官寅，戊己人得之；火长生寅，临官巳，庚辛人得之",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.官贵词馆",
+   "quote": "又名官贵学堂，以官贵长生之位为学堂，官贵临官之位为词馆也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.官贵词馆",
+   "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.官星学堂",
+   "quote": "有生处见克，如甲乙人辛亥，丁丙人壬寅，戊己人甲申，庚辛人丁巳，谓之官星学堂",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.官星学堂",
+   "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.食神学堂",
+   "quote": "有学堂会食，如甲食丙，得丙寅；乙食丁，得丁巳；丙食戊，得戊申之类",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.食神学堂",
+   "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.学堂会贵",
+   "quote": "有纳音见帝旺之位而逢天乙贵处其上，如己酉人得丙子、庚子日、时、壬午人得辛卯日时之类，谓之学堂会贵，主清贵",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.学堂会贵",
+   "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用",
+   "found": true,
+   "volume": 3
   }
  ]
 }
