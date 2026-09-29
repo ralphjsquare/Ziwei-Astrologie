@@ -7,7 +7,7 @@
     { "id": "smtht", "book": "三命通会", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" }
   ],
   "hko": {
-    "_说明": "以下 URL 模板是按香港天文台公开页面的常见形式推测的，未经验证；首次运行 hko:fetch 会把原始响应存入 docs/sources/raw/hko/，若解析失败请把 raw 文件提交，以便调整解析器。",
+    "_说明": "URL 模板已于 2026-09-29 实测可用（1901–2100 年均返回 200，2101 年 404）。原始文件存放在 docs/sources/raw/hko/。",
     "lunarTextUrl": "https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T{year}c.txt",
     "yearFrom": 1901,
     "yearTo": 2100

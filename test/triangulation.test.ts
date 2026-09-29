@@ -37,7 +37,7 @@ describe('节气：与独立天文模型 js-ephemeris-lite 比对', () => {
 });
 
 describe('农历：与独立天文历法 js-ephemeris-lite（historical 模式）比对', () => {
-  it('1901–2100 全部 2400 余个农历月首日与月序、闰月一致，仅 2097 年一例（新月在零点后 15 秒，ΔT 不确定度内）', () => {
+  it('1901–2100 全部 2400 余个农历月首日与月序、闰月一致，仅 2057、2097 各一例（新月在零点后 40/15 秒，ΔT 不确定度内的未来预测）', () => {
     // 离线全量核对结果（73,049 天逐日）：仅 2097-08-07 至 2097-09-05 共 30 天与 js-ephemeris-lite 相差一天，同一个新月；见 ADR-008。
     const opts = { mode: 'historical', utcOffsetMinutes: 480 } as const;
     const bad: string[] = [];
@@ -54,7 +54,7 @@ describe('农历：与独立天文历法 js-ephemeris-lite（historical 模式�
       if (!ok) bad.push(`${c.y}-${c.m}-${c.d}`);
     }
     expect(n).toBeGreaterThan(2400);
-    expect(bad).toEqual(['2097-8-7']);
+    expect(bad).toEqual(['2057-9-28', '2097-8-7']); // 2057：官方表（校正表）与 js-ephemeris-lite 不同；2097：官方表与历法库一致而与 js-ephemeris-lite 不同
   }, 180000);
 });
 

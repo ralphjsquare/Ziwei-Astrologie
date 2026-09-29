@@ -58,7 +58,7 @@ describe('L1 历法：与独立天文算法核对', () => {
     expect(max).toBeLessThanOrEqual(90);
   });
 
-  it('农历月：1901–2100 全部农历月首日、月序、闰月与天文推算一致，仅有 4 个已裁决例外', () => {
+  it('农历月：1901–2100 全部农历月首日、月序、闰月与天文推算一致，仅有 5 个已裁决例外', () => {
     const ast = astroLunarMonths(1901, 2100, astroTermEpochSec);
     const lib = new Map<number, string>();
     for (let d = D0; d <= D1; d++) {

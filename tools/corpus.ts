@@ -7,6 +7,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { Converter } from 'opencc-js';
+import { httpGet, sleep } from './http';
 import { applyQuotes, buildCorpusEntries, findCandidates, wikitextToPlain, type CorpusSourceMeta, type QuotePatch } from '../src/corpus';
 import { RULES, validateRules, type CorpusEntry, type Rule } from '../src/rules';
 
@@ -18,9 +19,8 @@ interface RawMeta { id: string; page: string; url: string; revid: number; timest
 const today = () => new Date().toISOString().slice(0, 10);
 const api = async (site: string, params: Record<string, string>) => {
   const u = `https://${site}/w/api.php?${new URLSearchParams({ format: 'json', formatversion: '2', ...params })}`;
-  const res = await fetch(u, { headers: { 'User-Agent': 'ziwei-astrologie-corpus/0.2 (research; contact via repo)' } });
-  if (!res.ok) throw new Error(`${res.status} ${u}`);
-  return (await res.json()) as any;
+  await sleep(1200); // 维基媒体 API 礼貌限速
+  return JSON.parse(await httpGet(u)) as any;
 };
 const readJson = <T>(p: string): T => JSON.parse(readFileSync(p, 'utf8')) as T;
 const safe = (s: string) => s.replace(/[\\/:*?"<>|\s]+/g, '_');

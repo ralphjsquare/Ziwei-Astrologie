@@ -16,25 +16,40 @@ export function lunarMonthFromName(s: string): number | null {
   return m ? NUM[m[1]] : null;
 }
 
-export interface HkoDay { y: number; m: number; d: number; lunarMonth: number | null; leap: boolean; lunarDay: number | null }
+export interface HkoRow { y: number; m: number; d: number; /** 该行是某农历月初一时的“X月/閏X月” */ monthStart: { month: number; leap: boolean } | null; lunarDay: number | null; term: string | null }
 
-/** 逐行解析：一行含“YYYY年M月D日”及“[闰]X月初X”，或仅含日名（沿用上一行月份）。无法解析的行忽略，返回统计供诊断。 */
-export function parseHkoLunarText(text: string): { days: HkoDay[]; skipped: number } {
-  const days: HkoDay[] = [];
+/**
+ * 解析香港天文台“公历与农历日期对照表”文字版。已核对的真实格式（2023、2024 年）：
+ *   `2024年1月11日          十二月      星期四              `   ← 农历月初一显示月名（闰月为“閏二月”）
+ *   `2024年1月12日          初二        星期五              `   ← 其余日子显示农历日名
+ *   `2024年1月6日           廿五        星期六      小寒    `   ← 末列为节气（只有日期，无时刻）
+ */
+export function parseHkoLunarText(text: string): { rows: HkoRow[]; skipped: number } {
+  const rows: HkoRow[] = [];
   let skipped = 0;
-  let curMonth: number | null = null, curLeap = false;
   for (const line of text.split(/\r?\n/)) {
-    const d = /(\d{4})\s*[年\-\/]\s*(\d{1,2})\s*[月\-\/]\s*(\d{1,2})/.exec(line);
-    if (!d) continue;
-    const mon = /([閏闰]?)(十二|十一|十|正|一|二|三|四|五|六|七|八|九|冬|臘|腊)月(初[一二三四五六七八九十]|十[一二三四五六七八九]|二十|[廿念][一二三四五六七八九]|三十)?/.exec(line);
-    const dayOnly = /(初[一二三四五六七八九十]|十[一二三四五六七八九]|二十|[廿念][一二三四五六七八九]|三十)/.exec(line);
-    let lunarDay: number | null = null;
-    if (mon) { curMonth = lunarMonthFromName(mon[2]); curLeap = mon[1] !== ''; lunarDay = mon[3] ? lunarDayFromName(mon[3]) : null; }
-    if (lunarDay === null && dayOnly) lunarDay = lunarDayFromName(dayOnly[1]);
-    if (lunarDay === null) { skipped++; continue; }
-    days.push({ y: Number(d[1]), m: Number(d[2]), d: Number(d[3]), lunarMonth: curMonth, leap: curLeap, lunarDay });
+    const m = /^\s*(\d{4})年(\d{1,2})月(\d{1,2})日\s+(\S+)\s+星期\S+\s*(\S*)/.exec(line);
+    if (!m) continue;
+    const field = m[4];
+    const mo = /^([閏闰]?)(十二|十一|十|正|一|二|三|四|五|六|七|八|九|冬|臘|腊)月$/.exec(field);
+    const day = mo ? null : lunarDayFromName(field);
+    if (!mo && day === null) { skipped++; continue; }
+    rows.push({ y: +m[1], m: +m[2], d: +m[3], monthStart: mo ? { month: lunarMonthFromName(mo[2])!, leap: mo[1] !== '' } : null, lunarDay: mo ? 1 : day, term: m[5] || null });
   }
-  return { days, skipped };
+  return { rows, skipped };
+}
+
+export interface HkoDay { key: string; lunarMonth: number; leap: boolean; lunarDay: number; term: string | null }
+/** 按日期顺序合并多年数据，沿用最近一次月初的月份；第一个月初之前的日子月份未知，跳过。 */
+export function resolveHkoDays(rowsInOrder: HkoRow[]): HkoDay[] {
+  const out: HkoDay[] = [];
+  let cur: { month: number; leap: boolean } | null = null;
+  for (const r of rowsInOrder) {
+    if (r.monthStart) cur = r.monthStart;
+    if (!cur || r.lunarDay === null) continue;
+    out.push({ key: `${r.y}-${r.m}-${r.d}`, lunarMonth: cur.month, leap: cur.leap, lunarDay: r.lunarDay, term: r.term });
+  }
+  return out;
 }
 
 export const TERM_NAMES_TRAD = ['冬至', '小寒', '大寒', '立春', '雨水', '驚蟄', '春分', '清明', '穀雨', '立夏', '小滿', '芒種', '夏至', '小暑', '大暑', '立秋', '處暑', '白露', '秋分', '寒露', '霜降', '立冬', '小雪', '大雪'];

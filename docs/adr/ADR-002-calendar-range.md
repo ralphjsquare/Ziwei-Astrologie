@@ -1,7 +1,13 @@
 # ADR-002 支持年份与历法核对
 状态：已采纳（D02-A）。支持 1901–2100，超出范围抛出 `OutOfRangeError`，不静默给出结果。1900 年不承诺。
 
-**官方历表（香港天文台）**：构建环境的网络代理拦截了 www.hko.gov.hk（403），本轮无法下载。已做的替代与准备：
-1. 三种互相独立的历法来源交叉核对（见 ADR-008）：`tyme4ts`（运行时）、`js-ephemeris-lite`（VSOP2013/ELP-MPP02 天文模型 + 历书历史规则）、`astronomy-engine`（另一套天文模型）。1901–2100 逐日 73,049 天，`tyme4ts` 与 `js-ephemeris-lite`（historical）仅 2097 年 8–9 月同一个月（30 天）相差一天。
-2. 已备好官方数据核对流水线：`npm run hko:fetch` → `npm run hko:import` 生成 `test/fixtures/hko/lunar.json` 后，`npm test` 自动逐日核对（测试文件 `test/hko.test.ts`，无夹具则跳过）。URL 模板与解析格式是按公开页面形式**推测**的，首次拿到真实数据后可能需要调整（`docs/sources/README.md`）。
-3. 在拿到并通过官方数据核对之前，本项目**不声称**已与官方历表核对一致。
+## 官方历表核对（已完成，2026-09-29）
+数据：香港天文台《公历与农历日期对照表》文字版（`https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T{年}c.txt`，1901–2100 年均可下载，2101 年 404），经 `npm run hko:fetch` / `hko:import` 导入 `test/fixtures/hko/lunar.json`（73,030 天；官方表自 1901-01-20 起才能确定农历月）。原始文件不入库（可用命令重新下载）。数据版权属香港天文台，本项目仅引用其中的日期事实用于核对，并在此注明来源。
+
+结果（`test/hko.test.ts`，自动逐日核对）：
+1. **农历月、闰月、日**：历法库 `tyme4ts` 与官方表 73,030 天中**只有 30 天不同**——2057-09-28 至 2057-10-27（同一个农历月）。该月新月在北京时间零点后约 40 秒，属 ΔT 未来预测；`js-ephemeris-lite`、`astronomy-engine` 与 `tyme4ts` 一致，官方表不同。**裁决：以官方表为准**，生成校正表 `src/calendar/hko-corrections.json`（30 天 + 1 个失效农历日 2057 年八月三十），`solarToLunar`/`lunarToSolar`/`lunarMonthDays` 优先使用；校正后 1901–2100 每一天公农历往返一致。
+2. **节气日期**：官方 4797 个节气日（1901-01-20 之后）与本项目节气的北京时间日期一致；仅 1912-11-22、1913-09-23、1927-09-09、1928-06-22 四个节气差一天，均在北京时间零点前后 20 分钟内，属 1929 年以前官方按当时北京地方时（约 UTC+7:45）推算所致（ADR-008）。官方表只给日期不给时刻，节气时刻精度仍由三源天文印证（ADR-008）。
+3. 官方表未覆盖：节气时刻（分钟）、1901-01-20 之前。
+
+## 三源印证（保留）
+`tyme4ts`（运行时）、`js-ephemeris-lite`（VSOP2013/ELP-MPP02 天文模型）、`astronomy-engine`；见 ADR-008。
