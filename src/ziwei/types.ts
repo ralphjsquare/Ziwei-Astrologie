@@ -3,7 +3,9 @@ export const PALACE_NAMES: PalaceName[] = ['命宫', '兄弟', '夫妻', '子女
 
 export type Transform = '禄' | '权' | '科' | '忌';
 
-export interface StarPlacement { name: string; kind: 'major' | 'aux' | 'sha' | 'other'; transform?: Transform }
+import type { Brightness } from './brightness.generated';
+export type { Brightness };
+export interface StarPlacement { name: string; kind: 'major' | 'aux' | 'sha' | 'other'; transform?: Transform; /** 《全书》卷二诸星庙旺利陷表；表中没有该星在该宫的记载则缺省 */ brightness?: Brightness }
 
 export interface Palace {
   branch: number; // 地支序号，子=0

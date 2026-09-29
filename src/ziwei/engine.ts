@@ -5,6 +5,7 @@ import {
   BUREAU_BY_ELEMENT, BUREAU_NAME, HUO_START, KUI_YUE, LING_START, LU_CUN, MAJOR_ORDER, RULES_VERSION, sihuaFor,
   TIANFU_GROUP, TIAN_MA, ZIWEI_GROUP, sanheGroup,
 } from './tables';
+import { BRIGHTNESS } from './brightness.generated';
 import { PALACE_NAMES, type Palace, type StarPlacement, type Transform, type ZiweiChart, type ZiweiStep } from './types';
 
 const YIN = 2;
@@ -98,7 +99,7 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
   for (let b = 0; b < 12; b++) {
     const k = mod(ming - b, 12); // 该地支宫是第 k 个宫（命宫=0），宫序逆地支排列
     const stars: StarPlacement[] = [];
-    for (const name of STAR_ORDER) if (at[name] === b) stars.push({ name, kind: KIND[name], ...(tmap[name] ? { transform: tmap[name] } : {}) });
+    for (const name of STAR_ORDER) if (at[name] === b) stars.push({ name, kind: KIND[name], ...(tmap[name] ? { transform: tmap[name] } : {}), ...(BRIGHTNESS[name]?.[BRANCHES[b]] ? { brightness: BRIGHTNESS[name][BRANCHES[b]] } : {}) });
     const j = mod((b - ming) * dir, 12); // 大限序号
     palaces.push({
       branch: b, stem: stemOf(b), name: PALACE_NAMES[k], stars, isBody: b === body,

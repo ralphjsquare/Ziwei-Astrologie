@@ -2321,5 +2321,194 @@
    "history": []
   },
   "basis": "quoted"
+ },
+ {
+  "id": "zw.brightness.庙",
+  "topic": "brightness",
+  "when": {
+   "kind": "brightness",
+   "grade": "庙"
+  },
+  "title": "星曜亮度：庙",
+  "plain": "传统上认为星曜在这一宫力量最充足，特质较容易发挥；但仍要结合同宫星曜与三方四正来看，并不代表结果一定良好。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "卷二·诸星庙旺利陷表",
+    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "zw.brightness.旺",
+  "topic": "brightness",
+  "when": {
+   "kind": "brightness",
+   "grade": "旺"
+  },
+  "title": "星曜亮度：旺",
+  "plain": "传统上认为星曜在这一宫力量较强，特质较容易发挥，仅次于“庙”；仍需结合其他星曜判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "卷二·诸星庙旺利陷表",
+    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "zw.brightness.得地",
+  "topic": "brightness",
+  "when": {
+   "kind": "brightness",
+   "grade": "得地"
+  },
+  "title": "星曜亮度：得地",
+  "plain": "传统上认为星曜在这一宫处于“得地”，力量中上，特质有一定发挥空间；仍需结合其他星曜判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "卷二·诸星庙旺利陷表",
+    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "zw.brightness.利益",
+  "topic": "brightness",
+  "when": {
+   "kind": "brightness",
+   "grade": "利益"
+  },
+  "title": "星曜亮度：利益",
+  "plain": "传统上认为星曜在这一宫处于“利益”，力量尚可，特质可以发挥但不算突出；仍需结合其他星曜判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "卷二·诸星庙旺利陷表",
+    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "zw.brightness.平和",
+  "topic": "brightness",
+  "when": {
+   "kind": "brightness",
+   "grade": "平和"
+  },
+  "title": "星曜亮度：平和",
+  "plain": "传统上认为星曜在这一宫处于“平和”，力量平平，表现比较中性；具体倾向要看同宫星曜与三方四正。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "卷二·诸星庙旺利陷表",
+    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "zw.brightness.不得地",
+  "topic": "brightness",
+  "when": {
+   "kind": "brightness",
+   "grade": "不得地"
+  },
+  "title": "星曜亮度：不得地",
+  "plain": "传统上认为星曜在这一宫“不得地”，力量偏弱，特质不太容易发挥；这只是传统说法，并不代表现实中一定不利。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "卷二·诸星庙旺利陷表",
+    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "zw.brightness.落陷",
+  "topic": "brightness",
+  "when": {
+   "kind": "brightness",
+   "grade": "落陷"
+  },
+  "title": "星曜亮度：落陷",
+  "plain": "传统上认为星曜在这一宫“落陷”，力量最弱，特质较不易发挥，传统命书常提示要看有没有吉星化解；这只是传统说法，并不代表现实中一定不利。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "卷二·诸星庙旺利陷表",
+    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
  }
 ]

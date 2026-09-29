@@ -88,6 +88,13 @@ export function interpretNatal(b: ChartBundle, R: RuleSet): InterpSection[] {
   }
   zs.push({ id: 'zw-palaces', heading: '紫微·十二宫', items: palaceItems });
 
+  const brItems: InterpItem[] = [];
+  for (const p of z.palaces) for (const s of p.stars.filter((x) => x.kind === 'major' && x.brightness)) {
+    const br = need(R, `zw.brightness.${s.brightness}`);
+    brItems.push(toItem(R, br, br.plain, `${s.name}在${BRANCHES[p.branch]}宫（${p.name}宫）：${s.brightness}`));
+  }
+  if (brItems.length) zs.push({ id: 'zw-brightness', heading: '紫微·主星庙旺利陷', items: brItems });
+
   // 八字
   const dm = bz.dayMaster.stem;
   const items1: InterpItem[] = [];

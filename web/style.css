@@ -71,3 +71,4 @@ details ul { margin: 4px 0; padding-left: 18px; }
 @media print { .tabs, form, .form, .row, .top .note, button { display: none !important; } body { background: #fff; color: #000; } .card { break-inside: avoid; } }
 [hidden] { display: none !important; }
 .badge.quoted { color: var(--lu); border-color: var(--lu); }
+.br { font-style: normal; font-size: 10px; margin-left: 2px; padding: 0 2px; border: 1px solid var(--line, #999); border-radius: 3px; opacity: .8; }

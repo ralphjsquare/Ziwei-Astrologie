@@ -137,7 +137,7 @@ const sectionsHtml = (secs: InterpSection[]) =>
 function chartHtml(b: ChartBundle): string {
   const z = b.ziwei;
   const cells = z.palaces.map((p) => {
-    const stars = p.stars.map((s) => `<span class="star ${s.kind}" data-star="${esc(s.name)}" data-tf="${s.transform ?? ''}">${esc(s.name)}${s.transform ? `<i class="tf ${s.transform}">${s.transform}</i>` : ''}</span>`).join('');
+    const stars = p.stars.map((s) => `<span class="star ${s.kind}" data-star="${esc(s.name)}" data-tf="${s.transform ?? ''}">${esc(s.name)}${s.brightness ? `<i class="br">${{ 庙: '庙', 旺: '旺', 得地: '得', 利益: '利', 平和: '平', 不得地: '不', 落陷: '陷' }[s.brightness]}</i>` : ''}${s.transform ? `<i class="tf ${s.transform}">${s.transform}</i>` : ''}</span>`).join('');
     return `<div class="pal${p.isBody ? ' body' : ''}" data-branch="${p.branch}" data-palace="${p.name}" style="grid-area:b${p.branch}">
       <div class="pal-head"><span class="pname">${p.name}${p.isBody ? '·身' : ''}</span><span>${STEMS[p.stem]}${BRANCHES[p.branch]}</span></div>
       <div class="stars">${stars}</div><div class="pal-foot"><span>大限 ${p.decade.startAge}–${p.decade.endAge}</span></div></div>`;
