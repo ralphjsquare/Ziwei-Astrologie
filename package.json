@@ -18,11 +18,13 @@
     "corpus:find": "tsx tools/corpus.ts find",
     "corpus:fetch": "tsx tools/corpus.ts fetch",
     "corpus:crosscheck": "tsx tools/crosscheck.ts --fetch",
+    "corpus:ebook": "tsx tools/ebook-import.ts",
     "corpus:import": "tsx tools/corpus.ts import",
     "corpus:suggest": "tsx tools/corpus.ts suggest",
     "corpus:apply": "tsx tools/corpus.ts apply",
     "hko:fetch": "tsx tools/hko.ts fetch",
     "hko:import": "tsx tools/hko.ts import",
+    "golden:sheet": "tsx tools/golden-sheet.ts",
     "golden:sign": "tsx tools/golden-sign.ts",
     "corpus:ground": "tsx tools/corpus.ts ground"
   },

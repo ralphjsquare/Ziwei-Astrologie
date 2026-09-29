@@ -112,7 +112,7 @@ function ground() {
   const corpus = readJson<Record<string, CorpusEntry>>('src/rules/corpus.json');
   const items = readJson<import('../src/corpus').GroundingItem[]>('docs/sources/grounding.json');
   const files: [string, Rule[]][] = [['src/rules/ziwei.json', RULES.ziwei], ['src/rules/bazi.json', RULES.bazi], ['src/rules/cross.json', RULES.cross]];
-  const res = applyGrounding([...RULES.ziwei, ...RULES.bazi, ...RULES.cross], corpus, items, { zwqs: 'zwqs', smtht: 'smtht', dts: 'dts' });
+  const res = applyGrounding([...RULES.ziwei, ...RULES.bazi, ...RULES.cross], corpus, items, { zwqs: 'zwqs', smtht: 'smtht', dts: 'dts', zpzq: 'zpzq', yhzp: 'yhzp' });
   const errs = validateRules({ ...RULES, corpus });
   if (res.errors.length || errs.length) { console.error([...res.errors, ...errs].join('\n')); process.exit(1); }
   for (const [p, rules] of files) writeFileSync(p, JSON.stringify(rules, null, 1) + '\n', 'utf8');
