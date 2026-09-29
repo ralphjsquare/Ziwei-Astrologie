@@ -1,3 +1,4 @@
+import type { ShenShaHit } from './shensha';
 import type { TenGod } from './tables';
 
 export interface HiddenStem { stem: number; role: '本气' | '中气' | '余气'; tenGod: TenGod }
@@ -40,6 +41,8 @@ export interface BaziChart {
     cycles: LuckCycle[];
   };
   relations: Relation[];
+  /** 神煞（十一种，《三命通会》表格；只列出现位置，不打分） */
+  shensha: ShenShaHit[];
   strength: StrengthEvidence;
   patterns: PatternCandidate[];
   yongshen: YongshenCandidate[];

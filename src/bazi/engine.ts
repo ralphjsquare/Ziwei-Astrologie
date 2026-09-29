@@ -5,6 +5,7 @@ import { jieInstantsAround, type TermInstant } from '../calendar/lunar';
 import type { ResolvedBirth } from '../calendar/resolve';
 import { analyzePatterns, analyzeStrength, analyzeYongshen } from './analysis';
 import { tenGodOf } from './engine-util';
+import { computeShenSha } from './shensha';
 import { computeRelations } from './relations';
 import { HIDDEN_ROLE, HIDDEN_STEMS, LONG_SHENG, LONG_SHENG_START, RULES_VERSION } from './tables';
 import type { BaziChart, LuckCycle, Pillar } from './types';
@@ -117,6 +118,7 @@ export function buildBazi(_input: BirthInput, r: ResolvedBirth, _opt: Options, g
     },
     luck: { direction: dir, start: { years, months, days, hours }, startDate, referenceJie: refJie.name, diffMinutes: Math.round(diffSec / 60), cycles },
     relations: computeRelations(units),
+    shensha: computeShenSha(pillars),
     strength, patterns: analyzePatterns(dStem, pillars), yongshen: analyzeYongshen(dStem, strength),
     steps, rulesVersion: RULES_VERSION,
   };

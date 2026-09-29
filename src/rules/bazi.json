@@ -2294,5 +2294,378 @@
    "history": []
   },
   "basis": "chapter-pointer"
+ },
+ {
+  "id": "bz.shensha.天乙贵人",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "天乙贵人"
+  },
+  "title": "神煞：天乙贵人",
+  "plain": "传统上把天乙贵人看作命中较吉的神煞：《三命通会》说它“三命中最吉之神”，遇到时常被理解为易得助力；但同一书也提醒“不可就为吉论”，还要看它是否得气、是否被冲破或落空亡。这里只列出它出现在哪一柱，属于传统说法，并不代表现实中一定如此。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论天乙贵人",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#5",
+    "quote": "天乙贵，三命中最吉之神"
+   },
+   {
+    "corpusRef": "smtht/卷三#5",
+    "quote": "可见命中有贵，不可就为吉论，要当细详"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.驿马",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "驿马"
+  },
+  "title": "神煞：驿马",
+  "plain": "驿马在传统里与“奔走、迁移、变动”相关，《三命通会》称它是“三命中发用，喜庆之神”，也说要看有没有空亡、冲破等情况。这里只列出它出现在哪一柱，属于传统说法，并不代表现实中一定如此。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论驿马",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#3",
+    "quote": "驿马者，三命中发用，喜庆之神"
+   },
+   {
+    "corpusRef": "smtht/卷三#3",
+    "quote": "寅午戌生人，马在申而五阳干乘之"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.咸池",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "咸池"
+  },
+  "title": "神煞：咸池",
+  "plain": "咸池又叫“桃花”，是长生十二宫里的“沐浴”之地。《三命通会》把它说成“非吉煞”，传统上多与感情、酒色、私情相联系；不过这只是旧书的说法，并不代表现实中的品行或结果，也要结合整个命盘来看。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷二·论咸池",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#23",
+    "quote": "五行沐浴之地，名咸池"
+   },
+   {
+    "corpusRef": "smtht/卷二#23",
+    "quote": "咸池非吉煞"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.劫煞",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "劫煞"
+  },
+  "title": "神煞：劫煞",
+  "plain": "劫煞在《三命通会》里被解释为“外来的夺取”：在五行绝地处，属寅申巳亥。传统上多把它与破耗、被夺联系在一起，这是旧书说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论劫煞亡神",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#12",
+    "quote": "劫者，夺也，自外夺之之谓夺"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.亡神",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "亡神"
+  },
+  "title": "神煞：亡神",
+  "plain": "亡神在《三命通会》里被解释为“自己失去”：在五行临官之处，属寅申巳亥。传统上多与耗散、失去联系在一起，这是旧书说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论劫煞亡神",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#12",
+    "quote": "亡者，失也，自内失之之谓亡"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.将星",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "将星"
+  },
+  "title": "神煞：将星",
+  "plain": "将星以三合局的中间一位为准，《三命通会》比作“将札中军”，传统上多与统领、担当相联系，并说需要有吉星相扶。这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷二·论将星华盖",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#22",
+    "quote": "将星者，如将札中军也，故以三合中位谓之将星"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.华盖",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "华盖"
+  },
+  "title": "神煞：华盖",
+  "plain": "华盖以三合局的“库”位为准，《三命通会》用宝盖来比喻。传统上多把它与孤高、艺术、宗教相联系，旧书也有偏于孤独的说法，但只是传统看法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷二·论将星华盖",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#22",
+    "quote": "故以三合底处得库谓之华盖"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.羊刃",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "羊刃"
+  },
+  "title": "神煞：羊刃",
+  "plain": "羊刃指日干“禄前一位”的地支，只有五个阳干有。《三命通会》解释为旺过了头，传统上认为需要制衡。也要注意，另有流派对阴干也定羊刃，本项目按《三命通会》的说法，只对阳干设羊刃。以上是传统说法，并不代表现实中一定如此。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论羊刃",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   },
+   {
+    "ref": "smtht",
+    "section": "卷六·论阳刃（前论羊刃煞与此参看）",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#13",
+    "quote": "羊言刚也，刃者取宰割之义"
+   },
+   {
+    "corpusRef": "smtht/卷六#72",
+    "quote": "惟甲丙戊庚壬五阳干有刃，乙丁己辛癸五阴干无刃"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.金舆",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "金舆"
+  },
+  "title": "神煞：金舆",
+  "plain": "金舆取“禄前二辰”，《三命通会》比作官员坐的车。传统上多视为较温和、安稳的象征，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论金舆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#2",
+    "quote": "故金舆常居禄前二辰"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.孤辰",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "孤辰"
+  },
+  "title": "神煞：孤辰",
+  "plain": "孤辰按出生年支所在的三方来定：如亥子丑年出生者以寅为孤辰。传统上认为与独立、离群的倾向相联系，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论孤辰寡宿",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#20",
+    "quote": "如亥子丑逐方三位，进前一辰见寅为孤，退后一辰见戌为寡"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.寡宿",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "寡宿"
+  },
+  "title": "神煞：寡宿",
+  "plain": "寡宿按出生年支所在的三方来定：如亥子丑年出生者以戌为寡宿。传统上认为与孤独、感情较淡的倾向相联系，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论孤辰寡宿",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#20",
+    "quote": "如亥子丑逐方三位，进前一辰见寅为孤，退后一辰见戌为寡"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
  }
 ]

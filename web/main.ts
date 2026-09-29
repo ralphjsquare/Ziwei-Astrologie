@@ -164,7 +164,7 @@ function baziHtml(b: ChartBundle): string {
     ${row('藏干（十神）', (k) => P[k].hidden.map((h) => `${STEMS[h.stem]}(${h.tenGod})`).join(' '))}
     ${row('纳音', (k) => P[k].nayin)}${row('十二长生（日主）', (k) => P[k].longSheng)}</table></div>`;
   const kong = bz.kongWang.map((x) => BRANCHES[x]).join('');
-  return `<div class="card"><h3>八字四柱</h3>${table}<p class="note">日柱旬空：${kong}；节令：${bz.boundaries.monthJie}之后；旺衰候选：${bz.strength.candidate}（${bz.strength.method}）；格局候选：${bz.patterns.slice(0, 2).map((p) => p.name).join('、') || '—'}</p></div>`;
+  return `<div class="card"><h3>八字四柱</h3>${table}<p class="note">日柱旬空：${kong}；神煞：${bz.shensha.length ? [...new Set(bz.shensha.map((h) => h.name))].map((n) => n + '（' + [...new Set(bz.shensha.filter((h) => h.name === n).map((h) => ({ year: '年', month: '月', day: '日', hour: '时' })[h.pillar]))].join('') + '）').join('、') : '无'}；节令：${bz.boundaries.monthJie}之后；旺衰候选：${bz.strength.candidate}（${bz.strength.method}）；格局候选：${bz.patterns.slice(0, 2).map((p) => p.name).join('、') || '—'}</p></div>`;
 }
 
 function timeHtml(b: ChartBundle): string {

@@ -1,3 +1,4 @@
+import { SHENSHA_NAMES } from '../bazi/shensha';
 // 解读引擎：由规则数据 + 盘面结构生成"白话解释 + 出处 + 依据等级 + 审核状态"。不含任何算法，也不含自由文本断语。
 import { BRANCHES, STEMS } from '../core/ganzhi';
 import type { ChartBundle } from '../index';
@@ -133,6 +134,18 @@ export function interpretNatal(b: ChartBundle, R: RuleSet): InterpSection[] {
     const item = toItem(R, th, ent ? th.plain : `${th.plain}（所用电子本没有收录“${STEMS[dm]}日主·${BRANCHES[bz.pillars.month.branch]}月”条目，此处从略。）`, `日主${STEMS[dm]}，出生月${BRANCHES[bz.pillars.month.branch]}月`);
     if (ent) item.classical = [{ quote: ent.text, source: `${ent.book}·${ent.section}` }];
     sections.push({ id: 'bz-tiaohou', heading: '八字·调候参考（穷通宝鉴）', items: [item] });
+  }
+
+  {
+    const PN = { year: '年柱', month: '月柱', day: '日柱', hour: '时柱' };
+    const ss: InterpItem[] = [];
+    for (const name of SHENSHA_NAMES) {
+      const hits = bz.shensha.filter((h) => h.name === name);
+      if (!hits.length) continue;
+      const rule = need(R, `bz.shensha.${name.replace(/（.*）/, '')}`);
+      ss.push(toItem(R, rule, rule.plain, hits.map((h) => `${PN[h.pillar]}（以${h.basis}为准）`).join('、')));
+    }
+    if (ss.length) sections.push({ id: 'bz-shensha', heading: '八字·神煞（十一种，仅列位置）', items: ss });
   }
 
   const items3: InterpItem[] = [];
