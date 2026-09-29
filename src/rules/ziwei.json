@@ -6,8 +6,8 @@
    "kind": "star",
    "star": "紫微"
   },
-  "title": "紫微（帝星，阴土）",
-  "plain": "传统上以「紫微」为帝星，阴土。尊贵、有领导与统筹意识，重视被尊重，适合居于主导位置；若缺少辅佐，容易显得孤高。",
+  "title": "紫微（帝星）",
+  "plain": "传统上以「紫微」为帝星。尊贵、有领导与统筹意识，重视被尊重，适合居于主导位置；若缺少辅佐，容易显得孤高。",
   "evidenceType": "school",
   "sources": [
    {
@@ -26,7 +26,8 @@
   },
   "data": {
    "trait": "尊贵、有领导与统筹意识，重视被尊重，适合居于主导位置；若缺少辅佐，容易显得孤高。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.天机",
@@ -35,8 +36,8 @@
    "kind": "star",
    "star": "天机"
   },
-  "title": "天机（智星，阴木）",
-  "plain": "传统上以「天机」为智星，阴木。思维敏捷、善于谋划与分析，点子多、反应快；也容易思虑过多、情绪多变。",
+  "title": "天机（智星）",
+  "plain": "传统上以「天机」为智星。思维敏捷、善于谋划与分析，点子多、反应快；也容易思虑过多、情绪多变。",
   "evidenceType": "school",
   "sources": [
    {
@@ -55,7 +56,8 @@
   },
   "data": {
    "trait": "思维敏捷、善于谋划与分析，点子多、反应快；也容易思虑过多、情绪多变。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.太阳",
@@ -64,8 +66,8 @@
    "kind": "star",
    "star": "太阳"
   },
-  "title": "太阳（官禄之星，阳火）",
-  "plain": "传统上以「太阳」为官禄之星，阳火。热情外向、乐于付出，重名声与公众形象；容易操心过多，需注意精力分配。",
+  "title": "太阳（官禄之星）",
+  "plain": "传统上以「太阳」为官禄之星。热情外向、乐于付出，重名声与公众形象；容易操心过多，需注意精力分配。",
   "evidenceType": "school",
   "sources": [
    {
@@ -84,7 +86,8 @@
   },
   "data": {
    "trait": "热情外向、乐于付出，重名声与公众形象；容易操心过多，需注意精力分配。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.武曲",
@@ -93,8 +96,8 @@
    "kind": "star",
    "star": "武曲"
   },
-  "title": "武曲（财星，阴金）",
-  "plain": "传统上以「武曲」为财星，阴金。刚毅果断、务实重执行，对钱财与效率敏感；表达偏直接，有时显得刚硬。",
+  "title": "武曲（财星）",
+  "plain": "传统上以「武曲」为财星。刚毅果断、务实重执行，对钱财与效率敏感；表达偏直接，有时显得刚硬。",
   "evidenceType": "school",
   "sources": [
    {
@@ -113,7 +116,8 @@
   },
   "data": {
    "trait": "刚毅果断、务实重执行，对钱财与效率敏感；表达偏直接，有时显得刚硬。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.天同",
@@ -122,8 +126,8 @@
    "kind": "star",
    "star": "天同"
   },
-  "title": "天同（福星，阳水）",
-  "plain": "传统上以「天同」为福星，阳水。温和随和、知足常乐，重视生活品质与人际和谐；冲劲相对不足，需要外力推动。",
+  "title": "天同（福星）",
+  "plain": "传统上以「天同」为福星。温和随和、知足常乐，重视生活品质与人际和谐；冲劲相对不足，需要外力推动。",
   "evidenceType": "school",
   "sources": [
    {
@@ -142,7 +146,8 @@
   },
   "data": {
    "trait": "温和随和、知足常乐，重视生活品质与人际和谐；冲劲相对不足，需要外力推动。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.廉贞",
@@ -151,8 +156,8 @@
    "kind": "star",
    "star": "廉贞"
   },
-  "title": "廉贞（次桃花之星，阴火）",
-  "plain": "传统上以「廉贞」为次桃花之星，阴火。个性鲜明、原则性强，感情与事业上都较投入；内心复杂，容易在情理之间纠结。",
+  "title": "廉贞（次桃花之星）",
+  "plain": "传统上以「廉贞」为次桃花之星。个性鲜明、原则性强，感情与事业上都较投入；内心复杂，容易在情理之间纠结。",
   "evidenceType": "school",
   "sources": [
    {
@@ -171,7 +176,8 @@
   },
   "data": {
    "trait": "个性鲜明、原则性强，感情与事业上都较投入；内心复杂，容易在情理之间纠结。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.天府",
@@ -180,8 +186,8 @@
    "kind": "star",
    "star": "天府"
   },
-  "title": "天府（南斗令星（库星），阳土）",
-  "plain": "传统上以「天府」为南斗令星（库星），阳土。稳重踏实、善于守成与理财，重视安全感；有时偏保守，不愿冒险。",
+  "title": "天府（南斗令星（库星））",
+  "plain": "传统上以「天府」为南斗令星（库星）。稳重踏实、善于守成与理财，重视安全感；有时偏保守，不愿冒险。",
   "evidenceType": "school",
   "sources": [
    {
@@ -200,7 +206,8 @@
   },
   "data": {
    "trait": "稳重踏实、善于守成与理财，重视安全感；有时偏保守，不愿冒险。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.太阴",
@@ -209,8 +216,8 @@
    "kind": "star",
    "star": "太阴"
   },
-  "title": "太阴（财星（田宅主），阴水）",
-  "plain": "传统上以「太阴」为财星（田宅主），阴水。细腻内敛、重感受与家庭，善于积累；情绪起伏时容易内耗。",
+  "title": "太阴（财星（田宅主））",
+  "plain": "传统上以「太阴」为财星（田宅主）。细腻内敛、重感受与家庭，善于积累；情绪起伏时容易内耗。",
   "evidenceType": "school",
   "sources": [
    {
@@ -229,7 +236,8 @@
   },
   "data": {
    "trait": "细腻内敛、重感受与家庭，善于积累；情绪起伏时容易内耗。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.贪狼",
@@ -238,8 +246,8 @@
    "kind": "star",
    "star": "贪狼"
   },
-  "title": "贪狼（桃花星，阴木兼阳水）",
-  "plain": "传统上以「贪狼」为桃花星，阴木兼阳水。多才多艺、欲望与好奇心强，善交际，应变灵活；兴趣广泛，需要避免分散。",
+  "title": "贪狼（桃花星）",
+  "plain": "传统上以「贪狼」为桃花星。多才多艺、欲望与好奇心强，善交际，应变灵活；兴趣广泛，需要避免分散。",
   "evidenceType": "school",
   "sources": [
    {
@@ -258,7 +266,8 @@
   },
   "data": {
    "trait": "多才多艺、欲望与好奇心强，善交际，应变灵活；兴趣广泛，需要避免分散。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.巨门",
@@ -267,8 +276,8 @@
    "kind": "star",
    "star": "巨门"
   },
-  "title": "巨门（暗星，阴水）",
-  "plain": "传统上以「巨门」为暗星，阴水。口才与分析力强，善于探究是非；也容易多疑、言语引起误会。",
+  "title": "巨门（暗星）",
+  "plain": "传统上以「巨门」为暗星。口才与分析力强，善于探究是非；也容易多疑、言语引起误会。",
   "evidenceType": "school",
   "sources": [
    {
@@ -287,7 +296,8 @@
   },
   "data": {
    "trait": "口才与分析力强，善于探究是非；也容易多疑、言语引起误会。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.天相",
@@ -296,8 +306,8 @@
    "kind": "star",
    "star": "天相"
   },
-  "title": "天相（印星，阳水）",
-  "plain": "传统上以「天相」为印星，阳水。谨慎周到、重形象与规矩，善于协调与辅佐他人；有时缺乏主见，容易受他人影响。",
+  "title": "天相（印星）",
+  "plain": "传统上以「天相」为印星。谨慎周到、重形象与规矩，善于协调与辅佐他人；有时缺乏主见，容易受他人影响。",
   "evidenceType": "school",
   "sources": [
    {
@@ -316,7 +326,8 @@
   },
   "data": {
    "trait": "谨慎周到、重形象与规矩，善于协调与辅佐他人；有时缺乏主见，容易受他人影响。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.天梁",
@@ -325,8 +336,8 @@
    "kind": "star",
    "star": "天梁"
   },
-  "title": "天梁（荫星（寿星），阳土）",
-  "plain": "传统上以「天梁」为荫星（寿星），阳土。稳重老成、有照顾他人的倾向，遇事常有转机；有时爱说教，显得过于清高。",
+  "title": "天梁（荫星（寿星））",
+  "plain": "传统上以「天梁」为荫星（寿星）。稳重老成、有照顾他人的倾向，遇事常有转机；有时爱说教，显得过于清高。",
   "evidenceType": "school",
   "sources": [
    {
@@ -345,7 +356,8 @@
   },
   "data": {
    "trait": "稳重老成、有照顾他人的倾向，遇事常有转机；有时爱说教，显得过于清高。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.七杀",
@@ -354,8 +366,8 @@
    "kind": "star",
    "star": "七杀"
   },
-  "title": "七杀（将星，阴金）",
-  "plain": "传统上以「七杀」为将星，阴金。冲劲足、独立果决，敢于挑战；人生起伏与变动往往较大，需要学会缓冲。",
+  "title": "七杀（将星）",
+  "plain": "传统上以「七杀」为将星。冲劲足、独立果决，敢于挑战；人生起伏与变动往往较大，需要学会缓冲。",
   "evidenceType": "school",
   "sources": [
    {
@@ -374,7 +386,8 @@
   },
   "data": {
    "trait": "冲劲足、独立果决，敢于挑战；人生起伏与变动往往较大，需要学会缓冲。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.star.破军",
@@ -383,8 +396,8 @@
    "kind": "star",
    "star": "破军"
   },
-  "title": "破军（耗星，阴水）",
-  "plain": "传统上以「破军」为耗星，阴水。勇于开创、破旧立新，不喜循规蹈矩；变动多，容易“先破后立”，需要注意稳定根基。",
+  "title": "破军（耗星）",
+  "plain": "传统上以「破军」为耗星。勇于开创、破旧立新，不喜循规蹈矩；变动多，容易“先破后立”，需要注意稳定根基。",
   "evidenceType": "school",
   "sources": [
    {
@@ -403,7 +416,8 @@
   },
   "data": {
    "trait": "勇于开创、破旧立新，不喜循规蹈矩；变动多，容易“先破后立”，需要注意稳定根基。"
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.palace.命宫",
@@ -431,7 +445,8 @@
   },
   "data": {
    "domain": "性格、先天格局与人生主线"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.兄弟",
@@ -459,7 +474,8 @@
   },
   "data": {
    "domain": "手足、同辈与合作伙伴"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.夫妻",
@@ -487,7 +503,8 @@
   },
   "data": {
    "domain": "婚姻、感情与伴侣特质"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.子女",
@@ -515,7 +532,8 @@
   },
   "data": {
    "domain": "子女缘、创造力与晚辈"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.财帛",
@@ -543,7 +561,8 @@
   },
   "data": {
    "domain": "赚钱方式与理财习惯"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.疾厄",
@@ -571,7 +590,8 @@
   },
   "data": {
    "domain": "体质与健康倾向"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.迁移",
@@ -599,7 +619,8 @@
   },
   "data": {
    "domain": "外出、外部环境与机遇"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.交友",
@@ -627,7 +648,8 @@
   },
   "data": {
    "domain": "朋友、同事与下属"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.官禄",
@@ -655,7 +677,8 @@
   },
   "data": {
    "domain": "事业与职业方向"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.田宅",
@@ -683,7 +706,8 @@
   },
   "data": {
    "domain": "家宅、不动产与家庭环境"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.福德",
@@ -711,7 +735,8 @@
   },
   "data": {
    "domain": "精神生活、兴趣与内心世界"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.palace.父母",
@@ -739,7 +764,8 @@
   },
   "data": {
    "domain": "父母缘、长辈与文书"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.transform.禄",
@@ -767,7 +793,8 @@
   },
   "data": {
    "meaning": "顺遂、资源与缘分"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.transform.权",
@@ -795,7 +822,8 @@
   },
   "data": {
    "meaning": "掌控、主动与行动力"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.transform.科",
@@ -823,7 +851,8 @@
   },
   "data": {
    "meaning": "声誉、条理与贵人"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.transform.忌",
@@ -851,7 +880,8 @@
   },
   "data": {
    "meaning": "执着、阻滞与需要留意之处"
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.bureau.2",
@@ -877,7 +907,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "zw.bureau.3",
@@ -903,7 +934,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "zw.bureau.4",
@@ -929,7 +961,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "zw.bureau.5",
@@ -955,7 +988,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "zw.bureau.6",
@@ -981,7 +1015,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "zw.body",
@@ -1005,7 +1040,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.sip.命宫.紫微",
@@ -1032,7 +1068,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.天机",
@@ -1059,7 +1096,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.太阳",
@@ -1086,7 +1124,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.武曲",
@@ -1113,7 +1152,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.天同",
@@ -1140,7 +1180,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.廉贞",
@@ -1167,7 +1208,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.天府",
@@ -1194,7 +1236,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.太阴",
@@ -1221,7 +1264,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.贪狼",
@@ -1248,7 +1292,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.巨门",
@@ -1275,7 +1320,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.天相",
@@ -1302,7 +1348,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.天梁",
@@ -1329,7 +1376,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.七杀",
@@ -1356,7 +1404,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.sip.命宫.破军",
@@ -1383,7 +1432,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "zw.compose.star-in-palace",
@@ -1407,7 +1457,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "template"
  },
  {
   "id": "zw.flow.ming.命宫",
@@ -1432,7 +1483,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.兄弟",
@@ -1457,7 +1509,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.夫妻",
@@ -1482,7 +1535,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.子女",
@@ -1507,7 +1561,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.财帛",
@@ -1532,7 +1587,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.疾厄",
@@ -1557,7 +1613,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.迁移",
@@ -1582,7 +1639,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.交友",
@@ -1607,7 +1665,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.官禄",
@@ -1632,7 +1691,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.田宅",
@@ -1657,7 +1717,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.福德",
@@ -1682,7 +1743,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.ming.父母",
@@ -1707,7 +1769,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.transform.禄",
@@ -1732,7 +1795,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.transform.权",
@@ -1757,7 +1821,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.transform.科",
@@ -1782,7 +1847,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.transform.忌",
@@ -1807,7 +1873,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.flow.decade",
@@ -1831,7 +1898,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "zw.empty-ming",
@@ -1855,6 +1923,7 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  }
 ]

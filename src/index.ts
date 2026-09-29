@@ -6,7 +6,7 @@ import { buildBazi } from './bazi/engine';
 import type { ZiweiChart } from './ziwei/types';
 import type { BaziChart } from './bazi/types';
 
-export const ENGINE_VERSION = '0.1.0';
+export const ENGINE_VERSION = '0.2.0';
 
 export interface ChartBundle {
   schema: 'chart-bundle/1';
@@ -19,7 +19,7 @@ export interface ChartBundle {
   calculationHash: string;
 }
 
-export const normalizeOptions = (o: Partial<Options> = {}): Options => ({ ...DEFAULT_OPTIONS, ...o });
+export const normalizeOptions = (o: Partial<Options> = {}): Options => ({ ...DEFAULT_OPTIONS, ...o, sihua: { ...DEFAULT_OPTIONS.sihua, ...(o.sihua ?? {}) } });
 
 export function computeCharts(input: BirthInput, options: Partial<Options> = {}): ChartBundle {
   const opt = normalizeOptions(options);

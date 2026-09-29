@@ -5,12 +5,12 @@ import { ziweiYearLayer } from '../ziwei/timelayers';
 import { baziYearLayer } from '../bazi/timelayers';
 import { PALACE_NAMES } from '../ziwei/types';
 import { tenGodOf } from '../bazi/engine-util';
-import { EVIDENCE_LABEL, REVIEW_LABEL, fill, type EvidenceType, type ReviewStatus, type Rule, type RuleSet } from '../rules';
+import { BASIS_LABEL, EVIDENCE_LABEL, REVIEW_LABEL, fill, type EvidenceType, type ReviewStatus, type Rule, type RuleSet } from '../rules';
 
 export interface InterpSource { book: string; section?: string; note?: string; edition: string; verified: boolean }
 export interface InterpItem {
   ruleId: string; title: string; text: string; context: string;
-  evidenceType: EvidenceType; evidenceLabel: string; reviewStatus: ReviewStatus; reviewLabel: string;
+  evidenceType: EvidenceType; evidenceLabel: string; basisLabel: string; reviewStatus: ReviewStatus; reviewLabel: string;
   sources: InterpSource[];
   classical: { quote: string; source: string }[];
   composed?: boolean;
@@ -22,7 +22,7 @@ export const DISCLAIMER = '本软件是传统文化研究与学习的参考工�
 function toItem(R: RuleSet, rule: Rule, text: string, context: string, composed = false): InterpItem {
   return {
     ruleId: rule.id, title: rule.title, text, context,
-    evidenceType: rule.evidenceType, evidenceLabel: EVIDENCE_LABEL[rule.evidenceType],
+    evidenceType: rule.evidenceType, evidenceLabel: EVIDENCE_LABEL[rule.evidenceType], basisLabel: BASIS_LABEL[rule.basis],
     reviewStatus: rule.review.status, reviewLabel: REVIEW_LABEL[rule.review.status],
     sources: rule.sources.map((s) => {
       const e = R.sources[s.ref];

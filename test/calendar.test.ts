@@ -5,6 +5,7 @@ import { OutOfRangeError, lunarToSolar, solarToLunar, termInstants, TERM_NAMES }
 import { InputError, resolveBirth, shichenOfHour } from '../src/calendar/resolve';
 import { DEFAULT_OPTIONS, CHINA_STANDARD_PLACE, type BirthInput } from '../src/core/types';
 import { jiaziName } from '../src/core/ganzhi';
+import { civilFromEpoch } from '../src/calendar/civil';
 import { astroLunarMonths, astroTermEpochSec } from '../tools/astro-terms';
 import exceptions from './fixtures/lunar-exceptions.json';
 
@@ -150,6 +151,14 @@ describe('时辰与日界（D04 字段变化表）', () => {
     const far = resolveBirth(solar(2024, 2, 20, 12, 0), DEFAULT_OPTIONS);
     expect(far.flags.nearTermBoundary).toBe(false);
     expect(far.flags.termOnSameDay).toBe(false);
+  });
+
+  it('1929 年以前放宽到 20 分钟（历书按北京地方时推算节令）', () => {
+    const t = termInstants(1927)[9]; // 1927 立夏 20:53
+    const c = civilFromEpoch(t.epochSec - 10 * 60, 480);
+    expect(resolveBirth(solar(c.y, c.m, c.d, c.hh, c.mm), DEFAULT_OPTIONS).flags.nearTermBoundary).toBe(true);
+    const c2 = civilFromEpoch(termInstants(1990)[9].epochSec - 10 * 60, 480);
+    expect(resolveBirth(solar(c2.y, c2.m, c2.d, c2.hh, c2.mm), DEFAULT_OPTIONS).flags.nearTermBoundary).toBe(false);
   });
 
   it('农历输入：含闰月换算', () => {

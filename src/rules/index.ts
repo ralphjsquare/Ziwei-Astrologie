@@ -8,6 +8,10 @@ import corpusJson from './corpus.json';
 export type EvidenceType = 'classical' | 'school' | 'modern' | 'structural';
 export type ReviewStatus = 'draft' | 'reviewed' | 'approved' | 'rejected';
 export const EVIDENCE_LABEL: Record<EvidenceType, string> = { classical: '古籍原文', school: '流派观点', modern: '现代整理', structural: '算法结构' };
+export type Basis = 'algorithmic' | 'template' | 'chapter-pointer' | 'textbook';
+export const BASIS_LABEL: Record<Basis, string> = {
+  algorithmic: '算法定义', template: '模板组合', 'chapter-pointer': '篇目指引（未核对原文）', textbook: '通行说法（无具体篇目，待核）',
+};
 export const REVIEW_LABEL: Record<ReviewStatus, string> = { draft: '未审核', reviewed: '已审核', approved: '已确认', rejected: '已驳回' };
 
 export interface ReviewRecord { status: ReviewStatus; reviewer: string | null; date: string | null; note: string | null; history: { status: ReviewStatus; reviewer: string | null; date: string | null; note: string | null }[] }
@@ -21,6 +25,8 @@ export interface Rule {
   evidenceType: EvidenceType;
   sources: RuleSourceRef[];
   classical: { quote: string; corpusRef: string }[];
+  /** 依据类型：算法定义 / 模板组合 / 篇目指引 / 通行说法 */
+  basis: Basis;
   review: ReviewRecord;
   data?: Record<string, string>;
 }
@@ -50,7 +56,7 @@ export const RULES: RuleSet = makeRuleSet(
 
 /** 规则内容哈希（不含审核状态，审核不改变解释内容）。 */
 export const rulesContentHash = (rs: RuleSet): string =>
-  hashOf([...rs.byId.values()].map((r) => ({ id: r.id, when: r.when, title: r.title, plain: r.plain, evidenceType: r.evidenceType, sources: r.sources, classical: r.classical, data: r.data ?? null })));
+  hashOf([...rs.byId.values()].map((r) => ({ id: r.id, when: r.when, title: r.title, plain: r.plain, evidenceType: r.evidenceType, basis: r.basis, sources: r.sources, classical: r.classical, data: r.data ?? null })));
 
 /** 校验：任何规则必须有出处；classical 必须引用语料库中的原文；ID 唯一。返回错误列表。 */
 export function validateRules(rs: RuleSet): string[] {
@@ -75,6 +81,8 @@ export function validateRules(rs: RuleSet): string[] {
       else if (!c.text.includes(q.quote)) errs.push(`${at}: 引文不是语料原文的子串`);
     }
     if ((r.review.status === 'reviewed' || r.review.status === 'approved') && !r.review.reviewer) errs.push(`${at}: 已审核状态必须记录审核人`);
+    if (r.review.status === 'approved' && r.evidenceType !== 'structural' && !r.classical.length) errs.push(`${at}: “已确认”需要古籍原文引用（或为算法结构类）；无原文的解释最高只能到“已审核”`);
+    if (!['algorithmic', 'template', 'chapter-pointer', 'textbook'].includes(r.basis)) errs.push(`${at}: basis 非法`);
   }
   for (const [k, c] of Object.entries(rs.corpus)) {
     if (!c.url || !c.license || !c.sha256 || !c.retrievedAt) errs.push(`语料 ${k}: 缺少来源 URL、许可、获取日期或校验和`);

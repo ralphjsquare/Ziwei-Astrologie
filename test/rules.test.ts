@@ -10,7 +10,7 @@ import { rng, solarInput } from './helpers';
 
 const mk = (over: Partial<Rule>): Rule => ({
   id: 't.1', topic: 't', when: { kind: 'x' }, title: 't', plain: 'p', evidenceType: 'school',
-  sources: [{ ref: 'zwqs' }], classical: [], review: { status: 'draft', reviewer: null, date: null, note: null, history: [] }, ...over,
+  sources: [{ ref: 'zwqs' }], classical: [], basis: 'textbook', review: { status: 'draft', reviewer: null, date: null, note: null, history: [] }, ...over,
 });
 const rs = (rules: Rule[], corpus = {}) => makeRuleSet(rules, [], [], RULES.sources, corpus as never);
 
@@ -29,6 +29,10 @@ describe('规则数据与出处校验', () => {
     expect(validateRules(rs([mk({ evidenceType: 'classical', classical: [{ quote: '改写', corpusRef: 'c1' }] })], corpus))[0]).toMatch(/不是语料原文的子串/);
     expect(validateRules(rs([mk({ review: { status: 'approved', reviewer: null, date: null, note: null, history: [] } })]))[0]).toMatch(/审核人/);
     expect(validateRules(rs([mk({}), mk({})]))[0]).toMatch(/重复/);
+    // 无古籍原文的解释最高只能“已审核”，不能“已确认”
+    expect(validateRules(rs([mk({ review: { status: 'approved', reviewer: '某老师', date: 'd', note: null, history: [] } })]))[0]).toMatch(/已确认.*古籍原文/);
+    expect(validateRules(rs([mk({ review: { status: 'reviewed', reviewer: '某老师', date: 'd', note: null, history: [] } })]))).toEqual([]);
+    expect(validateRules(rs([mk({ evidenceType: 'structural', review: { status: 'approved', reviewer: '某老师', date: 'd', note: null, history: [] } })]))).toEqual([]);
   });
   it('覆盖：十四主星、十二宫、四化、五个局、命宫×十四主星、十三类刑冲合害均有规则', () => {
     for (const s of MAJOR_ORDER) { expect(RULES.byId.has(`zw.star.${s}`)).toBe(true); expect(RULES.byId.has(`zw.sip.命宫.${s}`)).toBe(true); }

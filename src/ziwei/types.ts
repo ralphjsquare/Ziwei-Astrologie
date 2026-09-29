@@ -31,6 +31,8 @@ export interface ZiweiChart {
   palaces: Palace[]; // 按地支 0..11 排列
   fourTransforms: { stem: number; lu: string; quan: string; ke: string; ji: string };
   decadeDirection: 1 | -1;
+  /** 本盘采用的版本选项（流年四化等后续计算沿用） */
+  variants: { kuiYueXin: 'ma-hu' | 'hu-ma'; sihua: Partial<Record<string, number>> };
   steps: ZiweiStep[];
   rulesVersion: string;
 }

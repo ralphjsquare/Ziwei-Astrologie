@@ -22,7 +22,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "cr.element",
@@ -47,7 +48,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "cr.direction",
@@ -72,7 +74,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "cr.sihua",
@@ -97,7 +100,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "cr.flow-year",
@@ -121,6 +125,7 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  }
 ]

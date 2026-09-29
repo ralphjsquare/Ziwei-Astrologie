@@ -2,7 +2,7 @@ import { BRANCHES, STEMS, jiaziIndex, mod, nayinElement, nayinName, stemIsYang, 
 import type { BirthInput, Options } from '../core/types';
 import type { ResolvedBirth } from '../calendar/resolve';
 import {
-  BUREAU_BY_ELEMENT, BUREAU_NAME, HUO_START, KUI_YUE, LING_START, LU_CUN, MAJOR_ORDER, RULES_VERSION, SIHUA,
+  BUREAU_BY_ELEMENT, BUREAU_NAME, HUO_START, KUI_YUE, LING_START, LU_CUN, MAJOR_ORDER, RULES_VERSION, sihuaFor,
   TIANFU_GROUP, TIAN_MA, ZIWEI_GROUP, sanheGroup,
 } from './tables';
 import { PALACE_NAMES, type Palace, type StarPlacement, type Transform, type ZiweiChart, type ZiweiStep } from './types';
@@ -69,8 +69,9 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
   at['右弼'] = mod(10 - (em - 1), 12);
   at['文昌'] = mod(10 - h, 12);
   at['文曲'] = mod(4 + h, 12);
-  at['天魁'] = KUI_YUE[yearStem][0];
-  at['天钺'] = KUI_YUE[yearStem][1];
+  const kuiYue = yearStem === 7 && opt.kuiYueXin === 'hu-ma' ? ([2, 6] as [number, number]) : KUI_YUE[yearStem];
+  at['天魁'] = kuiYue[0];
+  at['天钺'] = kuiYue[1];
   at['禄存'] = LU_CUN[yearStem];
   at['擎羊'] = mod(LU_CUN[yearStem] + 1, 12);
   at['陀罗'] = mod(LU_CUN[yearStem] - 1, 12);
@@ -84,7 +85,7 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
   at['天喜'] = mod(at['红鸾'] + 6, 12);
   steps.push({ id: 'aux', text: '辅佐煞曜按《全书》安星诀依月、时、年干支排布' });
 
-  const [lu, quan, ke, ji] = SIHUA[yearStem];
+  const [lu, quan, ke, ji] = sihuaFor(yearStem, opt.sihua);
   const tmap: Record<string, Transform> = { [lu]: '禄', [quan]: '权', [ke]: '科', [ji]: '忌' };
   steps.push({ id: 'sihua', text: `${STEMS[yearStem]}年四化：${lu}化禄、${quan}化权、${ke}化科、${ji}化忌` });
 
@@ -110,6 +111,7 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
     yearStem, yearBranch,
     fiveElementBureau: { name: BUREAU_NAME[bureau], number: bureau as 2 | 3 | 4 | 5 | 6, nayin: nayinName(mingJz) },
     mingBranch: ming, bodyBranch: body, ziweiBranch: zw, tianfuBranch: tf,
-    palaces, fourTransforms: { stem: yearStem, lu, quan, ke, ji }, decadeDirection: dir, steps, rulesVersion: RULES_VERSION,
+    palaces, fourTransforms: { stem: yearStem, lu, quan, ke, ji }, decadeDirection: dir,
+    variants: { kuiYueXin: opt.kuiYueXin, sihua: { ...opt.sihua } }, steps, rulesVersion: RULES_VERSION,
   };
 }

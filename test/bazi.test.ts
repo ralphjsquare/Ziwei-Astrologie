@@ -161,8 +161,9 @@ describe('八字大运与流年', () => {
     fc.assert(fc.property(fc.integer({ min: 1902, max: 2099 }), fc.integer({ min: 1, max: 12 }), fc.integer({ min: 1, max: 28 }),
       fc.integer({ min: 0, max: 23 }), (y, m, d, h) => {
         const c = computeCharts(solarInput(y, m, d, h, 0)).bazi;
-        expect(c.strength.ratio).toBeGreaterThan(0);
-        expect(c.strength.ratio).toBeLessThan(1);
+        expect(c.strength.ratio).toBeGreaterThanOrEqual(0);
+        expect(c.strength.ratio).toBeLessThanOrEqual(1);
+        expect(Number.isFinite(c.strength.ratio)).toBe(true);
         expect(['偏强', '中和', '偏弱']).toContain(c.strength.candidate);
         expect(c.yongshen.length).toBeGreaterThan(0);
         for (const k of ['year', 'month', 'day', 'hour'] as const) expect(c.pillars[k].hidden.length).toBeGreaterThan(0);

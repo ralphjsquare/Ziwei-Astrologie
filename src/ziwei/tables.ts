@@ -50,3 +50,22 @@ export const SIHUA: [string, string, string, string][] = [
   ['天梁', '紫微', '左辅', '武曲'], // 壬
   ['破军', '巨门', '太阴', '贪狼'], // 癸
 ];
+
+/** 四化的其他版本（版本序号 2 起）。来源：通行软件的并存说法，均待古籍核对（ADR-010）。 */
+export const SIHUA_VARIANTS: Record<'戊' | '庚' | '壬' | '癸', [string, string, string, string][]> = {
+  戊: [['贪狼', '太阴', '右弼', '天机'], ['贪狼', '太阴', '太阳', '天机']],
+  庚: [['太阳', '武曲', '太阴', '天同'], ['太阳', '武曲', '天同', '太阴'], ['太阳', '武曲', '天府', '天同'], ['太阳', '武曲', '天同', '天相']],
+  壬: [['天梁', '紫微', '左辅', '武曲'], ['天梁', '紫微', '天府', '武曲']],
+  癸: [['破军', '巨门', '太阴', '贪狼'], ['破军', '巨门', '太阳', '贪狼']],
+};
+export const SIHUA_STEM_NAME: Record<number, '戊' | '庚' | '壬' | '癸'> = { 4: '戊', 6: '庚', 8: '壬', 9: '癸' };
+
+/** 按年干与所选版本取四化 [禄, 权, 科, 忌]；版本序号非法时抛错。 */
+export function sihuaFor(stem: number, variants: Partial<Record<string, number>> = {}): [string, string, string, string] {
+  const name = SIHUA_STEM_NAME[stem];
+  if (!name) return SIHUA[stem];
+  const v = variants[name] ?? 1;
+  const list = SIHUA_VARIANTS[name];
+  if (!Number.isInteger(v) || v < 1 || v > list.length) throw new RangeError(`sihua variant ${name}=${v} not in 1..${list.length}`);
+  return list[v - 1];
+}

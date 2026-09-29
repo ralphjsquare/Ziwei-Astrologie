@@ -24,11 +24,17 @@ export interface BirthInput {
   place: Place;
 }
 
+/** 紫微四化版本：天干 → 版本序号（1 起，默认 1）。可选天干：戊、庚、壬、癸（见 ADR-010）。 */
+export type SihuaVariants = Partial<Record<'戊' | '庚' | '壬' | '癸', number>>;
+
 export interface Options {
   trueSolarTime: boolean;
   baziDayBoundary: DayBoundary;
   ziweiDayBoundary: DayBoundary;
   leapMonthRule: LeapMonthRule;
+  /** 辛年天魁天钺：'ma-hu' 魁午钺寅（“六辛逢马虎”，默认）；'hu-ma' 魁寅钺午（“六辛逢虎马”）。两说并存，待古籍核对。 */
+  kuiYueXin: 'ma-hu' | 'hu-ma';
+  sihua: SihuaVariants;
 }
 
 export const DEFAULT_OPTIONS: Options = {
@@ -36,6 +42,8 @@ export const DEFAULT_OPTIONS: Options = {
   baziDayBoundary: 'zi23',
   ziweiDayBoundary: 'zi23',
   leapMonthRule: 'midMonth',
+  kuiYueXin: 'ma-hu',
+  sihua: {},
 };
 
 export const CHINA_STANDARD_PLACE: Place = { utcOffsetMinutes: 480, dstMinutes: 0 };

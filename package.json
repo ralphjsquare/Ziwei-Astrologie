@@ -14,20 +14,35 @@
     "dev": "vite --config web/vite.config.ts",
     "build": "vite build --config web/vite.config.ts",
     "verify": "npm run typecheck && npm run check:purity && npm run check:sources && npm test",
-    "gen:golden": "tsx tools/gen-golden.ts"
+    "gen:golden": "tsx tools/gen-golden.ts",
+    "corpus:find": "tsx tools/corpus.ts find",
+    "corpus:fetch": "tsx tools/corpus.ts fetch",
+    "corpus:import": "tsx tools/corpus.ts import",
+    "corpus:suggest": "tsx tools/corpus.ts suggest",
+    "corpus:apply": "tsx tools/corpus.ts apply",
+    "hko:fetch": "tsx tools/hko.ts fetch",
+    "hko:import": "tsx tools/hko.ts import",
+    "golden:sign": "tsx tools/golden-sign.ts"
   },
   "devDependencies": {
+    "@openfate/bazi-engine": "^2.0.0",
     "@types/node": "^26.6.3",
     "astronomy-engine": "^2.1.19",
+    "bazi-lite": "^1.2.0",
     "fake-indexeddb": "^6.2.5",
     "fast-check": "^4.10.2",
     "iztro": "^2.6.1",
+    "js-ephemeris-lite": "^1.2.0",
     "lunar-javascript": "^1.7.7",
+    "opencc-js": "^1.4.2",
     "playwright-core": "^1.63.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vite": "^8.3.1",
-    "vitest": "^5.0.2"
+    "vitest": "^5.0.2",
+    "zhiji-bazi": "^0.2.1",
+    "ziwei": "^0.0.8",
+    "ziwei-lite": "^1.2.0"
   },
   "dependencies": {
     "tyme4ts": "^1.5.2"

@@ -45,7 +45,13 @@ app.innerHTML = `
       <label>八字日柱换日<select id="bb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
       <label>紫微生日换日<select id="zb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
       <label>闰月取月（紫微）<select id="lr"><option value="midMonth">月中分界（默认）</option><option value="currentMonth">按本月</option><option value="nextMonth">按下月</option></select></label>
+      <label>辛年天魁天钺<select id="ky"><option value="ma-hu">魁午钺寅（六辛逢马虎，默认）</option><option value="hu-ma">魁寅钺午（六辛逢虎马）</option></select></label>
+      <label>戊年四化<select id="sh-wu"><option value="1">贪阴弼机（默认）</option><option value="2">贪阴阳机</option></select></label>
+      <label>庚年四化<select id="sh-geng"><option value="1">阳武阴同（默认）</option><option value="2">阳武同阴</option><option value="3">阳武府同</option><option value="4">阳武同相</option></select></label>
+      <label>壬年四化<select id="sh-ren"><option value="1">梁紫辅武（默认）</option><option value="2">梁紫府武</option></select></label>
+      <label>癸年四化<select id="sh-gui"><option value="1">破巨阴贪（默认）</option><option value="2">破巨阳贪</option></select></label>
     </div>
+    <p class="note">紫微四化与辛年魁钺存在并行的传统说法，尚待古籍核对；默认取通行版本。</p>
   </details>
   <div class="row"><button type="submit">排盘</button><span class="note">时辰以整点为界（23:00 起子时）。</span></div>
 </form>
@@ -93,7 +99,8 @@ function readInput(): { input: BirthInput; options: Partial<Options>; warnings: 
   const input: BirthInput = { calendar: cal, year: y, month: m, day: d, ...(cal === 'lunar' ? { leap: chk('leap') } : {}), hour: hh, minute: mm, gender: val('g') as 'M' | 'F', place };
   const options: Partial<Options> = {
     trueSolarTime: chk('tst'), baziDayBoundary: val('bb') as Options['baziDayBoundary'], ziweiDayBoundary: val('zb') as Options['ziweiDayBoundary'],
-    leapMonthRule: val('lr') as Options['leapMonthRule'],
+    leapMonthRule: val('lr') as Options['leapMonthRule'], kuiYueXin: val('ky') as Options['kuiYueXin'],
+    sihua: { 戊: num('sh-wu'), 庚: num('sh-geng'), 壬: num('sh-ren'), 癸: num('sh-gui') },
   };
   return { input, options, warnings };
 }
@@ -120,7 +127,7 @@ function itemHtml(it: InterpItem): string {
   const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}</li>`).join('') : '<li>尚未入库：公版古籍语料未导入，本条不提供逐字引文。</li>';
   return `<article class="item ev-${it.evidenceType}"><h4>${esc(it.title)} <span class="badge">${esc(it.evidenceLabel)}</span><span class="badge ${it.reviewStatus}">${esc(it.reviewLabel)}</span>${it.composed ? '<span class="badge">模板组合</span>' : ''}</h4>
   ${it.context ? `<p class="ctx">${esc(it.context)}</p>` : ''}<p>${esc(it.text)}</p>
-  <details><summary>出处与古籍原文</summary><ul>${src}</ul><p>古籍原文：</p><ul>${cls}</ul></details></article>`;
+  <details><summary>出处与古籍原文</summary><p>依据类型：${esc(it.basisLabel)}</p><ul>${src}</ul><p>古籍原文：</p><ul>${cls}</ul></details></article>`;
 }
 const keepItem = (it: InterpItem) => !st.onlyReviewed || it.reviewStatus === 'reviewed' || it.reviewStatus === 'approved';
 const sectionsHtml = (secs: InterpSection[]) =>
@@ -256,7 +263,7 @@ function bindTab() {
       const p = b.ziwei.palaces.find((x) => x.stars.some((s) => s.name === name))!;
       const items: InterpItem[] = [];
       if (RULES.byId.has(`zw.star.${name}`)) items.push(ruleItem(RULES, `zw.star.${name}`, undefined, `${name}落在${BRANCHES[p.branch]}宫（${p.name}）`));
-      else items.push({ ruleId: '', title: name, text: '辅佐煞曜的解释暂未收录（v1 仅收录十四主星、四化与十二宫）。', context: `${name}落在${BRANCHES[p.branch]}宫（${p.name}）`, evidenceType: 'structural', evidenceLabel: '算法结构', reviewStatus: 'draft', reviewLabel: '未审核', sources: [{ book: '本项目算法规格', edition: 'docs/adr', verified: true }], classical: [] });
+      else items.push({ ruleId: '', title: name, text: '辅佐煞曜的解释暂未收录（v1 仅收录十四主星、四化与十二宫）。', context: `${name}落在${BRANCHES[p.branch]}宫（${p.name}）`, evidenceType: 'structural', evidenceLabel: '算法结构', basisLabel: '算法定义', reviewStatus: 'draft', reviewLabel: '未审核', sources: [{ book: '本项目算法规格', edition: 'docs/adr', verified: true }], classical: [] });
       if (el.dataset.tf) items.push(ruleItem(RULES, `zw.transform.${el.dataset.tf}`, undefined, `${name}化${el.dataset.tf}`));
       st.selected = items; void render();
     }));

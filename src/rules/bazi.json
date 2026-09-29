@@ -22,7 +22,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.乙",
@@ -47,7 +48,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.丙",
@@ -72,7 +74,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.丁",
@@ -97,7 +100,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.戊",
@@ -122,7 +126,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.己",
@@ -147,7 +152,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.庚",
@@ -172,7 +178,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.辛",
@@ -197,7 +204,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.壬",
@@ -222,7 +230,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.stem.癸",
@@ -247,7 +256,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.god.比肩",
@@ -273,7 +283,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.劫财",
@@ -299,7 +310,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.食神",
@@ -325,7 +337,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.伤官",
@@ -351,7 +364,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.偏财",
@@ -377,7 +391,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.正财",
@@ -403,7 +418,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.七杀",
@@ -429,7 +445,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.正官",
@@ -455,7 +472,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.偏印",
@@ -481,7 +499,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.god.正印",
@@ -507,7 +526,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.strength.偏强",
@@ -532,7 +552,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.strength.偏弱",
@@ -557,7 +578,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.strength.中和",
@@ -582,7 +604,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.pattern.正官格",
@@ -608,7 +631,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.七杀格",
@@ -634,7 +658,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.正财格",
@@ -660,7 +685,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.偏财格",
@@ -686,7 +712,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.正印格",
@@ -712,7 +739,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.偏印格",
@@ -738,7 +766,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.食神格",
@@ -764,7 +793,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.伤官格",
@@ -790,7 +820,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.建禄格",
@@ -816,7 +847,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.pattern.月刃格",
@@ -842,7 +874,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "chapter-pointer"
  },
  {
   "id": "bz.rel.天干五合",
@@ -867,7 +900,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.天干相冲",
@@ -892,7 +926,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.地支六合",
@@ -917,7 +952,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.地支六冲",
@@ -942,7 +978,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.地支六害",
@@ -967,7 +1004,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.三刑",
@@ -992,7 +1030,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.无恩之刑（不全）",
@@ -1017,7 +1056,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.恃势之刑（不全）",
@@ -1042,7 +1082,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.无礼之刑",
@@ -1067,7 +1108,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.自刑",
@@ -1092,7 +1134,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.地支三合",
@@ -1117,7 +1160,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.地支半合",
@@ -1142,7 +1186,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.rel.地支三会",
@@ -1167,7 +1212,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.长生",
@@ -1192,7 +1238,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.沐浴",
@@ -1217,7 +1264,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.冠带",
@@ -1242,7 +1290,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.临官",
@@ -1267,7 +1316,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.帝旺",
@@ -1292,7 +1342,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.衰",
@@ -1317,7 +1368,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.病",
@@ -1342,7 +1394,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.死",
@@ -1367,7 +1420,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.墓",
@@ -1392,7 +1446,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.绝",
@@ -1417,7 +1472,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.胎",
@@ -1442,7 +1498,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.ls.养",
@@ -1467,7 +1524,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.kongwang",
@@ -1491,7 +1549,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.luck.direction",
@@ -1520,7 +1579,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "algorithmic"
  },
  {
   "id": "bz.flow.luck",
@@ -1544,7 +1604,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.flow.year",
@@ -1568,7 +1629,8 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  },
  {
   "id": "bz.yongshen.fuyi",
@@ -1592,6 +1654,7 @@
    "date": null,
    "note": null,
    "history": []
-  }
+  },
+  "basis": "textbook"
  }
 ]

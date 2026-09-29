@@ -1,0 +1,15 @@
+{
+  "_说明": "古籍语料与官方历表数据的来源清单。不要凭记忆填写：先用 `npm run corpus:find -- 关键词` 在维基文库检索实际页面标题，再填 title；读完站点与页面的许可条款后，才把 licenseVerified 改为 true 并填写 license（例如“原典为公版；站点文本 CC BY-SA 4.0，需署名并以相同方式共享”，以实际条款为准）。licenseVerified=false 的来源会被 corpus:import 拒绝入库。",
+  "corpus": [
+    { "id": "zwqs", "book": "紫微斗数全书", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" },
+    { "id": "zpzq", "book": "子平真诠", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" },
+    { "id": "yhzp", "book": "渊海子平", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" },
+    { "id": "smtht", "book": "三命通会", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" }
+  ],
+  "hko": {
+    "_说明": "以下 URL 模板是按香港天文台公开页面的常见形式推测的，未经验证；首次运行 hko:fetch 会把原始响应存入 docs/sources/raw/hko/，若解析失败请把 raw 文件提交，以便调整解析器。",
+    "lunarTextUrl": "https://www.hko.gov.hk/tc/gts/time/calendar/text/files/T{year}c.txt",
+    "yearFrom": 1901,
+    "yearTo": 2100
+  }
+}

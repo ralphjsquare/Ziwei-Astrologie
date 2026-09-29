@@ -1,6 +1,6 @@
 import { BRANCHES, STEMS, mod } from '../core/ganzhi';
 import { assertSupportedYear } from '../calendar/lunar';
-import { SIHUA } from './tables';
+import { sihuaFor } from './tables';
 import type { Palace, PalaceName, Transform, ZiweiChart } from './types';
 import { PALACE_NAMES } from './types';
 
@@ -35,11 +35,12 @@ export function ziweiYearLayer(c: ZiweiChart, year: number): ZiweiYearLayer {
   steps.push(`流年命宫：太岁${BRANCHES[branch]}宫入命，即本命${c.palaces[branch].name}`);
   const t: Transform[] = ['禄', '权', '科', '忌'];
   const transforms: FlowStarTransform[] = [];
-  SIHUA[stem].forEach((star, i) => {
+  const sh = sihuaFor(stem, c.variants.sihua);
+  sh.forEach((star, i) => {
     const p = findStar(c, star);
     if (p) transforms.push({ star, transform: t[i], natalPalace: p.name, branch: p.branch });
   });
-  steps.push(`流年四化（${STEMS[stem]}干）：${SIHUA[stem].map((s, i) => s + '化' + t[i]).join('、')}`);
+  steps.push(`流年四化（${STEMS[stem]}干）：${sh.map((s, i) => s + '化' + t[i]).join('、')}`);
   const dou = mod(branch - (c.input.effectiveMonth - 1) + c.input.hourBranch, 12);
   steps.push(`斗君：由流年${BRANCHES[branch]}宫起正月逆数至生月，再顺数至生时，得${BRANCHES[dou]}宫`);
   const months: FlowMonth[] = [];

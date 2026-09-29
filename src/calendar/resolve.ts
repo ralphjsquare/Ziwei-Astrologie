@@ -82,12 +82,13 @@ export function resolveBirth(input: BirthInput, opt: Options): ResolvedBirth {
     const c = civilFromEpoch(j.epochSec, stdOffset);
     return c.y === stdDay.y && c.m === stdDay.m && c.d === stdDay.d;
   });
+  // 1929 年以前历书按北京地方时（约 UTC+7:45）推算节令，与现代 UTC+8 口径最多相差约 15 分钟，故放宽提示范围
   const diffMin = (utcSec - nearest.epochSec) / 60;
 
   return {
     clock, utcSec, effective, trueSolarAdjustSeconds: tst, shichen, lateZi, baziDate,
     ziweiLunar: solarToLunar(zd.y, zd.m, zd.d),
     clockLunar: solarToLunar(clock.y, clock.m, clock.d),
-    flags: { termOnSameDay, nearTermBoundary: Math.abs(diffMin) <= 2, nearestJie: nearest.name, nearestJieMinutes: Math.round(diffMin * 10) / 10 },
+    flags: { termOnSameDay, nearTermBoundary: Math.abs(diffMin) <= (clock.y < 1929 ? 20 : 2), nearestJie: nearest.name, nearestJieMinutes: Math.round(diffMin * 10) / 10 },
   };
 }

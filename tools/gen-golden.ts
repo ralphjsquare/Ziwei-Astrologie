@@ -1,7 +1,7 @@
 // 生成黄金测试固件与人工核对表。期望值来自独立实现（iztro、tyme4ts），而不是本项目引擎的输出；
 // 生成时若与引擎不一致，记为 divergence，须在 ADR 中裁决后才可通过测试。
 // 用法：npx tsx tools/gen-golden.ts
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { astro } from 'iztro';
 import { ChildLimit, Gender, SolarTime } from 'tyme4ts';
 import { computeCharts, BRANCHES, STEMS, canonicalJson } from '../src/index';
@@ -64,6 +64,9 @@ const iztroVersion = JSON.parse(readFileSync('node_modules/iztro/package.json', 
 const tymeVersion = JSON.parse(readFileSync('node_modules/tyme4ts/package.json', 'utf8')).version;
 const out: unknown[] = [];
 const divergences: string[] = [];
+// 保留已有的人工签字（输入未变的用例）
+const prev = new Map<string, { input: unknown; oracle: { humanVerifiedBy: unknown } }>();
+if (existsSync('test/fixtures/golden.json')) for (const c of JSON.parse(readFileSync('test/fixtures/golden.json', 'utf8')).cases) prev.set(c.id, c);
 for (const c of cases) {
   const b = computeCharts(c.input);
   const L = c.libClock;
@@ -98,7 +101,7 @@ for (const c of cases) {
     expected.bazi.pillars === mine.bazi.pillars && JSON.stringify(expected.bazi.luckStart) === JSON.stringify(mine.bazi.luckStart);
   if (!same) divergences.push(c.id);
   out.push({ id: c.id, category: c.category, input: c.input, expected,
-    oracle: { ziwei: { type: 'independent-implementation', source: `iztro@${iztroVersion}` }, bazi: { type: 'independent-implementation', source: `tyme4ts@${tymeVersion}` }, note: c.input.place.dstMinutes ? '库输入为扣除夏令时后的标准时间' : '', humanVerifiedBy: null } });
+    oracle: { ziwei: { type: 'independent-implementation', source: `iztro@${iztroVersion}` }, bazi: { type: 'independent-implementation', source: `tyme4ts@${tymeVersion}` }, note: c.input.place.dstMinutes ? '库输入为扣除夏令时后的标准时间' : '', humanVerifiedBy: prev.get(c.id) && JSON.stringify(prev.get(c.id)!.input) === JSON.stringify(c.input) ? prev.get(c.id)!.oracle.humanVerifiedBy : null } });
 }
 mkdirSync('test/fixtures', { recursive: true });
 writeFileSync('test/fixtures/golden.json', JSON.stringify({ generatedBy: 'tools/gen-golden.ts', note: '期望值来自独立实现，非本引擎输出；humanVerifiedBy 为 null 表示尚未人工签字（见 docs/golden/HUMAN_REVIEW_SHEET.md）', divergences, cases: out }, null, 1) + '\n', 'utf8');
