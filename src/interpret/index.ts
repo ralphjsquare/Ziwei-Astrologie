@@ -145,7 +145,7 @@ export function interpretNatal(b: ChartBundle, R: RuleSet): InterpSection[] {
       const rule = need(R, `bz.shensha.${name.replace(/（.*）/, '')}`);
       ss.push(toItem(R, rule, rule.plain, hits.map((h) => `${PN[h.pillar]}（以${h.basis}为准）`).join('、')));
     }
-    if (ss.length) sections.push({ id: 'bz-shensha', heading: '八字·神煞（十一种，仅列位置）', items: ss });
+    if (ss.length) sections.push({ id: 'bz-shensha', heading: '八字·神煞（仅列位置）', items: ss });
   }
 
   const items3: InterpItem[] = [];

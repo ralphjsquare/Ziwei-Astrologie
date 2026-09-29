@@ -41,7 +41,7 @@ export interface BaziChart {
     cycles: LuckCycle[];
   };
   relations: Relation[];
-  /** 神煞（十一种，《三命通会》表格；只列出现位置，不打分） */
+  /** 神煞（《三命通会》表格；只列出现位置，不打分） */
   shensha: ShenShaHit[];
   strength: StrengthEvidence;
   patterns: PatternCandidate[];
