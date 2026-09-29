@@ -8,9 +8,9 @@ import corpusJson from './corpus.json';
 export type EvidenceType = 'classical' | 'school' | 'modern' | 'structural';
 export type ReviewStatus = 'draft' | 'reviewed' | 'approved' | 'rejected';
 export const EVIDENCE_LABEL: Record<EvidenceType, string> = { classical: '古籍原文', school: '流派观点', modern: '现代整理', structural: '算法结构' };
-export type Basis = 'algorithmic' | 'template' | 'chapter-pointer' | 'textbook';
+export type Basis = 'algorithmic' | 'template' | 'quoted' | 'chapter-pointer' | 'textbook';
 export const BASIS_LABEL: Record<Basis, string> = {
-  algorithmic: '算法定义', template: '模板组合', 'chapter-pointer': '篇目指引（未核对原文）', textbook: '通行说法（无具体篇目，待核）',
+  algorithmic: '算法定义', template: '模板组合', quoted: '转述古籍并附原文引文（转录本，底本待核）', 'chapter-pointer': '篇目指引（未核对原文）', textbook: '通行说法（无具体篇目，待核）',
 };
 export const REVIEW_LABEL: Record<ReviewStatus, string> = { draft: '未审核', reviewed: '已审核', approved: '已确认', rejected: '已驳回' };
 
@@ -31,7 +31,7 @@ export interface Rule {
   data?: Record<string, string>;
 }
 export interface SourceEntry { book: string; author: string; edition: string; verified: boolean; note: string }
-export interface CorpusEntry { book: string; section: string; text: string; url: string; license: string; retrievedAt: string; sha256: string }
+export interface CorpusEntry { book: string; section: string; text: string; url: string; license: string; retrievedAt: string; sha256: string; /** 底本/版本说明（维基文库转录本多未标明底本） */ edition?: string }
 
 export interface RuleSet {
   version: string;
@@ -109,7 +109,7 @@ export function validateRules(rs: RuleSet): string[] {
     }
     if ((r.review.status === 'reviewed' || r.review.status === 'approved') && !r.review.reviewer) errs.push(`${at}: 已审核状态必须记录审核人`);
     if (r.review.status === 'approved' && r.evidenceType !== 'structural' && !r.classical.length) errs.push(`${at}: “已确认”需要古籍原文引用（或为算法结构类）；无原文的解释最高只能到“已审核”`);
-    if (!['algorithmic', 'template', 'chapter-pointer', 'textbook'].includes(r.basis)) errs.push(`${at}: basis 非法`);
+    if (!['algorithmic', 'template', 'quoted', 'chapter-pointer', 'textbook'].includes(r.basis)) errs.push(`${at}: basis 非法`);
   }
   for (const [k, c] of Object.entries(rs.corpus)) {
     if (!c.url || !c.license || !c.sha256 || !c.retrievedAt) errs.push(`语料 ${k}: 缺少来源 URL、许可、获取日期或校验和`);

@@ -1,13 +1,14 @@
 # ADR-007 古籍语料（公版）
-状态：原则已采纳；**导入待网络放行或由你本地下载**。
-- 原则：只用公版；原典之外的现代点校、注释、译本不收；数字化文本站点的条款要读过再标记 `licenseVerified`（计划第 10 节 R2）。
-- 现状：构建环境代理拦截了 zh.wikisource.org、ctext.org、archive.org，`src/rules/corpus.json` 为空。**没有凭记忆写任何引文。**
-- 已备好完整流水线（离线测试通过，`test/corpus.test.ts`）：
-  1. `npm run corpus:find -- 关键词` 检索维基文库真实页面标题 → 填 `docs/sources/manifest.json`；
-  2. `npm run corpus:fetch` 下载（含子页面），记录修订号、时间、站点许可文字；
-  3. 人工读许可条款 → 改清单的 `license` 与 `licenseVerified: true`；
-  4. `npm run corpus:import` 清洗、分节、写 `corpus.json`（含 URL、许可、获取日期、SHA-256；未核对许可者拒绝入库）；
-  5. `npm run corpus:suggest` 为每条规则检索引文候选到 `docs/sources/quote-candidates.md`；
-  6. 审核人挑选后写 `docs/sources/quotes.json`，`npm run corpus:apply -- docs/sources/quotes.json` 回写（引文必须是语料原文子串；只有 `claimSupported: true` 才升级为“古籍原文”）。
-- 门禁：`classical` 规则必须有语料引文；**“已确认”状态必须有古籍原文引文**（算法结构类除外），无原文的解释最高只能到“已审核”（`validateRules`）。
-- 放行方式见 `docs/sources/README.md`。
+状态：**已导入（2026-09-29）**，引文须对照影印本核对底本。
+
+## 已入库
+- 《紫微斗数全书》卷一至卷三（维基文库“紫微斗數全書”，90 段）、《三命通会》卷一至卷九（维基文库“三命通會”，345 段）。共 435 段，`src/rules/corpus.json`，每段带书名、篇目、来源 URL（含修订号）、许可、获取日期、SHA-256、底本说明。
+- 许可：原典为明清著作，属公有领域；维基文库转录文本依 CC BY-SA 4.0（2026-09-29 经 MediaWiki API `siteinfo` 核对），署名与相同方式共享义务见 `docs/sources/NOTICE.md`。
+- **底本未标明**：维基文库这两部书的页面没有标明所据版本，繁简混用，且有个别转录错误（本项目已在测试中发现并记录，见 ADR-010）。因此所有引文都标注“底本未核对”，**审核人必须对照影印本核对后才可视为古籍原文**。
+- 未入库：《渊海子平》（该页面标注 `{{No source}}`，无出处，不采用）；《子平真诠》《穷通宝鉴》《滴天髓》（后两者已下载/下载中，许可待逐页核对；《子平真诠》在维基文库未找到）。
+
+## 使用方式
+- `docs/sources/grounding.json`：80 条规则的“落地”数据——白话转述 + 逐字引文。`npm run corpus:ground` 检查每条引文必须是语料某一条原文的**唯一子串**，再回写规则（`basis: quoted`，依据等级仍为“流派观点”，审核状态仍为“未审核”）。
+- 门禁：`classical` 规则必须有语料引文；“已确认”状态必须有古籍原文引文；伪造引文使校验失败。
+- 一手依据测试：`test/canon-quanshu.test.ts` 以《全书》卷二原文为独立预言核对安星表（含 149 格紫微落宫表）。
+- 流水线：`corpus:find` → `fetch`（断点续传、限流退避）→ 人工核对许可 → `import` → `suggest` → `apply`/`ground`。

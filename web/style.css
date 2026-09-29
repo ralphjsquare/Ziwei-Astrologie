@@ -70,3 +70,4 @@ details ul { margin: 4px 0; padding-left: 18px; }
 .disclaimer { font-size: 12.5px; color: var(--muted); border-top: 1px solid var(--line); margin-top: 20px; padding: 10px 0 30px; }
 @media print { .tabs, form, .form, .row, .top .note, button { display: none !important; } body { background: #fff; color: #000; } .card { break-inside: avoid; } }
 [hidden] { display: none !important; }
+.badge.quoted { color: var(--lu); border-color: var(--lu); }

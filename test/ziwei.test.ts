@@ -129,10 +129,11 @@ describe('L3 与独立实现（iztro）差分', () => {
         if (ip.isBodyPalace !== p.isBody) errs.push('body');
       }
       for (const nm of STAR_ORDER) {
+        if (c.yearStem === 7 && (nm === '天魁' || nm === '天钺')) continue; // 辛年魁钺两说并存：iztro 取“马虎”，本项目默认《全书》“虎马”（ADR-010）
         const mine = c.palaces.find((p) => p.stars.some((s) => s.name === nm))!;
         const i = iz.get(nm);
         if (!i || i.b !== mine.branch) errs.push(`star ${nm}`);
-        if (i && i.mut !== (mine.stars.find((s) => s.name === nm)!.transform ?? '')) errs.push(`mut ${nm}`);
+        if (c.yearStem !== 8 && i && i.mut !== (mine.stars.find((s) => s.name === nm)!.transform ?? '')) errs.push(`mut ${nm}`); // 壬年：iztro 取“辅”，本项目默认《全书》“府”（ADR-010）
       }
       if (a.fiveElementsClass !== c.fiveElementBureau.name) errs.push('bureau');
       if (errs.length) bad.push(`${y}-${m}-${d} ${h}h ${g}: ${errs.join(',')}`);
@@ -156,7 +157,7 @@ describe('L3 与独立实现（iztro）差分', () => {
         if (br(hz.monthly.index) !== zl.months[lm - 1].branch) bad.push(`month ${y}-${m}-${d} fy${fy} lm${lm}`);
         if (br(hz.yearly.index) !== zl.flowMingBranch) bad.push(`year ${y}-${m}-${d} fy${fy}`);
         if (zl.decade && br(hz.decadal.index) !== zl.decade.branch) bad.push(`decade ${y}-${m}-${d} fy${fy}`);
-        if (JSON.stringify(hz.yearly.mutagen) !== JSON.stringify(zl.transforms.map((t) => t.star))) bad.push(`mutagen ${fy}`);
+        if (zl.yearStem !== 8 && JSON.stringify(hz.yearly.mutagen) !== JSON.stringify(zl.transforms.map((t) => t.star))) bad.push(`mutagen ${fy}`);
       }
     }
     expect(bad).toEqual([]);

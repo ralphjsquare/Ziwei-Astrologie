@@ -30,7 +30,8 @@ describe('黄金盘（紫微 60 + 八字 60，独立实现为标准）', () => {
       expect(canonicalJson(norm(majors))).toBe(canonicalJson(norm(c.expected.ziwei.majorStars)));
       const trans: Record<string, string> = {};
       for (const p of b.ziwei.palaces) for (const s of p.stars) if (s.transform && s.kind !== 'other') trans[s.name] = s.transform;
-      for (const [star, t] of Object.entries(c.expected.ziwei.transforms)) expect(trans[star]).toBe(t);
+      // 壬年：iztro 取“辅”，本项目默认《全书》“府”（ADR-010），该年干不比较四化
+      if (b.ziwei.yearStem !== 8) for (const [star, t] of Object.entries(c.expected.ziwei.transforms)) expect(trans[star]).toBe(t);
       const pillars = (['year', 'month', 'day', 'hour'] as const).map((k) => STEMS[b.bazi.pillars[k].stem] + BRANCHES[b.bazi.pillars[k].branch]).join(' ');
       expect(pillars).toBe(c.expected.bazi.pillars);
       expect([b.bazi.luck.start.years, b.bazi.luck.start.months, b.bazi.luck.start.days]).toEqual(c.expected.bazi.luckStart);

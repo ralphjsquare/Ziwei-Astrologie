@@ -72,12 +72,12 @@ function zlChart(y: number, m: number, d: number, h: number, mi: number, g: 'M' 
 }
 
 describe('紫微：与独立实现 ziwei-lite 比对', () => {
-  it('随机 400 盘：局、命宫、身宫、宫干、二十六颗星落宫、生年四化一致（辛年魁钺为已知流派差异，见下）', () => {
+  it('随机 400 盘：局、命宫、身宫、宫干、二十六颗星落宫（含辛年天魁天钺）、生年四化一致', () => {
     const r = rng(2024), bad: string[] = [];
     for (let k = 0; k < 400; k++) {
       const y = r.int(1902, 2099), m = r.int(1, 12), d = r.int(1, 28), h = r.int(0, 23), mi = r.int(0, 59), g = k % 2 ? 'F' : 'M';
       const c = computeCharts(solarInput(y, m, d, h, mi, g)).ziwei;
-      const z = zlChart(y, m, d, h, mi, g);
+      const z = zlChart(y, m, d, h, mi, g, { sihua: { ren: OPT[1] } }); // 壬年：《全书》取“府”，对应其第 2 版
       const errs: string[] = [];
       if ([2, 3, 4, 5, 6][z.anchors.bureau] !== c.fiveElementBureau.number) errs.push('bureau');
       if (z.palaces.find((p) => p.name === '命宫')!.branch !== c.mingBranch) errs.push('ming');
@@ -88,7 +88,6 @@ describe('紫微：与独立实现 ziwei-lite 比对', () => {
         for (const s of p.stars) if (s.natal && KEY[s.key]) pos[KEY[s.key]] = p.branch;
       }
       for (const nm of STAR_ORDER) {
-        if (c.yearStem === 7 && (nm === '天魁' || nm === '天钺')) continue;
         if (pos[nm] !== c.palaces.find((p) => p.stars.some((x) => x.name === nm))!.branch) errs.push(nm);
       }
       const t = z.birthYearTransformations;
@@ -127,11 +126,11 @@ describe('紫微：与独立实现 ziwei-lite 比对', () => {
     expect(bad).toEqual([]);
   }, 120000);
 
-  it('辛年天魁天钺：iztro 取魁午钺寅，ziwei-lite 取魁寅钺午——两说并存，均可由选项复现', () => {
+  it('辛年天魁天钺：《全书》与 ziwei-lite 取魁寅钺午（虎马，默认），iztro 取魁午钺寅（马虎）——两说并存，均可由选项复现', () => {
     for (const [y, m, d] of [[1991, 5, 5], [2001, 8, 8], [2031, 12, 4]]) {
       const zl = zlChart(y, m, d, 10, 0, 'M');
       const at = (nm: string, key: string) => zl.palaces.find((p) => p.stars.some((s) => s.key === key))!.branch;
-      const a = computeCharts(solarInput(y, m, d, 10, 0), { kuiYueXin: 'hu-ma' }).ziwei;
+      const a = computeCharts(solarInput(y, m, d, 10, 0)).ziwei; // 默认 hu-ma
       const b = computeCharts(solarInput(y, m, d, 10, 0), { kuiYueXin: 'ma-hu' }).ziwei;
       const find = (z: typeof a, n: string) => z.palaces.find((p) => p.stars.some((s) => s.name === n))!.branch;
       expect(find(a, '天魁')).toBe(at('天魁', 'tiankui'));
@@ -141,13 +140,13 @@ describe('紫微：与独立实现 ziwei-lite 比对', () => {
     }
   });
 
-  it('四化版本：戊（2 种）、庚（4 种）、壬（2 种）、癸（2 种）与 ziwei-lite 的各版本逐一对应', () => {
+  it('四化版本：戊（2 种）、庚（4 种）、壬（2 种，序号与其相反）、癸（2 种）与 ziwei-lite 的各版本逐一对应', () => {
     const cases: [string, number, number, string, number][] = [ // 天干名, 天干序号, 版本数, ziwei-lite 规则键, 一个该天干的年份
       ['戊', 4, 2, 'wu', 1998], ['庚', 6, 4, 'geng', 2000], ['壬', 8, 2, 'ren', 2002], ['癸', 9, 2, 'gui', 2003],
     ];
     for (const [name, , n, key, year] of cases) {
       for (let v = 1; v <= n; v++) {
-        const z = zlChart(year, 6, 20, 10, 0, 'M', { sihua: { [key]: OPT[v - 1] } });
+        const z = zlChart(year, 6, 20, 10, 0, 'M', { sihua: { [key]: OPT[name === '壬' ? 2 - v : v - 1] } }); // 壬：本项目第 1 版（府）= ziwei-lite 第 2 版
         const t = z.birthYearTransformations;
         const theirs = [t.lu, t.quan, t.ke, t.ji].map((id) => ID2NAME.get(id));
         const c = computeCharts(solarInput(year, 6, 20, 10, 0), { sihua: { [name]: v } as never }).ziwei;

@@ -11,7 +11,7 @@ export function selectRules(rs: RuleSet, scope: ReviewScope, status: ReviewStatu
 }
 
 const srcText = (rs: RuleSet, r: Rule) =>
-  r.sources.map((s) => `${rs.sources[s.ref].book}${s.section ? '·' + s.section : ''}${rs.sources[s.ref].verified ? '' : '（未核对原文）'}`).join('；');
+  r.sources.map((s) => `${rs.sources[s.ref].book}${s.section ? '·' + s.section : ''}${rs.sources[s.ref].verified ? '' : '（底本未核对）'}`).join('；');
 const cond = (r: Rule) => Object.entries(r.when).map(([k, v]) => `${k}=${v}`).join(' ');
 
 const csvCell = (v: string) => (/[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v);
@@ -29,7 +29,7 @@ export function exportRules(rs: RuleSet, rules: Rule[], format: ReviewFormat, ge
     return '﻿' + [head, ...rows].map((row) => row.map(csvCell).join(',')).join('\n');
   }
   const L: string[] = [`# 解读规则审核文档`, '', `- 生成时间：${generatedAt}`, `- 规则集版本：${rs.version}`, `- 规则数量：${rules.length}`, '',
-    '> 说明：「古籍原文」栏目前为空，因为公版语料尚未入库；出处为书名/篇目级引用，标注“未核对原文”。请在“审核意见”与“新状态”处填写，可用 `npm run review:import` 导回。', ''];
+    '> 说明：「古籍原文」栏为语料中逐字摘录的引文（维基文库转录本，底本未标明，须对照影印本核对）；无引文的规则为通行说法或算法结构。请在“审核意见”与“新状态”处填写，可用 `npm run review:import` 导回。', ''];
   for (const r of rules) {
     L.push(`## ${r.id}｜${r.title}`, '',
       `- 触发条件：\`${cond(r)}\``, `- 依据等级：${EVIDENCE_LABEL[r.evidenceType]}；依据类型：${BASIS_LABEL[r.basis]}`, `- 出处：${srcText(rs, r)}`,
@@ -48,7 +48,7 @@ export function exportChartReview(title: string, sections: InterpSection[], calc
     L.push(`## ${s.heading}`, '');
     for (const it of s.items) {
       L.push(`### ${it.title}（${it.ruleId}）`, `- 位置：${it.context}`, `- 依据等级：${it.evidenceLabel}；审核状态：${it.reviewLabel}${it.composed ? '；模板组合' : ''}`,
-        `- 出处：${it.sources.map((x) => x.book + (x.section ? '·' + x.section : '') + (x.verified ? '' : '（未核对原文）')).join('；')}`, '', it.text, '', '审核意见：', '');
+        `- 出处：${it.sources.map((x) => x.book + (x.section ? '·' + x.section : '') + (x.verified ? '' : '（底本未核对）')).join('；')}`, '', it.text, '', '审核意见：', '');
     }
   }
   return L.join('\n');

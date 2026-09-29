@@ -22,7 +22,8 @@
     "corpus:apply": "tsx tools/corpus.ts apply",
     "hko:fetch": "tsx tools/hko.ts fetch",
     "hko:import": "tsx tools/hko.ts import",
-    "golden:sign": "tsx tools/golden-sign.ts"
+    "golden:sign": "tsx tools/golden-sign.ts",
+    "corpus:ground": "tsx tools/corpus.ts ground"
   },
   "devDependencies": {
     "@openfate/bazi-engine": "^2.0.0",

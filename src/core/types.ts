@@ -24,7 +24,7 @@ export interface BirthInput {
   place: Place;
 }
 
-/** 紫微四化版本：天干 → 版本序号（1 起，默认 1）。可选天干：戊、庚、壬、癸（见 ADR-010）。 */
+/** 紫微四化版本：天干 → 版本序号（1 起，默认 1，即《全书》原文）。可选天干：戊、庚、壬、癸（见 ADR-010）。 */
 export type SihuaVariants = Partial<Record<'戊' | '庚' | '壬' | '癸', number>>;
 
 export interface Options {
@@ -32,8 +32,8 @@ export interface Options {
   baziDayBoundary: DayBoundary;
   ziweiDayBoundary: DayBoundary;
   leapMonthRule: LeapMonthRule;
-  /** 辛年天魁天钺：'ma-hu' 魁午钺寅（“六辛逢马虎”，默认）；'hu-ma' 魁寅钺午（“六辛逢虎马”）。两说并存，待古籍核对。 */
-  kuiYueXin: 'ma-hu' | 'hu-ma';
+  /** 辛年天魁天钺：'hu-ma' 魁寅钺午（“六辛逢虎马”，《紫微斗数全书》卷二安天魁天钺诀，默认）；'ma-hu' 魁午钺寅（“六辛逢马虎”，iztro 等软件采用）。 */
+  kuiYueXin: 'hu-ma' | 'ma-hu';
   sihua: SihuaVariants;
 }
 
@@ -42,7 +42,7 @@ export const DEFAULT_OPTIONS: Options = {
   baziDayBoundary: 'zi23',
   ziweiDayBoundary: 'zi23',
   leapMonthRule: 'midMonth',
-  kuiYueXin: 'ma-hu',
+  kuiYueXin: 'hu-ma',
   sihua: {},
 };
 

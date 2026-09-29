@@ -6,7 +6,7 @@ const run = promisify(execFile);
 export const UA = 'ziwei-astrologie-research/0.2 (open-source research; non-commercial)';
 export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
-export async function httpGet(url: string, retries = 4): Promise<string> {
+export async function httpGet(url: string, retries = 6): Promise<string> {
   let lastErr = '';
   for (let i = 0; i <= retries; i++) {
     try {
@@ -17,7 +17,7 @@ export async function httpGet(url: string, retries = 4): Promise<string> {
       if (code === 200) return body;
       lastErr = `HTTP ${code}`;
       if (code === 404) break;
-      if (code === 429) await sleep(5000 * (i + 1));
+      if (code === 429) await sleep(15000 * (i + 1)); // 限流：指数退避
     } catch (e) { lastErr = (e as Error).message.split('\n')[0]; }
     await sleep(1500 * (i + 1));
   }

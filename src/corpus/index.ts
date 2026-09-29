@@ -33,6 +33,9 @@ export interface CorpusSourceMeta {
   id: string; book: string; url: string; license: string; retrievedAt: string;
   /** 用户/审核人明确核对过来源站点的许可条款 */
   licenseVerified: boolean;
+  edition?: string;
+  /** 源文本按版面硬换行（行中断句）时，合并单个换行、保留空行分段 */
+  joinLines?: boolean;
   /** 子页面标题（如 “卷一”），用作分节名前缀；无则空 */
   page?: string;
 }
@@ -43,10 +46,11 @@ export function buildCorpusEntries(meta: CorpusSourceMeta, plain: string): Recor
   if (!meta.licenseVerified) throw new CorpusImportError(`来源 ${meta.id} 的许可条款尚未标记为已核对（licenseVerified=false），拒绝入库`);
   if (!meta.license || !meta.url || !meta.retrievedAt) throw new CorpusImportError(`来源 ${meta.id} 缺少许可、URL 或获取日期`);
   const out: Record<string, CorpusEntry> = {};
-  splitSections(plain).forEach((s, i) => {
+  splitSections(plain).forEach((sec, i) => {
+    const s = meta.joinLines ? { heading: sec.heading, text: sec.text.replace(/(?<!\n)\n(?!\n)/g, '') } : sec;
     const key = `${meta.id}${meta.page ? '/' + meta.page : ''}#${i + 1}`;
     const section = [meta.page, s.heading].filter(Boolean).join('·') || meta.book;
-    out[key] = { book: meta.book, section, text: s.text, url: meta.url, license: meta.license, retrievedAt: meta.retrievedAt, sha256: sha256(s.text) };
+    out[key] = { book: meta.book, section, text: s.text, url: meta.url, license: meta.license, retrievedAt: meta.retrievedAt, sha256: sha256(s.text), ...(meta.edition ? { edition: meta.edition } : {}) };
   });
   return out;
 }
@@ -91,6 +95,40 @@ export function applyQuotes(rules: Rule[], corpus: Record<string, CorpusEntry>, 
     if (!ok) continue;
     for (const q of p.quotes) if (!r.classical.some((x) => x.corpusRef === q.corpusRef && x.quote === q.quote)) r.classical.push({ quote: q.quote, corpusRef: q.corpusRef });
     if (p.claimSupported && r.classical.length) { r.evidenceType = 'classical'; r.basis = 'chapter-pointer'; }
+    updated++;
+  }
+  return { updated, errors };
+}
+
+export interface GroundingItem { ruleId: string; plain: string; book: string; quotes: string[] }
+
+/**
+ * 依据语料对规则“落地”：白话解释改写为忠实转述，引文逐条在语料中定位（必须是某一条语料原文的唯一子串），
+ * 出处改为语料所在篇目。`evidenceType` 保持 school（转述说明），`basis` 记为 quoted。返回错误列表。
+ */
+export function applyGrounding(rules: Rule[], corpus: Record<string, CorpusEntry>, items: GroundingItem[], bookRefs: Record<string, string>): { updated: number; errors: string[] } {
+  const errors: string[] = [];
+  let updated = 0;
+  for (const it of items) {
+    const r = rules.find((x) => x.id === it.ruleId);
+    if (!r) { errors.push(`找不到规则 ${it.ruleId}`); continue; }
+    const pool = Object.entries(corpus).filter(([k]) => k.startsWith(it.book === 'zwqs' ? 'zwqs' : it.book));
+    const found: { corpusRef: string; quote: string }[] = [];
+    let ok = true;
+    for (const q of it.quotes) {
+      const hits = pool.filter(([, c]) => c.text.includes(q));
+      if (hits.length === 0) { errors.push(`${it.ruleId}: 引文在语料中找不到：${q.slice(0, 24)}…`); ok = false; }
+      else if (hits.length > 1) { errors.push(`${it.ruleId}: 引文在多条语料中重复，请加长以唯一定位：${q.slice(0, 24)}…（${hits.map((h) => h[0]).join('、')}）`); ok = false; }
+      else found.push({ corpusRef: hits[0][0], quote: q });
+    }
+    if (!ok) continue;
+    r.plain = it.plain;
+    r.classical = found;
+    const sections = [...new Set(found.map((f) => corpus[f.corpusRef].section))];
+    r.sources = sections.map((sec) => ({ ref: bookRefs[it.book] ?? it.book, section: sec, note: '引文来自维基文库转录本，底本未标明，须对照影印本核对' }));
+    r.basis = 'quoted';
+    if (r.evidenceType === 'structural') r.evidenceType = 'structural';
+    else if (r.evidenceType !== 'school') r.evidenceType = 'school';
     updated++;
   }
   return { updated, errors };

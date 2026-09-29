@@ -7,15 +7,25 @@
    "stem": "甲"
   },
   "title": "日主甲（阳木）",
-  "plain": "日主甲属阳木，传统取象：如参天大树，正直向上、有开拓与担当，重原则，但有时显得固执、不善变通。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“甲木为雷”取象，并说“凡命属甲日，主喜值春天”（传统说法）。现代命理书籍另有“如参天大树，正直向上、有开拓与担当，重原则，但有时显得固执、不善变通。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "甲木为雷。雷者，阳气之嘘也，甲木属阳，故取象于雷焉"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "凡命属甲日，主喜值春天"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -23,7 +33,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.乙",
@@ -33,15 +43,25 @@
    "stem": "乙"
   },
   "title": "日主乙（阴木）",
-  "plain": "日主乙属阴木，传统取象：如花草藤蔓，柔韧灵活、善于适应与协调，重人际，但有时缺乏主见。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“乙木为风”取象，并说“如人乙日建生者，在秋令大吉”（传统说法）。现代命理书籍另有“如花草藤蔓，柔韧灵活、善于适应与协调，重人际，但有时缺乏主见。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "乙木为风"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "如人乙日建生者，在秋令大吉"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -49,7 +69,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.丙",
@@ -59,15 +79,25 @@
    "stem": "丙"
   },
   "title": "日主丙（阳火）",
-  "plain": "日主丙属阳火，传统取象：如太阳，热情开朗、光明磊落、乐于付出，但有时性急、耐性不足。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“丙火为日”取象，并说“凡六丙生冬夏，不如春秋”（传统说法）。现代命理书籍另有“如太阳，热情开朗、光明磊落、乐于付出，但有时性急、耐性不足。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "丙为日"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "凡六丙生冬夏，不如春秋"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -75,7 +105,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.丁",
@@ -85,15 +115,25 @@
    "stem": "丁"
   },
   "title": "日主丁（阴火）",
-  "plain": "日主丁属阴火，传统取象：如灯烛之火，细腻温暖、心思缜密、有内在的热情，但容易多虑。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“丁火为星”取象，并说“凡丁日生人喜遇夜，喜遇秋”（传统说法）。现代命理书籍另有“如灯烛之火，细腻温暖、心思缜密、有内在的热情，但容易多虑。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "丁火为星"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "凡丁日生人喜遇夜，喜遇秋"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -101,7 +141,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.戊",
@@ -111,15 +151,25 @@
    "stem": "戊"
   },
   "title": "日主戊（阳土）",
-  "plain": "日主戊属阳土，传统取象：如高山厚土，稳重厚道、包容守信，但有时行动偏慢、不善表达。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“戊土为霞”取象，并说“如戊土日主爱四柱带水则为上格”（传统说法）。现代命理书籍另有“如高山厚土，稳重厚道、包容守信，但有时行动偏慢、不善表达。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "戊土为霞"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "如戊土日主爱四柱带水则为上格"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -127,7 +177,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.己",
@@ -137,15 +187,25 @@
    "stem": "己"
   },
   "title": "日主己（阴土）",
-  "plain": "日主己属阴土，传统取象：如田园之土，内敛务实、善于培育与包容，但有时想得多、显得优柔。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“己土为云”取象，并说“凡身主属己土，贵坐酉，贵春生，贵见印”（传统说法）。现代命理书籍另有“如田园之土，内敛务实、善于培育与包容，但有时想得多、显得优柔。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "己土为云"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "凡身主属己土，贵坐酉，贵春生，贵见印"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -153,7 +213,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.庚",
@@ -163,15 +223,25 @@
    "stem": "庚"
   },
   "title": "日主庚（阳金）",
-  "plain": "日主庚属阳金，传统取象：如刀剑顽铁，刚毅果断、重义气，但有时过于强硬、直来直去。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“庚金为月”取象，并说“秋为上，冬次之，春夏无取”（传统说法）。现代命理书籍另有“如刀剑顽铁，刚毅果断、重义气，但有时过于强硬、直来直去。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "庚金为月"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "秋为上，冬次之，春夏无取"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -179,7 +249,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.辛",
@@ -189,15 +259,25 @@
    "stem": "辛"
   },
   "title": "日主辛（阴金）",
-  "plain": "日主辛属阴金，传统取象：如珠玉首饰，精致敏锐、重品质与面子，但有时敏感、易挑剔。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“辛金为霜”取象，并说“爱冬生”（传统说法）。现代命理书籍另有“如珠玉首饰，精致敏锐、重品质与面子，但有时敏感、易挑剔。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "辛金为霜"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "爱冬生"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -205,7 +285,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.壬",
@@ -215,15 +295,25 @@
    "stem": "壬"
   },
   "title": "日主壬（阳水）",
-  "plain": "日主壬属阳水，传统取象：如江河大水，聪明灵活、胸襟开阔、行动力强，但有时不够稳定。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“壬水为秋露”取象，并说“如壬日生秋，见丁火最显”（传统说法）。现代命理书籍另有“如江河大水，聪明灵活、胸襟开阔、行动力强，但有时不够稳定。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "壬水为秋露"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "如壬日生秋，见丁火最显"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -231,7 +321,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.stem.癸",
@@ -241,15 +331,25 @@
    "stem": "癸"
   },
   "title": "日主癸（阴水）",
-  "plain": "日主癸属阴水，传统取象：如雨露细泉，细腻聪慧、善于思考与感受，但有时偏内向、易忧虑。这是八字对日主性格的取象说法，只是一种参考。",
+  "plain": "《三命通会》“十干分配天文”以“癸水为春霖”取象，并说“春夏吉，秋冬不吉”（传统说法）。现代命理书籍另有“如雨露细泉，细腻聪慧、善于思考与感受，但有时偏内向、易忧虑。”一类的性格取象，属现代通行说法，并非本书原文，仅供参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "十干取象的传统说法，具体篇目待核"
+    "section": "卷二·十干分配天文",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "癸水为春霖"
+   },
+   {
+    "corpusRef": "smtht/卷二#3",
+    "quote": "春夏吉，秋冬不吉"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -257,7 +357,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.比肩",
@@ -294,16 +394,30 @@
    "tenGod": "劫财"
   },
   "title": "劫财",
-  "plain": "与日主同类异性，代表竞争者、伙伴；主动进取，也需留意冲动，以及在钱财、资源上的竞争。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》说“财怕劫，被劫则分”，又说偏财“切忌有姊妹兄弟分夺”；传统上认为劫财（比劫）较大概率与竞争、分财有关。“主动进取、易冲动”一类的性格说法属现代通行说法，并非本书原文。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷五·论古人立印食官财名义",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   },
+   {
+    "ref": "smtht",
+    "section": "卷六·论偏财",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷五#1",
+    "quote": "财怕劫，被劫则分"
+   },
+   {
+    "corpusRef": "smtht/卷六#51",
+    "quote": "切忌有姊妹兄弟分夺"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -311,7 +425,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.食神",
@@ -321,16 +435,34 @@
    "tenGod": "食神"
   },
   "title": "食神",
-  "plain": "日主所生、同性，代表才华、表达与享受；性格随和，重生活情趣。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》说“我生者，有子孙之义，故立名食神”，食神“一名寿星，一名爵星”；日主与食神俱生旺、无冲破，则被认为“财厚食丰，福量宽弘”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷五·论古人立印食官财名义",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   },
+   {
+    "ref": "smtht",
+    "section": "卷六·论食神",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷五#1",
+    "quote": "我生者，有子孙之义，故立名食神"
+   },
+   {
+    "corpusRef": "smtht/卷六#64",
+    "quote": "故食神一名寿星，一名爵星"
+   },
+   {
+    "corpusRef": "smtht/卷六#64",
+    "quote": "主人财厚食丰，福量宽弘"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -338,7 +470,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.伤官",
@@ -348,16 +480,29 @@
    "tenGod": "伤官"
   },
   "title": "伤官",
-  "plain": "日主所生、异性，代表才气、创意与叛逆；表达力强，也容易与规则、权威冲突。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》说“伤官者，我生彼之谓”，此格“主多材艺，傲物气高”，并有“伤官见官，祸患百端”之说，传统上主张伤官宜见财、不宜见官。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷六·论伤官",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷六#63",
+    "quote": "伤官者，我生彼之谓，乃甲见丁、乙见丙之类"
+   },
+   {
+    "corpusRef": "smtht/卷六#63",
+    "quote": "此格主多材艺，傲物气高"
+   },
+   {
+    "corpusRef": "smtht/卷六#63",
+    "quote": "伤官见官，祸患百端"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -365,7 +510,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.偏财",
@@ -375,16 +520,29 @@
    "tenGod": "偏财"
   },
   "title": "偏财",
-  "plain": "日主所克、同性，代表流动之财、人脉与机会；擅长把握机遇，花销也较大。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》说偏财“非妻所带，乃众人之财也”，此格“主人慷慨，不甚吝财，与人有情而多诈”，最怕“分夺”与落空亡。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷六·论偏财",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷六#51",
+    "quote": "何谓偏财？乃甲见戊、乙见己之例。非妻所带，乃众人之财也"
+   },
+   {
+    "corpusRef": "smtht/卷六#51",
+    "quote": "偏财格，主人慷慨，不甚吝财，与人有情而多诈"
+   },
+   {
+    "corpusRef": "smtht/卷六#51",
+    "quote": "唯怕分夺，及落空亡"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -392,7 +550,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.正财",
@@ -402,16 +560,25 @@
    "tenGod": "正财"
   },
   "title": "正财",
-  "plain": "日主所克、异性，代表稳定收入、务实与责任；重踏实与积累。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》说“正财者，乃甲见己、乙见戊之例。受我克制，为我之妻”，并说“财为养命之源，凡人八字不可无财，但不要太多，多则不清”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷六·论正财",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷六#46",
+    "quote": "正财者，乃甲见己、乙见戊之例。受我克制，为我之妻"
+   },
+   {
+    "corpusRef": "smtht/卷六#46",
+    "quote": "财为养命之源，凡人八字不可无财，但不要太多，多则不清"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -419,7 +586,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.七杀",
@@ -429,16 +596,29 @@
    "tenGod": "七杀"
   },
   "title": "七杀",
-  "plain": "克日主、同性，代表压力、挑战与魄力；有魄力与冲劲，也意味着承受压力。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》称偏官“以其隔七位而相克战，故谓之七煞”，并说“有制谓之偏官，无制谓之七煞”，强调有食神、印等制化方可为用；又说“忌日主衰弱，七煞重逢”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷五·论偏官",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷五#13",
+    "quote": "以其隔七位而相克战，故谓之七煞"
+   },
+   {
+    "corpusRef": "smtht/卷五#13",
+    "quote": "有制谓之偏官，无制谓之七煞"
+   },
+   {
+    "corpusRef": "smtht/卷五#13",
+    "quote": "忌日主衰弱，七煞重逢"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -446,7 +626,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.正官",
@@ -456,16 +636,29 @@
    "tenGod": "正官"
   },
   "title": "正官",
-  "plain": "克日主、异性，代表规范、职位与责任；重秩序与名誉，行事守规矩。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》说“正官者，乃甲见辛、乙见庚之例。阴阳配合，相制有用”，“正官为六格之首，止许一位，多则不宜”，并列出刑冲破害、伤官七煞、贪合忘官、劫财分福为忌。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷五·论正官",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷五#2",
+    "quote": "正官者，乃甲见辛、乙见庚之例。阴阳配合，相制有用"
+   },
+   {
+    "corpusRef": "smtht/卷五#2",
+    "quote": "正官为六格之首，止许一位，多则不宜"
+   },
+   {
+    "corpusRef": "smtht/卷五#2",
+    "quote": "大忌刑冲破害、伤官七煞、贪合忘官、劫财分福，为破格"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -473,7 +666,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.偏印",
@@ -483,16 +676,30 @@
    "tenGod": "偏印"
   },
   "title": "偏印",
-  "plain": "生日主、同性，代表偏门学问、灵感与独处；思维独特，但容易孤僻多疑。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》称偏印为“枭”“倒食”，说“食怕枭，逢枭则夺”，即偏印最忌夺食神；书中形容偏印夺食之人“有始无终”“心性局促，多愁无成”，传统上认为较大概率与思虑较多、做事难持续有关。这是传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷五·论古人立印食官财名义",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   },
+   {
+    "ref": "smtht",
+    "section": "卷六·论食神",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷五#1",
+    "quote": "食怕枭，逢枭则夺"
+   },
+   {
+    "corpusRef": "smtht/卷六#64",
+    "quote": "食神大忌偏印为倒食，主为人有始无终"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -500,7 +707,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.god.正印",
@@ -510,16 +717,34 @@
    "tenGod": "正印"
   },
   "title": "正印",
-  "plain": "生日主、异性，代表学业、长辈庇护与名誉；重学习与涵养，也可能过于依赖。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "plain": "《三命通会》说“生我者，有父母之义，故立名印绶”，像父母以恩德荫庇子孙；传统上以正印代表学业、长辈庇护与名誉，“此格主聪明，多智慧，性慈惠”，但也“吝财”，忌见财星（“财能破印”）。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷五·论古人立印食官财名义",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   },
+   {
+    "ref": "smtht",
+    "section": "卷六·论印绶",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷五#1",
+    "quote": "生我者，有父母之义，故立名印绶。印，荫也。绶，受也"
+   },
+   {
+    "corpusRef": "smtht/卷六#56",
+    "quote": "此格主聪明，多智慧，性慈惠"
+   },
+   {
+    "corpusRef": "smtht/卷六#56",
+    "quote": "忌财星，以财能破印"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -527,7 +752,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.strength.偏强",
@@ -885,15 +1110,25 @@
    "type": "天干五合"
   },
   "title": "天干五合",
-  "plain": "两干相合，传统上表示亲近、牵引与合化的倾向；是否真正“化”需结合月令等条件。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》说“唯阴见阳，阳见阴为合，亦如男女相合而成夫妇之道”，并以“兄嫁妹”解释甲己、乙庚、丙辛、丁壬、戊癸相合。传统上认为两干相合表示和谐与牵引；是否真正“合化”需结合月令等条件。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论十干合",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#17",
+    "quote": "唯阴见阳，阳见阴为合，亦如男女相合而成夫妇之道"
+   },
+   {
+    "corpusRef": "smtht/卷二#17",
+    "quote": "所以乙与庚合"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -901,7 +1136,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.天干相冲",
@@ -911,15 +1146,21 @@
    "type": "天干相冲"
   },
   "title": "天干相冲",
-  "plain": "两干相克相冲，传统上表示对立、冲突的力量。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》以“天干取七位为煞”解释相克相冲（甲至庚数七位，故甲逢庚为煞）。传统上认为两干相冲表示对立、冲突的力量。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论冲击",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#26",
+    "quote": "犹天干取七位为煞之义"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -927,7 +1168,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.地支六合",
@@ -937,15 +1178,25 @@
    "type": "地支六合"
   },
   "title": "地支六合",
-  "plain": "两支相合，传统上表示亲和、牵制与合作。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》说“夫合者，和也，乃阴阳相和，其气自合”，“一阴一阳和而谓之合”。传统上认为两支相合表示亲和、牵制与合作。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论支元六合",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#20",
+    "quote": "夫合者，和也，乃阴阳相和，其气自合"
+   },
+   {
+    "corpusRef": "smtht/卷二#20",
+    "quote": "一阴一阳和而谓之合"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -953,7 +1204,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.地支六冲",
@@ -963,15 +1214,25 @@
    "type": "地支六冲"
   },
   "title": "地支六冲",
-  "plain": "两支相冲，传统上表示变动、冲击与对立，常与迁移、变化相联系。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》说“地支取七位为冲”，“相冲者，十二支战击之神，大概为凶。然有为福之甚者，乃冲处相生”。传统上认为两支相冲表示变动、冲击与对立，吉凶要看冲处是相生还是相克。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论冲击",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#26",
+    "quote": "地支取七位为冲"
+   },
+   {
+    "corpusRef": "smtht/卷二#26",
+    "quote": "相冲者，十二支战击之神，大概为凶。然有为福之甚者，乃冲处相生"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -979,7 +1240,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.地支六害",
@@ -1015,15 +1276,25 @@
    "type": "三刑"
   },
   "title": "三刑",
-  "plain": "三支成刑，传统上表示纠缠、压力与反复。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》引《阴符经》说“恩生于害，害生于恩；三刑生于二合”，并列有无礼之刑、无恩之刑、恃势之刑。传统上认为三支成刑表示纠缠、压力与反复。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论三刑",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#25",
+    "quote": "《阴符经》曰：恩生于害，害生于恩；三刑生于二合"
+   },
+   {
+    "corpusRef": "smtht/卷二#25",
+    "quote": "极十数而为无礼之刑"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1031,7 +1302,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.无恩之刑（不全）",
@@ -1041,15 +1312,21 @@
    "type": "无恩之刑（不全）"
   },
   "title": "无恩之刑（不全）",
-  "plain": "寅巳申中见其二，传统上称“无恩之刑”的一部分，提示人际中恩怨纠缠。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》称寅巳申为“无恩之刑”（“寅逆至巳，巳逆至申，极十数而为无恩之刑”），并说生旺者“持重少语，寡欲无情”，死绝者较易“忘恩失义”。此处是三支中见其二的不全情形，作用较弱。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论三刑",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#25",
+    "quote": "寅逆至巳，巳逆至申，极十数而为无恩之刑"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1057,7 +1334,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.恃势之刑（不全）",
@@ -1067,15 +1344,21 @@
    "type": "恃势之刑（不全）"
   },
   "title": "恃势之刑（不全）",
-  "plain": "丑戌未中见其二，传统上称“恃势之刑”的一部分。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》称丑戌未为“恃势之刑”（“丑顺至戌，戌顺至未，极十数而为恃势之刑”）。此处是三支中见其二的不全情形，作用较弱。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论三刑",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#25",
+    "quote": "丑顺至戌，戌顺至未，极十数而为恃势之刑"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1083,7 +1366,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.无礼之刑",
@@ -1093,15 +1376,21 @@
    "type": "无礼之刑"
   },
   "title": "无礼之刑",
-  "plain": "子卯相刑，传统上称“无礼之刑”，提示人际中的礼节与摩擦。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》称子卯相刑为“无礼之刑”（“数自卯顺至子，子逆至卯，极十数而为无礼之刑”）。传统上认为提示人际中的礼节与摩擦。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论三刑",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#25",
+    "quote": "故数自卯顺至子，子逆至卯，极十数而为无礼之刑"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1109,7 +1398,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.自刑",
@@ -1119,15 +1408,25 @@
    "type": "自刑"
   },
   "title": "自刑",
-  "plain": "同支重见（辰、午、酉、亥），传统上称“自刑”，提示自我纠结与内耗。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》说“辰见辰自刑”，午、酉、亥同理（“寅午戌加巳午未，则……午见午自刑”）。传统上认为提示自我纠结与内耗。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论三刑",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#25",
+    "quote": "辰见辰自刑"
+   },
+   {
+    "corpusRef": "smtht/卷二#25",
+    "quote": "午见午自刑"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1135,7 +1434,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.地支三合",
@@ -1145,15 +1444,25 @@
    "type": "地支三合"
   },
   "title": "地支三合",
-  "plain": "三支合局，力量集中于某一五行，传统上表示合力与聚合。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》说“申子辰为水局”，并说“若三字缺一则化不成局，不可以三合化局论”。传统上认为三支合局表示力量集中于某一五行。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论支元三合",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#21",
+    "quote": "故申子辰为水局"
+   },
+   {
+    "corpusRef": "smtht/卷二#21",
+    "quote": "若三字缺一则化不成局，不可以三合化局论"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1161,7 +1470,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.地支半合",
@@ -1171,15 +1480,21 @@
    "type": "地支半合"
   },
   "title": "地支半合",
-  "plain": "三合局中缺一，力量较弱的合局。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "plain": "《三命通会》明确说三合“若三字缺一则化不成局，不可以三合化局论”；“半合”的说法属后世通行说法，力量较弱，仅作参考。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "刑冲合害的传统说法，具体篇目待核"
+    "section": "卷二·论支元三合",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#21",
+    "quote": "若三字缺一则化不成局，不可以三合化局论"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1187,7 +1502,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.rel.地支三会",
@@ -1534,15 +1849,25 @@
    "kind": "kong-wang"
   },
   "title": "空亡",
-  "plain": "以日柱所在的旬，缺少的两个地支称“空亡”。传统上认为落在空亡的宫位，其所代表的事物力量偏虚、不易着力。",
+  "plain": "《三命通会》说“以甲旬尽处曰空亡”，“有是位而无禄，曰空；有支而无干，曰亡”，但强调“空而有实，亡而有存，所以未可便为凶论”。传统上认为落空亡处力量偏虚、不易着力，但不宜简单视为凶。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "smtht",
-    "note": "空亡的传统说法，篇目待核"
+    "section": "卷三·论空亡",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#14",
+    "quote": "故以甲旬尽处曰空亡，盖有是位而无禄，曰空；有支而无干，曰亡"
+   },
+   {
+    "corpusRef": "smtht/卷三#14",
+    "quote": "然空而有实，亡而有存，所以未可便为凶论"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1550,7 +1875,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.luck.direction",

@@ -1,10 +1,69 @@
 {
   "_说明": "古籍语料与官方历表数据的来源清单。不要凭记忆填写：先用 `npm run corpus:find -- 关键词` 在维基文库检索实际页面标题，再填 title；读完站点与页面的许可条款后，才把 licenseVerified 改为 true 并填写 license（例如“原典为公版；站点文本 CC BY-SA 4.0，需署名并以相同方式共享”，以实际条款为准）。licenseVerified=false 的来源会被 corpus:import 拒绝入库。",
   "corpus": [
-    { "id": "zwqs", "book": "紫微斗数全书", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" },
-    { "id": "zpzq", "book": "子平真诠", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" },
-    { "id": "yhzp", "book": "渊海子平", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" },
-    { "id": "smtht", "book": "三命通会", "site": "zh.wikisource.org", "title": "", "includeSubpages": true, "license": "", "licenseVerified": false, "edition": "" }
+    {
+      "id": "zwqs",
+      "book": "紫微斗数全书",
+      "site": "zh.wikisource.org",
+      "title": "紫微斗數全書",
+      "includeSubpages": true,
+      "license": "原典为明清著作，属公有领域；转录文本 © 维基文库贡献者，依 CC BY-SA 4.0 授权（署名、相同方式共享；2026-09-29 经 MediaWiki API siteinfo 核对站点授权）",
+      "licenseVerified": true,
+      "edition": "维基文库转录本，底本未标明（页面标“清朝”）；字形有繁简混用与个别转录错误，引用前须对照影印本核对"
+    },
+    {
+      "id": "smtht",
+      "book": "三命通会",
+      "site": "zh.wikisource.org",
+      "title": "三命通會",
+      "includeSubpages": true,
+      "license": "原典为明清著作，属公有领域；转录文本 © 维基文库贡献者，依 CC BY-SA 4.0 授权（署名、相同方式共享；2026-09-29 经 MediaWiki API siteinfo 核对站点授权）",
+      "licenseVerified": true,
+      "edition": "维基文库转录本（卷一至卷九，缺卷十至十二），底本未标明；引用前须对照影印本核对",
+      "joinLines": true
+    },
+    {
+      "id": "smtht-sk",
+      "book": "三命通会（四库全书本）",
+      "site": "zh.wikisource.org",
+      "title": "三命通會 (四庫全書本)",
+      "includeSubpages": true,
+      "license": "",
+      "licenseVerified": false,
+      "edition": "文渊阁四库全书本",
+      "joinLines": true
+    },
+    {
+      "id": "dts",
+      "book": "滴天髓",
+      "site": "zh.wikisource.org",
+      "title": "滴天髓",
+      "includeSubpages": true,
+      "license": "",
+      "licenseVerified": false,
+      "edition": ""
+    },
+    {
+      "id": "qtbj",
+      "book": "穷通宝鉴",
+      "site": "zh.wikisource.org",
+      "title": "穷通宝鉴",
+      "includeSubpages": true,
+      "license": "",
+      "licenseVerified": false,
+      "edition": ""
+    },
+    {
+      "id": "yhzp",
+      "book": "渊海子平",
+      "site": "zh.wikisource.org",
+      "title": "淵海子平",
+      "includeSubpages": false,
+      "license": "",
+      "licenseVerified": false,
+      "edition": "",
+      "_note": "该页标注 {{No source}}（无版本出处），仅下载核对，不作为古籍原文依据"
+    }
   ],
   "hko": {
     "_说明": "URL 模板已于 2026-09-29 实测可用（1901–2100 年均返回 200，2101 年 404）。原始文件存放在 docs/sources/raw/hko/。",

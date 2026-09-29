@@ -7,16 +7,25 @@
    "star": "紫微"
   },
   "title": "紫微（帝星）",
-  "plain": "传统上以「紫微」为帝星。尊贵、有领导与统筹意识，重视被尊重，适合居于主导位置；若缺少辅佐，容易显得孤高。",
+  "plain": "《全书》称紫微“乃中天之尊星为帝座，主掌造化枢机，人生主宰”；并说要看它在庙旺还是陷地，最好有左辅右弼同行，否则称“孤君”，再好也有不足。以上是传统说法，仅作文化理解。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問紫微所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#9",
+    "quote": "紫微屬土，乃中天之尊星為帝座，主掌造化樞機，人生主宰"
+   },
+   {
+    "corpusRef": "zwqs/卷一#9",
+    "quote": "無輔弼同行則為孤君"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -25,9 +34,9 @@
    "history": []
   },
   "data": {
-   "trait": "尊贵、有领导与统筹意识，重视被尊重，适合居于主导位置；若缺少辅佐，容易显得孤高。"
+   "trait": "中天之尊星，居帝座"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.天机",
@@ -37,16 +46,25 @@
    "star": "天机"
   },
   "title": "天机（智星）",
-  "plain": "传统上以「天机」为智星。思维敏捷、善于谋划与分析，点子多、反应快；也容易思虑过多、情绪多变。",
+  "plain": "《全书》称天机为“南斗第三益算之善星”，属木，性质偏“善”；说其人“有灵机应变之志”，做事有章法，与天梁、左右、昌曲等吉星会合较易有作为；若落陷地又逢四煞冲破，传统上认为格局较低。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問天機所主如何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#10",
+    "quote": "天機屬木，南斗第三益算之善星也"
+   },
+   {
+    "corpusRef": "zwqs/卷一#10",
+    "quote": "有靈機應變之志"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -55,9 +73,9 @@
    "history": []
   },
   "data": {
-   "trait": "思维敏捷、善于谋划与分析，点子多、反应快；也容易思虑过多、情绪多变。"
+   "trait": "南斗益算之善星，有灵机应变之志"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.太阳",
@@ -67,16 +85,29 @@
    "star": "太阳"
   },
   "title": "太阳（官禄之星）",
-  "plain": "传统上以「太阳」为官禄之星。热情外向、乐于付出，重名声与公众形象；容易操心过多，需注意精力分配。",
+  "plain": "《全书》称太阳属火，是“日之精”，主人“有贵气，能为文为武”，被视为官禄方面的枢机，最宜居官禄宫；诸吉星会集则较吉，遇“黑星”则较劳心费力；传统上男命以太阳为父星，女命以之为夫星。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問太陽所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#11",
+    "quote": "太陽星屬火，日之精也。乃造化之表儀，在數主人有貴氣，能為文為武"
+   },
+   {
+    "corpusRef": "zwqs/卷一#11",
+    "quote": "諸吉集則降禎祥，處黑星則勞心費力"
+   },
+   {
+    "corpusRef": "zwqs/卷一#11",
+    "quote": "男作父星，女為夫主"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -85,9 +116,9 @@
    "history": []
   },
   "data": {
-   "trait": "热情外向、乐于付出，重名声与公众形象；容易操心过多，需注意精力分配。"
+   "trait": "日之精，主贵气，可文可武"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.武曲",
@@ -97,16 +128,29 @@
    "star": "武曲"
   },
   "title": "武曲（财星）",
-  "plain": "传统上以「武曲」为财星。刚毅果断、务实重执行，对钱财与效率敏感；表达偏直接，有时显得刚硬。",
+  "plain": "《全书》称武曲为北斗第六星，属金，是财帛宫之主；主人性情刚强果决，“有喜有怒，可福可灾”；与禄马交驰被认为利于在外发财，与贪狼同度被认为较吝啬，与破军同在财位被认为钱财易散。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問武曲星所主為何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#12",
+    "quote": "武曲北斗第六星，屬金，乃財帛宮主"
+   },
+   {
+    "corpusRef": "zwqs/卷一#12",
+    "quote": "性剛果決，有喜有怒，可福可災"
+   },
+   {
+    "corpusRef": "zwqs/卷一#12",
+    "quote": "與祿馬交馳，發財於遠郡"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -115,9 +159,9 @@
    "history": []
   },
   "data": {
-   "trait": "刚毅果断、务实重执行，对钱财与效率敏感；表达偏直接，有时显得刚硬。"
+   "trait": "财帛之主，性刚果决"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.天同",
@@ -127,16 +171,29 @@
    "star": "天同"
   },
   "title": "天同（福星）",
-  "plain": "传统上以「天同」为福星。温和随和、知足常乐，重视生活品质与人际和谐；冲劲相对不足，需要外力推动。",
+  "plain": "《全书》称天同属水，是南斗第四星，福德宫之主，“益算保生之星”；主人谦逊、性情温和，有奇志而少激烈；书中说它不怕七杀等凶星同度，在十二宫中多作福论。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問天同星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#13",
+    "quote": "天同星屬水，乃南方第四星也，為福德宮之主宰"
+   },
+   {
+    "corpusRef": "zwqs/卷一#13",
+    "quote": "主為人謙遜，稟性溫和"
+   },
+   {
+    "corpusRef": "zwqs/卷一#13",
+    "quote": "十二宮中皆為福論"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -145,9 +202,9 @@
    "history": []
   },
   "data": {
-   "trait": "温和随和、知足常乐，重视生活品质与人际和谐；冲劲相对不足，需要外力推动。"
+   "trait": "福德之主，谦逊温和"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.廉贞",
@@ -157,16 +214,29 @@
    "star": "廉贞"
   },
   "title": "廉贞（次桃花之星）",
-  "plain": "传统上以「廉贞」为次桃花之星。个性鲜明、原则性强，感情与事业上都较投入；内心复杂，容易在情理之间纠结。",
+  "plain": "《全书》称廉贞属火，是北斗第五星，“在斗司品秩，在数司权令”；坐命宫（身命）为“次桃花”，在官禄宫则有威权。书中对其性情评价偏严，传统上认为其人较大概率强势、偏激（原文“心狠性狂”），但也说遇禄存主富贵、遇文昌好礼乐、遇杀曜可显武职。以上为传统说法，强弱因组合而异。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問廉貞所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#14",
+    "quote": "廉貞屬火，北斗第五星也。在斗司品秩，在數司權令"
+   },
+   {
+    "corpusRef": "zwqs/卷一#14",
+    "quote": "在官祿有威權，在身命為次桃花"
+   },
+   {
+    "corpusRef": "zwqs/卷一#14",
+    "quote": "遇祿存主富貴，遇文昌好禮樂，遇殺曜顯武職"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -175,9 +245,9 @@
    "history": []
   },
   "data": {
-   "trait": "个性鲜明、原则性强，感情与事业上都较投入；内心复杂，容易在情理之间纠结。"
+   "trait": "在数司权令，坐命为次桃花"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.天府",
@@ -187,16 +257,29 @@
    "star": "天府"
   },
   "title": "天府（南斗令星（库星））",
-  "plain": "传统上以「天府」为南斗令星（库星）。稳重踏实、善于守成与理财，重视安全感；有时偏保守，不愿冒险。",
+  "plain": "《全书》称天府属土，是“南斗主令第一星”，财帛之主宰，被称为“禄库”（“天府为禄库，命逢终是富”）；主人相貌清奇、性情温良端雅；会吉星较有富贵之基，不喜四煞冲破。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問天府所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#15",
+    "quote": "天府屬土，南斗主令第一星也。為財帛之主宰"
+   },
+   {
+    "corpusRef": "zwqs/卷一#15",
+    "quote": "稟性溫良端雅"
+   },
+   {
+    "corpusRef": "zwqs/卷一#15",
+    "quote": "天府為祿庫，命逢終是富是也"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -205,9 +288,9 @@
    "history": []
   },
   "data": {
-   "trait": "稳重踏实、善于守成与理财，重视安全感；有时偏保守，不愿冒险。"
+   "trait": "南斗主令星，财帛之主宰，称禄库"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.太阴",
@@ -217,16 +300,29 @@
    "star": "太阴"
   },
   "title": "太阴（财星（田宅主））",
-  "plain": "传统上以「太阴」为财星（田宅主）。细腻内敛、重感受与家庭，善于积累；情绪起伏时容易内耗。",
+  "plain": "《全书》称太阴是“水之精”，田宅宫之主，与太阳相配；主人聪明俊秀、性情端雅纯和；得地（酉戌亥子丑为得垣）较吉，陷地（卯辰巳午未）则力量减弱；男命又以太阴为“妻宿”“母星”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問太陰星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#16",
+    "quote": "太陰乃水之精，為田宅主，化富，與日為配"
+   },
+   {
+    "corpusRef": "zwqs/卷一#16",
+    "quote": "其為人也聰明俊秀，其稟性也端雅純祥"
+   },
+   {
+    "corpusRef": "zwqs/卷一#16",
+    "quote": "男為妻宿，又作母星"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -235,9 +331,9 @@
    "history": []
   },
   "data": {
-   "trait": "细腻内敛、重感受与家庭，善于积累；情绪起伏时容易内耗。"
+   "trait": "水之精，田宅之主，聪明端雅"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.贪狼",
@@ -247,16 +343,29 @@
    "star": "贪狼"
   },
   "title": "贪狼（桃花星）",
-  "plain": "传统上以「贪狼」为桃花星。多才多艺、欲望与好奇心强，善交际，应变灵活；兴趣广泛，需要避免分散。",
+  "plain": "《全书》称贪狼为北斗第一星，“解厄之神”，属水，“化气为桃花”，主祸福；书中说其人好高谈、易浮荡，“作巧成拙”，入庙乐之宫“可为祥可为祸”。与破军、七杀、羊陀等同度时，原书评语较重，传统上认为这类组合较大概率带来感情与钱财上的起伏，需看具体组合。以上为传统说法，不能据此判断现实。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問貪狼所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#17",
+    "quote": "貪狼北斗解厄之神，第一星也。屬水，化氣為桃花"
+   },
+   {
+    "corpusRef": "zwqs/卷一#17",
+    "quote": "又好高吟浮蕩，作巧成拙"
+   },
+   {
+    "corpusRef": "zwqs/卷一#17",
+    "quote": "入廟樂之宮，可為祥可為禍"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -265,9 +374,9 @@
    "history": []
   },
   "data": {
-   "trait": "多才多艺、欲望与好奇心强，善交际，应变灵活；兴趣广泛，需要避免分散。"
+   "trait": "解厄之神，化气为桃花，可祥可祸"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.巨门",
@@ -277,16 +386,29 @@
    "star": "巨门"
   },
   "title": "巨门（暗星）",
-  "plain": "传统上以「巨门」为暗星。口才与分析力强，善于探究是非；也容易多疑、言语引起误会。",
+  "plain": "《全书》称巨门为北斗第二星，“阴精之星”，“化气为暗”，主掌是非；坐身命传统上被认为较易招惹口舌，其人多疑、六亲较难相合；会太阳则吉凶相半，逢禄存可解其厄。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問巨門所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#18",
+    "quote": "巨門屬水、金。北斗第二星也，為陰精之星，化氣為暗"
+   },
+   {
+    "corpusRef": "zwqs/卷一#18",
+    "quote": "在身命一生招口舌之非"
+   },
+   {
+    "corpusRef": "zwqs/卷一#18",
+    "quote": "會太陽則吉凶相半"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -295,9 +417,9 @@
    "history": []
   },
   "data": {
-   "trait": "口才与分析力强，善于探究是非；也容易多疑、言语引起误会。"
+   "trait": "阴精之星，化气为暗，主是非"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.天相",
@@ -307,16 +429,29 @@
    "star": "天相"
   },
   "title": "天相（印星）",
-  "plain": "传统上以「天相」为印星。谨慎周到、重形象与规矩，善于协调与辅佐他人；有时缺乏主见，容易受他人影响。",
+  "plain": "《全书》称天相属水，是南斗第五星，“司爵之宿”，“化气曰印”，为官禄文星、辅佐帝座；主人言语诚实、有恻隐之心；书中说它在十二宫中多为祥福，“不随恶而变志，不因杀而改移”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問天相星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#19",
+    "quote": "天相屬水，南斗第五星也。為司爵之宿，為福善，化氣曰印"
+   },
+   {
+    "corpusRef": "zwqs/卷一#19",
+    "quote": "言語誠實，事不虛偽"
+   },
+   {
+    "corpusRef": "zwqs/卷一#19",
+    "quote": "十二宮中皆為祥福，不隨惡而變志，不因殺而改移"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -325,9 +460,9 @@
    "history": []
   },
   "data": {
-   "trait": "谨慎周到、重形象与规矩，善于协调与辅佐他人；有时缺乏主见，容易受他人影响。"
+   "trait": "司爵之宿，化气曰印，言语诚实"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.天梁",
@@ -337,16 +472,25 @@
    "star": "天梁"
   },
   "title": "天梁（荫星（寿星））",
-  "plain": "传统上以「天梁」为荫星（寿星）。稳重老成、有照顾他人的倾向，遇事常有转机；有时爱说教，显得过于清高。",
+  "plain": "《全书》称天梁属土，是南斗第二星，“司寿”，“化气为荫”，为父母宫之主；主人性情磊落、厚重温谦、循直无私，遇昌曲左右较易有声望；与贪狼、巨门同度则书中评价不佳。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問天梁星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#20",
+    "quote": "天梁屬土，南斗第二星也。司壽化氣為蔭為福壽，乃父母之主"
+   },
+   {
+    "corpusRef": "zwqs/卷一#20",
+    "quote": "性情磊落，於相貌則厚重溫謙，循直無私"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -355,9 +499,9 @@
    "history": []
   },
   "data": {
-   "trait": "稳重老成、有照顾他人的倾向，遇事常有转机；有时爱说教，显得过于清高。"
+   "trait": "司寿，化气为荫，磊落温谦"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.七杀",
@@ -367,16 +511,25 @@
    "star": "七杀"
   },
   "title": "七杀（将星）",
-  "plain": "传统上以「七杀」为将星。冲劲足、独立果决，敢于挑战；人生起伏与变动往往较大，需要学会缓冲。",
+  "plain": "《全书》称七杀是南斗第六星，“斗中之上将”；书中说其坐身命者较易经历艰辛，起伏较大，但遇紫微则“化权降福”；与火铃等凶星同度评价较差。传统上强弱因组合而异，不宜据此下结论。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問七殺星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#21",
+    "quote": "七殺南斗第六星也，屬火、金。乃斗中之上將"
+   },
+   {
+    "corpusRef": "zwqs/卷一#21",
+    "quote": "七殺斗中上將，遇紫微則化權降福"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -385,9 +538,9 @@
    "history": []
   },
   "data": {
-   "trait": "冲劲足、独立果决，敢于挑战；人生起伏与变动往往较大，需要学会缓冲。"
+   "trait": "斗中上将，遇紫微则化权"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.star.破军",
@@ -397,16 +550,25 @@
    "star": "破军"
   },
   "title": "破军（耗星）",
-  "plain": "传统上以「破军」为耗星。勇于开创、破旧立新，不喜循规蹈矩；变动多，容易“先破后立”，需要注意稳定根基。",
+  "plain": "《全书》称破军属水，是北斗第七星，“在数为耗星，故化气曰耗”，司夫妻、子息、奴仆；居子午入庙。书中对其性情评价偏严，认为遇凶星结党则较大概率起伏破败，惟“天梁可制其恶，天禄可解其狂”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜性质的传统说法，篇目待核"
+    "section": "卷一·問破軍所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#22",
+    "quote": "破軍屬水，北斗第七星也，司夫妻、子息、奴僕之神。居子午入廟，在天為殺氣，在數為耗星，故化氣曰耗"
+   },
+   {
+    "corpusRef": "zwqs/卷一#22",
+    "quote": "惟天梁可制其惡，天祿可解其狂"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -415,9 +577,9 @@
    "history": []
   },
   "data": {
-   "trait": "勇于开创、破旧立新，不喜循规蹈矩；变动多，容易“先破后立”，需要注意稳定根基。"
+   "trait": "在数为耗星，居子午入庙"
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.命宫",
@@ -427,15 +589,21 @@
    "palace": "命宫"
   },
   "title": "命宫宫",
-  "plain": "命宫代表一个人的性格特质、基本气质与人生主线，是整张命盘的核心。",
+  "plain": "《全书》“谈星要论”说看盘“第一看命宫吉凶庙旺化吉化忌生克”，即以命宫为看盘的第一要处；命宫传统上代表性格、先天格局与人生主线。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷三·谈星要论",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷三#1",
+    "quote": "第一看命宫吉凶庙旺化吉化忌生克"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -446,7 +614,7 @@
   "data": {
    "domain": "性格、先天格局与人生主线"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.兄弟",
@@ -456,15 +624,21 @@
    "palace": "兄弟"
   },
   "title": "兄弟宫",
-  "plain": "兄弟宫看手足关系、同辈往来与合作伙伴的缘分。",
+  "plain": "《全书》十二宫中的“二兄弟”一篇按星曜论手足的有无、多寡与和睦（如“天机庙旺有二人”“见羊陀火铃虽有而克害”），故兄弟宫看手足、同辈与合作关系。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·二兄弟",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#3",
+    "quote": "天机庙旺有二人，与巨门同二人，陷地，相背不一心"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -475,7 +649,7 @@
   "data": {
    "domain": "手足、同辈与合作伙伴"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.夫妻",
@@ -485,15 +659,21 @@
    "palace": "夫妻"
   },
   "title": "夫妻宫",
-  "plain": "夫妻宫看感情观、婚姻状态与伴侣的特质。",
+  "plain": "《全书》“三妻妾”一篇按星曜论婚配的迟早、和谐与否（如“紫微晚聘谐老性刚”），故夫妻宫看婚姻、感情与伴侣特质。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·三妻妾",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#4",
+    "quote": "紫微晚聘谐老性刚，天府同谐老"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -504,7 +684,7 @@
   "data": {
    "domain": "婚姻、感情与伴侣特质"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.子女",
@@ -514,15 +694,21 @@
    "palace": "子女"
   },
   "title": "子女宫",
-  "plain": "子女宫看与子女、晚辈的关系，也常联系到创造力与投资。",
+  "plain": "《全书》“四子女”一篇说“凡看子女先看本宫星宿主有几子”，并论子女的多寡与贵贱，故子女宫看子女缘、晚辈与创造力。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·四子女",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#5",
+    "quote": "凡看子女先看本宫星宿主有几子"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -533,7 +719,7 @@
   "data": {
    "domain": "子女缘、创造力与晚辈"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.财帛",
@@ -543,15 +729,21 @@
    "palace": "财帛"
   },
   "title": "财帛宫",
-  "plain": "财帛宫看赚钱的方式、理财的习惯与金钱观。",
+  "plain": "《全书》“五财帛”一篇按星曜论生财方式与聚散（如“紫微丰足仓箱”“武曲丰足化吉有巨万家资”），故财帛宫看赚钱方式与理财习惯。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·五财帛",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#6",
+    "quote": "紫微丰足仓箱，加羊陀火铃空劫不旺"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -562,7 +754,7 @@
   "data": {
    "domain": "赚钱方式与理财习惯"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.疾厄",
@@ -572,15 +764,21 @@
    "palace": "疾厄"
   },
   "title": "疾厄宫",
-  "plain": "疾厄宫传统上看体质与健康倾向，仅作生活提醒，不能替代医疗判断。",
+  "plain": "《全书》“六疾厄”一篇说“先看命宫星曜落陷……又看疾厄宫星曜善恶庙旺落陷如何断之”，并按星曜论体质与病灾，故疾厄宫传统上看体质与健康倾向，仅作生活提醒，不能替代医疗判断。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·六疾厄",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#7",
+    "quote": "又看疾厄宫星曜善恶庙旺落陷如何断之"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -591,7 +789,7 @@
   "data": {
    "domain": "体质与健康倾向"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.迁移",
@@ -601,15 +799,21 @@
    "palace": "迁移"
   },
   "title": "迁移宫",
-  "plain": "迁移宫看在外的表现、环境变化与外部人际机遇。",
+  "plain": "《全书》“七迁移”一篇论出外的际遇（如“紫微同左右出外贵人扶持发福”“加羊陀火铃在外多是非”），故迁移宫看外出、外部环境与机遇。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·七迁移",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#8",
+    "quote": "紫微同左右出外贵人扶持发福"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -620,7 +824,7 @@
   "data": {
    "domain": "外出、外部环境与机遇"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.交友",
@@ -630,15 +834,21 @@
    "palace": "交友"
   },
   "title": "交友宫",
-  "plain": "交友宫（古称仆役）看朋友、同事、下属关系与人脉。",
+  "plain": "交友宫，《全书》称“八奴仆”，按星曜论下属、朋友是否得力（如“紫微成行得力，旺主生财”“加空劫招怨逃走”），故看朋友、同事与人脉。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·八奴仆",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#9",
+    "quote": "紫微成行得力，旺主生财"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -649,7 +859,7 @@
   "data": {
    "domain": "朋友、同事与下属"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.官禄",
@@ -659,15 +869,21 @@
    "palace": "官禄"
   },
   "title": "官禄宫",
-  "plain": "官禄宫看事业方向、工作态度与成就方式。",
+  "plain": "《全书》“九官禄”一篇论事业与官职（如“紫微庙旺遇左右昌曲魁钺，轩胜位至封候伯”），故官禄宫看事业方向、工作态度与成就方式。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·九官禄",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#10",
+    "quote": "紫微庙旺遇左右昌曲魁钺，轩胜位至封候伯"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -678,7 +894,7 @@
   "data": {
    "domain": "事业与职业方向"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.田宅",
@@ -688,15 +904,21 @@
    "palace": "田宅"
   },
   "title": "田宅宫",
-  "plain": "田宅宫看居住环境、不动产与家庭根基。",
+  "plain": "《全书》“十田宅”一篇论祖业与置产（如“紫微茂盛自置旺相”“太阳入庙得祖业”），故田宅宫看家宅、不动产与家庭根基。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·十田宅",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#11",
+    "quote": "紫微茂盛自置旺相"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -707,7 +929,7 @@
   "data": {
    "domain": "家宅、不动产与家庭环境"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.福德",
@@ -717,15 +939,21 @@
    "palace": "福德"
   },
   "title": "福德宫",
-  "plain": "福德宫看内心的满足感、兴趣爱好与精神状态。",
+  "plain": "《全书》“十一福德”一篇论福气与心境（如“紫微福厚享福安乐”“天同快乐有福有寿”），故福德宫看内心的满足感、兴趣与精神状态。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·十一福德",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#12",
+    "quote": "紫微福厚享福安乐"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -736,7 +964,7 @@
   "data": {
    "domain": "精神生活、兴趣与内心世界"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.palace.父母",
@@ -746,15 +974,21 @@
    "palace": "父母"
   },
   "title": "父母宫",
-  "plain": "父母宫看与父母、长辈、上司的关系，也涉及证件文书与学业。",
+  "plain": "《全书》“十二父母”一篇说“凡看父母以太阳星为父，太阴星为母”，并论与父母的缘分，故父母宫看父母、长辈与上司，也涉及文书。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "十二宫含义的传统说法，具体篇目待核"
+    "section": "卷二·十二父母",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#13",
+    "quote": "凡看父母以太阳星为父，太阴星为母"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -765,7 +999,7 @@
   "data": {
    "domain": "父母缘、长辈与文书"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.transform.禄",
@@ -775,15 +1009,21 @@
    "transform": "禄"
   },
   "title": "化禄",
-  "plain": "化禄传统上代表顺利、有资源与人缘，星曜的特质容易得到发挥，但也提示不宜过度贪求。",
+  "plain": "《全书》称禄为“福德之神”，守身命、官禄之位，与科权相逢较被看好；大限十年多主吉庆。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "四化含义的传统说法，篇目待核"
+    "section": "卷一·问化禄星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#31",
+    "quote": "禄为福德之神。守身命官禄之位，科权相逢必作大臣之职"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -794,7 +1034,7 @@
   "data": {
    "meaning": "顺遂、资源与缘分"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.transform.权",
@@ -804,15 +1044,21 @@
    "transform": "权"
   },
   "title": "化权",
-  "plain": "化权传统上代表主动、掌控与进取，星曜的特质变得更强势，需留意用力过猛。",
+  "plain": "《全书》称权为“掌判生杀之神”，守身命而与科禄相逢，被认为较有权柄；逢羊陀耗使劫空则被认为易受谗言拖累。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "四化含义的传统说法，篇目待核"
+    "section": "卷一·问化权星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#32",
+    "quote": "权星掌判生杀之神。守身命科禄相逢出将入相"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -823,7 +1069,7 @@
   "data": {
    "meaning": "掌控、主动与行动力"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.transform.科",
@@ -833,15 +1079,21 @@
    "transform": "科"
   },
   "title": "化科",
-  "plain": "化科传统上代表声誉、条理与贵人相助，倾向于以平和、有序的方式呈现星曜特质。",
+  "plain": "《全书》称科为“主掌文墨之星”，守身命与权禄相逢被认为较显贵；即使遇恶曜，也被认为“亦为文章秀士”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "四化含义的传统说法，篇目待核"
+    "section": "卷一·问化科星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#33",
+    "quote": "科星上界应试，主掌文墨之星。守身命权禄相逢宰臣之贵"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -852,7 +1104,7 @@
   "data": {
    "meaning": "声誉、条理与贵人"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.transform.忌",
@@ -862,15 +1114,25 @@
    "transform": "忌"
   },
   "title": "化忌",
-  "plain": "化忌传统上代表执着、牵挂与阻滞，是提醒“需要多留意或调整”的地方，并不等于必然不利。",
+  "plain": "《全书》称忌为“多管之神”，传统上认为守身命较大概率一生较不顺，小限、大限逢之则一年、十年多有不足与悔吝；书中建议“处事只求七分”。这是传统说法，是提醒“需要多留意或调整”的地方，并不代表现实中就一定不利。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "四化含义的传统说法，篇目待核"
+    "section": "卷一·问化忌星所主若何？",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#34",
+    "quote": "忌为多管之神。守身命一生不顺，小限逢之一年不足，大限十年悔吝"
+   },
+   {
+    "corpusRef": "zwqs/卷一#34",
+    "quote": "处事只求七分"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -881,7 +1143,7 @@
   "data": {
    "meaning": "执着、阻滞与需要留意之处"
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.bureau.2",
@@ -895,12 +1157,17 @@
   "evidenceType": "structural",
   "sources": [
    {
-    "ref": "adr",
-    "section": "ADR-010",
-    "note": "五行局与起限年龄由算法直接得出"
+    "ref": "zwqs",
+    "section": "卷二·安身命例",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#1",
+    "quote": "坎水宫中二岁行"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -908,7 +1175,7 @@
    "note": null,
    "history": []
   },
-  "basis": "algorithmic"
+  "basis": "quoted"
  },
  {
   "id": "zw.bureau.3",
@@ -922,12 +1189,17 @@
   "evidenceType": "structural",
   "sources": [
    {
-    "ref": "adr",
-    "section": "ADR-010",
-    "note": "五行局与起限年龄由算法直接得出"
+    "ref": "zwqs",
+    "section": "卷二·安身命例",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#1",
+    "quote": "生逢木宫三岁起"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -935,7 +1207,7 @@
    "note": null,
    "history": []
   },
-  "basis": "algorithmic"
+  "basis": "quoted"
  },
  {
   "id": "zw.bureau.4",
@@ -949,12 +1221,17 @@
   "evidenceType": "structural",
   "sources": [
    {
-    "ref": "adr",
-    "section": "ADR-010",
-    "note": "五行局与起限年龄由算法直接得出"
+    "ref": "zwqs",
+    "section": "卷二·安身命例",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#1",
+    "quote": "紫微金宫四岁花"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -962,7 +1239,7 @@
    "note": null,
    "history": []
   },
-  "basis": "algorithmic"
+  "basis": "quoted"
  },
  {
   "id": "zw.bureau.5",
@@ -976,12 +1253,17 @@
   "evidenceType": "structural",
   "sources": [
    {
-    "ref": "adr",
-    "section": "ADR-010",
-    "note": "五行局与起限年龄由算法直接得出"
+    "ref": "zwqs",
+    "section": "卷二·安身命例",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#1",
+    "quote": "戌土五龙居其中"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -989,7 +1271,7 @@
    "note": null,
    "history": []
   },
-  "basis": "algorithmic"
+  "basis": "quoted"
  },
  {
   "id": "zw.bureau.6",
@@ -1003,12 +1285,17 @@
   "evidenceType": "structural",
   "sources": [
    {
-    "ref": "adr",
-    "section": "ADR-010",
-    "note": "五行局与起限年龄由算法直接得出"
+    "ref": "zwqs",
+    "section": "卷二·安身命例",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#1",
+    "quote": "离火宫中六岁奇"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1016,7 +1303,7 @@
    "note": null,
    "history": []
   },
-  "basis": "algorithmic"
+  "basis": "quoted"
  },
  {
   "id": "zw.body",
@@ -1052,16 +1339,25 @@
    "palace": "命宫"
   },
   "title": "紫微坐命宫",
-  "plain": "命宫见紫微，传统上主人有领导气质与自尊心，适合担任统筹角色；若同宫有辅佐星曜，格局更稳。",
+  "plain": "紫微坐命宫，《全书》说其人“忠厚老成，谦恭耿直”，“其威制七杀降火铃”；无左右辅弼同行称“孤君”，传统上认为格局不足。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "为人忠厚老成，谦恭耿直，其威制七杀降火铃"
+   },
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "不入庙无左右为孤君"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1069,7 +1365,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.天机",
@@ -1080,16 +1376,21 @@
    "palace": "命宫"
   },
   "title": "天机坐命宫",
-  "plain": "命宫见天机，传统上主人机敏多思、善谋划，适合需要分析与策划的工作；需要留意想得多做得少。",
+  "plain": "天机坐命宫，《全书》说其人“性急心慈，机谋多变”，入庙则形貌较丰满。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "入庙身长肥胖，性急心慈，机谋多变"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1097,7 +1398,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.太阳",
@@ -1108,16 +1409,21 @@
    "palace": "命宫"
   },
   "title": "太阳坐命宫",
-  "plain": "命宫见太阳，传统上主人热情大方、乐于付出，重名声；需留意操劳过度。",
+  "plain": "太阳坐命宫，《全书》说其人“心慈”“好济施”，入庙形貌堂堂；日生较吉、夜生较弱（“夜生陷日生庙旺”）。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "太阳入庙形貌堂堂，雄壮面方圆满，夜生陷日生庙旺，心慈面紫色，好济施"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1125,7 +1431,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.武曲",
@@ -1136,16 +1442,21 @@
    "palace": "命宫"
   },
   "title": "武曲坐命宫",
-  "plain": "命宫见武曲，传统上主人刚毅务实、执行力强，与财务、管理相关的事务较有缘；表达宜柔和。",
+  "plain": "武曲坐命宫，《全书》说其人“性刚果决，心直无毒”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "武曲性刚果决，心直无毒"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1153,7 +1464,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.天同",
@@ -1164,16 +1475,21 @@
    "palace": "命宫"
   },
   "title": "天同坐命宫",
-  "plain": "命宫见天同，传统上主人温和随缘、重享受与和谐；宜主动培养进取心。",
+  "plain": "天同坐命宫，《全书》说其人“仁慈耿直”，入庙形貌肥满清明。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "天同入庙肥满清明，仁慈耿直"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1181,7 +1497,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.廉贞",
@@ -1192,16 +1508,25 @@
    "palace": "命宫"
   },
   "title": "廉贞坐命宫",
-  "plain": "命宫见廉贞，传统上主人个性鲜明、情感丰富，事业心与原则性并存；需要平衡情与理。",
+  "plain": "廉贞坐命宫，《全书》说其为“次桃花杀、囚星”，其人“性硬浮荡，好忿争”，传统上认为较大概率个性强硬、情绪起伏较大。以上为传统说法，强弱因组合而异。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "廉贞属火，北斗化次桃花杀、囚星，为官禄主"
+   },
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "性硬浮荡，好忿争"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1209,7 +1534,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.天府",
@@ -1220,16 +1545,21 @@
    "palace": "命宫"
   },
   "title": "天府坐命宫",
-  "plain": "命宫见天府，传统上主人稳重、善守成与理财，重视安全感；宜适度尝试新事物。",
+  "plain": "天府坐命宫，《全书》说其人“心性温和，聪明俊秀，博学机变，能解一切灾厄”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "心性温和，聪明俊秀，博学机变，能解一切灾厄"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1237,7 +1567,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.太阴",
@@ -1248,16 +1578,21 @@
    "palace": "命宫"
   },
   "title": "太阴坐命宫",
-  "plain": "命宫见太阴，传统上主人细腻内敛、重家庭，善于积累；需关注情绪的自我调节。",
+  "plain": "太阴坐命宫，《全书》说其人“心性温和，清秀耿直聪明”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "太阴居命面方圆，心性温和，清秀耿直聪明"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1265,7 +1600,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.贪狼",
@@ -1276,16 +1611,21 @@
    "palace": "命宫"
   },
   "title": "贪狼坐命宫",
-  "plain": "命宫见贪狼，传统上主人多才多艺、好奇心强、善交际；需要专注，避免兴趣过散。",
+  "plain": "贪狼坐命宫，《全书》说其人“性格不常，心多计较，作事急速不耐静，作巧反拙”，并有“好赌博花酒”之说；传统上认为较大概率兴趣多变、欲望较强，需要收敛。以上为传统说法，不能据此判断现实。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "性格不常，心多计较，作事急速不耐静，作巧反拙，好赌博花酒"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1293,7 +1633,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.巨门",
@@ -1304,16 +1644,21 @@
    "palace": "命宫"
   },
   "title": "巨门坐命宫",
-  "plain": "命宫见巨门，传统上主人善于分析、口才好，也易在言语上引起是非；宜多沟通、少猜疑。",
+  "plain": "巨门坐命宫，《全书》说其人“多疑且多学少精，与人寡合，多是多非，奔波劳碌”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "多疑且多学少精，与人寡合，多是多非，奔波劳碌"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1321,7 +1666,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.天相",
@@ -1332,16 +1677,21 @@
    "palace": "命宫"
   },
   "title": "天相坐命宫",
-  "plain": "命宫见天相，传统上主人谨慎周到、重形象，善于协调；宜培养自己的主见。",
+  "plain": "天相坐命宫，《全书》说其人“相貌敦厚持重”，“衣禄丰足”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "为人相貌敦厚持重，清白好酒食，衣禄丰足"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1349,7 +1699,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.天梁",
@@ -1360,16 +1710,21 @@
    "palace": "命宫"
   },
   "title": "天梁坐命宫",
-  "plain": "命宫见天梁，传统上主人稳重、有担当，愿意照顾他人，遇事常有贵人；宜避免说教。",
+  "plain": "天梁坐命宫，《全书》说其人“厚重清秀，聪明耿直，心无私曲好济施”，主寿。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "天梁属土，南斗化荫，主寿星。厚重清秀，聪明耿直，心无私曲好济施，有寿"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1377,7 +1732,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.七杀",
@@ -1388,16 +1743,21 @@
    "palace": "命宫"
   },
   "title": "七杀坐命宫",
-  "plain": "命宫见七杀，传统上主人独立果决、有冲劲，人生变动较大；宜学会缓冲与蓄力。",
+  "plain": "七杀坐命宫，《全书》说其为“南斗将星”，“遇帝为权，其余诸宫皆杀”，其人“目大性急，喜怒无常，作事进退沈吟”。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "七杀火金，南斗将星，遇帝为权，其余诸宫皆杀。为人目大性急，喜怒无常，作事进退沈吟"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1405,7 +1765,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.破军",
@@ -1416,16 +1776,21 @@
    "palace": "命宫"
   },
   "title": "破军坐命宫",
-  "plain": "命宫见破军，传统上主人勇于开创、不喜守旧，变动多；宜在变动中保持稳定的根基。",
+  "plain": "破军坐命宫，《全书》说其人“性刚寡合，好争强”，并有“弃祖发福”之说。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "section": "诸星问答论",
-    "note": "星曜入命宫的传统说法，篇目待核"
+    "section": "卷二·一 命宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#2",
+    "quote": "性刚寡合，好争强。弃祖发福"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1433,7 +1798,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "zw.compose.star-in-palace",
@@ -1442,7 +1807,7 @@
    "kind": "star-in-palace-template"
   },
   "title": "主星入宫（组合说明）",
-  "plain": "「{star}」落在{palace}宫：{star}的特质是“{trait}”；{palace}宫主管“{domain}”。因此在“{domain}”方面，容易呈现“{starShort}”的倾向。此为按星性与宫位自动组合的说明，仅作理解参考。",
+  "plain": "「{star}」落在{palace}宫：{star}在《全书》中被描述为“{trait}”；{palace}宫主管“{domain}”。因此在“{domain}”方面，传统上会结合这一星性来参看。这是按星性与宫位含义自动组合的说明，并非《全书》对该组合的原文断语，仅作理解参考。",
   "evidenceType": "modern",
   "sources": [
    {

@@ -14,7 +14,7 @@ describe('审核导出与导入', () => {
     expect(json.count).toBe(rules.length);
     for (const r of rules) { expect(md).toContain(r.id); expect(csv).toContain(r.id); }
     expect(md).toContain('审核意见');
-    expect(md).toContain('未核对原文');
+    expect(md).toContain('底本未核对');
     expect(json.rules[0].sources[0].verified).toBe(false);
     expect(parseCsv(csv).length).toBe(rules.length + 1);
   });

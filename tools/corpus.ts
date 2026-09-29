@@ -8,18 +8,18 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from 
 import { join } from 'node:path';
 import { Converter } from 'opencc-js';
 import { httpGet, sleep } from './http';
-import { applyQuotes, buildCorpusEntries, findCandidates, wikitextToPlain, type CorpusSourceMeta, type QuotePatch } from '../src/corpus';
+import { applyGrounding, applyQuotes, buildCorpusEntries, findCandidates, wikitextToPlain, type CorpusSourceMeta, type QuotePatch } from '../src/corpus';
 import { RULES, validateRules, type CorpusEntry, type Rule } from '../src/rules';
 
 const MANIFEST = 'docs/sources/manifest.json';
 const RAW = 'docs/sources/raw';
-interface ManifestItem { id: string; book: string; site: string; title: string; includeSubpages: boolean; license: string; licenseVerified: boolean; edition: string }
+interface ManifestItem { joinLines?: boolean; id: string; book: string; site: string; title: string; includeSubpages: boolean; license: string; licenseVerified: boolean; edition: string }
 interface RawMeta { id: string; page: string; url: string; revid: number; timestamp: string; retrievedAt: string; siteRights: string; file: string }
 
 const today = () => new Date().toISOString().slice(0, 10);
 const api = async (site: string, params: Record<string, string>) => {
   const u = `https://${site}/w/api.php?${new URLSearchParams({ format: 'json', formatversion: '2', ...params })}`;
-  await sleep(1200); // 维基媒体 API 礼貌限速
+  await sleep(2500); // 维基媒体 API 礼貌限速
   return JSON.parse(await httpGet(u)) as any;
 };
 const readJson = <T>(p: string): T => JSON.parse(readFileSync(p, 'utf8')) as T;
@@ -31,20 +31,25 @@ async function find(kw: string) {
 }
 
 async function fetchAll() {
-  const items = readJson<{ corpus: ManifestItem[] }>(MANIFEST).corpus.filter((x) => x.title);
+  const only = process.argv.includes('--only') ? process.argv[process.argv.indexOf('--only') + 1].split(',') : null;
+  const items = readJson<{ corpus: ManifestItem[] }>(MANIFEST).corpus.filter((x) => x.title && (!only || only.includes(x.id)));
   if (!items.length) throw new Error('清单里没有填写 title 的条目：请先用 corpus:find 确认页面标题');
   for (const it of items) {
     const rights = (await api(it.site, { action: 'query', meta: 'siteinfo', siprop: 'rightsinfo' })).query.rightsinfo;
     let titles = [it.title];
     if (it.includeSubpages) {
       const sub = await api(it.site, { action: 'query', list: 'allpages', apprefix: it.title + '/', aplimit: '500' });
-      titles = titles.concat(sub.query.allpages.map((p: { title: string }) => p.title));
+      titles = titles.concat(sub.query.allpages.map((p: { title: string }) => p.title).filter((t: string) => !/\/全覽\d*$/.test(t)));
     }
     const dir = join(RAW, it.id);
     mkdirSync(dir, { recursive: true });
     const metas: RawMeta[] = [];
+    const prev: RawMeta[] = existsSync(join(dir, 'meta.json')) ? readJson<RawMeta[]>(join(dir, 'meta.json')) : [];
     for (const [i, t] of titles.entries()) {
-      const d = await api(it.site, { action: 'query', prop: 'revisions', rvprop: 'content|ids|timestamp', rvslots: 'main', titles: t });
+      const done = prev.find((m) => m.page === t);
+      if (done && existsSync(join(dir, done.file))) { metas.push(done); continue; } // 断点续传
+      let d: any;
+      try { d = await api(it.site, { action: 'query', prop: 'revisions', rvprop: 'content|ids|timestamp', rvslots: 'main', titles: t }); } catch (e) { console.warn('失败（可重跑续传）：', t, (e as Error).message.slice(0, 60)); continue; }
       const page = d.query.pages[0];
       if (page.missing || !page.revisions) { console.warn('缺失页面：', t); continue; }
       const rev = page.revisions[0];
@@ -52,6 +57,7 @@ async function fetchAll() {
       writeFileSync(join(dir, file), rev.slots.main.content, 'utf8');
       metas.push({ id: it.id, page: t, url: `https://${it.site}/wiki/${encodeURIComponent(t)}?oldid=${rev.revid}`, revid: rev.revid, timestamp: rev.timestamp, retrievedAt: today(), siteRights: `${rights.text} ${rights.url}`, file });
       console.log('已下载', t);
+      writeFileSync(join(dir, 'meta.json'), JSON.stringify(metas, null, 1) + '\n', 'utf8'); // 边下边存
     }
     writeFileSync(join(dir, 'meta.json'), JSON.stringify(metas, null, 1) + '\n', 'utf8');
   }
@@ -64,8 +70,9 @@ function importCorpus() {
   for (const it of items) {
     const dir = join(RAW, it.id);
     if (!existsSync(join(dir, 'meta.json'))) continue;
+    if (!it.licenseVerified) { console.warn(`跳过 ${it.id}：许可尚未核对（licenseVerified=false）`); continue; }
     for (const m of readJson<RawMeta[]>(join(dir, 'meta.json'))) {
-      const meta: CorpusSourceMeta = { id: it.id, book: it.book, url: m.url, license: it.license, retrievedAt: m.retrievedAt, licenseVerified: it.licenseVerified, page: m.page.includes('/') ? m.page.slice(m.page.indexOf('/') + 1) : undefined };
+      const meta: CorpusSourceMeta = { id: it.id, book: it.book, url: m.url, license: it.license, retrievedAt: m.retrievedAt, licenseVerified: it.licenseVerified, edition: it.edition || undefined, joinLines: it.joinLines, page: m.page.includes('/') ? m.page.slice(m.page.indexOf('/') + 1) : undefined };
       Object.assign(corpus, buildCorpusEntries(meta, wikitextToPlain(readFileSync(join(dir, m.file), 'utf8'))));
     }
   }
@@ -101,6 +108,17 @@ function apply(file: string) {
   console.log(`已回写 ${res.updated} 条规则的引文`);
 }
 
+function ground() {
+  const corpus = readJson<Record<string, CorpusEntry>>('src/rules/corpus.json');
+  const items = readJson<import('../src/corpus').GroundingItem[]>('docs/sources/grounding.json');
+  const files: [string, Rule[]][] = [['src/rules/ziwei.json', RULES.ziwei], ['src/rules/bazi.json', RULES.bazi], ['src/rules/cross.json', RULES.cross]];
+  const res = applyGrounding([...RULES.ziwei, ...RULES.bazi, ...RULES.cross], corpus, items, { zwqs: 'zwqs', smtht: 'smtht' });
+  const errs = validateRules({ ...RULES, corpus });
+  if (res.errors.length || errs.length) { console.error([...res.errors, ...errs].join('\n')); process.exit(1); }
+  for (const [p, rules] of files) writeFileSync(p, JSON.stringify(rules, null, 1) + '\n', 'utf8');
+  console.log(`已落地 ${res.updated} 条规则（引文均在语料中唯一定位）`);
+}
+
 const [cmd, arg] = process.argv.slice(2);
 void readdirSync;
 switch (cmd) {
@@ -109,5 +127,6 @@ switch (cmd) {
   case 'import': importCorpus(); break;
   case 'suggest': suggest(); break;
   case 'apply': apply(arg); break;
+  case 'ground': ground(); break;
   default: console.log('用法：find <关键词> | fetch | import | suggest | apply <quotes.json>');
 }

@@ -45,10 +45,10 @@ app.innerHTML = `
       <label>八字日柱换日<select id="bb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
       <label>紫微生日换日<select id="zb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
       <label>闰月取月（紫微）<select id="lr"><option value="midMonth">月中分界（默认）</option><option value="currentMonth">按本月</option><option value="nextMonth">按下月</option></select></label>
-      <label>辛年天魁天钺<select id="ky"><option value="ma-hu">魁午钺寅（六辛逢马虎，默认）</option><option value="hu-ma">魁寅钺午（六辛逢虎马）</option></select></label>
+      <label>辛年天魁天钺<select id="ky"><option value="hu-ma">魁寅钺午（六辛逢虎马，《全书》，默认）</option><option value="ma-hu">魁午钺寅（六辛逢马虎，iztro 等）</option></select></label>
       <label>戊年四化<select id="sh-wu"><option value="1">贪阴弼机（默认）</option><option value="2">贪阴阳机</option></select></label>
       <label>庚年四化<select id="sh-geng"><option value="1">阳武阴同（默认）</option><option value="2">阳武同阴</option><option value="3">阳武府同</option><option value="4">阳武同相</option></select></label>
-      <label>壬年四化<select id="sh-ren"><option value="1">梁紫辅武（默认）</option><option value="2">梁紫府武</option></select></label>
+      <label>壬年四化<select id="sh-ren"><option value="1">梁紫府武（《全书》，默认）</option><option value="2">梁紫辅武（通行软件）</option></select></label>
       <label>癸年四化<select id="sh-gui"><option value="1">破巨阴贪（默认）</option><option value="2">破巨阳贪</option></select></label>
     </div>
     <p class="note">紫微四化与辛年魁钺存在并行的传统说法，尚待古籍核对；默认取通行版本。</p>
@@ -123,9 +123,9 @@ function buildWarnings(b: ChartBundle, extra: string[]): string[] {
 
 // ---------- 渲染 ----------
 function itemHtml(it: InterpItem): string {
-  const src = it.sources.map((s) => `<li>${esc(s.book)}${s.section ? '·' + esc(s.section) : ''}${s.verified ? '' : '（未核对原文）'}${s.note ? ' — ' + esc(s.note) : ''}</li>`).join('');
-  const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}</li>`).join('') : '<li>尚未入库：公版古籍语料未导入，本条不提供逐字引文。</li>';
-  return `<article class="item ev-${it.evidenceType}"><h4>${esc(it.title)} <span class="badge">${esc(it.evidenceLabel)}</span><span class="badge ${it.reviewStatus}">${esc(it.reviewLabel)}</span>${it.composed ? '<span class="badge">模板组合</span>' : ''}</h4>
+  const src = it.sources.map((s) => `<li>${esc(s.book)}${s.section ? '·' + esc(s.section) : ''}${s.verified ? '' : '（底本未核对）'}${s.note ? ' — ' + esc(s.note) : ''}</li>`).join('');
+  const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}</li>`).join('') + '<li class="note">引文来自维基文库转录本，底本未标明，须对照影印本核对。</li>' : '<li>本条暂无古籍引文（属通行说法或算法结构）。</li>';
+  return `<article class="item ev-${it.evidenceType}"><h4>${esc(it.title)} <span class="badge">${esc(it.evidenceLabel)}</span><span class="badge ${it.reviewStatus}">${esc(it.reviewLabel)}</span>${it.composed ? '<span class="badge">模板组合</span>' : ''}${it.classical.length ? '<span class="badge quoted">附古籍引文</span>' : ''}</h4>
   ${it.context ? `<p class="ctx">${esc(it.context)}</p>` : ''}<p>${esc(it.text)}</p>
   <details><summary>出处与古籍原文</summary><p>依据类型：${esc(it.basisLabel)}</p><ul>${src}</ul><p>古籍原文：</p><ul>${cls}</ul></details></article>`;
 }
@@ -221,7 +221,7 @@ function settingsHtml(b: ChartBundle | null): string {
   <li>支持 ${SUPPORTED_MIN_YEAR}–${SUPPORTED_MAX_YEAR} 年；超出范围会报错。</li>
   <li>紫微为三合派（《紫微斗数全书》安星诀）通行版本；飞星派、四化版本差异、庙旺利陷、小限未实现。</li>
   <li>八字为子平法；旺衰、格局、用神只给“候选与依据”，不是唯一结论；调候（穷通宝鉴）未实现。</li>
-  <li>古籍原文尚未入库（公版语料待导入），所有解释均标注“未核对原文”与审核状态。</li>
+  <li>古籍语料已入库《紫微斗数全书》《三命通会》（维基文库转录本，CC BY-SA 4.0，底本未标明）；80 条规则附原文引文，其余为通行说法。所有解释均为“未审核”，引文须由审核人对照影印本核对底本。</li>
   <li>合盘、主题对照、多流派为后续版本内容。</li></ul></div>`;
 }
 

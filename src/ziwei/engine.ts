@@ -69,7 +69,7 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
   at['右弼'] = mod(10 - (em - 1), 12);
   at['文昌'] = mod(10 - h, 12);
   at['文曲'] = mod(4 + h, 12);
-  const kuiYue = yearStem === 7 && opt.kuiYueXin === 'hu-ma' ? ([2, 6] as [number, number]) : KUI_YUE[yearStem];
+  const kuiYue = yearStem === 7 && opt.kuiYueXin === 'ma-hu' ? ([6, 2] as [number, number]) : KUI_YUE[yearStem];
   at['天魁'] = kuiYue[0];
   at['天钺'] = kuiYue[1];
   at['禄存'] = LU_CUN[yearStem];

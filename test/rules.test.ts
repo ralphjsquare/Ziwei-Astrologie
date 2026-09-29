@@ -15,9 +15,14 @@ const mk = (over: Partial<Rule>): Rule => ({
 const rs = (rules: Rule[], corpus = {}) => makeRuleSet(rules, [], [], RULES.sources, corpus as never);
 
 describe('规则数据与出处校验', () => {
-  it('内置规则集通过校验；没有伪造的古籍引文', () => {
+  it('内置规则集通过校验；每条古籍引文都是语料原文的子串（伪造引文会使校验失败）', () => {
     expect(validateRules(RULES)).toEqual([]);
-    for (const r of [...RULES.ziwei, ...RULES.bazi, ...RULES.cross]) expect(r.classical).toEqual([]);
+    const all = [...RULES.ziwei, ...RULES.bazi, ...RULES.cross];
+    const quoted = all.filter((r) => r.classical.length > 0);
+    expect(quoted.length).toBeGreaterThanOrEqual(80);
+    for (const r of quoted) for (const q of r.classical) expect(RULES.corpus[q.corpusRef].text.includes(q.quote), r.id).toBe(true);
+    // 审核状态仍全部为“未审核”：引文不等于审核
+    expect(all.every((r) => r.review.status === 'draft')).toBe(true);
   });
   it('无出处、出处不存在、classical 无原文、引文不在语料中、已审核无审核人，均校验失败', () => {
     expect(validateRules(rs([mk({ sources: [] })]))[0]).toMatch(/没有出处/);

@@ -44,16 +44,17 @@ describe('语料处理（纯函数，离线可测）', () => {
   it('引文回写：必须是语料原文子串；claimSupported 才升级为 classical；升级后通过全部校验', () => {
     const corpus = buildCorpusEntries(META, wikitextToPlain(WIKI)) as Record<string, CorpusEntry>;
     const rules = JSON.parse(JSON.stringify(RULES.ziwei)) as Rule[];
-    const id = rules[0].id;
+    const k = rules.findIndex((r) => r.classical.length === 0 && r.evidenceType === 'school'); // 找一条尚无引文的规则
+    const id = rules[k].id;
     const bad = applyQuotes(rules, corpus, [{ ruleId: id, quotes: [{ corpusRef: 'zwqs#2', quote: '编造的一句话' }], claimSupported: true }]);
     expect(bad.errors[0]).toMatch(/不是.*原文子串/);
-    expect(rules[0].classical).toEqual([]);
+    expect(rules[k].classical).toEqual([]);
     const noSupport = applyQuotes(rules, corpus, [{ ruleId: id, quotes: [{ corpusRef: 'zwqs#2', quote: '紫微星為帝座' }], claimSupported: false }]);
     expect(noSupport.updated).toBe(1);
-    expect(rules[0].evidenceType).toBe('school');
+    expect(rules[k].evidenceType).toBe('school');
     applyQuotes(rules, corpus, [{ ruleId: id, quotes: [{ corpusRef: 'zwqs#2', quote: '紫微星為帝座' }], claimSupported: true }]);
-    expect(rules[0].evidenceType).toBe('classical');
-    expect(rules[0].classical).toHaveLength(1);
-    expect(validateRules(makeRuleSet(rules, RULES.bazi, RULES.cross, RULES.sources, corpus))).toEqual([]);
+    expect(rules[k].evidenceType).toBe('classical');
+    expect(rules[k].classical).toHaveLength(1);
+    expect(validateRules(makeRuleSet(rules, RULES.bazi, RULES.cross, RULES.sources, { ...RULES.corpus, ...corpus }))).toEqual([]);
   });
 });

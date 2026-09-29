@@ -8,5 +8,6 @@ if (errs.length) {
 }
 const all = [...RULES.ziwei, ...RULES.bazi, ...RULES.cross];
 const by = (k: string) => all.filter((r) => r.evidenceType === k).length;
-console.log(`check-sources OK：${all.length} 条规则（古籍原文 ${by('classical')}／流派观点 ${by('school')}／现代整理 ${by('modern')}／算法结构 ${by('structural')}），` +
+const quoted = all.filter((r) => r.classical.length > 0).length;
+console.log(`check-sources OK：${all.length} 条规则（其中 ${quoted} 条附古籍原文引文；依据等级 古籍原文 ${by('classical')}／流派观点 ${by('school')}／现代整理 ${by('modern')}／算法结构 ${by('structural')}），` +
   `语料条目 ${Object.keys(RULES.corpus).length}，未审核 ${all.filter((r) => r.review.status === 'draft').length}`);
