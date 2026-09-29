@@ -34,9 +34,17 @@ describe('规则数据与出处校验', () => {
     expect(validateRules(rs([mk({ review: { status: 'reviewed', reviewer: '某老师', date: 'd', note: null, history: [] } })]))).toEqual([]);
     expect(validateRules(rs([mk({ evidenceType: 'structural', review: { status: 'approved', reviewer: '某老师', date: 'd', note: null, history: [] } })]))).toEqual([]);
   });
-  it('语言准则：拒绝绝对化、恐吓式、替人决策的用语；允许否定语境与十二长生等术语', () => {
-    expect(lintText('你一定会发财')).toContain('绝对化/宿命化用语');
-    expect(lintText('此人克夫，必然早亡')).toEqual(expect.arrayContaining(['恐吓式或宿命式用语', '绝对化用语“必然”']));
+  it('语言准则：绝对化措辞须改为定性概率；敏感说法须同句“转述传统说法 + 定性概率”；不替人下指令', () => {
+    expect(lintText('你一定会发财')[0]).toMatch(/定性概率/);
+    expect(lintText('此命注定大富')[0]).toMatch(/定性概率/);
+    expect(lintText('必然早亡')[0]).toMatch(/定性概率/);
+    // 敏感说法：缺少概率用语或缺少传统说法转述都不通过
+    expect(lintText('此人克夫')).not.toEqual([]);
+    expect(lintText('传统上认为此格克夫')).not.toEqual([]);
+    expect(lintText('较大概率克夫')).not.toEqual([]);
+    // 同句同时具备：通过
+    expect(lintText('传统上认为此组合较大概率与婚姻波折有关，即古人所称“克夫”之说')).toEqual([]);
+    expect(lintText('古人认为此格有一定可能早亡，但这只是传统说法，不能据此判断寿数')).toEqual([]);
     expect(lintText('你必须离婚')).toContain('替读者下指令或直接断言个人未来');
     expect(lintText('化忌并不等于必然不利')).toEqual([]);
     expect(lintText('十二长生：病、死是象征性的比喻，传统上倾向于……')).toEqual([]);

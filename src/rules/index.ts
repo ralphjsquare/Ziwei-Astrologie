@@ -54,16 +54,29 @@ export const RULES: RuleSet = makeRuleSet(
   srcJson as Record<string, SourceEntry>, corpusJson as unknown as Record<string, CorpusEntry>,
 );
 
-/** 解释文字的语言准则：不做绝对化、宿命化、恐吓式或替人决策的断语（docs/INTERPRETATION_GUIDELINES.md）。返回违规描述列表。 */
+/** 定性概率用语（由小到大），解释文字涉及婚姻波折、健康起伏、寿数、灾厄等敏感说法时，必须使用这一类词。 */
+export const PROBABILITY_LEVELS = ['极小概率', '较小概率', '有一定可能', '较大概率', '极大概率'] as const;
+const PROB_WORDS = /极小概率|较小概率|小概率|不太可能|有一定可能|有可能|可能|较大概率|大概率|很可能|极大概率|多半/;
+const ATTRIBUTION = /传统上|古人|旧说|古籍|命书|一般认为|有的说法|有些流派|某些流派/;
+const SENSITIVE = /克夫|克妻|克父|克母|克子|短命|早亡|夭折|血光|灾祸|大凶|官司|离婚|重病/;
+
+/**
+ * 解释文字的语言准则（docs/INTERPRETATION_GUIDELINES.md）：
+ * 1. 不用绝对化、宿命化措辞（必定、注定、肯定会……），改用定性概率表述；
+ * 2. 涉及婚姻波折、寿数、灾厄等敏感说法（克夫、短命……）时，同一句里必须同时有“传统说法的转述”和“定性概率用语”；
+ * 3. 不替读者下指令。返回违规描述列表。
+ */
 export function lintText(text: string): string[] {
   const out: string[] = [];
-  const rules: [RegExp, string][] = [
-    [/必定|一定会|注定|肯定会|绝对|定会|势必/, '绝对化/宿命化用语'],
-    [/(?<!不等于|并不|不一定|不是)必然/, '绝对化用语“必然”'],
-    [/克夫|克妻|克父|克母|短命|早亡|夭折|血光|灾祸|大凶|必死|克死/, '恐吓式或宿命式用语'],
-    [/你(会|将|必须|应该)|一定要|务必|必须(离婚|结婚|投资|手术|服药|辞职)/, '替读者下指令或直接断言个人未来'],
-  ];
-  for (const [re, msg] of rules) if (re.test(text)) out.push(msg);
+  if (/必定|一定会|注定|肯定会|绝对|定会|势必|必死/.test(text) || /(?<!不等于|并不|不一定|不是)必然/.test(text)) {
+    out.push('绝对化/宿命化用语，请改用定性概率表述（极小概率／较小概率／有一定可能／较大概率／极大概率）');
+  }
+  for (const sentence of text.split(/[。；！？\n]/)) {
+    if (SENSITIVE.test(sentence) && !(PROB_WORDS.test(sentence) && ATTRIBUTION.test(sentence))) {
+      out.push(`敏感说法“${SENSITIVE.exec(sentence)![0]}”须同句转述传统说法并使用定性概率用语`);
+    }
+  }
+  if (/你(会|将|必须|应该)|一定要|务必|必须(离婚|结婚|投资|手术|服药|辞职)/.test(text)) out.push('替读者下指令或直接断言个人未来');
   return out;
 }
 
