@@ -127,5 +127,208 @@
    "history": []
   },
   "basis": "algorithmic"
+ },
+ {
+  "id": "sy.bz.daymaster",
+  "topic": "synastry-daymaster",
+  "when": {
+   "kind": "synastry-daymaster"
+  },
+  "title": "合盘：日主关系",
+  "plain": "日主是八字里代表“自己”的天干。这里列出两人日主互相对应的十神（如“正官”“食神”），以及日干之间是否有天干五合或相冲。现代书籍常把日干相合看作一个可参考的点，但这只是传统说法，并不代表关系一定顺利或不顺。",
+  "evidenceType": "modern",
+  "sources": [
+   {
+    "ref": "modern",
+    "note": "现代通行的合盘整理，非古籍原文"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "sy.bz.daybranch",
+  "topic": "synastry-daybranch",
+  "when": {
+   "kind": "synastry-daybranch"
+  },
+  "title": "合盘：日支关系",
+  "plain": "日支常被看作八字里与“配偶宫”相关的位置。这里只列出两人日支之间的传统关系（六合、六冲、六害、三合或同支）。这些术语来自传统命理，仅作为文化上的参考，不表示关系好坏。",
+  "evidenceType": "modern",
+  "sources": [
+   {
+    "ref": "modern",
+    "note": "现代通行的合盘整理，非古籍原文"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "sy.bz.yearbranch",
+  "topic": "synastry-yearbranch",
+  "when": {
+   "kind": "synastry-yearbranch"
+  },
+  "title": "合盘：年支（属相）关系",
+  "plain": "年支对应属相。这里列出两人年支之间的传统关系（六合、六冲、六害、三合或同支）。这是民间常见的说法，只作参考，不代表现实中一定如此。",
+  "evidenceType": "modern",
+  "sources": [
+   {
+    "ref": "modern",
+    "note": "现代通行的合盘整理，非古籍原文"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "sy.bz.cross-relations",
+  "topic": "synastry-crossrel",
+  "when": {
+   "kind": "synastry-crossrel"
+  },
+  "title": "合盘：八字跨盘合冲刑害",
+  "plain": "把两人八个字放在一起，列出跨盘出现的天干五合、天干相冲、地支六合、六冲、六害、刑与三合等关系，并标明是哪一柱与哪一柱。关系类型的定义来自本项目的八字关系表，解释只是传统说法，并不代表实际结果。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-014",
+    "note": "合盘范围与口径由本项目定义"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "algorithmic"
+ },
+ {
+  "id": "sy.bz.elements",
+  "topic": "synastry-elements",
+  "when": {
+   "kind": "synastry-elements"
+  },
+  "title": "合盘：五行分布并列",
+  "plain": "按天干与地支本位统计两人各自的五行个数并列展示，便于对照各自偏多或偏少的五行。这只是简单计数，没有考虑月令得令、藏干等因素，也不判断互补是否“更好”。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-014",
+    "note": "合盘范围与口径由本项目定义"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "algorithmic"
+ },
+ {
+  "id": "sy.zw.ming",
+  "topic": "synastry-ming",
+  "when": {
+   "kind": "synastry-ming"
+  },
+  "title": "合盘：命宫互落与地支关系",
+  "plain": "列出两人命宫所在地支、主星，以及一方的命宫落在另一方命盘的哪一宫，并给出两命宫地支之间的传统关系（六合、六冲、六害、三合、同支）。“互落宫位”是紫微合盘的常见看法，这里只做位置事实的并列，解释仅作参考。",
+  "evidenceType": "modern",
+  "sources": [
+   {
+    "ref": "modern",
+    "note": "现代通行的合盘整理，非古籍原文"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "sy.zw.spouse",
+  "topic": "synastry-spouse",
+  "when": {
+   "kind": "synastry-spouse"
+  },
+  "title": "合盘：夫妻宫与对方命宫",
+  "plain": "列出各自夫妻宫的地支与主星，以及夫妻宫与对方命宫之间的传统地支关系。夫妻宫在紫微里对应亲密关系的相关信息，这只是传统说法，并不代表现实中的关系走向。",
+  "evidenceType": "modern",
+  "sources": [
+   {
+    "ref": "modern",
+    "note": "现代通行的合盘整理，非古籍原文"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "sy.zw.sihua",
+  "topic": "synastry-sihua",
+  "when": {
+   "kind": "synastry-sihua"
+  },
+  "title": "合盘：年干四化落入对方盘",
+  "plain": "把一方出生年天干的四化星（化禄、化权、化科、化忌），按位置落入另一方命盘的宫位并列展示。落宫位置是算法事实；对它的传统解释因流派而异，这里不下结论。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-014",
+    "note": "合盘范围与口径由本项目定义"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "algorithmic"
  }
 ]

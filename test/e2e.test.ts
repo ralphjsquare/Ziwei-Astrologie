@@ -67,6 +67,17 @@ describe.skipIf(!CHROME)('端到端：浏览器中排盘、解读、存档、导
     expect(await page.locator('.item').count()).toBeGreaterThan(30);
   });
 
+  it('合盘：输入对方出生信息后并列展示两人，含免责声明且无评分', async () => {
+    await page.click('[data-tab=syn]');
+    await page.click('#pf button[type=submit]');
+    const t = await page.innerText('#out');
+    expect(t).toContain('不给“合不合”');
+    expect(t).toContain('合盘：命宫互落与地支关系');
+    expect(t).toContain('合盘：日支关系');
+    expect(t).not.toMatch(/匹配度[:：]\s*\d|得分/);
+    await page.click('[data-tab=chart]');
+  });
+
   it('输入错误与范围外给出明确提示', async () => {
     await page.fill('#y', '2200');
     await page.click('button[type=submit]');

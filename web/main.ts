@@ -6,18 +6,19 @@ import { chinaDstState } from '../src/calendar/china-dst';
 import { RULES, REVIEW_LABEL, rulesContentHash, type ReviewStatus } from '../src/rules';
 import { interpretNatal, interpretYear, ruleItem, DISCLAIMER, type InterpItem, type InterpSection } from '../src/interpret';
 import { crossReference, CROSS_DISCLAIMER } from '../src/crossref';
+import { synastry, SYNASTRY_DISCLAIMER } from '../src/synastry';
 import { exportChartReview, exportRules, selectRules, type ReviewFormat, type ReviewScope } from '../src/review';
 import { IndexedDbStorage, exportArchive, importArchive, makeRecord, openRecord, type ChartRecord, type StorageAdapter } from '../src/storage';
 
 const $ = <T extends HTMLElement>(sel: string, root: ParentNode = document) => root.querySelector(sel) as T;
 const esc = (s: unknown) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
-const TABS: [string, string][] = [['chart', '命盘'], ['time', '时间层'], ['cross', '对照'], ['read', '解读'], ['archive', '存档'], ['settings', '设置与导出']];
+const TABS: [string, string][] = [['chart', '命盘'], ['time', '时间层'], ['cross', '对照'], ['syn', '合盘'], ['read', '解读'], ['archive', '存档'], ['settings', '设置与导出']];
 
 interface State {
-  bundle: ChartBundle | null; tab: string; year: number; onlyReviewed: boolean;
+  partner: ChartBundle | null; partnerError: string; pv: Record<string, string>; bundle: ChartBundle | null; tab: string; year: number; onlyReviewed: boolean;
   selected: InterpItem[]; warnings: string[]; error: string; changeNote: string; savedName: string;
 }
-const st: State = { bundle: null, tab: 'chart', year: new Date().getFullYear(), onlyReviewed: false, selected: [], warnings: [], error: '', changeNote: '', savedName: '' };
+const st: State = { pv: { by: '1992', bm: '3', bd: '8', bh: '14', bmi: '0', bg: 'F' }, partner: null, partnerError: '', bundle: null, tab: 'chart', year: new Date().getFullYear(), onlyReviewed: false, selected: [], warnings: [], error: '', changeNote: '', savedName: '' };
 let storage: StorageAdapter | null = null;
 try { storage = new IndexedDbStorage(indexedDB); } catch { storage = null; }
 
@@ -197,6 +198,18 @@ function crossHtml(b: ChartBundle): string {
     <div class="cross"><div><b>紫微</b><br>${esc(c.ziwei)}</div><div><b>八字</b><br>${esc(c.bazi)}</div></div><p>${esc(c.note)}</p><p class="note">出处：${esc(c.source)}</p></section>`).join('');
 }
 
+function synHtml(b: ChartBundle): string {
+  const form = `<form id="pf" class="card" novalidate><h3>对方（B）的出生信息</h3><p class="note">你当前的命盘为 A。B 使用与 A 相同的高级选项；出生地按中国大陆（UTC+8，1986–1991 自动判断夏令时）处理。</p>
+    <div class="form"><label>年<input id="by" type="number" min="${SUPPORTED_MIN_YEAR}" max="${SUPPORTED_MAX_YEAR}" value="${st.pv.by}"></label><label>月<input id="bm" type="number" min="1" max="12" value="${st.pv.bm}"></label><label>日<input id="bd" type="number" min="1" max="31" value="${st.pv.bd}"></label>
+    <label>时（0–23）<input id="bh" type="number" min="0" max="23" value="${st.pv.bh}"></label><label>分<input id="bmi" type="number" min="0" max="59" value="${st.pv.bmi}"></label><label>性别<select id="bg"><option value="F"${st.pv.bg === 'F' ? ' selected' : ''}>女</option><option value="M"${st.pv.bg === 'M' ? ' selected' : ''}>男</option></select></label></div>
+    <div class="row"><button type="submit">生成合盘</button></div></form>`;
+  if (st.partnerError) return form + `<div class="warn">${esc(st.partnerError)}</div>`;
+  if (!st.partner) return form;
+  const items = synastry(b, st.partner, RULES);
+  return form + `<div class="warn">${esc(SYNASTRY_DISCLAIMER)}</div>` + items.map((c) => `<section class="card"><h3>${esc(c.title)} <span class="badge">${esc(c.system)}</span><span class="badge">${esc(c.evidenceLabel)}</span><span class="badge draft">${esc(c.reviewLabel)}</span></h3>
+    <div class="cross"><div><b>A</b><br>${esc(c.a)}</div><div><b>B</b><br>${esc(c.b)}</div></div><p>${esc(c.note)}</p><p class="note">出处：${esc(c.source)}</p></section>`).join('');
+}
+
 async function archiveHtml(): Promise<string> {
   if (!storage) return '<div class="warn">当前环境不支持本地存档（IndexedDB 不可用）。</div>';
   const recs = await storage.list();
@@ -235,6 +248,7 @@ async function render() {
   if (st.tab === 'chart' && b) body = `<div class="card">${chartHtml(b)}<div id="detail">${st.selected.map(itemHtml).join('')}</div></div>${baziHtml(b)}`;
   else if (st.tab === 'time' && b) body = timeHtml(b);
   else if (st.tab === 'cross' && b) body = crossHtml(b);
+  else if (st.tab === 'syn' && b) body = synHtml(b);
   else if (st.tab === 'read' && b) body = sectionsHtml([...interpretNatal(b, RULES), ...interpretYear(b, clampYear(b), RULES)]);
   else if (st.tab === 'archive') body = await archiveHtml();
   else if (st.tab === 'settings') body = settingsHtml(b);
@@ -274,6 +288,24 @@ function bindTab() {
       if (p.isBody) st.selected.push(ruleItem(RULES, 'zw.body', undefined, '身宫所在'));
       void render();
     }));
+  }
+  if (st.tab === 'syn' && st.bundle) {
+    $('#pf').addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      const n = (id: string) => Number(($('#' + id) as HTMLInputElement).value);
+      const y = n('by'), m = n('bm'), d = n('bd'), hh = n('bh'), mm = n('bmi');
+      st.pv = { by: String(y), bm: String(m), bd: String(d), bh: String(hh), bmi: String(mm), bg: ($('#bg') as HTMLSelectElement).value };
+      st.partnerError = '';
+      try {
+        if (![y, m, d, hh, mm].every(Number.isInteger)) throw new Error('请填写完整的整数出生信息');
+        const ds = chinaDstState(y, m, d, hh);
+        if (ds === 'nonexistent') throw new Error('该钟表时间处于夏令时开始时被跳过的一小时，实际不存在，请核对。');
+        const dst = ds === 'dst' ? 60 : 0;
+        const input: BirthInput = { calendar: 'solar', year: y, month: m, day: d, hour: hh, minute: mm, gender: ($('#bg') as HTMLSelectElement).value as 'M' | 'F', place: { utcOffsetMinutes: 480 + dst, dstMinutes: dst } };
+        st.partner = computeCharts(input, st.bundle!.options);
+      } catch (e) { st.partner = null; st.partnerError = (e as Error).message; }
+      void render();
+    });
   }
   if (st.tab === 'time') $('#yr').addEventListener('change', () => { st.year = Number(($('#yr') as HTMLInputElement).value); void render(); });
   if (st.tab === 'settings') {
