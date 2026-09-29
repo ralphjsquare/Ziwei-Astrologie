@@ -42,3 +42,7 @@ npm run verify         # 类型检查 + 纯度检查 + 出处检查 + 全部测�
 
 ## 目录
 `src/core`（干支、哈希）· `src/calendar`（历法）· `src/ziwei` · `src/bazi` · `src/rules`（规则数据）· `src/corpus`（语料处理）· `src/interpret` · `src/crossref` · `src/review` · `src/storage` · `web/`（界面）· `tools/`（检查与导出脚本）· `test/`。
+
+## 桌面版与审阅包
+- Windows 桌面版：`npm run desktop:win`，说明见 `docs/DESKTOP.md`。
+- 神煞规则审阅包：`npm run pack:shensha`，输出 `docs/packages/神煞规则包.zip`。

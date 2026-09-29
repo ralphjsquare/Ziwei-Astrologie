@@ -6,3 +6,5 @@ docs/sources/raw/hko/
 # Kanripo 原文（体积大，可用 corpus:crosscheck --fetch 重新下载）
 docs/sources/raw/kanripo-smtht/
 docs/sources/raw/ia/
+
+release/

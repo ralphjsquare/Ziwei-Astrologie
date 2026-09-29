@@ -13,6 +13,8 @@
     "review:import": "tsx tools/review-import.ts",
     "dev": "vite --config web/vite.config.ts",
     "build": "vite build --config web/vite.config.ts",
+    "pack:shensha": "tsx tools/shensha-pack.ts",
+    "desktop:win": "node tools/desktop.mjs",
     "verify": "npm run typecheck && npm run check:purity && npm run check:sources && npm test",
     "gen:golden": "tsx tools/gen-golden.ts",
     "corpus:find": "tsx tools/corpus.ts find",
@@ -29,10 +31,12 @@
     "corpus:ground": "tsx tools/corpus.ts ground"
   },
   "devDependencies": {
+    "@electron/packager": "^20.3.0",
     "@openfate/bazi-engine": "^2.0.0",
     "@types/node": "^26.6.3",
     "astronomy-engine": "^2.1.19",
     "bazi-lite": "^1.2.0",
+    "electron": "^44.4.5",
     "fake-indexeddb": "^6.2.5",
     "fast-check": "^4.10.2",
     "iztro": "^2.6.1",

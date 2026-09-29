@@ -12,6 +12,7 @@ export function selectRules(rs: RuleSet, scope: ReviewScope, status: ReviewStatu
 
 const srcText = (rs: RuleSet, r: Rule) =>
   r.sources.map((s) => `${rs.sources[s.ref].book}${s.section ? '·' + s.section : ''}${rs.sources[s.ref].verified ? '' : '（底本未核对）'}`).join('；');
+export const SOURCE_CLASS_LABEL: Record<string, string> = { PRIMARY_TEXT: '原文明确', TEXTUAL_VARIANT: '转录异文（经其他传本校读）', CLASSICAL_SECONDARY: '古籍二手引述', MODERN_COMMON: '现代通行整理', IMPLEMENTATION_ONLY: '仅软件实现支持', DERIVED_FROM_TEXT: '原文只给例子、判据反推' };
 const cond = (r: Rule) => Object.entries(r.when).map(([k, v]) => `${k}=${v}`).join(' ');
 
 const csvCell = (v: string) => (/[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v);
@@ -20,19 +21,19 @@ export function exportRules(rs: RuleSet, rules: Rule[], format: ReviewFormat, ge
   if (format === 'json') {
     return JSON.stringify({ generatedAt, rulesVersion: rs.version, count: rules.length, rules: rules.map((r) => ({
       id: r.id, condition: r.when, title: r.title, plain: r.plain, evidenceType: r.evidenceType, basis: r.basis, sources: r.sources.map((s) => ({ ...s, book: rs.sources[s.ref].book, verified: rs.sources[s.ref].verified })),
-      classical: r.classical, review: r.review,
+      ...(r.sourceClass ? { sourceClass: r.sourceClass } : {}), classical: r.classical, review: r.review,
     })) }, null, 1);
   }
   if (format === 'csv') {
-    const head = ['id', '触发条件', '标题', '白话解释', '依据等级', '出处', '古籍原文', '审核状态', '审核人', '审核意见(请填写)', '新状态(draft/reviewed/approved/rejected)'];
-    const rows = rules.map((r) => [r.id, cond(r), r.title, r.plain, EVIDENCE_LABEL[r.evidenceType] + '／' + BASIS_LABEL[r.basis], srcText(rs, r), r.classical.map((q) => q.quote + (q.variant ? `〔异文：${q.variant}〕` : '')).join(' | ') || '（尚未入库）', REVIEW_LABEL[r.review.status], r.review.reviewer ?? '', '', '']);
+    const head = ['id', '触发条件', '标题', '白话解释', '依据等级', '来源分级', '出处', '古籍原文', '审核状态', '审核人', '审核意见(请填写)', '新状态(draft/reviewed/approved/rejected)'];
+    const rows = rules.map((r) => [r.id, cond(r), r.title, r.plain, EVIDENCE_LABEL[r.evidenceType] + '／' + BASIS_LABEL[r.basis], r.sourceClass ? SOURCE_CLASS_LABEL[r.sourceClass] : '', srcText(rs, r), r.classical.map((q) => q.quote + (q.variant ? `〔异文：${q.variant}〕` : '')).join(' | ') || '（尚未入库）', REVIEW_LABEL[r.review.status], r.review.reviewer ?? '', '', '']);
     return '﻿' + [head, ...rows].map((row) => row.map(csvCell).join(',')).join('\n');
   }
   const L: string[] = [`# 解读规则审核文档`, '', `- 生成时间：${generatedAt}`, `- 规则集版本：${rs.version}`, `- 规则数量：${rules.length}`, '',
     '> 说明：「古籍原文」栏为语料中逐字摘录的引文（维基文库转录本，底本未标明，须对照影印本核对）；无引文的规则为通行说法或算法结构。请在“审核意见”与“新状态”处填写，可用 `npm run review:import` 导回。', ''];
   for (const r of rules) {
     L.push(`## ${r.id}｜${r.title}`, '',
-      `- 触发条件：\`${cond(r)}\``, `- 依据等级：${EVIDENCE_LABEL[r.evidenceType]}；依据类型：${BASIS_LABEL[r.basis]}`, `- 出处：${srcText(rs, r)}`,
+      `- 触发条件：\`${cond(r)}\``, `- 依据等级：${EVIDENCE_LABEL[r.evidenceType]}；依据类型：${BASIS_LABEL[r.basis]}${r.sourceClass ? '；来源分级：' + SOURCE_CLASS_LABEL[r.sourceClass] : ''}`, `- 出处：${srcText(rs, r)}`,
       `- 当前审核状态：${REVIEW_LABEL[r.review.status]}${r.review.reviewer ? '（' + r.review.reviewer + '）' : ''}`, '',
       `**白话解释**：${r.plain}`, '',
       `**古籍原文**：${r.classical.length ? r.classical.map((q) => '「' + q.quote + '」' + (q.variant ? `（版本异文：${q.variant}）` : '')).join('；') : '（尚未入库）'}`, '',
