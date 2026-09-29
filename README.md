@@ -23,14 +23,21 @@ npm run verify         # 类型检查 + 纯度检查 + 出处检查 + 全部测�
 - **审核接口**：`npm run review:export -- --scope all --status draft --format md|csv|json [--out 文件]`；也可导出“样例盘 + 全部解读”：`--chart 1990-06-15T10:30,M`。审核意见回写：`npm run review:import -- 文件.csv --reviewer 姓名`。
 
 ## 准确性依据
-见 `docs/adr/`。要点：历法库与独立天文算法交叉核对；紫微与 iztro、八字与 tyme4ts 差分比对；60 个覆盖边界的黄金输入；性质测试；Node 与浏览器逐字节一致。**外部软件的一致只是发现差异的手段，不等于古籍正确。**
+见 `docs/adr/`。要点：
+- **历法三源印证**：`tyme4ts`（运行时）、`js-ephemeris-lite`（独立天文模型）、`astronomy-engine`。1902–2025 年节气时刻两个主要来源相差 ≤3 秒；1901–2100 逐日 73,049 天农历仅 2097 年一个月相差一天（未来预测区）。
+- **排盘三源印证**：紫微对 iztro 与 ziwei-lite，八字对 tyme4ts 与 bazi-lite，随机数百到数千盘一致；发现的差异不是“改到一致”，而是记为并行说法并做成选项（辛年天魁天钺，戊/庚/壬/癸年四化版本，闰月流月）。
+- 60 个覆盖边界的黄金输入；性质测试；Node 与浏览器逐字节一致。
+- **外部软件的一致只是发现差异的手段，不等于古籍正确。**
+
+## 官方历表与古籍原文：怎样补上
+构建环境的网络被限制，无法下载香港天文台数据与公版古籍文本；**已备好流水线**，见 `docs/sources/README.md`（放行网络，或在你自己的电脑上运行后提交结果）。补上之前：解释均标注“未核对原文”，规则均为“未审核”，“已确认”状态被校验禁止用于无古籍原文的规则。
 
 ## 已知限制（如实）
-- 古籍原文**尚未入库**：构建环境无法访问公版语料站点（ADR-007）。所有解释标注“未核对原文”，规则均为“未审核”。
-- 未能与香港天文台逐日历表核对（ADR-002），改用独立天文推算；有 4 个已裁决的农历月例外。
-- 黄金盘的人工签字（20 盘）尚待确认人完成：`docs/golden/HUMAN_REVIEW_SHEET.md`。
-- 未实现：合盘、飞星派与多流派内容、庙旺利陷、小限、调候、神煞、桌面安装包（见 `docs/DEVELOPMENT_PLAN.md`）。
-- 1949 年前及非中国大陆出生时间的时区按用户给出的偏移计算。
+- 古籍原文**尚未入库**（ADR-007）；官方历表**尚未核对**（ADR-002）。
+- 黄金盘人工签字（20 盘）尚待确认人完成：`docs/golden/HUMAN_REVIEW_SHEET.md`，方法见 `docs/golden/REVIEW_PROTOCOL.md`。
+- 解读文字由开发者按“传统说法转述”的准则撰写（`docs/INTERPRETATION_GUIDELINES.md`），**未经术数老师审核**。
+- 未实现：合盘、飞星派、庙旺利陷、小限、调候、神煞、桌面安装包。
+- 1929 年前节令口径、2026 年后节气预测、闰月流月等口径差异见 ADR-008、ADR-010。
 
 ## 目录
-`src/core`（干支、哈希）· `src/calendar`（历法）· `src/ziwei` · `src/bazi` · `src/rules`（规则数据）· `src/interpret` · `src/crossref` · `src/review` · `src/storage` · `web/`（界面）· `tools/`（检查与导出脚本）· `test/`。
+`src/core`（干支、哈希）· `src/calendar`（历法）· `src/ziwei` · `src/bazi` · `src/rules`（规则数据）· `src/corpus`（语料处理）· `src/interpret` · `src/crossref` · `src/review` · `src/storage` · `web/`（界面）· `tools/`（检查与导出脚本）· `test/`。

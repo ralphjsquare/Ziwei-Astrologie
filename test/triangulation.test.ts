@@ -2,14 +2,16 @@
 // （另一套天文模型 VSOP2013/ELP-MPP02 与另一套排盘代码）。三者一致才算有力印证；差异要么修正，要么记为流派差异（ADR-006/008/010）。
 import { describe, expect, it } from 'vitest';
 import { ZonedTime, getQiShuoYear } from 'js-ephemeris-lite';
-import { ZiweiChart, ZiweiOptions, ZIWEI_GENDER, ZIWEI_RULE_OPTION, STAR_CATALOG } from 'ziwei-lite';
-import { BaziChart, BaziOptions, GENDER } from 'bazi-lite';
+import { ZiweiChart, ZiweiOptions, ZIWEI_GENDER, ZIWEI_RULE_OPTION, STAR_CATALOG, FLOW_MONTH_PALACE_STRATEGY } from 'ziwei-lite';
+import { BaziChart, BaziOptions, GENDER, pillarName } from 'bazi-lite';
 import { describeFourPillars } from 'js-ephemeris-lite';
 import { BRANCHES, STEMS, computeCharts } from '../src/index';
 import { termInstants, TERM_NAMES, solarToLunar } from '../src/calendar/lunar';
 import { civilFromDays, daysFromCivil } from '../src/calendar/civil';
 import { solarToLunar as jsSolarToLunar } from 'js-ephemeris-lite';
 import { STAR_ORDER } from '../src/ziwei/engine';
+import { ziweiYearLayer } from '../src/index';
+import { lunarToSolar } from '../src/calendar/lunar';
 import { rng, solarInput } from './helpers';
 
 describe('节气：与独立天文模型 js-ephemeris-lite 比对', () => {
@@ -98,6 +100,33 @@ describe('紫微：与独立实现 ziwei-lite 比对', () => {
     expect(bad).toEqual([]);
   }, 120000);
 
+  it('大限、流年命宫、流月（斗君法）、流限：与 ziwei-lite 一致（100 盘；流月按月序、闰月不单列，对应其 EFFECTIVE_MONTH 策略）', () => {
+    // ziwei-lite 默认按“含闰月的时序”推进流月命宫，本项目按农历月序（闰月随所属月），两者只在当年有闰月时不同（ADR-010）。
+    const r = rng(5150), bad: string[] = [];
+    for (let k = 0; k < 100; k++) {
+      const y = r.int(1930, 2060), m = r.int(1, 12), d = r.int(1, 28), h = r.int(0, 23), g = k % 2 ? 'F' : 'M';
+      const c = computeCharts(solarInput(y, m, d, h, 10, g)).ziwei;
+      const z = ZiweiChart.fromZonedTime(new ZonedTime({ year: y, month: m, day: d, hour: h, minute: 10, second: 0, offsetMinutes: 480 }),
+        new ZiweiOptions({ gender: g === 'M' ? ZIWEI_GENDER.MALE : ZIWEI_GENDER.FEMALE, flowMonthPalaceStrategy: FLOW_MONTH_PALACE_STRATEGY.EFFECTIVE_MONTH } as never));
+      for (const dd of z.timeline().getDecades()) {
+        const p = c.palaces.find((pp) => pp.decade.startAge === dd.startAge);
+        if (!p || p.branch !== dd.branch || p.decade.endAge !== dd.endAge) bad.push(`decade ${y}-${m}-${d} ${dd.startAge}`);
+      }
+      const fy = Math.min(2098, r.int(y + 1, y + 50));
+      const zl = ziweiYearLayer(c, fy);
+      for (const lm of [2, 5, 9]) {
+        const sd = lunarToSolar({ year: fy, month: lm, leap: false, day: 12 });
+        const f = z.resolveFlow(new ZonedTime({ year: sd.y, month: sd.m, day: sd.d, hour: 12, minute: 0, second: 0, offsetMinutes: 480 })) as unknown as
+          { year: { limit: { coordinate: { branch: number } } }; month: { limit: { coordinate: { branch: number } } }; decade: { limit: { coordinate: { branch: number } } } };
+        if (f.year.limit.coordinate.branch !== zl.flowMingBranch) bad.push(`flowyear ${y}-${m}-${d} ${fy}`);
+        if (f.month.limit.coordinate.branch !== zl.months[lm - 1].branch) bad.push(`flowmonth ${y}-${m}-${d} ${fy} m${lm}`);
+        const dm = c.palaces.find((p) => zl.age >= p.decade.startAge && zl.age <= p.decade.endAge);
+        if (dm && f.decade.limit.coordinate.branch !== dm.branch) bad.push(`flowdecade ${y}-${m}-${d} ${fy}`);
+      }
+    }
+    expect(bad).toEqual([]);
+  }, 120000);
+
   it('辛年天魁天钺：iztro 取魁午钺寅，ziwei-lite 取魁寅钺午——两说并存，均可由选项复现', () => {
     for (const [y, m, d] of [[1991, 5, 5], [2001, 8, 8], [2031, 12, 4]]) {
       const zl = zlChart(y, m, d, 10, 0, 'M');
@@ -149,6 +178,21 @@ describe('八字：与独立实现 bazi-lite 比对（严格天文口径）', ()
       else if (Math.abs(dd) > 1) bad.push(`luck-future ${y}-${m}-${d} diff ${dd}d`);
     }
     expect(strictN).toBeGreaterThan(1000);
+    expect(bad).toEqual([]);
+  }, 120000);
+
+  it('大运序列与起运公历年：600 盘与 bazi-lite 一致', () => {
+    const r = rng(8), bad: string[] = [];
+    for (let k = 0; k < 600; k++) {
+      const y = r.int(1902, 2040), m = r.int(1, 12), d = r.int(1, 28), h = r.int(0, 23), mi = r.int(0, 59), g = k % 2 ? 'F' : 'M';
+      const c = computeCharts(solarInput(y, m, d, h, mi, g)).bazi;
+      const b = BaziChart.fromZonedTime(new ZonedTime({ year: y, month: m, day: d, hour: h, minute: mi, second: 0, offsetMinutes: 480 }),
+        new BaziOptions({ gender: g === 'M' ? GENDER.MALE : GENDER.FEMALE, mode: 'china-astronomical', pillarHistoricalMode: 'off' } as never));
+      (b.getDaYunTable() as unknown as { pillar: number; startCivilTime: { year: number } }[]).slice(0, 8).forEach((row, i) => {
+        if (pillarName(row.pillar) !== STEMS[c.luck.cycles[i].stem] + BRANCHES[c.luck.cycles[i].branch]) bad.push(`cycle ${y}-${m}-${d} #${i}`);
+        if (row.startCivilTime.year !== c.luck.cycles[i].startYear) bad.push(`year ${y}-${m}-${d} #${i}`);
+      });
+    }
     expect(bad).toEqual([]);
   }, 120000);
 

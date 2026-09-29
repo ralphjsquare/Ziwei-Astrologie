@@ -54,6 +54,19 @@ export const RULES: RuleSet = makeRuleSet(
   srcJson as Record<string, SourceEntry>, corpusJson as unknown as Record<string, CorpusEntry>,
 );
 
+/** 解释文字的语言准则：不做绝对化、宿命化、恐吓式或替人决策的断语（docs/INTERPRETATION_GUIDELINES.md）。返回违规描述列表。 */
+export function lintText(text: string): string[] {
+  const out: string[] = [];
+  const rules: [RegExp, string][] = [
+    [/必定|一定会|注定|肯定会|绝对|定会|势必/, '绝对化/宿命化用语'],
+    [/(?<!不等于|并不|不一定|不是)必然/, '绝对化用语“必然”'],
+    [/克夫|克妻|克父|克母|短命|早亡|夭折|血光|灾祸|大凶|必死|克死/, '恐吓式或宿命式用语'],
+    [/你(会|将|必须|应该)|一定要|务必|必须(离婚|结婚|投资|手术|服药|辞职)/, '替读者下指令或直接断言个人未来'],
+  ];
+  for (const [re, msg] of rules) if (re.test(text)) out.push(msg);
+  return out;
+}
+
 /** 规则内容哈希（不含审核状态，审核不改变解释内容）。 */
 export const rulesContentHash = (rs: RuleSet): string =>
   hashOf([...rs.byId.values()].map((r) => ({ id: r.id, when: r.when, title: r.title, plain: r.plain, evidenceType: r.evidenceType, basis: r.basis, sources: r.sources, classical: r.classical, data: r.data ?? null })));
@@ -70,6 +83,7 @@ export function validateRules(rs: RuleSet): string[] {
     if (seen.has(r.id)) errs.push(`${at}: id 重复`);
     seen.add(r.id);
     if (!r.title || !r.plain) errs.push(`${at}: 缺少标题或白话解释`);
+    for (const m of lintText(r.title + r.plain)) errs.push(`${at}: 语言准则：${m}`);
     if (!types.includes(r.evidenceType)) errs.push(`${at}: evidenceType 非法`);
     if (!statuses.includes(r.review?.status)) errs.push(`${at}: review.status 非法`);
     if (!r.sources?.length) errs.push(`${at}: 没有出处（sources 为空）`);

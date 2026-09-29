@@ -177,7 +177,7 @@ function timeHtml(b: ChartBundle): string {
     const bm = bl.months.map((m) => `<tr><td>${m.jie}</td><td>${STEMS[m.stem]}${BRANCHES[m.branch]}</td><td>${m.stemTenGod}</td></tr>`).join('');
     yearPart = `<div class="card"><h3>${st.year} 年 · 紫微流年</h3>
       <p>${zl.steps.map(esc).join('<br>')}</p>
-      <div class="scroll"><table><tr><th>流月（斗君起）</th><th>落宫</th><th>星曜</th></tr>${zm}</table></div></div>
+      <div class="scroll"><table><tr><th>流月（斗君起）</th><th>落宫</th><th>星曜</th></tr>${zm}</table></div><p class="note">流月按农历月序，闰月不单列（部分软件按含闰月的时序推进，闰年后半年会相差一宫）。</p></div>
       <div class="card"><h3>${st.year} 年 · 八字流年</h3>
       <p>${STEMS[bl.stem]}${BRANCHES[bl.branch]}年（${bl.nayin}），天干十神：${bl.stemTenGod}；当前大运：${bl.activeLuck ? STEMS[bl.activeLuck.stem] + BRANCHES[bl.activeLuck.branch] : '尚未起运'}</p>
       <p>与原局、大运的关系：${bl.relations.map((r) => esc(r.type + '（' + r.members.map((m) => m.pos + m.char).join('') + '）')).join('；') || '无明显合冲刑害'}</p>

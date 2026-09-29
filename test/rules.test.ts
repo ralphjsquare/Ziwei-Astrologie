@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { RULES, fill, makeRuleSet, rulesContentHash, validateRules, type Rule } from '../src/rules';
+import { RULES, fill, lintText, makeRuleSet, rulesContentHash, validateRules, type Rule } from '../src/rules';
 import { computeCharts } from '../src/index';
 import { interpretNatal, interpretYear, type InterpSection } from '../src/interpret';
 import { crossReference } from '../src/crossref';
@@ -33,6 +33,15 @@ describe('规则数据与出处校验', () => {
     expect(validateRules(rs([mk({ review: { status: 'approved', reviewer: '某老师', date: 'd', note: null, history: [] } })]))[0]).toMatch(/已确认.*古籍原文/);
     expect(validateRules(rs([mk({ review: { status: 'reviewed', reviewer: '某老师', date: 'd', note: null, history: [] } })]))).toEqual([]);
     expect(validateRules(rs([mk({ evidenceType: 'structural', review: { status: 'approved', reviewer: '某老师', date: 'd', note: null, history: [] } })]))).toEqual([]);
+  });
+  it('语言准则：拒绝绝对化、恐吓式、替人决策的用语；允许否定语境与十二长生等术语', () => {
+    expect(lintText('你一定会发财')).toContain('绝对化/宿命化用语');
+    expect(lintText('此人克夫，必然早亡')).toEqual(expect.arrayContaining(['恐吓式或宿命式用语', '绝对化用语“必然”']));
+    expect(lintText('你必须离婚')).toContain('替读者下指令或直接断言个人未来');
+    expect(lintText('化忌并不等于必然不利')).toEqual([]);
+    expect(lintText('十二长生：病、死是象征性的比喻，传统上倾向于……')).toEqual([]);
+    expect(validateRules(rs([mk({ plain: '此命注定大富' })]))[0]).toMatch(/语言准则/);
+    for (const r of [...RULES.ziwei, ...RULES.bazi, ...RULES.cross]) expect(lintText(r.title + r.plain), r.id).toEqual([]);
   });
   it('覆盖：十四主星、十二宫、四化、五个局、命宫×十四主星、十三类刑冲合害均有规则', () => {
     for (const s of MAJOR_ORDER) { expect(RULES.byId.has(`zw.star.${s}`)).toBe(true); expect(RULES.byId.has(`zw.sip.命宫.${s}`)).toBe(true); }
