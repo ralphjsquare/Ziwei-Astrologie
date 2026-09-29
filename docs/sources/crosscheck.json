@@ -1,0 +1,663 @@
+{
+ "book": "三命通会",
+ "secondSource": "Kanripo KR3g0042（文渊阁四库全书本 WYG）",
+ "total": 110,
+ "found": 105,
+ "rows": [
+  {
+   "ruleId": "bz.stem.甲",
+   "quote": "甲木为雷。雷者，阳气之嘘也，甲木属阳，故取象于雷焉",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.甲",
+   "quote": "凡命属甲日，主喜值春天",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.乙",
+   "quote": "乙木为风",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.乙",
+   "quote": "如人乙日建生者，在秋令大吉",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.丙",
+   "quote": "丙为日",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.丙",
+   "quote": "凡六丙生冬夏，不如春秋",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.丁",
+   "quote": "丁火为星",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.丁",
+   "quote": "凡丁日生人喜遇夜，喜遇秋",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.戊",
+   "quote": "戊土为霞",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.戊",
+   "quote": "如戊土日主爱四柱带水则为上格",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.己",
+   "quote": "己土为云",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.己",
+   "quote": "凡身主属己土，贵坐酉，贵春生，贵见印",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.庚",
+   "quote": "庚金为月",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.庚",
+   "quote": "秋为上，冬次之，春夏无取",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.辛",
+   "quote": "辛金为霜",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.辛",
+   "quote": "爱冬生",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.壬",
+   "quote": "壬水为秋露",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.壬",
+   "quote": "如壬日生秋，见丁火最显",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.癸",
+   "quote": "癸水为春霖",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.stem.癸",
+   "quote": "春夏吉，秋冬不吉",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.god.正印",
+   "quote": "生我者，有父母之义，故立名印绶。印，荫也。绶，受也",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.正印",
+   "quote": "此格主聪明，多智慧，性慈惠",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.正印",
+   "quote": "忌财星，以财能破印",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.偏印",
+   "quote": "食怕枭，逢枭则夺",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.偏印",
+   "quote": "食神大忌偏印为倒食，主为人有始无终",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.劫财",
+   "quote": "财怕劫，被劫则分",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.劫财",
+   "quote": "切忌有姊妹兄弟分夺",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.食神",
+   "quote": "我生者，有子孙之义，故立名食神",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.食神",
+   "quote": "故食神一名寿星，一名爵星",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.食神",
+   "quote": "主人财厚食丰，福量宽弘",
+   "found": false
+  },
+  {
+   "ruleId": "bz.god.伤官",
+   "quote": "伤官者，我生彼之谓，乃甲见丁、乙见丙之类",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.伤官",
+   "quote": "此格主多材艺，傲物气高",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.伤官",
+   "quote": "伤官见官，祸患百端",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.偏财",
+   "quote": "何谓偏财？乃甲见戊、乙见己之例。非妻所带，乃众人之财也",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.偏财",
+   "quote": "偏财格，主人慷慨，不甚吝财，与人有情而多诈",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.偏财",
+   "quote": "唯怕分夺，及落空亡",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.正财",
+   "quote": "正财者，乃甲见己、乙见戊之例。受我克制，为我之妻",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.正财",
+   "quote": "财为养命之源，凡人八字不可无财，但不要太多，多则不清",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.七杀",
+   "quote": "以其隔七位而相克战，故谓之七煞",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.七杀",
+   "quote": "有制谓之偏官，无制谓之七煞",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.七杀",
+   "quote": "忌日主衰弱，七煞重逢",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.正官",
+   "quote": "正官者，乃甲见辛、乙见庚之例。阴阳配合，相制有用",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.正官",
+   "quote": "正官为六格之首，止许一位，多则不宜",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.god.正官",
+   "quote": "大忌刑冲破害、伤官七煞、贪合忘官、劫财分福，为破格",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.rel.天干五合",
+   "quote": "唯阴见阳，阳见阴为合，亦如男女相合而成夫妇之道",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.天干五合",
+   "quote": "所以乙与庚合",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.天干相冲",
+   "quote": "犹天干取七位为煞之义",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.地支六合",
+   "quote": "夫合者，和也，乃阴阳相和，其气自合",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.地支六合",
+   "quote": "一阴一阳和而谓之合",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.地支六冲",
+   "quote": "地支取七位为冲",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.地支六冲",
+   "quote": "相冲者，十二支战击之神，大概为凶。然有为福之甚者，乃冲处相生",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.地支三合",
+   "quote": "故申子辰为水局",
+   "found": false
+  },
+  {
+   "ruleId": "bz.rel.地支三合",
+   "quote": "若三字缺一则化不成局，不可以三合化局论",
+   "found": false
+  },
+  {
+   "ruleId": "bz.rel.地支半合",
+   "quote": "若三字缺一则化不成局，不可以三合化局论",
+   "found": false
+  },
+  {
+   "ruleId": "bz.rel.三刑",
+   "quote": "《阴符经》曰：恩生于害，害生于恩；三刑生于二合",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.三刑",
+   "quote": "极十数而为无礼之刑",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.无恩之刑（不全）",
+   "quote": "寅逆至巳，巳逆至申，极十数而为无恩之刑",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.恃势之刑（不全）",
+   "quote": "丑顺至戌，戌顺至未，极十数而为恃势之刑",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.无礼之刑",
+   "quote": "故数自卯顺至子，子逆至卯，极十数而为无礼之刑",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.自刑",
+   "quote": "辰见辰自刑",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.rel.自刑",
+   "quote": "午见午自刑",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.kongwang",
+   "quote": "故以甲旬尽处曰空亡，盖有是位而无禄，曰空；有支而无干，曰亡",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.kongwang",
+   "quote": "然空而有实，亡而有存，所以未可便为凶论",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.luck.direction",
+   "quote": "折除以三日为年",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.luck.direction",
+   "quote": "阳男阴女，大运以生日后未来节气日时为数，顺而行之；阴男阳女，大运以生日前过去节气日时为数，逆而行之",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.luck.direction",
+   "quote": "乃一岁奇九月之大运",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.长生",
+   "quote": "四曰长生，万物发生向荣，如人始生而向长也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.长生",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.沐浴",
+   "quote": "五曰沐浴，又曰败，以万物始生，形体柔脆，易为所损，如人生后三日以沐浴之，几至困绝也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.沐浴",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.冠带",
+   "quote": "六曰冠带，万物渐荣秀，如人具衣冠也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.冠带",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.临官",
+   "quote": "七曰临官，万物既秀实，如人之临官也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.临官",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.帝旺",
+   "quote": "八曰帝旺，万物成熟，如人之兴旺也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.帝旺",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.衰",
+   "quote": "九曰衰，万物形衰，如人之气衰也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.衰",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.病",
+   "quote": "十曰病，万物病，如人之病也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.病",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.死",
+   "quote": "十一曰死，万物死，如人之死也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.死",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.墓",
+   "quote": "十二曰墓，又曰库，以万物成功而藏之库，如人之终而归墓也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.墓",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.绝",
+   "quote": "一曰受气，又曰绝，曰脆，以万物在地中未有其象，如母腹空，未有物也",
+   "found": false
+  },
+  {
+   "ruleId": "bz.ls.绝",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.胎",
+   "quote": "二曰受胎，天地气交，氤氲造物，其物在地中萌芽，始有其气，如人受父母之气也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.胎",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.养",
+   "quote": "三曰成形，万物在地中成形，如人在母腹成形也",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.ls.养",
+   "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.pattern.正官格",
+   "quote": "正官先看月令，然后方看其余",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.正官格",
+   "quote": "正官为六格之首，止许一位，多则不宜",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.正官格",
+   "quote": "大忌刑冲破害、伤官七煞、贪合忘官、劫财分福，为破格",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.七杀格",
+   "quote": "有制谓之偏官，无制谓之七煞",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.七杀格",
+   "quote": "一见制伏，却为贵本",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.七杀格",
+   "quote": "忌日主衰弱，七煞重逢",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.正财格",
+   "quote": "故财要得时乘旺，不偏正混乱，不重叠多见，自家日主有力，皆能发福",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.正财格",
+   "quote": "大怕枭，夺则不能生，刃劫则不能享，库逢空则不能聚",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.偏财格",
+   "quote": "偏财月令所带最重，不宜柱中多逢",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.偏财格",
+   "quote": "偏财格，主人慷慨，不甚吝财，与人有情而多诈",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.偏财格",
+   "quote": "唯怕分夺，及落空亡",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.正印格",
+   "quote": "此格主聪明，多智慧，性慈惠",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.正印格",
+   "quote": "喜官星，以官能生印",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.正印格",
+   "quote": "忌财星，以财能破印",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.食神格",
+   "quote": "此格要日主食神俱生旺，无冲破",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.食神格",
+   "quote": "食神宜食生食旺，不可食衰食绝",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.食神格",
+   "quote": "食神大忌偏印为倒食",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.伤官格",
+   "quote": "伤官格务要伤尽，方作贵看",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.伤官格",
+   "quote": "所以伤官要见财，不要见官",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.pattern.伤官格",
+   "quote": "伤官格用财，亦有用印者",
+   "found": true,
+   "volume": 5
+  }
+ ]
+}

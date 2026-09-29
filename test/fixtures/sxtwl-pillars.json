@@ -1,0 +1,306 @@
+{
+ "generatedBy": "sxtwl (pip), tools/py/sxtwl_pillars.py",
+ "note": "以 sxtwl 秒级节令时刻推出的四柱；hour>=23 按晚子时换日（本项目默认）；含夏令时的用例按钟表时间减 1 小时换算",
+ "cases": {
+  "G01": {
+   "pillars": "癸卯 戊午 辛卯 癸巳",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G02": {
+   "pillars": "丙午 甲午 戊子 己未",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G03": {
+   "pillars": "丁巳 癸卯 辛未 癸巳",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G04": {
+   "pillars": "己未 癸酉 庚午 癸未",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G05": {
+   "pillars": "癸酉 戊午 丁卯 丙午",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G06": {
+   "pillars": "辛巳 丙申 甲午 辛未",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G07": {
+   "pillars": "乙丑 己卯 戊申 壬子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G08": {
+   "pillars": "乙丑 己卯 戊申 壬子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G09": {
+   "pillars": "乙丑 己卯 丁未 庚子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G10": {
+   "pillars": "乙丑 己卯 丁未 庚子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G11": {
+   "pillars": "辛巳 丙申 丙辰 戊子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G12": {
+   "pillars": "辛巳 丙申 丙辰 戊子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G13": {
+   "pillars": "辛巳 丙申 乙卯 丙子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G14": {
+   "pillars": "辛巳 丙申 乙卯 丙子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G15": {
+   "pillars": "壬子 庚戌 庚子 丙子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G16": {
+   "pillars": "壬子 庚戌 庚子 丙子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G17": {
+   "pillars": "乙未 辛巳 癸巳 壬子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G18": {
+   "pillars": "乙未 辛巳 癸巳 壬子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G19": {
+   "pillars": "癸亥 乙丑 己巳 甲子",
+   "termSec": 83924,
+   "ambiguous": false
+  },
+  "G20": {
+   "pillars": "甲子 丙寅 己巳 甲子",
+   "termSec": 83924,
+   "ambiguous": false
+  },
+  "G21": {
+   "pillars": "己卯 丁丑 壬辰 庚戌",
+   "termSec": 74424,
+   "ambiguous": false
+  },
+  "G22": {
+   "pillars": "庚辰 戊寅 壬辰 庚戌",
+   "termSec": 74424,
+   "ambiguous": false
+  },
+  "G23": {
+   "pillars": "癸卯 乙丑 戊戌 庚申",
+   "termSec": 59213,
+   "ambiguous": false
+  },
+  "G24": {
+   "pillars": "甲辰 丙寅 戊戌 庚申",
+   "termSec": 59213,
+   "ambiguous": false
+  },
+  "G25": {
+   "pillars": "己巳 丁丑 乙卯 丙子",
+   "termSec": 85380,
+   "ambiguous": false
+  },
+  "G26": {
+   "pillars": "庚午 戊寅 乙卯 丙子",
+   "termSec": 85380,
+   "ambiguous": false
+  },
+  "G27": {
+   "pillars": "甲辰 丙寅 庚子 壬午",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G28": {
+   "pillars": "己亥 丙寅 癸酉 戊午",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G29": {
+   "pillars": "壬寅 癸丑 癸未 戊午",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G30": {
+   "pillars": "庚寅 戊寅 甲午 庚午",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G31": {
+   "pillars": "乙巳 己卯 己未 丙寅",
+   "termSec": 10837,
+   "ambiguous": false
+  },
+  "G32": {
+   "pillars": "戊午 乙卯 丁酉 丙午",
+   "termSec": 41959,
+   "ambiguous": false
+  },
+  "G33": {
+   "pillars": "癸酉 丁巳 丙戌 戊戌",
+   "termSec": 72102,
+   "ambiguous": false
+  },
+  "G34": {
+   "pillars": "壬午 乙巳 乙巳 戊寅",
+   "termSec": 17086,
+   "ambiguous": false
+  },
+  "G35": {
+   "pillars": "辛卯 乙未 癸亥 辛酉",
+   "termSec": 67319,
+   "ambiguous": false
+  },
+  "G36": {
+   "pillars": "庚子 癸未 壬午 乙巳",
+   "termSec": 32763,
+   "ambiguous": false
+  },
+  "G37": {
+   "pillars": "乙未 乙酉 壬申 己酉",
+   "termSec": 66705,
+   "ambiguous": false
+  },
+  "G38": {
+   "pillars": "戊寅 辛酉 戊子 壬戌",
+   "termSec": 71745,
+   "ambiguous": false
+  },
+  "G39": {
+   "pillars": "癸丑 癸亥 壬戌 乙巳",
+   "termSec": 38436,
+   "ambiguous": false
+  },
+  "G40": {
+   "pillars": "丙戌 己亥 乙酉 戊寅",
+   "termSec": 13663,
+   "ambiguous": true
+  },
+  "G41": {
+   "pillars": "丙午 辛丑 己亥 庚午",
+   "termSec": 42117,
+   "ambiguous": false
+  },
+  "G42": {
+   "pillars": "庚子 戊子 己卯 己巳",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G43": {
+   "pillars": "辛丑 庚寅 戊辰 丁巳",
+   "termSec": 56694,
+   "ambiguous": false
+  },
+  "G44": {
+   "pillars": "庚申 戊子 丁未 乙巳",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G45": {
+   "pillars": "己未 丙子 癸卯 丁巳",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G46": {
+   "pillars": "己巳 丁丑 己卯 辛未",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G47": {
+   "pillars": "乙亥 壬午 丁丑 丁未",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G48": {
+   "pillars": "戊寅 甲寅 壬辰 丁未",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G49": {
+   "pillars": "庚辰 丙戌 丙午 乙未",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G50": {
+   "pillars": "丙寅 甲午 丙午 甲午",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G51": {
+   "pillars": "戊辰 戊午 辛丑 壬辰",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G52": {
+   "pillars": "庚午 癸未 己亥 甲戌",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G53": {
+   "pillars": "辛未 癸巳 庚寅 丙子",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G54": {
+   "pillars": "辛亥 丙申 丙申 乙未",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G55": {
+   "pillars": "乙卯 辛巳 壬午 庚戌",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G56": {
+   "pillars": "丙申 丁酉 丙午 戊戌",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G57": {
+   "pillars": "丁巳 壬寅 己巳 戊辰",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G58": {
+   "pillars": "庚戌 己卯 壬寅 乙巳",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G59": {
+   "pillars": "戊午 庚申 甲寅 丙寅",
+   "termSec": null,
+   "ambiguous": false
+  },
+  "G60": {
+   "pillars": "戊子 戊午 戊戌 戊午",
+   "termSec": null,
+   "ambiguous": false
+  }
+ }
+}

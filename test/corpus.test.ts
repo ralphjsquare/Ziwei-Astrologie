@@ -58,3 +58,13 @@ describe('语料处理（纯函数，离线可测）', () => {
     expect(validateRules(makeRuleSet(rules, RULES.bazi, RULES.cross, RULES.sources, { ...RULES.corpus, ...corpus }))).toEqual([]);
   });
 });
+
+describe('第二来源核对（三命通会：Kanripo 文渊阁四库本）', () => {
+  it('核对结果文件完整，绝大多数引文与第二来源一致，差异条目被列出', async () => {
+    const { readFileSync } = await import('node:fs');
+    const r = JSON.parse(readFileSync('docs/sources/crosscheck.json', 'utf8')) as { total: number; found: number; rows: { found: boolean; quote: string }[] };
+    expect(r.total).toBeGreaterThan(100);
+    expect(r.found / r.total).toBeGreaterThan(0.9);
+    expect(r.rows.filter((x) => !x.found)).toHaveLength(r.total - r.found);
+  });
+});

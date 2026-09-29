@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { computeCharts, BRANCHES, STEMS, canonicalJson } from '../src/index';
 import type { BirthInput } from '../src/core/types';
 import golden from './fixtures/golden.json';
+import sxtwl from './fixtures/sxtwl-pillars.json';
 
 // 黄金测试：期望值来自独立实现（iztro、tyme4ts），不是本引擎输出（ADR-006）。
 // 覆盖矩阵：闰月、子时、立春、春节与立春先后、节令交接、范围两端、农历三十、夏令时、随机覆盖。
@@ -37,4 +38,11 @@ describe('黄金盘（紫微 60 + 八字 60，独立实现为标准）', () => {
       expect([b.bazi.luck.start.years, b.bazi.luck.start.months, b.bazi.luck.start.days]).toEqual(c.expected.bazi.luckStart);
     });
   }
+
+  // 第三个独立来源：寿星天文历 sxtwl（tools/py/sxtwl_pillars.py 生成），与 tyme4ts 的期望值逐例比对
+  it('八字四柱与 sxtwl 独立推算一致（60 例）', () => {
+    const cases = sxtwl.cases as Record<string, { pillars: string }>;
+    expect(Object.keys(cases)).toHaveLength(60);
+    for (const c of golden.cases) expect(cases[c.id].pillars, c.id).toBe(c.expected.bazi.pillars);
+  });
 });

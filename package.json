@@ -17,6 +17,7 @@
     "gen:golden": "tsx tools/gen-golden.ts",
     "corpus:find": "tsx tools/corpus.ts find",
     "corpus:fetch": "tsx tools/corpus.ts fetch",
+    "corpus:crosscheck": "tsx tools/crosscheck.ts --fetch",
     "corpus:import": "tsx tools/corpus.ts import",
     "corpus:suggest": "tsx tools/corpus.ts suggest",
     "corpus:apply": "tsx tools/corpus.ts apply",

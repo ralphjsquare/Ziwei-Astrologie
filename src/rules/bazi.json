@@ -762,15 +762,21 @@
    "value": "偏强"
   },
   "title": "日主偏强（候选）",
-  "plain": "日主的助力（比劫、印）在盘中占优，传统上称“身强”，宜以泄、耗、克（食伤、财、官杀）来平衡。本项目的旺衰判断是基于十神加权的简化候选，不是唯一结论。",
+  "plain": "日主偏强时，传统做法是设法以财、食伤来疏泄平衡。《滴天髓輯要》讲“身旺而傷官旺者，見財而可見官”，说明身旺要看盘中其他成分如何搭配。本项目的旺衰判断只是简化候选，不是唯一结论。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "note": "旺衰与扶抑的传统说法，篇目待核"
+    "ref": "dts",
+    "section": "06",
+    "note": "引文来自维基文库《滴天髓輯要》转录本，页面未附影印本，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "dts/06#1",
+    "quote": "身旺而傷官旺者，見財而可見官，以財生官，且以財洩傷也"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -778,7 +784,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.strength.偏弱",
@@ -788,15 +794,21 @@
    "value": "偏弱"
   },
   "title": "日主偏弱（候选）",
-  "plain": "日主的助力较少，泄耗克的力量较多，传统上称“身弱”，宜以印、比劫来扶助。本项目的旺衰判断是基于十神加权的简化候选，不是唯一结论。",
+  "plain": "日主偏弱时，传统上倾向借印、比劫来扶助。《滴天髓輯要》讲“身弱而傷官旺者，見印而可見官，官以生印，印以扶身也”。本项目的旺衰判断只是简化候选，不是唯一结论。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "note": "旺衰与扶抑的传统说法，篇目待核"
+    "ref": "dts",
+    "section": "06",
+    "note": "引文来自维基文库《滴天髓輯要》转录本，页面未附影印本，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "dts/06#1",
+    "quote": "身弱而傷官旺者，見印而可見官，官以生印，印以扶身也"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -804,7 +816,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.strength.中和",
@@ -814,15 +826,21 @@
    "value": "中和"
   },
   "title": "日主中和（候选）",
-  "plain": "日主与泄耗克的力量较为均衡，传统上称“中和”，需要结合格局与调候进一步判断。本项目的旺衰判断是基于十神加权的简化候选，不是唯一结论。",
+  "plain": "传统上把“中和”看作较平衡的状态。《滴天髓輯要》说“中而且和，子平之要法”，同时又指出偏枯、有病也可能成格局，并非中和才好。本项目的“中和”只是简化候选。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "note": "旺衰与扶抑的传统说法，篇目待核"
+    "ref": "dts",
+    "section": "13",
+    "note": "引文来自维基文库《滴天髓輯要》转录本，页面未附影印本，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "dts/13#1",
+    "quote": "中而且和，子平之要法"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -830,7 +848,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.pattern.正官格",

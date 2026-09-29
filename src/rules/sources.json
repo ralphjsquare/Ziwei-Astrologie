@@ -1,44 +1,51 @@
 {
- "zwqs": {
-  "book": "紫微斗数全书",
-  "author": "题陈希夷（传统署名，本项目不断言作者）",
-  "edition": "维基文库转录本，底本未标明；引文须对照影印本核对",
-  "verified": false,
-  "note": "引文取自维基文库转录本（CC BY-SA 4.0），繁简混用，个别字疑为转录错误；转述已尽量忠实，但引用前须由审核人对照影印本核对。"
- },
- "zpzq": {
-  "book": "子平真诠",
-  "author": "清·沈孝瞻",
-  "edition": "待核",
-  "verified": false,
-  "note": "同上，篇目级引用，待核。"
- },
- "yhzp": {
-  "book": "渊海子平",
-  "author": "宋·徐子平（传）",
-  "edition": "待核",
-  "verified": false,
-  "note": "同上，篇目级引用，待核。"
- },
- "smtht": {
-  "book": "三命通会",
-  "author": "明·万民英",
-  "edition": "维基文库转录本（卷一至卷九），底本未标明；引文须对照影印本核对",
-  "verified": false,
-  "note": "引文取自维基文库转录本（CC BY-SA 4.0）；转述已尽量忠实，但引用前须由审核人对照影印本核对。"
- },
- "adr": {
-  "book": "本项目算法规格与决策记录",
-  "author": "ziwei-astrologie",
-  "edition": "docs/adr",
-  "verified": true,
-  "note": "结构性事实，由算法定义直接得出，无须古籍原文。"
- },
- "modern": {
-  "book": "现代通行整理",
-  "author": "—",
-  "edition": "—",
-  "verified": false,
-  "note": "现代命理书籍与软件的通行说法，非古籍原文，仅供参考。"
- }
+  "zwqs": {
+    "book": "紫微斗数全书",
+    "author": "题陈希夷（传统署名，本项目不断言作者）",
+    "edition": "维基文库转录本，底本未标明；引文须对照影印本核对",
+    "verified": false,
+    "note": "引文取自维基文库转录本（CC BY-SA 4.0），繁简混用，个别字疑为转录错误；转述已尽量忠实，但引用前须由审核人对照影印本核对。"
+  },
+  "zpzq": {
+    "book": "子平真诠",
+    "author": "清·沈孝瞻",
+    "edition": "待核",
+    "verified": false,
+    "note": "同上，篇目级引用，待核。"
+  },
+  "yhzp": {
+    "book": "渊海子平",
+    "author": "宋·徐子平（传）",
+    "edition": "待核",
+    "verified": false,
+    "note": "同上，篇目级引用，待核。"
+  },
+  "smtht": {
+    "book": "三命通会",
+    "author": "明·万民英",
+    "edition": "维基文库转录本（卷一至卷九），底本未标明；引文已与 Kanripo 文渊阁四库全书本机械核对（105/110 条一致，5 条存在文字差异，见 docs/sources/crosscheck.json），仍须对照影印本核对",
+    "verified": false,
+    "note": "引文取自维基文库转录本（CC BY-SA 4.0）；转述已尽量忠实，但引用前须由审核人对照影印本核对。"
+  },
+  "adr": {
+    "book": "本项目算法规格与决策记录",
+    "author": "ziwei-astrologie",
+    "edition": "docs/adr",
+    "verified": true,
+    "note": "结构性事实，由算法定义直接得出，无须古籍原文。"
+  },
+  "modern": {
+    "book": "现代通行整理",
+    "author": "—",
+    "edition": "—",
+    "verified": false,
+    "note": "现代命理书籍与软件的通行说法，非古籍原文，仅供参考。"
+  },
+  "dts": {
+    "book": "滴天髓（滴天髓輯要）",
+    "author": "题刘伯温著，清·陈之遴辑（传统署名，本项目不断言作者）",
+    "edition": "维基文库转录本，页面标明为《滴天髓輯要》，未附影印本；引文须对照影印本核对",
+    "verified": false,
+    "note": "引文取自维基文库转录本（CC BY-SA 4.0）；转述已尽量忠实，但引用前须由审核人对照影印本核对。"
+  }
 }

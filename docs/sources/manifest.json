@@ -19,7 +19,7 @@
       "includeSubpages": true,
       "license": "原典为明清著作，属公有领域；转录文本 © 维基文库贡献者，依 CC BY-SA 4.0 授权（署名、相同方式共享；2026-09-29 经 MediaWiki API siteinfo 核对站点授权）",
       "licenseVerified": true,
-      "edition": "维基文库转录本（卷一至卷九，缺卷十至十二），底本未标明；引用前须对照影印本核对",
+      "edition": "维基文库转录本（卷一至卷九，缺卷十至十二），底本未标明；已用 Kanripo 文渊阁四库全书本（KR3g0042，版本 WYG）作第二来源逐条核对引文，见 docs/sources/crosscheck.json",
       "joinLines": true
     },
     {
@@ -40,10 +40,10 @@
       "site": "zh.wikisource.org",
       "title": "滴天髓",
       "includeSubpages": true,
-      "license": "",
-      "licenseVerified": false,
-      "edition": "",
-      "_note": "已于 2026-09-29 下载全部 34 页（滴天髓輯要，题刘伯温著、陈之遴辑）；尚未核对逐页许可与底本，未入库（v1.1 备选八字方法用）"
+      "license": "原典为明清著作，属公有领域；转录文本 © 维基文库贡献者，依 CC BY-SA 4.0 授权（署名、相同方式共享；2026-09-29 经 MediaWiki API siteinfo 核对站点授权）",
+      "licenseVerified": true,
+      "edition": "《滴天髓輯要》（页面题：劉伯溫著，清陳之遴素庵輯；页面未附影印本链接）；版本名称明确，但转录与影印本的逐字核对尚未做",
+      "joinLines": false
     },
     {
       "id": "qtbj",
