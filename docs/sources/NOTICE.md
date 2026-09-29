@@ -17,3 +17,4 @@
 - Kanripo（漢籍リポジトリ）`KR3g0042` 三命通会，文渊阁四库全书本（版本 WYG）：仅用 `npm run corpus:crosscheck` 下载到本地（已 gitignore）做机械比对，结果写入 `docs/sources/crosscheck.json`；其文本不并入语料库，其许可未逐条核实，因此不再分发。
 - 寿星天文历 `sxtwl`（PyPI）：仅用于生成 `test/fixtures/sxtwl-pillars.json`（见 `tools/py/sxtwl_pillars.py`），不包含其代码。
 - archive.org 上的明刻本影印（紫微斗数全书·南阳堂本 1600；刻京台增补渊海子平大全·万历二十八年乔山堂本）：版本明确，但站内 OCR 对木刻本是乱码，无法机械比对，暂未使用。
+- 用户提供的三份电子书（子平真诠原本 epub、渊海子平 epub、穷通宝鉴 txt，均来自第三方电子书站，版本与整理者不明）：仅用于核对篇名是否存在，其文本不入库、不再分发；渊海子平电子本夹带广告、疑为节本，穷通宝鉴与子平真诠尚未逐条比对正文。
