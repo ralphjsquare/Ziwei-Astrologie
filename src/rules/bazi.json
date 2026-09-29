@@ -2268,5 +2268,31 @@
    "history": []
   },
   "basis": "quoted"
+ },
+ {
+  "id": "bz.tiaohou",
+  "topic": "tiaohou",
+  "when": {
+   "kind": "tiaohou"
+  },
+  "title": "调候参考（穷通宝鉴）",
+  "plain": "“调候”是传统上依出生月份的寒暖燥湿来调节命局的取用思路。下面引出《穷通宝鉴》中与本命日主、出生月份对应条目的原文开头，供对照阅读；本项目不从原文中自动提取“用神”，也不据此下结论。以上是传统说法，并不代表现实中一定如此，电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "qtbj",
+    "section": "各日主·各月条目",
+    "note": "【版本未核实】仅引条目开头原文"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "chapter-pointer"
  }
 ]

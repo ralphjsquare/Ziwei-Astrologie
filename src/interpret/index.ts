@@ -126,6 +126,15 @@ export function interpretNatal(b: ChartBundle, R: RuleSet): InterpSection[] {
   }
   sections.push({ id: 'bz-strength', heading: '八字·旺衰、格局、用神（候选）', items: items2 });
 
+  {
+    const th = need(R, 'bz.tiaohou');
+    const key = `qtbj/${STEMS[dm]}${BRANCHES[bz.pillars.month.branch]}#1`;
+    const ent = R.corpus[key];
+    const item = toItem(R, th, ent ? th.plain : `${th.plain}（所用电子本没有收录“${STEMS[dm]}日主·${BRANCHES[bz.pillars.month.branch]}月”条目，此处从略。）`, `日主${STEMS[dm]}，出生月${BRANCHES[bz.pillars.month.branch]}月`);
+    if (ent) item.classical = [{ quote: ent.text, source: `${ent.book}·${ent.section}` }];
+    sections.push({ id: 'bz-tiaohou', heading: '八字·调候参考（穷通宝鉴）', items: [item] });
+  }
+
   const items3: InterpItem[] = [];
   const seen = new Set<string>();
   for (const rel of bz.relations) {

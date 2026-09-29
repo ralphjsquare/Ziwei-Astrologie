@@ -18,5 +18,11 @@ for (const [id, chapters] of Object.entries(excerpts)) {
     corpus[`${id}/${section}#1`] = { book: BOOKS[id].book, section, text: plain, url: 'user-provided-ebook', license: LICENSE, retrievedAt: '2026-09-29', sha256: createHash('sha256').update(plain).digest('hex'), edition: BOOKS[id].edition };
   }
 }
+// 穷通宝鉴：日主×月份条目（tools/gen-tiaohou.ts 生成）
+const QT_EDITION = '【版本未核实】第三方电子书站的“穷通宝鉴”txt（整理者与底本不明）；用户于 2026-09-29 提供并接受为未核实来源；须对照影印本核对';
+const qt = JSON.parse(readFileSync('docs/sources/qtbj-excerpts.json', 'utf8')) as Record<string, { lead: string; shared?: boolean }>;
+for (const [key, v] of Object.entries(qt)) {
+  corpus[`qtbj/${key}#1`] = { book: '穷通宝鉴', section: `日主${key[0]}·${key[1]}月${v.shared ? '（原书按季节或相邻月份合写）' : ''}`, text: v.lead, url: 'user-provided-ebook', license: LICENSE, retrievedAt: '2026-09-29', sha256: createHash('sha256').update(v.lead).digest('hex'), edition: QT_EDITION };
+}
 writeFileSync('src/rules/corpus.json', JSON.stringify(corpus, null, 1) + '\n', 'utf8');
 console.log(`语料条目：${Object.keys(corpus).length}`);

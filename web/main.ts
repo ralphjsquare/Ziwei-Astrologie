@@ -125,7 +125,7 @@ function buildWarnings(b: ChartBundle, extra: string[]): string[] {
 // ---------- 渲染 ----------
 function itemHtml(it: InterpItem): string {
   const src = it.sources.map((s) => `<li>${esc(s.book)}${s.section ? '·' + esc(s.section) : ''}${s.verified ? '' : '（底本未核对）'}${s.note ? ' — ' + esc(s.note) : ''}</li>`).join('');
-  const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}${q.variant ? `<br><span class="note">版本异文：${esc(q.variant)}</span>` : ''}</li>`).join('') + '<li class="note">引文来自维基文库转录本，底本未标明，须对照影印本核对。</li>' : '<li>本条暂无古籍引文（属通行说法或算法结构）。</li>';
+  const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}${q.variant ? `<br><span class="note">版本异文：${esc(q.variant)}</span>` : ''}</li>`).join('') + '<li class="note">引文来自电子转录本（维基文库或用户提供的电子书，见各条出处的版本说明，部分“版本未核实”），须对照影印本核对。</li>' : '<li>本条暂无古籍引文（属通行说法或算法结构）。</li>';
   return `<article class="item ev-${it.evidenceType}"><h4>${esc(it.title)} <span class="badge">${esc(it.evidenceLabel)}</span><span class="badge ${it.reviewStatus}">${esc(it.reviewLabel)}</span>${it.composed ? '<span class="badge">模板组合</span>' : ''}${it.classical.length ? '<span class="badge quoted">附古籍引文</span>' : ''}</h4>
   ${it.context ? `<p class="ctx">${esc(it.context)}</p>` : ''}<p>${esc(it.text)}</p>
   <details><summary>出处与古籍原文</summary><p>依据类型：${esc(it.basisLabel)}</p><ul>${src}</ul><p>古籍原文：</p><ul>${cls}</ul></details></article>`;
