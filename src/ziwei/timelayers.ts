@@ -1,4 +1,5 @@
 import { BRANCHES, STEMS, mod } from '../core/ganzhi';
+import { assertSupportedYear } from '../calendar/lunar';
 import { SIHUA } from './tables';
 import type { Palace, PalaceName, Transform, ZiweiChart } from './types';
 import { PALACE_NAMES } from './types';
@@ -21,6 +22,7 @@ const findStar = (c: ZiweiChart, star: string): Palace | undefined => c.palaces.
 
 /** 紫微流年、流月。year 按农历年干支（正月初一换年）计。 */
 export function ziweiYearLayer(c: ZiweiChart, year: number): ZiweiYearLayer {
+  assertSupportedYear(year);
   const idx = mod(year - 4, 60);
   const stem = idx % 10, branch = idx % 12;
   const age = year - c.input.lunarYear + 1;

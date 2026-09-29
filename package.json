@@ -13,7 +13,8 @@
     "review:import": "tsx tools/review-import.ts",
     "dev": "vite --config web/vite.config.ts",
     "build": "vite build --config web/vite.config.ts",
-    "verify": "npm run typecheck && npm run check:purity && npm run check:sources && npm test"
+    "verify": "npm run typecheck && npm run check:purity && npm run check:sources && npm test",
+    "gen:golden": "tsx tools/gen-golden.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.3",

@@ -3,7 +3,7 @@ import fc from 'fast-check';
 import { astro } from 'iztro';
 import { computeCharts, BRANCHES, STEMS, ziweiYearLayer } from '../src/index';
 import { STAR_ORDER, effectiveLunarMonth, tianfuPosition, ziweiPosition } from '../src/ziwei/engine';
-import { solarToLunar } from '../src/calendar/lunar';
+import { lunarToSolar, solarToLunar } from '../src/calendar/lunar';
 import { addDays } from '../src/calendar/civil';
 import { rng, solarInput } from './helpers';
 
@@ -91,6 +91,11 @@ describe('紫微排盘：性质', () => {
 });
 
 describe('紫微流年/流月', () => {
+  it('年份超出支持范围时明确报错', () => {
+    const z = computeCharts(solarInput(1990, 6, 15, 10, 30)).ziwei;
+    expect(() => ziweiYearLayer(z, 2101)).toThrow(/outside supported range/);
+    expect(() => ziweiYearLayer(z, 1900)).toThrow(/outside supported range/);
+  });
   it('流年命宫为太岁所在宫；流年四化按当年天干；斗君与流月', () => {
     const z = computeCharts(solarInput(1990, 6, 15, 10, 30)).ziwei;
     const y = ziweiYearLayer(z, 2024); // 甲辰
@@ -131,6 +136,28 @@ describe('L3 与独立实现（iztro）差分', () => {
       }
       if (a.fiveElementsClass !== c.fiveElementBureau.name) errs.push('bureau');
       if (errs.length) bad.push(`${y}-${m}-${d} ${h}h ${g}: ${errs.join(',')}`);
+    }
+    expect(bad).toEqual([]);
+  }, 180000);
+
+  it('流年命宫、流月（斗君法）、流年四化、大限宫位：与 iztro 逐项一致（40 盘 × 4 个流月）', () => {
+    const r = rng(31337);
+    const bad: string[] = [];
+    for (let k = 0; k < 40; k++) {
+      const y = r.int(1930, 2060), m = r.int(1, 12), d = r.int(1, 28), h = r.int(1, 22), g = k % 2 ? 'F' : 'M';
+      const c = computeCharts(solarInput(y, m, d, h, 0, g)).ziwei;
+      const a = astro.bySolar(`${y}-${m}-${d}`, Math.floor(((h + 1) % 24) / 2), g === 'M' ? '男' : '女', true, 'zh-CN');
+      const fy = r.int(y + 1, y + 50);
+      const zl = ziweiYearLayer(c, fy);
+      for (const lm of [1, 4, 8, 12]) {
+        const sd = lunarToSolar({ year: fy, month: lm, leap: false, day: 10 });
+        const hz = a.horoscope(`${sd.y}-${sd.m}-${sd.d}`, 6);
+        const br = (i: number) => B(a.palaces[i].earthlyBranch);
+        if (br(hz.monthly.index) !== zl.months[lm - 1].branch) bad.push(`month ${y}-${m}-${d} fy${fy} lm${lm}`);
+        if (br(hz.yearly.index) !== zl.flowMingBranch) bad.push(`year ${y}-${m}-${d} fy${fy}`);
+        if (zl.decade && br(hz.decadal.index) !== zl.decade.branch) bad.push(`decade ${y}-${m}-${d} fy${fy}`);
+        if (JSON.stringify(hz.yearly.mutagen) !== JSON.stringify(zl.transforms.map((t) => t.star))) bad.push(`mutagen ${fy}`);
+      }
     }
     expect(bad).toEqual([]);
   }, 180000);

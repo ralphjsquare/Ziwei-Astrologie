@@ -1,0 +1,334 @@
+import {
+  ENGINE_VERSION, computeCharts, baziYearLayer, ziweiYearLayer, BRANCHES, STEMS, InputError, OutOfRangeError,
+  SUPPORTED_MAX_YEAR, SUPPORTED_MIN_YEAR, type BirthInput, type ChartBundle, type Options, type Place,
+} from '../src/index';
+import { chinaDstState } from '../src/calendar/china-dst';
+import { RULES, REVIEW_LABEL, rulesContentHash, type ReviewStatus } from '../src/rules';
+import { interpretNatal, interpretYear, ruleItem, DISCLAIMER, type InterpItem, type InterpSection } from '../src/interpret';
+import { crossReference, CROSS_DISCLAIMER } from '../src/crossref';
+import { exportChartReview, exportRules, selectRules, type ReviewFormat, type ReviewScope } from '../src/review';
+import { IndexedDbStorage, exportArchive, importArchive, makeRecord, openRecord, type ChartRecord, type StorageAdapter } from '../src/storage';
+
+const $ = <T extends HTMLElement>(sel: string, root: ParentNode = document) => root.querySelector(sel) as T;
+const esc = (s: unknown) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+const TABS: [string, string][] = [['chart', '命盘'], ['time', '时间层'], ['cross', '对照'], ['read', '解读'], ['archive', '存档'], ['settings', '设置与导出']];
+
+interface State {
+  bundle: ChartBundle | null; tab: string; year: number; onlyReviewed: boolean;
+  selected: InterpItem[]; warnings: string[]; error: string; changeNote: string; savedName: string;
+}
+const st: State = { bundle: null, tab: 'chart', year: new Date().getFullYear(), onlyReviewed: false, selected: [], warnings: [], error: '', changeNote: '', savedName: '' };
+let storage: StorageAdapter | null = null;
+try { storage = new IndexedDbStorage(indexedDB); } catch { storage = null; }
+
+// ---------- 表单 ----------
+const app = $('#app');
+app.innerHTML = `
+<form id="f" class="card" novalidate>
+  <div class="form">
+    <label>历法<select id="cal"><option value="solar">公历</option><option value="lunar">农历</option></select></label>
+    <label>年<input id="y" type="number" min="${SUPPORTED_MIN_YEAR}" max="${SUPPORTED_MAX_YEAR}" value="1990" required></label>
+    <label>月<input id="m" type="number" min="1" max="12" value="6" required></label>
+    <label>日<input id="d" type="number" min="1" max="31" value="15" required></label>
+    <label class="inline" id="leapw" hidden><input id="leap" type="checkbox"> 闰月</label>
+    <label>时（0–23）<input id="hh" type="number" min="0" max="23" value="10" required></label>
+    <label>分<input id="mm" type="number" min="0" max="59" value="30" required></label>
+    <label>性别<select id="g"><option value="M">男</option><option value="F">女</option></select></label>
+    <label>出生地时区<select id="tz"><option value="cn">中国大陆（UTC+8）</option><option value="custom">自定义偏移</option></select></label>
+    <label id="offw" hidden>UTC 偏移（小时，如 9、-5、5.5）<input id="off" type="number" step="0.25" value="8"></label>
+    <label id="dstw">夏令时<select id="dst"><option value="auto">自动（中国 1986–1991）</option><option value="0">否</option><option value="60">是（+1 小时）</option></select></label>
+    <label>出生地东经（度，可选）<input id="lon" type="number" step="0.01" min="-180" max="180" placeholder="如 116.4"></label>
+    <label class="inline"><input id="tst" type="checkbox" disabled> 使用真太阳时（需填经度）</label>
+  </div>
+  <details class="row"><summary>高级选项（日界、闰月规则）</summary>
+    <div class="form" style="margin-top:8px">
+      <label>八字日柱换日<select id="bb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
+      <label>紫微生日换日<select id="zb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
+      <label>闰月取月（紫微）<select id="lr"><option value="midMonth">月中分界（默认）</option><option value="currentMonth">按本月</option><option value="nextMonth">按下月</option></select></label>
+    </div>
+  </details>
+  <div class="row"><button type="submit">排盘</button><span class="note">时辰以整点为界（23:00 起子时）。</span></div>
+</form>
+<div id="msg"></div>
+<div id="out"></div>
+<p class="disclaimer">${esc(DISCLAIMER)}</p>`;
+
+const val = (id: string) => ($(`#${id}`) as HTMLInputElement).value;
+const chk = (id: string) => ($(`#${id}`) as HTMLInputElement).checked;
+const num = (id: string) => Number(val(id));
+
+function syncForm() {
+  $('#leapw').hidden = val('cal') !== 'lunar';
+  $('#offw').hidden = val('tz') !== 'custom';
+  ($('#dst') as HTMLSelectElement).querySelector('option[value="auto"]')!.toggleAttribute('hidden', val('tz') !== 'cn');
+  if (val('tz') !== 'cn' && val('dst') === 'auto') ($('#dst') as HTMLSelectElement).value = '0';
+  const hasLon = val('lon').trim() !== '';
+  ($('#tst') as HTMLInputElement).disabled = !hasLon;
+  if (!hasLon) ($('#tst') as HTMLInputElement).checked = false;
+}
+$('#f').addEventListener('input', syncForm);
+syncForm();
+
+function readInput(): { input: BirthInput; options: Partial<Options>; warnings: string[] } {
+  const warnings: string[] = [];
+  const cal = val('cal') as 'solar' | 'lunar';
+  const y = num('y'), m = num('m'), d = num('d'), hh = num('hh'), mm = num('mm');
+  let offMin = 480, dstMin = 0;
+  if (val('tz') === 'cn') {
+    if (val('dst') === 'auto') {
+      if (cal === 'solar') {
+        const s = chinaDstState(y, m, d, hh);
+        if (s === 'dst') dstMin = 60;
+        if (s === 'ambiguous') warnings.push('该钟表时间处于夏令时结束时重复的一小时，无法确定是夏令时还是标准时间，已按标准时间处理；请在“夏令时”中手动选择。');
+        if (s === 'nonexistent') throw new InputError('该钟表时间处于夏令时开始时被跳过的一小时，实际不存在，请核对出生时间。');
+      } else if (y >= 1986 && y <= 1991) warnings.push('农历输入无法自动判断夏令时，1986–1991 年出生请手动选择“夏令时”。');
+    } else dstMin = Number(val('dst'));
+    offMin = 480 + dstMin;
+  } else {
+    dstMin = Number(val('dst'));
+    offMin = Math.round(num('off') * 60);
+  }
+  const lon = val('lon').trim() === '' ? undefined : num('lon');
+  const place: Place = { utcOffsetMinutes: offMin, dstMinutes: dstMin, ...(lon !== undefined ? { longitude: lon } : {}) };
+  const input: BirthInput = { calendar: cal, year: y, month: m, day: d, ...(cal === 'lunar' ? { leap: chk('leap') } : {}), hour: hh, minute: mm, gender: val('g') as 'M' | 'F', place };
+  const options: Partial<Options> = {
+    trueSolarTime: chk('tst'), baziDayBoundary: val('bb') as Options['baziDayBoundary'], ziweiDayBoundary: val('zb') as Options['ziweiDayBoundary'],
+    leapMonthRule: val('lr') as Options['leapMonthRule'],
+  };
+  return { input, options, warnings };
+}
+
+function buildWarnings(b: ChartBundle, extra: string[]): string[] {
+  const w = [...extra];
+  const f = b.resolved.flags;
+  if (f.nearTermBoundary) w.push(`出生时刻距离节令“${f.nearestJie}”仅 ${Math.abs(f.nearestJieMinutes)} 分钟：月柱（及可能的年柱、大运起运）对时间极为敏感，建议核对出生时间是否精确到分钟。`);
+  else if (f.termOnSameDay) w.push(`出生当天有节令交接（最近：${f.nearestJie}），月柱已按分钟精度判定。`);
+  if (b.resolved.effective.hh === 23 || b.resolved.effective.hh === 0) {
+    w.push(`出生在子时附近（有效时间 ${String(b.resolved.effective.hh).padStart(2, '0')}:${String(b.resolved.effective.mm).padStart(2, '0')}）。当前日界规则：八字 ${b.options.baziDayBoundary === 'zi23' ? '23:00 起算次日' : '00:00 起算次日'}，紫微 ${b.options.ziweiDayBoundary === 'zi23' ? '23:00 起算次日' : '00:00 起算次日'}；可在高级选项中更改。`);
+  }
+  if (b.options.trueSolarTime) w.push(`已启用真太阳时，相对标准时间校正 ${Math.round(b.resolved.trueSolarAdjustSeconds / 60)} 分钟，有效时间 ${b.resolved.effective.hh}:${String(b.resolved.effective.mm).padStart(2, '0')}。`);
+  if (b.resolved.clock.y < 1949 || b.input.place.utcOffsetMinutes !== 480 + b.input.place.dstMinutes) w.push('早期或非中国大陆出生时间的时区规则可能与当时实际采用的时间不一致，此处按您给出的偏移计算。');
+  if (b.ziwei.input.lunarYear !== b.resolved.baziDate.y && STEMS[b.ziwei.yearStem] + BRANCHES[b.ziwei.yearBranch] !== STEMS[b.bazi.pillars.year.stem] + BRANCHES[b.bazi.pillars.year.branch]) {
+    w.push('紫微（农历正月初一换年）与八字（立春换年）的年干支不同，这是两套体系口径的差异，并非错误（见“对照”页）。');
+  }
+  return w;
+}
+
+// ---------- 渲染 ----------
+function itemHtml(it: InterpItem): string {
+  const src = it.sources.map((s) => `<li>${esc(s.book)}${s.section ? '·' + esc(s.section) : ''}${s.verified ? '' : '（未核对原文）'}${s.note ? ' — ' + esc(s.note) : ''}</li>`).join('');
+  const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}</li>`).join('') : '<li>尚未入库：公版古籍语料未导入，本条不提供逐字引文。</li>';
+  return `<article class="item ev-${it.evidenceType}"><h4>${esc(it.title)} <span class="badge">${esc(it.evidenceLabel)}</span><span class="badge ${it.reviewStatus}">${esc(it.reviewLabel)}</span>${it.composed ? '<span class="badge">模板组合</span>' : ''}</h4>
+  ${it.context ? `<p class="ctx">${esc(it.context)}</p>` : ''}<p>${esc(it.text)}</p>
+  <details><summary>出处与古籍原文</summary><ul>${src}</ul><p>古籍原文：</p><ul>${cls}</ul></details></article>`;
+}
+const keepItem = (it: InterpItem) => !st.onlyReviewed || it.reviewStatus === 'reviewed' || it.reviewStatus === 'approved';
+const sectionsHtml = (secs: InterpSection[]) =>
+  secs.map((s) => `<section class="card"><h3>${esc(s.heading)}</h3>${s.items.filter(keepItem).map(itemHtml).join('') || '<p class="note">没有符合筛选条件的条目。</p>'}</section>`).join('');
+
+function chartHtml(b: ChartBundle): string {
+  const z = b.ziwei;
+  const cells = z.palaces.map((p) => {
+    const stars = p.stars.map((s) => `<span class="star ${s.kind}" data-star="${esc(s.name)}" data-tf="${s.transform ?? ''}">${esc(s.name)}${s.transform ? `<i class="tf ${s.transform}">${s.transform}</i>` : ''}</span>`).join('');
+    return `<div class="pal${p.isBody ? ' body' : ''}" data-branch="${p.branch}" data-palace="${p.name}" style="grid-area:b${p.branch}">
+      <div class="pal-head"><span class="pname">${p.name}${p.isBody ? '·身' : ''}</span><span>${STEMS[p.stem]}${BRANCHES[p.branch]}</span></div>
+      <div class="stars">${stars}</div><div class="pal-foot"><span>大限 ${p.decade.startAge}–${p.decade.endAge}</span></div></div>`;
+  }).join('');
+  const r = b.resolved, i = b.input;
+  const pil = (['year', 'month', 'day', 'hour'] as const).map((k) => STEMS[b.bazi.pillars[k].stem] + BRANCHES[b.bazi.pillars[k].branch]).join(' ');
+  const center = `<div class="center"><h3>${esc(st.savedName || '命盘')}</h3>
+    <div>公历 ${r.clock.y}-${r.clock.m}-${r.clock.d} ${String(r.clock.hh).padStart(2, '0')}:${String(r.clock.mm).padStart(2, '0')} · ${i.gender === 'M' ? '男' : '女'}</div>
+    <div>农历 ${r.clockLunar.year}年${r.clockLunar.leap ? '闰' : ''}${r.clockLunar.month}月${r.clockLunar.day}日 · ${STEMS[z.yearStem]}${BRANCHES[z.yearBranch]}年 · ${BRANCHES[z.input.hourBranch]}时</div>
+    <div>${z.fiveElementBureau.name}（${z.fiveElementBureau.nayin}）· 大限${z.decadeDirection === 1 ? '顺' : '逆'}行</div>
+    <div>四化：${z.fourTransforms.lu}禄 ${z.fourTransforms.quan}权 ${z.fourTransforms.ke}科 ${z.fourTransforms.ji}忌</div>
+    <div>八字：${pil}</div><div class="note">点击星曜或宫位查看解释</div></div>`;
+  return `<div class="chart">${cells}${center}</div>`;
+}
+
+function baziHtml(b: ChartBundle): string {
+  const bz = b.bazi;
+  const cols = ['year', 'month', 'day', 'hour'] as const, nm = ['年柱', '月柱', '日柱（日主）', '时柱'];
+  const row = (label: string, f: (k: (typeof cols)[number]) => string) => `<tr><th>${label}</th>${cols.map((k) => `<td>${f(k)}</td>`).join('')}</tr>`;
+  const P = bz.pillars;
+  const table = `<div class="scroll"><table><tr><th></th>${nm.map((n) => `<th>${n}</th>`).join('')}</tr>
+    ${row('十神（天干）', (k) => P[k].stemTenGod ?? '日主')}${row('天干', (k) => STEMS[P[k].stem])}${row('地支', (k) => BRANCHES[P[k].branch])}
+    ${row('藏干（十神）', (k) => P[k].hidden.map((h) => `${STEMS[h.stem]}(${h.tenGod})`).join(' '))}
+    ${row('纳音', (k) => P[k].nayin)}${row('十二长生（日主）', (k) => P[k].longSheng)}</table></div>`;
+  const kong = bz.kongWang.map((x) => BRANCHES[x]).join('');
+  return `<div class="card"><h3>八字四柱</h3>${table}<p class="note">日柱旬空：${kong}；节令：${bz.boundaries.monthJie}之后；旺衰候选：${bz.strength.candidate}（${bz.strength.method}）；格局候选：${bz.patterns.slice(0, 2).map((p) => p.name).join('、') || '—'}</p></div>`;
+}
+
+function timeHtml(b: ChartBundle): string {
+  const z = b.ziwei, bz = b.bazi;
+  const decades = [...z.palaces].sort((a, c) => a.decade.startAge - c.decade.startAge)
+    .map((p) => `<tr><td>${p.decade.startAge}–${p.decade.endAge}</td><td>${BRANCHES[p.branch]}宫 ${p.name}</td></tr>`).join('');
+  const luck = bz.luck.cycles.map((c) => `<tr><td>${c.startAge}–${c.endAge}</td><td>${STEMS[c.stem]}${BRANCHES[c.branch]}</td><td>${c.stemTenGod}</td><td>${c.startYear}</td></tr>`).join('');
+  let yearPart = '';
+  try {
+    const zl = ziweiYearLayer(z, st.year), bl = baziYearLayer(bz, st.year);
+    const zm = zl.months.map((m) => `<tr><td>${m.month}月</td><td>${BRANCHES[m.branch]}宫 ${m.natalPalace}</td><td>${esc(m.stars.join('、') || '—')}</td></tr>`).join('');
+    const bm = bl.months.map((m) => `<tr><td>${m.jie}</td><td>${STEMS[m.stem]}${BRANCHES[m.branch]}</td><td>${m.stemTenGod}</td></tr>`).join('');
+    yearPart = `<div class="card"><h3>${st.year} 年 · 紫微流年</h3>
+      <p>${zl.steps.map(esc).join('<br>')}</p>
+      <div class="scroll"><table><tr><th>流月（斗君起）</th><th>落宫</th><th>星曜</th></tr>${zm}</table></div></div>
+      <div class="card"><h3>${st.year} 年 · 八字流年</h3>
+      <p>${STEMS[bl.stem]}${BRANCHES[bl.branch]}年（${bl.nayin}），天干十神：${bl.stemTenGod}；当前大运：${bl.activeLuck ? STEMS[bl.activeLuck.stem] + BRANCHES[bl.activeLuck.branch] : '尚未起运'}</p>
+      <p>与原局、大运的关系：${bl.relations.map((r) => esc(r.type + '（' + r.members.map((m) => m.pos + m.char).join('') + '）')).join('；') || '无明显合冲刑害'}</p>
+      <div class="scroll"><table><tr><th>流月（节令起）</th><th>干支</th><th>十神</th></tr>${bm}</table></div></div>`;
+  } catch (e) { yearPart = `<div class="err">${esc((e as Error).message)}</div>`; }
+  return `<div class="card"><label style="max-width:200px">查看年份<input id="yr" type="number" min="${SUPPORTED_MIN_YEAR}" max="${SUPPORTED_MAX_YEAR}" value="${st.year}"></label></div>${yearPart}
+  <div class="card"><h3>紫微大限</h3><div class="scroll"><table><tr><th>虚岁</th><th>大限宫位</th></tr>${decades}</table></div></div>
+  <div class="card"><h3>八字大运（${bz.luck.direction === 1 ? '顺' : '逆'}排，起运 ${bz.luck.start.years} 岁 ${bz.luck.start.months} 个月 ${bz.luck.start.days} 天）</h3>
+  <div class="scroll"><table><tr><th>年龄</th><th>大运</th><th>天干十神</th><th>起始公历年</th></tr>${luck}</table></div></div>`;
+}
+
+function crossHtml(b: ChartBundle): string {
+  const items = crossReference(b, RULES, clampYear(b));
+  return `<div class="warn">${esc(CROSS_DISCLAIMER)}</div>` + items.map((c) => `<section class="card"><h3>${esc(c.title)} <span class="tag ${c.relation}">${{ agree: '一致', differ: '口径不同', info: '并列' }[c.relation]}</span>
+    <span class="badge">${esc(c.evidenceLabel)}</span><span class="badge draft">${esc(c.reviewLabel)}</span></h3>
+    <div class="cross"><div><b>紫微</b><br>${esc(c.ziwei)}</div><div><b>八字</b><br>${esc(c.bazi)}</div></div><p>${esc(c.note)}</p><p class="note">出处：${esc(c.source)}</p></section>`).join('');
+}
+
+async function archiveHtml(): Promise<string> {
+  if (!storage) return '<div class="warn">当前环境不支持本地存档（IndexedDB 不可用）。</div>';
+  const recs = await storage.list();
+  const rows = recs.map((r) => `<tr><td>${esc(r.name)}</td><td>${r.input.calendar === 'solar' ? '公历' : '农历'} ${r.input.year}-${r.input.month}-${r.input.day} ${r.input.hour}:${String(r.input.minute).padStart(2, '0')}</td><td>${esc(r.note)}</td>
+    <td><button class="secondary" data-open="${esc(r.id)}">打开</button> <button class="secondary" data-del="${esc(r.id)}">删除</button></td></tr>`).join('');
+  return `<div class="card"><h3>保存当前命盘</h3><div class="form"><label>名称<input id="sn" maxlength="40" value="${esc(st.savedName)}"></label><label>备注<input id="sc" maxlength="120"></label></div>
+    <div class="row"><button id="save" ${st.bundle ? '' : 'disabled'}>保存</button></div></div>
+    ${st.changeNote ? `<div class="warn">${st.changeNote}</div>` : ''}
+    <div class="card"><h3>已保存（${recs.length}）</h3><div class="scroll"><table><tr><th>名称</th><th>出生</th><th>备注</th><th></th></tr>${rows || '<tr><td colspan="4">暂无</td></tr>'}</table></div>
+    <div class="row"><button id="exp" class="secondary">导出全部存档（JSON）</button><label class="inline">导入存档 <input id="imp" type="file" accept="application/json,.json"></label></div>
+    <p class="note">存档保存的是出生输入与选项；打开时会重新计算，如与保存时的哈希不一致（引擎或规则升级），会提示并列出差异。</p></div>`;
+}
+
+function settingsHtml(b: ChartBundle | null): string {
+  return `<div class="card"><h3>解读显示</h3><label class="inline"><input id="onlyrev" type="checkbox" ${st.onlyReviewed ? 'checked' : ''}> 只显示已审核／已确认的条目（当前规则大多为“未审核”）</label></div>
+  <div class="card"><h3>导出审核文档</h3><p class="note">用于自行审核或与专业老师交流；软件内不做讨论。审核意见可用命令行 <code>npm run review:import</code> 导回。</p>
+  <div class="form"><label>范围<select id="rs"><option value="all">全部</option><option value="ziwei">紫微</option><option value="bazi">八字</option><option value="cross">对照</option></select></label>
+  <label>审核状态<select id="rt"><option value="all">全部</option><option value="draft">未审核</option><option value="reviewed">已审核</option><option value="approved">已确认</option></select></label>
+  <label>格式<select id="rf"><option value="md">Markdown</option><option value="csv">CSV（可填写后导回）</option><option value="json">JSON</option></select></label></div>
+  <div class="row"><button id="rexp">导出规则审核文档</button><button id="cexp" class="secondary" ${b ? '' : 'disabled'}>导出当前命盘 + 全部解读（Markdown）</button></div></div>
+  <div class="card"><h3>版本与已知限制</h3><ul>
+  <li>引擎版本 ${ENGINE_VERSION}；规则集 ${RULES.version}（内容哈希 ${rulesContentHash(RULES).slice(0, 12)}）${b ? `；本盘计算哈希 ${b.calculationHash.slice(0, 16)}` : ''}</li>
+  <li>支持 ${SUPPORTED_MIN_YEAR}–${SUPPORTED_MAX_YEAR} 年；超出范围会报错。</li>
+  <li>紫微为三合派（《紫微斗数全书》安星诀）通行版本；飞星派、四化版本差异、庙旺利陷、小限未实现。</li>
+  <li>八字为子平法；旺衰、格局、用神只给“候选与依据”，不是唯一结论；调候（穷通宝鉴）未实现。</li>
+  <li>古籍原文尚未入库（公版语料待导入），所有解释均标注“未核对原文”与审核状态。</li>
+  <li>合盘、主题对照、多流派为后续版本内容。</li></ul></div>`;
+}
+
+async function render() {
+  $('#msg').innerHTML = (st.error ? `<div class="err">${esc(st.error)}</div>` : '') + st.warnings.map((w) => `<div class="warn">${esc(w)}</div>`).join('');
+  const out = $('#out');
+  if (!st.bundle && st.tab !== 'archive' && st.tab !== 'settings') { out.innerHTML = '<div class="card">请输入出生信息后点击“排盘”。</div>' + tabsHtml(); bindTabs(); return; }
+  const b = st.bundle;
+  let body = '';
+  if (st.tab === 'chart' && b) body = `<div class="card">${chartHtml(b)}<div id="detail">${st.selected.map(itemHtml).join('')}</div></div>${baziHtml(b)}`;
+  else if (st.tab === 'time' && b) body = timeHtml(b);
+  else if (st.tab === 'cross' && b) body = crossHtml(b);
+  else if (st.tab === 'read' && b) body = sectionsHtml([...interpretNatal(b, RULES), ...interpretYear(b, clampYear(b), RULES)]);
+  else if (st.tab === 'archive') body = await archiveHtml();
+  else if (st.tab === 'settings') body = settingsHtml(b);
+  out.innerHTML = tabsHtml() + body;
+  bindTabs();
+  bindTab();
+}
+const clampYear = (b: ChartBundle) => Math.min(SUPPORTED_MAX_YEAR, Math.max(st.year, b.ziwei.input.lunarYear));
+const tabsHtml = () => `<nav class="tabs">${TABS.map(([k, n]) => `<button type="button" data-tab="${k}" class="${st.tab === k ? 'on' : ''}">${n}</button>`).join('')}</nav>`;
+function bindTabs() { document.querySelectorAll<HTMLButtonElement>('[data-tab]').forEach((el) => el.addEventListener('click', () => { st.tab = el.dataset.tab!; void render(); })); }
+
+function download(name: string, text: string, mime: string) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], { type: mime }));
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+const today = () => new Date().toISOString().slice(0, 10);
+
+function bindTab() {
+  if (st.tab === 'chart' && st.bundle) {
+    const b = st.bundle;
+    document.querySelectorAll<HTMLElement>('.star').forEach((el) => el.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      const name = el.dataset.star!;
+      const p = b.ziwei.palaces.find((x) => x.stars.some((s) => s.name === name))!;
+      const items: InterpItem[] = [];
+      if (RULES.byId.has(`zw.star.${name}`)) items.push(ruleItem(RULES, `zw.star.${name}`, undefined, `${name}落在${BRANCHES[p.branch]}宫（${p.name}）`));
+      else items.push({ ruleId: '', title: name, text: '辅佐煞曜的解释暂未收录（v1 仅收录十四主星、四化与十二宫）。', context: `${name}落在${BRANCHES[p.branch]}宫（${p.name}）`, evidenceType: 'structural', evidenceLabel: '算法结构', reviewStatus: 'draft', reviewLabel: '未审核', sources: [{ book: '本项目算法规格', edition: 'docs/adr', verified: true }], classical: [] });
+      if (el.dataset.tf) items.push(ruleItem(RULES, `zw.transform.${el.dataset.tf}`, undefined, `${name}化${el.dataset.tf}`));
+      st.selected = items; void render();
+    }));
+    document.querySelectorAll<HTMLElement>('.pal').forEach((el) => el.addEventListener('click', () => {
+      const p = b.ziwei.palaces.find((x) => x.branch === Number(el.dataset.branch))!;
+      st.selected = [ruleItem(RULES, `zw.palace.${p.name}`, undefined, `${BRANCHES[p.branch]}宫·${p.name}（${STEMS[p.stem]}${BRANCHES[p.branch]}）`)];
+      if (p.isBody) st.selected.push(ruleItem(RULES, 'zw.body', undefined, '身宫所在'));
+      void render();
+    }));
+  }
+  if (st.tab === 'time') $('#yr').addEventListener('change', () => { st.year = Number(($('#yr') as HTMLInputElement).value); void render(); });
+  if (st.tab === 'settings') {
+    $('#onlyrev').addEventListener('change', (e) => { st.onlyReviewed = (e.target as HTMLInputElement).checked; });
+    $('#rexp').addEventListener('click', () => {
+      const f = val('rf') as ReviewFormat;
+      const rules = selectRules(RULES, val('rs') as ReviewScope, val('rt') as ReviewStatus | 'all');
+      download(`review-${val('rs')}.${f}`, exportRules(RULES, rules, f, today()), f === 'json' ? 'application/json' : f === 'csv' ? 'text/csv' : 'text/markdown');
+    });
+    $('#cexp').addEventListener('click', () => {
+      if (!st.bundle) return;
+      const secs = [...interpretNatal(st.bundle, RULES), ...interpretYear(st.bundle, clampYear(st.bundle), RULES)];
+      download('chart-review.md', exportChartReview(st.savedName || '当前命盘', secs, st.bundle.calculationHash, today()), 'text/markdown');
+    });
+  }
+  if (st.tab === 'archive' && storage) {
+    const s = storage;
+    $('#save')?.addEventListener('click', async () => {
+      if (!st.bundle) return;
+      st.savedName = val('sn') || '未命名';
+      const id = typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2);
+      await s.put(makeRecord(id, st.savedName, val('sc'), new Date().toISOString(), st.bundle.input, st.bundle.options));
+      st.changeNote = ''; await render();
+    });
+    document.querySelectorAll<HTMLElement>('[data-open]').forEach((el) => el.addEventListener('click', async () => {
+      const rec = (await s.get(el.dataset.open!)) as ChartRecord;
+      const r = openRecord(rec);
+      st.bundle = r.bundle; st.savedName = rec.name; st.selected = [];
+      st.warnings = buildWarnings(r.bundle, []);
+      st.changeNote = r.changed
+        ? `此存档保存时的计算结果与现在重算的结果不一致（引擎 ${esc(r.oldEngineVersion)} → ${esc(r.newEngineVersion)}）。以下是差异，界面已显示<b>重算后</b>的结果：<br>${r.diff.slice(0, 12).map((d) => `${esc(d.path)}：${esc(JSON.stringify(d.before))} → ${esc(JSON.stringify(d.after))}`).join('<br>')}`
+        : '已重新计算，结果与保存时一致。';
+      st.tab = 'chart'; await render();
+      $('#msg').insertAdjacentHTML('beforeend', `<div class="warn">${st.changeNote}</div>`);
+    }));
+    document.querySelectorAll<HTMLElement>('[data-del]').forEach((el) => el.addEventListener('click', async () => { await s.delete(el.dataset.del!); await render(); }));
+    $('#exp').addEventListener('click', async () => download('ziwei-archive.json', await exportArchive(s, today()), 'application/json'));
+    $('#imp').addEventListener('change', async (e) => {
+      const f = (e.target as HTMLInputElement).files?.[0];
+      if (!f) return;
+      try { const r = await importArchive(s, await f.text()); st.changeNote = `导入 ${r.imported} 条，跳过 ${r.skipped} 条（已存在）。`; } catch (err) { st.changeNote = esc((err as Error).message); }
+      await render();
+    });
+  }
+}
+
+$('#f').addEventListener('submit', (e) => {
+  e.preventDefault();
+  st.error = ''; st.warnings = []; st.selected = []; st.changeNote = ''; st.savedName = '';
+  try {
+    const { input, options, warnings } = readInput();
+    const b = computeCharts(input, options);
+    st.bundle = b;
+    st.warnings = buildWarnings(b, warnings);
+    if (st.year < b.ziwei.input.lunarYear) st.year = b.ziwei.input.lunarYear;
+    st.tab = 'chart';
+  } catch (err) {
+    st.bundle = null;
+    st.error = err instanceof InputError || err instanceof OutOfRangeError ? `输入有误：${err.message}` : `计算失败：${(err as Error).message}`;
+  }
+  void render();
+});
+
+// 供浏览器与 Node 一致性测试使用
+(window as unknown as { __zw: unknown }).__zw = { computeCharts };
+void render();

@@ -53,7 +53,7 @@ describe('解读引擎', () => {
   it('随机 400 盘：本命与流年解读不抛错、无未替换占位符、每条有出处与依据等级', () => {
     const r = rng(99);
     for (let k = 0; k < 400; k++) {
-      const y = r.int(1902, 2050), b = computeCharts(solarInput(y, r.int(1, 12), r.int(1, 28), r.int(0, 23), r.int(0, 59), r.next() < 0.5 ? 'M' : 'F'));
+      const y = r.int(1902, 2040), b = computeCharts(solarInput(y, r.int(1, 12), r.int(1, 28), r.int(0, 23), r.int(0, 59), r.next() < 0.5 ? 'M' : 'F'));
       const secs = [...interpretNatal(b, RULES), ...interpretYear(b, y + r.int(1, 60), RULES)];
       expect(secs.length).toBeGreaterThanOrEqual(8);
       for (const it of allItems(secs)) {

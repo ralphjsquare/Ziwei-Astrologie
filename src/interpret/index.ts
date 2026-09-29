@@ -37,6 +37,11 @@ const need = (R: RuleSet, id: string): Rule => {
   if (!r) throw new Error(`missing rule ${id}`);
   return r;
 };
+/** 单条规则的展示项（供界面点击查看星曜、宫位含义） */
+export const ruleItem = (R: RuleSet, id: string, text?: string, context = ''): InterpItem => {
+  const r = need(R, id);
+  return toItem(R, r, text ?? r.plain, context);
+};
 const short = (t: string) => t.split('；')[0].replace(/。$/, '');
 
 export function interpretNatal(b: ChartBundle, R: RuleSet): InterpSection[] {

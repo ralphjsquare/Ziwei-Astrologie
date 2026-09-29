@@ -1,5 +1,5 @@
 import { BRANCHES, STEMS, jiaziIndex, mod, nayinName, yinMonthStem } from '../core/ganzhi';
-import { jieInstantsAround } from '../calendar/lunar';
+import { assertSupportedYear, jieInstantsAround } from '../calendar/lunar';
 import { civilFromEpoch } from '../calendar/civil';
 import { tenGodOf } from './engine-util';
 import { computeRelations, relationsInvolving } from './relations';
@@ -18,6 +18,7 @@ export interface BaziYearLayer {
 
 /** 八字流年、流月。year 为流年标签（立春至下一立春）。 */
 export function baziYearLayer(c: BaziChart, year: number): BaziYearLayer {
+  assertSupportedYear(year);
   const idx = mod(year - 4, 60);
   const stem = idx % 10, branch = idx % 12;
   const dm = c.dayMaster.stem;
