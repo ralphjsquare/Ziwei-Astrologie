@@ -35,8 +35,6 @@ export interface Options {
   /** 辛年天魁天钺：'hu-ma' 魁寅钺午（“六辛逢虎马”，《紫微斗数全书》卷二安天魁天钺诀，默认）；'ma-hu' 魁午钺寅（“六辛逢马虎”，iztro 等软件采用）。 */
   kuiYueXin: 'hu-ma' | 'ma-hu';
   sihua: SihuaVariants;
-  /** 大限起宫：'ming' 命宫起限（通行，默认）；'literal' 《全书》大限诀字面读法——阳男阴女从命前一宫（父母宫）起顺行，阴男阳女从命后一宫（兄弟宫）起逆行。 */
-  decadeStart: 'ming' | 'literal';
 }
 
 export const DEFAULT_OPTIONS: Options = {
@@ -46,7 +44,6 @@ export const DEFAULT_OPTIONS: Options = {
   leapMonthRule: 'midMonth',
   kuiYueXin: 'hu-ma',
   sihua: {},
-  decadeStart: 'ming',
 };
 
 export const CHINA_STANDARD_PLACE: Place = { utcOffsetMinutes: 480, dstMinutes: 0 };
