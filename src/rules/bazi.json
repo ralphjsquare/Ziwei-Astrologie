@@ -2329,7 +2329,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.驿马",
@@ -2365,7 +2366,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.咸池",
@@ -2401,7 +2403,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.劫煞",
@@ -2434,7 +2437,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "TEXTUAL_VARIANT"
  },
  {
   "id": "bz.shensha.亡神",
@@ -2466,7 +2470,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.将星",
@@ -2498,7 +2503,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.华盖",
@@ -2530,7 +2536,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.羊刃",
@@ -2580,7 +2587,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.金舆",
@@ -2612,7 +2620,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.孤辰",
@@ -2644,7 +2653,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.寡宿",
@@ -2676,7 +2686,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.月德贵人",
@@ -2712,7 +2723,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.月德合",
@@ -2745,7 +2757,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "TEXTUAL_VARIANT"
  },
  {
   "id": "bz.shensha.德秀贵人",
@@ -2781,7 +2794,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.元辰",
@@ -2813,7 +2827,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.灾煞",
@@ -2845,7 +2860,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.勾煞",
@@ -2881,7 +2897,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "TEXTUAL_VARIANT"
  },
  {
   "id": "bz.shensha.绞煞",
@@ -2917,7 +2934,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "TEXTUAL_VARIANT"
  },
  {
   "id": "bz.shensha.十恶大败",
@@ -2953,7 +2971,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "TEXTUAL_VARIANT"
  },
  {
   "id": "bz.shensha.天罗",
@@ -2989,7 +3008,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.地网",
@@ -3025,7 +3045,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.三奇贵人",
@@ -3061,7 +3082,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.禄神",
@@ -3093,7 +3115,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.魁罡",
@@ -3129,7 +3152,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.日德",
@@ -3161,7 +3185,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.日贵",
@@ -3194,7 +3219,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "TEXTUAL_VARIANT"
  },
  {
   "id": "bz.shensha.丧门",
@@ -3226,7 +3252,8 @@
    "note": null,
    "history": []
   },
-  "basis": "quoted"
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
  },
  {
   "id": "bz.shensha.吊客",
@@ -3258,6 +3285,203 @@
    "note": null,
    "history": []
   },
+  "basis": "quoted",
+  "sourceClass": "PRIMARY_TEXT"
+ },
+ {
+  "id": "bz.shensha.天德贵人",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "天德贵人"
+  },
+  "title": "神煞：天德贵人",
+  "plain": "天德按出生月来定（正月丁、二月申、三月壬、四月辛、五月亥、六月甲、七月癸、八月寅、九月丙、十月乙、十一月巳、十二月庚），目标可能是天干也可能是地支。《三命通会》把天德视为能“回凶作善”的吉神；原文逐项写了前几个月，并说“余照此”，其余月份依原排列继续推演，与通行表一致，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sourceClass": "PRIMARY_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论天月德",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#7",
+    "quote": "此十二位宫，能回凶作善，乃曰天德也"
+   },
+   {
+    "corpusRef": "smtht/卷三#7",
+    "quote": "天德合，如正月丁与壬合，二月坤与巽合，三月壬与丁合，四月辛与丙合，余照此"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
   "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.天德合",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "天德合"
+  },
+  "title": "神煞：天德合",
+  "plain": "天德合是天德的“合”（如正月丁对应壬，二月申对应巳）。《三命通会》与月德合一同列出，原文写了前几个月并说“余照此”，其余月份依原排列继续推演。传统上视为与天德相配的助力，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sourceClass": "PRIMARY_TEXT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论天月德",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#7",
+    "quote": "天德合，如正月丁与壬合，二月坤与巽合，三月壬与丁合，四月辛与丙合，余照此"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.文昌贵人",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "文昌贵人"
+  },
+  "title": "神煞：文昌贵人",
+  "plain": "文昌贵人以年干、日干为基准，落在四柱地支。本项目默认据《三命通会》歌诀（甲巳、乙亥、丙戌、丁辰、戊申、己午、庚寅、辛未、壬卯、癸丑）；也可切换为通行表（甲巳、乙午、丙申、丁酉、戊申、己酉、庚亥、辛子、壬寅、癸卯）。文昌一般被联系到文才与学业，这是通行说法，原文并未展开，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sourceClass": "TEXTUAL_VARIANT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论太极贵",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#8",
+    "quote": "有文昌贵，甲乙蛇口乙猪头，丙狗丁龙戊向猴；己午庚寅辛未贵，六壬卯位癸逢牛",
+    "variant": "项目语料（维基文库）作“甲乙蛇口乙猪头”；文渊阁四库本（Kanripo）作“甲人蛇口乙猪头”，据后者校读为甲巳、乙亥；表为甲巳乙亥丙戌丁辰戊申己午庚寅辛未壬卯癸丑"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.shensha.太极贵人",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "太极贵人"
+  },
+  "title": "神煞：太极贵人",
+  "plain": "太极贵人以年干、日干为基准，落在四柱地支（甲乙子午、丙丁卯酉、戊己辰戌丑未、庚辛寅亥、壬癸申巳）。《三命通会》说它取“造化始终相保”之意，传统上视为吉的贵人，也提醒还要有福气贵神相扶，这是传统说法，并不代表现实中一定如此；这里只列出它出现在哪一柱。",
+  "evidenceType": "school",
+  "sourceClass": "TEXTUAL_VARIANT",
+  "sources": [
+   {
+    "ref": "smtht",
+    "section": "卷三·论太极贵",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷三#8",
+    "quote": "造化始终相保，乃曰太极贵也"
+   },
+   {
+    "corpusRef": "smtht/卷三#8",
+    "quote": "壬癸水先得则生，后得巳而纳",
+    "variant": "项目语料作“壬癸水先得则生”，缺宾语；文渊阁四库本作“壬癸水先得申而生，后得巳而纳”，故壬癸取申、巳"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "modern_shensha.红鸾",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "红鸾"
+  },
+  "title": "神煞：红鸾",
+  "plain": "红鸾按出生年支来定（子年在卯、丑年在寅，以此类推），现代排盘中常与感情、婚恋相联系。这是现代通行整理，项目语料《三命通会》中没有对应的年支表，因此没有古籍引文；并不代表现实中一定如此。这里只列出它出现在哪一柱。",
+  "evidenceType": "modern",
+  "sourceClass": "MODERN_COMMON",
+  "sources": [
+   {
+    "ref": "modern",
+    "note": "年支系红鸾、天喜为现代通行整理；项目语料《三命通会》中未找到对应的年支表（语料里的“天喜神”按季节，是另一种说法）"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
+ },
+ {
+  "id": "modern_shensha.天喜",
+  "topic": "shensha",
+  "when": {
+   "kind": "shensha",
+   "name": "天喜"
+  },
+  "title": "神煞：天喜",
+  "plain": "天喜与红鸾相对（在红鸾所在地支的对冲位），现代排盘中常与喜庆、婚恋相联系。这是现代通行整理，项目语料《三命通会》中没有对应的年支表，因此没有古籍引文；注意它不同于《三命通会》按季节推的“天喜神”，两者不是同一规则。并不代表现实中一定如此。",
+  "evidenceType": "modern",
+  "sourceClass": "MODERN_COMMON",
+  "sources": [
+   {
+    "ref": "modern",
+    "note": "年支系红鸾、天喜为现代通行整理；项目语料《三命通会》中未找到对应的年支表（语料里的“天喜神”按季节，是另一种说法）"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "textbook"
  }
 ]

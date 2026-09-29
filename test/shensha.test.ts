@@ -84,8 +84,9 @@ describe('神煞：规则与解读', () => {
   });
   it('没有绝对化措辞：每条神煞解读都含“传统”与“并不代表”', () => {
     for (const n0 of SHENSHA_NAMES) {
-      const r = RULES.byId.get(`bz.shensha.${n0.replace(/（.*）/, '')}`)!;
-      expect(r.plain).toContain('传统');
+      const key = n0.replace(/（.*）/, '');
+      const r = (RULES.byId.get(`bz.shensha.${key}`) ?? RULES.byId.get(`modern_shensha.${key}`))!;
+      expect(r.plain).toContain(r.id.startsWith('modern_') ? '现代通行' : '传统');
       expect(r.plain).toContain('并不代表');
     }
   });
@@ -168,6 +169,85 @@ describe('神煞第二批：表格对照《三命通会》文字（手写期望�
       if (mySanQi !== theirSanQi) bad.push(`${y}-${m}-${d} ${h} ${g} 三奇`);
     }
     expect(bad.slice(0, 5)).toEqual([]);
+  });
+});
+
+describe('神煞第三批（ADR-017）：天德、文昌、太极、红鸾天喜、阴干羊刃选项', () => {
+  const stemIdx = (c: string) => STEMS.indexOf(c as (typeof STEMS)[number]);
+  it('文昌贵人：默认《三命通会》歌诀表，通行表为选项（手写期望）', () => {
+    const san: Record<string, string> = { 甲: '巳', 乙: '亥', 丙: '戌', 丁: '辰', 戊: '申', 己: '午', 庚: '寅', 辛: '未', 壬: '卯', 癸: '丑' };
+    const com: Record<string, string> = { 甲: '巳', 乙: '午', 丙: '申', 丁: '酉', 戊: '申', 己: '酉', 庚: '亥', 辛: '子', 壬: '寅', 癸: '卯' };
+    for (const g of Object.keys(san)) {
+      const mk = (br: string) => pillars(B('子'), B('子'), B('子'), B(br), stemIdx(g));
+      expect(computeShenSha(mk(san[g])).some((h) => h.name === '文昌贵人' && h.pillar === 'hour'), `sanming ${g}`).toBe(true);
+      expect(computeShenSha(mk(com[g]), 'M', { wenchangMode: 'common', yinStemYangRen: false }).some((h) => h.name === '文昌贵人' && h.pillar === 'hour'), `common ${g}`).toBe(true);
+    }
+    expect(computeShenSha(pillars(B('子'), B('子'), B('子'), B('午'), 1)).some((h) => h.name === '文昌贵人' && h.pillar === 'hour')).toBe(false); // 乙午是通行表，不是歌诀表
+  });
+  it('太极贵人（壬癸取申、巳）与红鸾天喜（子年红鸾在卯、天喜在酉）', () => {
+    for (const [g, brs] of [['甲', '子午'], ['丙', '卯酉'], ['戊', '辰戌丑未'], ['庚', '寅亥'], ['壬', '申巳'], ['癸', '申巳']] as [string, string][])
+      for (const br of brs) expect(computeShenSha(pillars(B('子'), B('子'), B('子'), B(br), stemIdx(g))).some((h) => h.name === '太极贵人' && h.pillar === 'hour'), `${g}${br}`).toBe(true);
+    const h = computeShenSha(pillars(B('子'), B('卯'), B('酉'), B('子')));
+    expect(h.some((x) => x.name === '红鸾' && x.pillar === 'month')).toBe(true);
+    expect(h.some((x) => x.name === '天喜' && x.pillar === 'day')).toBe(true);
+  });
+  it('天德贵人与天德合（正月丁壬、二月申巳、三月壬丁、四月辛丙、五月亥寅、六月甲己、七月癸戊、八月寅亥、九月丙辛、十月乙庚、十一月巳申、十二月庚乙）', () => {
+    const rows: [string, string, string][] = [['寅', '丁', '壬'], ['卯', '申', '巳'], ['辰', '壬', '丁'], ['巳', '辛', '丙'], ['午', '亥', '寅'], ['未', '甲', '己'], ['申', '癸', '戊'], ['酉', '寅', '亥'], ['戌', '丙', '辛'], ['亥', '乙', '庚'], ['子', '巳', '申'], ['丑', '庚', '乙']];
+    for (const [mb, de, he] of rows) {
+      const isStem = STEMS.includes(de as (typeof STEMS)[number]);
+      const p = pillars(B('午'), B(mb), B('午'), B('午'));
+      if (isStem) { p.hour.stem = stemIdx(de); p.day.stem = stemIdx(he); } else { p.hour.branch = B(de); p.day.branch = B(he); }
+      const hits = computeShenSha(p);
+      expect(hits.some((x) => x.name === '天德贵人' && x.pillar === 'hour'), `${mb}月天德${de}`).toBe(true);
+      expect(hits.some((x) => x.name === '天德合' && x.pillar === 'day'), `${mb}月天德合${he}`).toBe(true);
+    }
+  });
+  it('阴干羊刃选项：默认关闭；开启后乙寅、丁巳、己巳、辛申、癸亥（日干基准）', () => {
+    for (const [g, br] of [['乙', '寅'], ['丁', '巳'], ['己', '巳'], ['辛', '申'], ['癸', '亥']] as [string, string][]) {
+      const p = pillars(B('子'), B('子'), B('子'), B(br), stemIdx(g));
+      expect(computeShenSha(p).some((h) => h.name === '羊刃')).toBe(false);
+      expect(computeShenSha(p, 'M', { wenchangMode: 'sanming', yinStemYangRen: true }).some((h) => h.name === '羊刃' && h.pillar === 'hour')).toBe(true);
+    }
+  });
+  it('分层：德秀同见与否、三奇是否顺布，检测到就列出，qualified 记录是否满足完整条件', () => {
+    // 寅月（寅午戌）德=丙丁，秀=戊癸：只有德（丙）
+    const onlyDe = pillars(B('午'), B('寅'), B('子'), B('子')); onlyDe.year.stem = stemIdx('丙'); onlyDe.month.stem = stemIdx('甲'); onlyDe.day.stem = stemIdx('庚'); onlyDe.hour.stem = stemIdx('庚');
+    const a = computeShenSha(onlyDe).filter((h) => h.name === '德秀贵人');
+    expect(a.length).toBeGreaterThan(0); expect(a.every((h) => h.qualified === false)).toBe(true);
+    const both = pillars(B('午'), B('寅'), B('子'), B('子')); both.year.stem = stemIdx('丙'); both.month.stem = stemIdx('戊'); both.day.stem = stemIdx('庚'); both.hour.stem = stemIdx('庚');
+    expect(computeShenSha(both).filter((h) => h.name === '德秀贵人').every((h) => h.qualified === true)).toBe(true);
+    const seq = { year: st(0, 1), month: st(0, 2), day: st(0, 3), hour: st(0, 0) };
+    expect(computeShenSha(seq).filter((h) => h.name === '三奇贵人').every((h) => h.qualified === true)).toBe(true);
+    const rev = { year: st(0, 3), month: st(0, 2), day: st(0, 1), hour: st(0, 0) };
+    expect(computeShenSha(rev).filter((h) => h.name === '三奇贵人').every((h) => h.qualified === false)).toBe(true);
+  });
+  it('与 bazi-lite 比对 1200 盘：天德、天德合、太极、红鸾、天喜、文昌（通行表）一致；阴干羊刃开启后与 bazi-lite 完整一致', () => {
+    const r = rng(9090);
+    const bad: string[] = [];
+    for (let k = 0; k < 1200; k++) {
+      const y = r.int(1902, 2099), m = r.int(1, 12), d = r.int(1, 28), h = r.int(0, 23), g = k % 2 ? 'F' : 'M';
+      const c = computeCharts(solarInput(y, m, d, h, 10, g), { wenchangMode: 'common', yinStemYangRen: true }).bazi;
+      const gg = g === 'M' ? GENDER.MALE : GENDER.FEMALE;
+      const b = BaziChart.fromZonedTime(new ZonedTime({ year: y, month: m, day: d, hour: h, minute: 10, second: 0, offsetMinutes: 480 }), new BaziOptions({ gender: gg, mode: 'china-astronomical', pillarHistoricalMode: 'off' } as never));
+      const o = collectNatalShenSha(b as never, { gender: gg } as never) as unknown as Record<PillarKey, bigint>;
+      const MAP: Record<string, string> = { 天德贵人: '天德贵人', 天德合: '天德合', 太极贵人: '太极贵人', 红鸾: '红鸾', 天喜: '天喜', 文昌贵人: '文昌贵人', 羊刃: '羊刃' };
+      for (const pk of ['year', 'month', 'day', 'hour'] as PillarKey[]) {
+        const theirs = new Set(shenShaNames(o[pk]));
+        const mine = new Set(c.shensha.filter((x) => x.pillar === pk).map((x) => x.name as string));
+        for (const [mn, tn] of Object.entries(MAP)) if (mine.has(mn) !== theirs.has(tn)) bad.push(`${y}-${m}-${d} ${h} ${g} ${pk} ${mn}`);
+      }
+    }
+    expect(bad.slice(0, 5)).toEqual([]);
+  });
+  it('来源分级：所有神煞规则都有 sourceClass；modern_shensha 无引文；文昌、太极有异文注记', () => {
+    const all = [...RULES.bazi].filter((r) => r.id.startsWith('bz.shensha.') || r.id.startsWith('modern_shensha.'));
+    expect(all.length).toBe(34);
+    for (const r of all) expect(r.sourceClass, r.id).toBeDefined();
+    for (const r of all.filter((x) => x.id.startsWith('modern_shensha.'))) { expect(r.sourceClass).toBe('MODERN_COMMON'); expect(r.classical).toHaveLength(0); }
+    const wc = RULES.byId.get('bz.shensha.文昌贵人')!, tj = RULES.byId.get('bz.shensha.太极贵人')!;
+    expect(wc.classical.some((q) => q.variant?.includes('甲人蛇口'))).toBe(true);
+    expect(tj.classical.some((q) => q.variant?.includes('先得申而生'))).toBe(true);
+    expect(validateRules(RULES)).toEqual([]);
   });
 });
 

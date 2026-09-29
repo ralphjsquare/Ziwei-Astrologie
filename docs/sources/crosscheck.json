@@ -1,8 +1,8 @@
 {
  "book": "三命通会",
  "secondSource": "Kanripo KR3g0042（文渊阁四库全书本 WYG）",
- "total": 152,
- "found": 145,
+ "total": 158,
+ "found": 149,
  "rows": [
   {
    "ruleId": "bz.stem.甲",
@@ -908,6 +908,40 @@
    "quote": "取命前二辰为丧门，命后二辰为吊客",
    "found": true,
    "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.天德贵人",
+   "quote": "此十二位宫，能回凶作善，乃曰天德也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.天德贵人",
+   "quote": "天德合，如正月丁与壬合，二月坤与巽合，三月壬与丁合，四月辛与丙合，余照此",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.天德合",
+   "quote": "天德合，如正月丁与壬合，二月坤与巽合，三月壬与丁合，四月辛与丙合，余照此",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.文昌贵人",
+   "quote": "有文昌贵，甲乙蛇口乙猪头，丙狗丁龙戊向猴；己午庚寅辛未贵，六壬卯位癸逢牛",
+   "found": false
+  },
+  {
+   "ruleId": "bz.shensha.太极贵人",
+   "quote": "造化始终相保，乃曰太极贵也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.太极贵人",
+   "quote": "壬癸水先得则生，后得巳而纳",
+   "found": false
   }
  ]
 }

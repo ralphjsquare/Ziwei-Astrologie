@@ -5,6 +5,9 @@ import crJson from './cross.json';
 import srcJson from './sources.json';
 import corpusJson from './corpus.json';
 
+/** 来源分级（神煞等结构化规则）：原文明确／转录异文经其他传本校读／古籍二手引述／现代通行整理／仅有软件实现支持 */
+export type SourceClass = 'PRIMARY_TEXT' | 'TEXTUAL_VARIANT' | 'CLASSICAL_SECONDARY' | 'MODERN_COMMON' | 'IMPLEMENTATION_ONLY';
+export const SOURCE_CLASSES: SourceClass[] = ['PRIMARY_TEXT', 'TEXTUAL_VARIANT', 'CLASSICAL_SECONDARY', 'MODERN_COMMON', 'IMPLEMENTATION_ONLY'];
 export type EvidenceType = 'classical' | 'school' | 'modern' | 'structural';
 export type ReviewStatus = 'draft' | 'reviewed' | 'approved' | 'rejected';
 export const EVIDENCE_LABEL: Record<EvidenceType, string> = { classical: '古籍原文', school: '流派观点', modern: '现代整理', structural: '算法结构' };
@@ -24,6 +27,8 @@ export interface Rule {
   plain: string;
   evidenceType: EvidenceType;
   sources: RuleSourceRef[];
+  /** 来源分级；神煞规则必填 */
+  sourceClass?: SourceClass;
   classical: { quote: string; corpusRef: string; /** 与第二来源（如文渊阁四库本）的异文说明；不改变证据等级 */ variant?: string }[];
   /** 依据类型：算法定义 / 模板组合 / 篇目指引 / 通行说法 */
   basis: Basis;
@@ -109,6 +114,12 @@ export function validateRules(rs: RuleSet): string[] {
     }
     if ((r.review.status === 'reviewed' || r.review.status === 'approved') && !r.review.reviewer) errs.push(`${at}: 已审核状态必须记录审核人`);
     if (r.review.status === 'approved' && r.evidenceType !== 'structural' && !r.classical.length) errs.push(`${at}: “已确认”需要古籍原文引用（或为算法结构类）；无原文的解释最高只能到“已审核”`);
+    if (r.sourceClass !== undefined && !SOURCE_CLASSES.includes(r.sourceClass)) errs.push(`${at}: sourceClass 非法`);
+    if (r.id.startsWith('bz.shensha.') || r.id.startsWith('modern_shensha.')) {
+      if (!r.sourceClass) errs.push(`${at}: 神煞规则必须标明 sourceClass`);
+      if (r.id.startsWith('modern_shensha.') && r.classical.length) errs.push(`${at}: 现代整理类神煞不得附古籍引文`);
+      if (r.sourceClass === 'MODERN_COMMON' && r.classical.length) errs.push(`${at}: MODERN_COMMON 不得附古籍引文`);
+    }
     if (!['algorithmic', 'template', 'quoted', 'chapter-pointer', 'textbook'].includes(r.basis)) errs.push(`${at}: basis 非法`);
   }
   for (const [k, c] of Object.entries(rs.corpus)) {

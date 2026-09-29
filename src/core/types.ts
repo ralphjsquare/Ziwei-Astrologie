@@ -35,6 +35,10 @@ export interface Options {
   /** 辛年天魁天钺：'hu-ma' 魁寅钺午（“六辛逢虎马”，《紫微斗数全书》卷二安天魁天钺诀，默认）；'ma-hu' 魁午钺寅（“六辛逢马虎”，iztro 等软件采用）。 */
   kuiYueXin: 'hu-ma' | 'ma-hu';
   sihua: SihuaVariants;
+  /** 文昌贵人取法（ADR-017）：'sanming' 据《三命通会》歌诀（甲巳乙亥丙戌丁辰戊申己午庚寅辛未壬卯癸丑，默认）；'common' 通行表（甲巳乙午丙申丁酉戊申己酉庚亥辛子壬寅癸卯）。 */
+  wenchangMode: 'sanming' | 'common';
+  /** 阴干是否也定羊刃（后世/其他流派，取禄后一位；《三命通会》明言五阴干无刃，默认关闭）。 */
+  yinStemYangRen: boolean;
 }
 
 export const DEFAULT_OPTIONS: Options = {
@@ -44,6 +48,8 @@ export const DEFAULT_OPTIONS: Options = {
   leapMonthRule: 'midMonth',
   kuiYueXin: 'hu-ma',
   sihua: {},
+  wenchangMode: 'sanming',
+  yinStemYangRen: false,
 };
 
 export const CHINA_STANDARD_PLACE: Place = { utcOffsetMinutes: 480, dstMinutes: 0 };

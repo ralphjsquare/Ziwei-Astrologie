@@ -46,6 +46,8 @@ app.innerHTML = `
       <label>八字日柱换日<select id="bb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
       <label>紫微生日换日<select id="zb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
       <label>闰月规则（仅紫微；八字按节令，不受影响）<select id="lr"><option value="midMonth">前后半月法（现代通行，默认）：闰四月初十按四月，二十按五月</option><option value="currentMonth">全作本月：闰四月一律按四月</option><option value="nextMonth">全作下月（古籍字面法）：闰四月一律按五月</option></select></label>
+      <label>文昌贵人取法（八字神煞）<select id="wc"><option value="sanming">《三命通会》歌诀表（默认）</option><option value="common">通行表</option></select></label>
+      <label class="inline"><input id="yinren" type="checkbox"> 阴干也定羊刃（另一流派，默认关闭）</label>
       <label>辛年天魁天钺<select id="ky"><option value="hu-ma">魁寅钺午（六辛逢虎马，《全书》，默认）</option><option value="ma-hu">魁午钺寅（六辛逢马虎，iztro 等）</option></select></label>
       <label>戊年四化<select id="sh-wu"><option value="1">贪阴弼机（默认）</option><option value="2">贪阴阳机</option></select></label>
       <label>庚年四化<select id="sh-geng"><option value="1">阳武阴同（默认）</option><option value="2">阳武同阴</option><option value="3">阳武府同</option><option value="4">阳武同相</option></select></label>
@@ -100,7 +102,7 @@ function readInput(): { input: BirthInput; options: Partial<Options>; warnings: 
   const input: BirthInput = { calendar: cal, year: y, month: m, day: d, ...(cal === 'lunar' ? { leap: chk('leap') } : {}), hour: hh, minute: mm, gender: val('g') as 'M' | 'F', place };
   const options: Partial<Options> = {
     trueSolarTime: chk('tst'), baziDayBoundary: val('bb') as Options['baziDayBoundary'], ziweiDayBoundary: val('zb') as Options['ziweiDayBoundary'],
-    leapMonthRule: val('lr') as Options['leapMonthRule'], kuiYueXin: val('ky') as Options['kuiYueXin'],
+    leapMonthRule: val('lr') as Options['leapMonthRule'], kuiYueXin: val('ky') as Options['kuiYueXin'], wenchangMode: val('wc') as Options['wenchangMode'], yinStemYangRen: chk('yinren'),
     sihua: { 戊: num('sh-wu'), 庚: num('sh-geng'), 壬: num('sh-ren'), 癸: num('sh-gui') },
   };
   return { input, options, warnings };

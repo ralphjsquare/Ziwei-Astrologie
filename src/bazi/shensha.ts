@@ -31,9 +31,11 @@ const LU = [2, 3, 5, 6, 5, 6, 8, 9, 11, 0];
 const JIN_YU = LU.map((b) => (b + 2) % 12);
 
 export type ShenShaName = '天乙贵人' | '驿马' | '咸池（桃花）' | '劫煞' | '亡神' | '将星' | '华盖' | '羊刃' | '金舆' | '孤辰' | '寡宿'
-  | '月德贵人' | '月德合' | '德秀贵人' | '元辰' | '灾煞' | '勾煞' | '绞煞' | '十恶大败' | '天罗' | '地网' | '三奇贵人' | '禄神' | '魁罡' | '日德' | '日贵' | '丧门' | '吊客';
+  | '月德贵人' | '月德合' | '德秀贵人' | '元辰' | '灾煞' | '勾煞' | '绞煞' | '十恶大败' | '天罗' | '地网' | '三奇贵人' | '禄神' | '魁罡' | '日德' | '日贵' | '丧门' | '吊客'
+  | '天德贵人' | '天德合' | '文昌贵人' | '太极贵人' | '红鸾' | '天喜';
 export const SHENSHA_NAMES: ShenShaName[] = ['天乙贵人', '驿马', '咸池（桃花）', '劫煞', '亡神', '将星', '华盖', '羊刃', '金舆', '孤辰', '寡宿',
-  '月德贵人', '月德合', '德秀贵人', '元辰', '灾煞', '勾煞', '绞煞', '十恶大败', '天罗', '地网', '三奇贵人', '禄神', '魁罡', '日德', '日贵', '丧门', '吊客'];
+  '月德贵人', '月德合', '德秀贵人', '元辰', '灾煞', '勾煞', '绞煞', '十恶大败', '天罗', '地网', '三奇贵人', '禄神', '魁罡', '日德', '日贵', '丧门', '吊客',
+  '天德贵人', '天德合', '文昌贵人', '太极贵人', '红鸾', '天喜'];
 /** 月德：月支所在三合局的月德天干（申子辰壬、寅午戌丙、巳酉丑庚、亥卯未甲）；月德合为其五合之干 */
 const YUE_DE = [8, 2, 6, 0];
 /** 德秀：[德干, 秀干]，按月支所在三合局（申子辰、寅午戌、巳酉丑、亥卯未），据卷三“论德秀” */
@@ -46,15 +48,35 @@ const KUI_GANG = ['庚辰', '壬辰', '戊戌', '庚戌'];
 const RI_DE = ['甲寅', '丙辰', '戊辰', '庚辰', '壬戌'];
 const RI_GUI = ['丁酉', '丁亥', '癸巳', '癸卯'];
 
+/** 天德：按月支，目标为天干或地支（寅丁、卯申、辰壬、巳辛、午亥、未甲、申癸、酉寅、戌丙、亥乙、子巳、丑庚）。前四个月原文有明文，其余据“余照此”与通行表 */
+const TIAN_DE: { stem?: number; branch?: number }[] = (() => {
+  const t: { stem?: number; branch?: number }[] = new Array(12);
+  const S = (c: string) => STEMS.indexOf(c as (typeof STEMS)[number]);
+  const B = (c: string) => BRANCHES.indexOf(c as (typeof BRANCHES)[number]);
+  t[B('寅')] = { stem: S('丁') }; t[B('卯')] = { branch: B('申') }; t[B('辰')] = { stem: S('壬') }; t[B('巳')] = { stem: S('辛') };
+  t[B('午')] = { branch: B('亥') }; t[B('未')] = { stem: S('甲') }; t[B('申')] = { stem: S('癸') }; t[B('酉')] = { branch: B('寅') };
+  t[B('戌')] = { stem: S('丙') }; t[B('亥')] = { stem: S('乙') }; t[B('子')] = { branch: B('巳') }; t[B('丑')] = { stem: S('庚') };
+  return t;
+})();
+/** 天德合的地支之合：坤（申）与巽（巳）合、乾（亥）与艮（寅）合 */
+const TIAN_DE_HE_BRANCH: Record<number, number> = { 8: 5, 5: 8, 11: 2, 2: 11 };
+const WEN_CHANG_SANMING = [5, 11, 10, 4, 8, 6, 2, 7, 3, 1]; // 甲巳 乙亥 丙戌 丁辰 戊申 己午 庚寅 辛未 壬卯 癸丑
+const WEN_CHANG_COMMON = [5, 6, 8, 9, 8, 9, 11, 0, 2, 3]; // 甲巳 乙午 丙申 丁酉 戊申 己酉 庚亥 辛子 壬寅 癸卯
+const TAI_JI: number[][] = [[0, 6], [0, 6], [3, 9], [3, 9], [4, 10, 1, 7], [4, 10, 1, 7], [2, 11], [2, 11], [5, 8], [5, 8]];
+/** 红鸾：年支 → 地支（子卯 丑寅 寅丑 卯子 辰亥 巳戌 午酉 未申 申未 酉午 戌巳 亥辰）；天喜为其对冲 */
+const HONG_LUAN = [3, 2, 1, 0, 11, 10, 9, 8, 7, 6, 5, 4];
+
 export type PillarKey = 'year' | 'month' | 'day' | 'hour';
-export interface ShenShaHit { name: ShenShaName; pillar: PillarKey; basis: string }
+/** detected 层：出现即列出；qualified 层：满足更完整的成立条件（德秀＝德、秀同见；三奇＝依序顺布）。其余神煞不区分，qualified 缺省。 */
+export interface ShenShaHit { name: ShenShaName; pillar: PillarKey; basis: string; qualified?: boolean }
 
 interface P { stem: number; branch: number }
 /** 计算命中的神煞。三合类（驿马等）分别以年支、日支为基准；天乙贵人以日干、年干为基准；羊刃、金舆以日干为基准；孤辰寡宿以年支为基准；基准柱自身也算（如日支即为华盖）。 */
-export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M'): ShenShaHit[] {
+export interface ShenShaOptions { wenchangMode: 'sanming' | 'common'; yinStemYangRen: boolean }
+export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M', opt: ShenShaOptions = { wenchangMode: 'sanming', yinStemYangRen: false }): ShenShaHit[] {
   const out: ShenShaHit[] = [];
   const keys: PillarKey[] = ['year', 'month', 'day', 'hour'];
-  const add = (name: ShenShaName, pillar: PillarKey, basis: string) => { if (!out.some((h) => h.name === name && h.pillar === pillar && h.basis === basis)) out.push({ name, pillar, basis }); };
+  const add = (name: ShenShaName, pillar: PillarKey, basis: string, qualified?: boolean) => { if (!out.some((h) => h.name === name && h.pillar === pillar && h.basis === basis)) out.push({ name, pillar, basis, ...(qualified === undefined ? {} : { qualified }) }); };
   const groupTables: [ShenShaName, number[]][] = [['驿马', YI_MA], ['咸池（桃花）', XIAN_CHI], ['劫煞', JIE_SHA], ['亡神', WANG_SHEN], ['将星', JIANG_XING], ['华盖', HUA_GAI]];
   for (const [base, bk] of [['年支', 'year'], ['日支', 'day']] as const) {
     const g = GROUP_OF[p[bk].branch];
@@ -83,10 +105,11 @@ export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M')
   }
   {
     const [de, xiu] = DE_XIU[mg];
+    const both = keys.some((k) => de.includes(p[k].stem)) && keys.some((k) => xiu.includes(p[k].stem));
     for (const k of keys) {
       const st = p[k].stem;
       const tag = de.includes(st) && xiu.includes(st) ? '德兼秀' : de.includes(st) ? '德' : xiu.includes(st) ? '秀' : '';
-      if (tag) add('德秀贵人', k, `月支${BRANCHES[p.month.branch]}（${STEMS[st]}为${tag}）`);
+      if (tag) add('德秀贵人', k, `月支${BRANCHES[p.month.branch]}（${STEMS[st]}为${tag}）`, both);
     }
   }
   // 元辰、勾煞、绞煞：以年支为基准；阳男阴女与阴男阳女方向相反
@@ -122,7 +145,32 @@ export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M')
   for (const [tri, nm] of [[[1, 2, 3], '天上'], [[0, 4, 6], '地下'], [[7, 8, 9], '人中']] as [number[], string][]) {
     if (!tri.every((x) => stems.includes(x))) continue;
     const ordered = (['year', 'month', 'day', 'hour'] as PillarKey[]).some((_, i, a) => i + 2 < 4 && tri.every((x, j) => p[a[i + j]].stem === x));
-    for (const k of keys) if (tri.includes(p[k].stem)) add('三奇贵人', k, `${nm}三奇（${tri.map((x) => STEMS[x]).join('')}）${ordered ? '，顺布' : '，未顺布'}`);
+    for (const k of keys) if (tri.includes(p[k].stem)) add('三奇贵人', k, `${nm}三奇（${tri.map((x) => STEMS[x]).join('')}）${ordered ? '，顺布' : '，未顺布'}`, ordered);
+  }
+  // —— 第三批（ADR-017）——
+  // 天德、天德合：按月支；天德目标可能是天干或地支（原文十二位宫含乾坤艮巽）
+  const td = TIAN_DE[p.month.branch];
+  for (const k of keys) {
+    if ((td.stem !== undefined && p[k].stem === td.stem) || (td.branch !== undefined && p[k].branch === td.branch)) add('天德贵人', k, `月支${BRANCHES[p.month.branch]}`);
+    if ((td.stem !== undefined && p[k].stem === (td.stem + 5) % 10) || (td.branch !== undefined && p[k].branch === TIAN_DE_HE_BRANCH[td.branch])) add('天德合', k, `月支${BRANCHES[p.month.branch]}`);
+  }
+  // 文昌贵人、太极贵人：以年干、日干为基准，落在四柱地支
+  const wc = opt.wenchangMode === 'common' ? WEN_CHANG_COMMON : WEN_CHANG_SANMING;
+  for (const [base, bk] of [['日干', 'day'], ['年干', 'year']] as const) {
+    for (const k of keys) {
+      if (wc[p[bk].stem] === p[k].branch) add('文昌贵人', k, `${base}${STEMS[p[bk].stem]}（${opt.wenchangMode === 'common' ? '通行表' : '《三命通会》表'}）`);
+      if (TAI_JI[p[bk].stem].includes(p[k].branch)) add('太极贵人', k, `${base}${STEMS[p[bk].stem]}`);
+    }
+  }
+  // 红鸾、天喜（年支系，现代通行）：不同于《三命通会》按季节的“天喜神”
+  for (const k of keys) {
+    if (p[k].branch === HONG_LUAN[p.year.branch]) add('红鸾', k, `年支${BRANCHES[p.year.branch]}`);
+    if (p[k].branch === (HONG_LUAN[p.year.branch] + 6) % 12) add('天喜', k, `年支${BRANCHES[p.year.branch]}`);
+  }
+  // 阴干羊刃（其他流派选项）：取禄后一位（乙寅、丁巳、己巳、辛申、癸亥）
+  if (opt.yinStemYangRen) for (const [base, bk] of [['日干', 'day']] as const) {
+    const ds = p[bk].stem;
+    if (ds % 2 === 1) for (const k of keys) if ((LU[ds] + 11) % 12 === p[k].branch) add('羊刃', k, `${base}${STEMS[ds]}（阴干，另一流派）`);
   }
   for (const k of keys) if (LU[p.day.stem] === p[k].branch) add('禄神', k, `日干${STEMS[p.day.stem]}`);
   return out;
