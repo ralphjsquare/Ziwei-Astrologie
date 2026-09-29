@@ -840,16 +840,29 @@
    "key": "正官格"
   },
   "title": "正官格",
-  "plain": "月令透出或藏有正官。传统上重官星清纯，喜财、印相辅，忌伤官、七杀混杂。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "plain": "《三命通会》“论正官”：正官格“先看月令，然后方看其余”，官星“止许一位，多则不宜”，日主要健旺、得财印两扶、柱中不见伤官七煞；大忌刑冲破害、伤官七煞、贪合忘官、劫财分福。本项目按“月令取格”的简化实现给出候选，不同流派取格并不相同。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷五·论正官",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷五#2",
+    "quote": "正官先看月令，然后方看其余"
+   },
+   {
+    "corpusRef": "smtht/卷五#2",
+    "quote": "正官为六格之首，止许一位，多则不宜"
+   },
+   {
+    "corpusRef": "smtht/卷五#2",
+    "quote": "大忌刑冲破害、伤官七煞、贪合忘官、劫财分福，为破格"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -857,7 +870,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.pattern.七杀格",
@@ -867,16 +880,29 @@
    "key": "七杀格"
   },
   "title": "七杀格",
-  "plain": "月令透出或藏有七杀。传统上喜食神制杀或印化杀，忌财星过旺助杀。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "plain": "《三命通会》“论偏官”：偏官“有制谓之偏官，无制谓之七煞”，“一见制伏，却为贵本”，强调用食神、印等制化，忌日主衰弱而七煞重逢；“煞印相生，功名显达”。本项目按“月令取格”的简化实现给出候选。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷五·论偏官",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷五#13",
+    "quote": "有制谓之偏官，无制谓之七煞"
+   },
+   {
+    "corpusRef": "smtht/卷五#13",
+    "quote": "一见制伏，却为贵本"
+   },
+   {
+    "corpusRef": "smtht/卷五#13",
+    "quote": "忌日主衰弱，七煞重逢"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -884,7 +910,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.pattern.正财格",
@@ -894,16 +920,25 @@
    "key": "正财格"
   },
   "title": "正财格",
-  "plain": "月令透出或藏有正财。传统上喜官星、食伤生财，忌比劫夺财。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "plain": "《三命通会》“论正财”：财要“得时乘旺，不偏正混乱，不重叠多见，自家日主有力”才能发福；“大怕枭，夺则不能生，刃劫则不能享，库逢空则不能聚”。本项目按“月令取格”的简化实现给出候选。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷六·论正财",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷六#46",
+    "quote": "故财要得时乘旺，不偏正混乱，不重叠多见，自家日主有力，皆能发福"
+   },
+   {
+    "corpusRef": "smtht/卷六#46",
+    "quote": "大怕枭，夺则不能生，刃劫则不能享，库逢空则不能聚"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -911,7 +946,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.pattern.偏财格",
@@ -921,16 +956,29 @@
    "key": "偏财格"
   },
   "title": "偏财格",
-  "plain": "月令透出或藏有偏财。传统上喜食伤生财，忌比劫争夺。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "plain": "《三命通会》“论偏财”：偏财“月令所带最重，不宜柱中多逢”，“唯怕分夺，及落空亡”；此格“主人慷慨，不甚吝财，与人有情而多诈”。本项目按“月令取格”的简化实现给出候选。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷六·论偏财",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷六#51",
+    "quote": "偏财月令所带最重，不宜柱中多逢"
+   },
+   {
+    "corpusRef": "smtht/卷六#51",
+    "quote": "偏财格，主人慷慨，不甚吝财，与人有情而多诈"
+   },
+   {
+    "corpusRef": "smtht/卷六#51",
+    "quote": "唯怕分夺，及落空亡"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -938,7 +986,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.pattern.正印格",
@@ -948,16 +996,29 @@
    "key": "正印格"
   },
   "title": "正印格",
-  "plain": "月令透出或藏有正印。传统上喜官杀生印，忌财星坏印。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "plain": "《三命通会》“论印绶”：印绶格“主聪明，多智慧，性慈惠”，“喜官星，以官能生印”，“忌财星，以财能破印”。本项目按“月令取格”的简化实现给出候选。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷六·论印绶",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷六#56",
+    "quote": "此格主聪明，多智慧，性慈惠"
+   },
+   {
+    "corpusRef": "smtht/卷六#56",
+    "quote": "喜官星，以官能生印"
+   },
+   {
+    "corpusRef": "smtht/卷六#56",
+    "quote": "忌财星，以财能破印"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -965,7 +1026,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.pattern.偏印格",
@@ -1002,16 +1063,29 @@
    "key": "食神格"
   },
   "title": "食神格",
-  "plain": "月令透出或藏有食神。传统上喜生财，忌偏印夺食。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "plain": "《三命通会》“论食神”：此格“要日主食神俱生旺，无冲破”，“食神宜食生食旺，不可食衰食绝”，“大忌偏印为倒食”。本项目按“月令取格”的简化实现给出候选。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷六·论食神",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷六#64",
+    "quote": "此格要日主食神俱生旺，无冲破"
+   },
+   {
+    "corpusRef": "smtht/卷六#64",
+    "quote": "食神宜食生食旺，不可食衰食绝"
+   },
+   {
+    "corpusRef": "smtht/卷六#64",
+    "quote": "食神大忌偏印为倒食"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1019,7 +1093,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.pattern.伤官格",
@@ -1029,16 +1103,29 @@
    "key": "伤官格"
   },
   "title": "伤官格",
-  "plain": "月令透出或藏有伤官。传统上分伤官生财、伤官配印等取法，忌伤官见官。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "plain": "《三命通会》“论伤官”：“伤官格务要伤尽，方作贵看”，“伤官要见财，不要见官”，也有“伤官格用财，亦有用印者”，身旺者用财、身弱者用印。本项目按“月令取格”的简化实现给出候选。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "zpzq",
-    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
-    "note": "篇目待核"
+    "ref": "smtht",
+    "section": "卷六·论伤官",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷六#63",
+    "quote": "伤官格务要伤尽，方作贵看"
+   },
+   {
+    "corpusRef": "smtht/卷六#63",
+    "quote": "所以伤官要见财，不要见官"
+   },
+   {
+    "corpusRef": "smtht/卷六#63",
+    "quote": "伤官格用财，亦有用印者"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1046,7 +1133,7 @@
    "note": null,
    "history": []
   },
-  "basis": "chapter-pointer"
+  "basis": "quoted"
  },
  {
   "id": "bz.pattern.建禄格",
@@ -1538,15 +1625,25 @@
    "value": "长生"
   },
   "title": "十二长生：长生",
-  "plain": "如人初生，充满生机。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“长生”：万物发生向荣，如人始生而向长（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "四曰长生，万物发生向荣，如人始生而向长也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1554,7 +1651,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.沐浴",
@@ -1564,15 +1661,25 @@
    "value": "沐浴"
   },
   "title": "十二长生：沐浴",
-  "plain": "如婴儿沐浴，易变动、不稳定。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“沐浴”：又名“败”，万物始生、形体柔脆、易受损伤，如婴儿出生三日沐浴（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "五曰沐浴，又曰败，以万物始生，形体柔脆，易为所损，如人生后三日以沐浴之，几至困绝也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1580,7 +1687,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.冠带",
@@ -1590,15 +1697,25 @@
    "value": "冠带"
   },
   "title": "十二长生：冠带",
-  "plain": "如少年成长，渐有形象与追求。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“冠带”：万物渐荣秀，如人具衣冠（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "六曰冠带，万物渐荣秀，如人具衣冠也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1606,7 +1723,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.临官",
@@ -1616,15 +1733,25 @@
    "value": "临官"
   },
   "title": "十二长生：临官",
-  "plain": "如壮年任职，力量强盛。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“临官”：万物既已秀实，如人之临官（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "七曰临官，万物既秀实，如人之临官也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1632,7 +1759,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.帝旺",
@@ -1642,15 +1769,25 @@
    "value": "帝旺"
   },
   "title": "十二长生：帝旺",
-  "plain": "如鼎盛之期，力量最强。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“帝旺”：万物成熟，如人之兴旺（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "八曰帝旺，万物成熟，如人之兴旺也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1658,7 +1795,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.衰",
@@ -1668,15 +1805,25 @@
    "value": "衰"
   },
   "title": "十二长生：衰",
-  "plain": "如力量转衰。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“衰”：万物形衰，如人之气衰（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "九曰衰，万物形衰，如人之气衰也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1684,7 +1831,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.病",
@@ -1694,15 +1841,25 @@
    "value": "病"
   },
   "title": "十二长生：病",
-  "plain": "如带病之身，力量不足。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“病”：万物有病，如人之病（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "十曰病，万物病，如人之病也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1710,7 +1867,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.死",
@@ -1720,15 +1877,25 @@
    "value": "死"
   },
   "title": "十二长生：死",
-  "plain": "如生机停止。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“死”：万物死去，如人之死（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "十一曰死，万物死，如人之死也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1736,7 +1903,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.墓",
@@ -1746,15 +1913,25 @@
    "value": "墓"
   },
   "title": "十二长生：墓",
-  "plain": "如入库收藏。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“墓”：又名“库”，万物成功而收藏入库，如人终而归墓（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "十二曰墓，又曰库，以万物成功而藏之库，如人之终而归墓也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1762,7 +1939,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.绝",
@@ -1772,15 +1949,25 @@
    "value": "绝"
   },
   "title": "十二长生：绝",
-  "plain": "如断绝，等待更新。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“绝”：《三命通会》称之为“受气”，又名“绝”“脆”，万物在地中尚未成象，如母腹尚空（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "一曰受气，又曰绝，曰脆，以万物在地中未有其象，如母腹空，未有物也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1788,7 +1975,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.胎",
@@ -1798,15 +1985,25 @@
    "value": "胎"
   },
   "title": "十二长生：胎",
-  "plain": "如受孕成胎，酝酿新生。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“胎”：《三命通会》称之为“受胎”，天地气交、万物在地中萌芽，如人受父母之气（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "二曰受胎，天地气交，氤氲造物，其物在地中萌芽，始有其气，如人受父母之气也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1814,7 +2011,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.ls.养",
@@ -1824,15 +2021,25 @@
    "value": "养"
   },
   "title": "十二长生：养",
-  "plain": "如胎儿成形、待出生。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "plain": "十二长生之“养”：《三命通会》称之为“成形”，万物在地中成形，如人在母腹成形（《三命通会》卷二“论五行旺相休囚死并寄生十二宫”）。书中提醒“见生旺者未必便作吉论，见休囚死绝未必便作凶言”，即旺衰只是状态的比喻，吉凶还要看是否太过、不及，并结合其他条件。以上为传统说法。",
   "evidenceType": "school",
   "sources": [
    {
-    "ref": "yhzp",
-    "note": "十二长生的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论五行旺相休囚死并寄生十二宫",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "三曰成形，万物在地中成形，如人在母腹成形也"
+   },
+   {
+    "corpusRef": "smtht/卷二#8",
+    "quote": "见生旺者未必便作吉论，见休囚死绝未必便作凶言"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1840,7 +2047,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "bz.kongwang",

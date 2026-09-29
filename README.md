@@ -31,11 +31,11 @@ npm run verify         # 类型检查 + 纯度检查 + 出处检查 + 全部测�
 - **外部软件的一致只是发现差异的手段，不等于古籍正确；古籍引文的底本仍待人工核对。**
 
 ## 古籍语料
-`src/rules/corpus.json`：《紫微斗数全书》卷一至卷三、《三命通会》卷一至卷九（维基文库转录本，CC BY-SA 4.0，见 `docs/sources/NOTICE.md`），共 435 段，含来源 URL、修订号、许可、SHA-256。81 条规则已附逐字引文（`docs/sources/grounding.json`，`npm run corpus:ground` 校验每条引文都是语料原文的唯一子串）。补充新语料的流程见 `docs/sources/README.md`。
+`src/rules/corpus.json`：《紫微斗数全书》卷一至卷三、《三命通会》卷一至卷九（维基文库转录本，CC BY-SA 4.0，见 `docs/sources/NOTICE.md`），共 435 段，含来源 URL、修订号、许可、SHA-256。100 条规则已附逐字引文（`docs/sources/grounding.json`，`npm run corpus:ground` 校验每条引文都是语料原文的唯一子串）。补充新语料的流程见 `docs/sources/README.md`。
 
 ## 已知限制（如实）
 - **古籍引文的底本未核对**：维基文库这两部书未标明版本，繁简混用且有个别转录错误；引文须由审核人对照影印本核对。规则全部为“未审核”，“已确认”状态被校验禁止用于无古籍原文的规则。
-- 解读文字由开发者按“转述古籍 + 定性概率表述”的准则撰写（`docs/INTERPRETATION_GUIDELINES.md`），**未经术数老师审核**；未附引文的 56 条为通行说法或算法结构。
+- 解读文字由开发者按“转述古籍 + 定性概率表述”的准则撰写（`docs/INTERPRETATION_GUIDELINES.md`），**未经术数老师审核**；未附引文的 37 条为通行说法或算法结构。
 - 黄金盘人工签字（20 盘）尚待确认人完成：`docs/golden/HUMAN_REVIEW_SHEET.md`，方法见 `docs/golden/REVIEW_PROTOCOL.md`。
 - 《子平真诠》《穷通宝鉴》《滴天髓》尚未入库或未核对；未实现：合盘、飞星派、庙旺利陷、小限、调候、神煞、桌面安装包。
 - 口径差异见 ADR-008、ADR-010（1929 年前节令、2026 年后节气预测、闰月与流月、大限起法措辞、闰月取月默认值待裁定）。

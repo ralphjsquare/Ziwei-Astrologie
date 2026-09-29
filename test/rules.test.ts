@@ -19,7 +19,7 @@ describe('规则数据与出处校验', () => {
     expect(validateRules(RULES)).toEqual([]);
     const all = [...RULES.ziwei, ...RULES.bazi, ...RULES.cross];
     const quoted = all.filter((r) => r.classical.length > 0);
-    expect(quoted.length).toBeGreaterThanOrEqual(80);
+    expect(quoted.length).toBeGreaterThanOrEqual(100);
     for (const r of quoted) for (const q of r.classical) expect(RULES.corpus[q.corpusRef].text.includes(q.quote), r.id).toBe(true);
     // 审核状态仍全部为“未审核”：引文不等于审核
     expect(all.every((r) => r.review.status === 'draft')).toBe(true);
