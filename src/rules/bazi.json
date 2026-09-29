@@ -1884,20 +1884,29 @@
    "kind": "luck-direction"
   },
   "title": "大运顺逆与起运",
-  "plain": "阳年生男、阴年生女大运顺排，阴年生男、阳年生女逆排；顺排数到下一个节令，逆排数到上一个节令，三天折合一岁推算起运时间。",
+  "plain": "《三命通会》“论大运”说：“阳男阴女，大运以生日后未来节气日时为数，顺而行之；阴男阳女，大运以生日前过去节气日时为数，逆而行之”，并以“三日为年”折算起运（原书算例：生日到节令“五日三时”，折得“一岁奇九月”）。本项目按此换算：三天折一岁，一日折四个月，一时辰折十天。",
   "evidenceType": "structural",
   "sources": [
    {
-    "ref": "adr",
-    "section": "ADR-011",
-    "note": "大运顺逆与起运换算为算法定义"
-   },
-   {
-    "ref": "yhzp",
-    "note": "大运排法的传统说法，篇目待核"
+    "ref": "smtht",
+    "section": "卷二·论大运",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "smtht/卷二#13",
+    "quote": "折除以三日为年"
+   },
+   {
+    "corpusRef": "smtht/卷二#13",
+    "quote": "阳男阴女，大运以生日后未来节气日时为数，顺而行之；阴男阳女，大运以生日前过去节气日时为数，逆而行之"
+   },
+   {
+    "corpusRef": "smtht/卷二#13",
+    "quote": "乃一岁奇九月之大运"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1905,7 +1914,7 @@
    "note": null,
    "history": []
   },
-  "basis": "algorithmic"
+  "basis": "quoted"
  },
  {
   "id": "bz.flow.luck",

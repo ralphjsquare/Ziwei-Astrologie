@@ -3,9 +3,13 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { BRANCHES, STEMS, jiaziIndex, nayinName, yinMonthStem } from '../src/core/ganzhi';
+import { BRANCH_SIX_COMBINE, PUNISH_GROUPS, STEM_COMBINE, THREE_COMBINE } from '../src/bazi/tables';
+import { longShengOf } from '../src/bazi/engine';
 import { HUO_START, KUI_YUE, LING_START, LU_CUN, SIHUA, SIHUA_VARIANTS, TIAN_MA, sanheGroup } from '../src/ziwei/tables';
 import { ziweiPosition } from '../src/ziwei/engine';
 import { computeCharts } from '../src/index';
+import { qiyunOffset } from '../src/bazi/engine';
+import { RULES } from '../src/rules';
 import { solarInput } from './helpers';
 
 const RAW = readFileSync('docs/sources/raw/zwqs/003-紫微斗數全書_卷二.wikitext', 'utf8');
@@ -174,5 +178,80 @@ describe('《紫微斗数全书》卷二“紫微星落宫表”（原文文字�
     expect(extra).toEqual([[3, 9, B('寅')]]);
     expect(missing).toEqual([[3, 5], [4, 30]]);
     expect(ziweiPosition(4, 30)).toBe(B('亥'));
+  });
+});
+
+describe('《三命通会》卷二“论大运”原文 × 起运算法', () => {
+  const C = JSON.parse(readFileSync('src/rules/corpus.json', 'utf8')) as Record<string, { text: string }>;
+  const t = C['smtht/卷二#13'].text;
+  it('原文：阳男阴女数生日后未来节气、顺行；阴男阳女数生日前过去节气、逆行；三日折一岁', () => {
+    expect(t).toContain('折除以三日为年');
+    expect(t).toContain('阳男阴女，大运以生日后未来节气日时为数，顺而行之；阴男阳女，大运以生日前过去节气日时为数，逆而行之');
+    const c = computeCharts(solarInput(1990, 6, 15, 10, 30)).bazi; // 庚午年（阳）男：顺行，数到下一节令
+    expect(c.luck.direction).toBe(1);
+    expect(c.luck.referenceJie).toBe('小暑');
+    const d = computeCharts(solarInput(1985, 3, 9, 10, 30)).bazi; // 乙丑年（阴）男：逆行，数到上一节令
+    expect(d.luck.direction).toBe(-1);
+    expect(d.luck.referenceJie).toBe('惊蛰');
+  });
+  it('原文算例：生日到节令“五日三时”（三时辰）→ 折除“一岁奇九月”，与本项目换算一致', () => {
+    // 原文：24 日巳时至 29 日申时，5 日 3 时辰 = 5 天 + 6 小时；63 时辰×10 日 = 630 日 = 1 岁 9 个月
+    expect(t).toContain('一岁奇九月');
+    const off = qiyunOffset(5 * 86400 + 6 * 3600);
+    expect(off).toMatchObject({ years: 1, months: 9, days: 0 });
+  });
+  it('该规则已附上述原文引文', () => {
+    const r = RULES.byId.get('bz.luck.direction')!;
+    expect(r.classical.length).toBeGreaterThan(0);
+  });
+});
+
+describe('《三命通会》原文 × 八字数据表', () => {
+  const C = JSON.parse(readFileSync('src/rules/corpus.json', 'utf8')) as Record<string, { text: string }>;
+  const T = (k: string) => C[k].text;
+
+  it('论十干禄：甲禄寅、乙禄卯、丙禄巳、丁禄午、戊寄巳、己寄午、庚禄申、辛禄酉、壬禄亥、癸禄子（与十二长生“临官”一致）', () => {
+    expect(T('smtht/卷三#1')).toContain('甲禄寅，乙禄卯，庚禄申，辛禄酉，壬禄亥，癸禄子，丙禄已，丁禄午，戊寄已，已寄午'); // 原文“已”为“巳/己”之误
+    const lu = '寅卯巳午巳午申酉亥子'.split('').map(B);
+    STEMS.forEach((st, i) => expect(BRANCHES.indexOf(BRANCHES.find((_, b) => longShengOf(i, b) === '临官')!), st).toBe(lu[i]));
+  });
+
+  it('论十干化气：丁壬化木、戊癸化火、乙庚化金、甲己化土、丙辛化水', () => {
+    const t = T('smtht/卷二#19');
+    for (const [a, b, el] of STEM_COMBINE) expect(t, `${STEMS[a]}${STEMS[b]}`).toMatch(new RegExp(`${STEMS[a]}${STEMS[b]}化${el}|${STEMS[b]}${STEMS[a]}化${el}`));
+  });
+
+  it('论支元六合、三合：六对合支与四组三合局', () => {
+    const six = T('smtht/卷二#20');
+    for (const [a, b] of BRANCH_SIX_COMBINE) expect(six, BRANCHES[a] + BRANCHES[b]).toMatch(new RegExp(`${BRANCHES[a]}合${BRANCHES[b]}|${BRANCHES[b]}合${BRANCHES[a]}|${BRANCHES[a] === '巳' ? '已' : BRANCHES[a]}合${BRANCHES[b]}|${BRANCHES[b]}合${BRANCHES[a] === '巳' ? '已' : BRANCHES[a]}`));
+    const three = T('smtht/卷二#21');
+    for (const g of THREE_COMBINE) {
+      const name = g.branches.map((b) => BRANCHES[b]).join('');
+      const zhong = ['申子辰', '已酉丑', '寅午戌', '亥卯未'].some((x) => [...x].every((ch) => name.replace('巳', '已').includes(ch)));
+      expect(zhong, name).toBe(true);
+    }
+    expect(three).toContain('故申子辰为水局');
+  });
+
+  it('论三刑：无恩（寅巳申）、恃势（丑戌未）、无礼（子卯）、自刑（辰午酉亥）', () => {
+    const t = T('smtht/卷二#25');
+    expect(t).toContain('极十数而为无礼之刑');
+    expect(t).toContain('极十数而为无恩之刑');
+    expect(t).toContain('极十数而为恃势之刑');
+    expect(PUNISH_GROUPS.map((g) => g.name)).toEqual(['无恩之刑', '恃势之刑']);
+    expect(PUNISH_GROUPS[0].branches.map((b) => BRANCHES[b]).sort()).toEqual(['寅', '巳', '申'].sort());
+    expect(PUNISH_GROUPS[1].branches.map((b) => BRANCHES[b]).sort()).toEqual(['丑', '戌', '未'].sort());
+    expect(t).toContain('辰见辰自刑');
+  });
+
+  it('论空亡：甲子旬空戌亥（“甲子的遁至酉而十干足，所以无戌亥”）；本项目日柱旬空一致', () => {
+    expect(T('smtht/卷三#14')).toContain('如甲子的遁至酉而十干足，所以无戌亥');
+    // 2000-01-07 为甲子日（2000-01-01 戊午，序号 54，+6 日 = 序号 0）
+    const c = computeCharts(solarInput(2000, 1, 7, 12, 0)).bazi;
+    expect(c.pillars.day.jiazi).toBe(0);
+    expect(c.kongWang.map((b) => BRANCHES[b])).toEqual(['戌', '亥']);
+    const d = computeCharts(solarInput(2000, 2, 6, 12, 0)).bazi; // 甲午日（序号 30）
+    expect(d.pillars.day.jiazi).toBe(30);
+    expect(d.kongWang.map((b) => BRANCHES[b])).toEqual(['辰', '巳']);
   });
 });

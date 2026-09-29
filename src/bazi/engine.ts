@@ -36,6 +36,16 @@ export function addYmd(y: number, m: number, d: number, years: number, months: n
 
 export const CYCLE_COUNT = 10;
 
+/** 起运换算（《三命通会》卷二“论大运”：三日折一岁；一日四个月、一时辰十天，一年按 360 日）：出生到节令的相差秒数 → 年月日时 */
+export function qiyunOffset(diffSec: number): { years: number; months: number; days: number; hours: number } {
+  const conv = diffSec * 120;
+  const years = Math.floor(conv / 31104000);
+  let rem = conv - years * 31104000;
+  const months = Math.floor(rem / 2592000); rem -= months * 2592000;
+  const days = Math.floor(rem / 86400); rem -= days * 86400;
+  return { years, months, days, hours: Math.floor(rem / 3600) };
+}
+
 export function buildBazi(_input: BirthInput, r: ResolvedBirth, _opt: Options, gender: 'M' | 'F'): BaziChart {
   const steps: BaziChart['steps'] = [];
   const jie: TermInstant[] = jieInstantsAround(r.clock.y);
@@ -74,12 +84,7 @@ export function buildBazi(_input: BirthInput, r: ResolvedBirth, _opt: Options, g
   const dir: 1 | -1 = (yang && gender === 'M') || (!yang && gender === 'F') ? 1 : -1;
   const refJie = dir === 1 ? nextJie : curJie;
   const diffSec = Math.abs(refJie.epochSec - r.utcSec);
-  const conv = diffSec * 120; // 三天折一年：1 日 = 4 个月 = 120 日（一年按 360 日）
-  const years = Math.floor(conv / 31104000);
-  let rem = conv - years * 31104000;
-  const months = Math.floor(rem / 2592000); rem -= months * 2592000;
-  const days = Math.floor(rem / 86400); rem -= days * 86400;
-  const hours = Math.floor(rem / 3600);
+  const { years, months, days, hours } = qiyunOffset(diffSec);
   const std = { y: r.clock.y, m: r.clock.m, d: r.clock.d };
   const startDate = addYmd(std.y, std.m, std.d, years, months, days);
   steps.push({

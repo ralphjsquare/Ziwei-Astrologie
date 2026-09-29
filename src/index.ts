@@ -6,7 +6,7 @@ import { buildBazi } from './bazi/engine';
 import type { ZiweiChart } from './ziwei/types';
 import type { BaziChart } from './bazi/types';
 
-export const ENGINE_VERSION = '0.2.0';
+export const ENGINE_VERSION = '0.3.0';
 
 export interface ChartBundle {
   schema: 'chart-bundle/1';
