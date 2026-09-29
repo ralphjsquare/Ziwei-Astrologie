@@ -1,0 +1,34 @@
+{
+  "name": "ziwei-astrologie",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "紫微斗数 + 八字 本地排盘与解读（可溯源、可复现）",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check:sources": "tsx tools/check-sources.ts",
+    "check:purity": "tsx tools/check-purity.ts",
+    "review:export": "tsx tools/review-export.ts",
+    "review:import": "tsx tools/review-import.ts",
+    "dev": "vite --config web/vite.config.ts",
+    "build": "vite build --config web/vite.config.ts",
+    "verify": "npm run typecheck && npm run check:purity && npm run check:sources && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "astronomy-engine": "^2.1.19",
+    "fake-indexeddb": "^6.2.5",
+    "fast-check": "^4.10.2",
+    "iztro": "^2.6.1",
+    "lunar-javascript": "^1.7.7",
+    "playwright-core": "^1.63.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  },
+  "dependencies": {
+    "tyme4ts": "^1.5.2"
+  }
+}
