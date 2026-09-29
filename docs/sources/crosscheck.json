@@ -1,8 +1,8 @@
 {
  "book": "三命通会",
  "secondSource": "Kanripo KR3g0042（文渊阁四库全书本 WYG）",
- "total": 110,
- "found": 106,
+ "total": 152,
+ "found": 145,
  "rows": [
   {
    "ruleId": "bz.stem.甲",
@@ -659,6 +659,255 @@
    "quote": "伤官格用财，亦有用印者",
    "found": true,
    "volume": 5
+  },
+  {
+   "ruleId": "bz.shensha.天乙贵人",
+   "quote": "天乙贵，三命中最吉之神",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.天乙贵人",
+   "quote": "可见命中有贵，不可就为吉论，要当细详",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.驿马",
+   "quote": "驿马者，三命中发用，喜庆之神",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.驿马",
+   "quote": "寅午戌生人，马在申而五阳干乘之",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.咸池",
+   "quote": "五行沐浴之地，名咸池",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.shensha.咸池",
+   "quote": "咸池非吉煞",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.shensha.劫煞",
+   "quote": "劫者，夺也，自外夺之之谓夺",
+   "found": false
+  },
+  {
+   "ruleId": "bz.shensha.亡神",
+   "quote": "亡者，失也，自内失之之谓亡",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.将星",
+   "quote": "将星者，如将札中军也，故以三合中位谓之将星",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.shensha.华盖",
+   "quote": "故以三合底处得库谓之华盖",
+   "found": true,
+   "volume": 2
+  },
+  {
+   "ruleId": "bz.shensha.羊刃",
+   "quote": "羊言刚也，刃者取宰割之义",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.羊刃",
+   "quote": "惟甲丙戊庚壬五阳干有刃，乙丁己辛癸五阴干无刃",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.shensha.羊刃",
+   "quote": "刃為兵器無煞難存煞為軍令無刃不尊刃煞雙顯威鎮乾坤",
+   "found": true,
+   "volume": 12
+  },
+  {
+   "ruleId": "bz.shensha.金舆",
+   "quote": "故金舆常居禄前二辰",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.孤辰",
+   "quote": "如亥子丑逐方三位，进前一辰见寅为孤，退后一辰见戌为寡",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.寡宿",
+   "quote": "如亥子丑逐方三位，进前一辰见寅为孤，退后一辰见戌为寡",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.月德贵人",
+   "quote": "月德者，乃三合所照之方，日月会合之辰",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.月德贵人",
+   "quote": "凡命中带凶煞，得此二德扶化，凶不为甚",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.月德合",
+   "quote": "月备合，如正月丙与辛合，二月甲与己合，三月壬与丁合，四月庚与乙合，余照此",
+   "found": false
+  },
+  {
+   "ruleId": "bz.shensha.德秀贵人",
+   "quote": "德者，本月生旺之德；秀者，合天地中和之气、五行变化而成者也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.德秀贵人",
+   "quote": "赋性聪明，温厚和气",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.元辰",
+   "quote": "是以阳男阴女，在冲前一位支辰；阴男阳女，在冲后一位支辰",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.灾煞",
+   "quote": "灾煞者，其性勇猛，常居劫煞之前，冲破将星，谓之灾煞",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.勾煞",
+   "quote": "勾者，牵连之义；绞者，羁绊之名",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.勾煞",
+   "quote": "阳男阴女，命前三辰为勾",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.绞煞",
+   "quote": "勾者，牵连之义；绞者，羁绊之名",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.绞煞",
+   "quote": "阳男阴女，命前三辰为勾",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.十恶大败",
+   "quote": "十恶者，譬律法中人，犯十恶重罪，在所不赦",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.十恶大败",
+   "quote": "况犯者未必皆凶，若内有吉神相扶，贵气相辅，当为吉论",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.天罗",
+   "quote": "何以戌亥为天罗，辰巳为地网",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.天罗",
+   "quote": "中间又分火命人有天罗，水、土命人有地网",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.地网",
+   "quote": "何以戌亥为天罗，辰巳为地网",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.地网",
+   "quote": "中间又分火命人有天罗，水、土命人有地网",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.三奇贵人",
+   "quote": "凡命遇三奇，主人精神异常，襟怀卓越，好奇尚大，博学多能",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.三奇贵人",
+   "quote": "三奇要顺布，不欲倒乱",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.禄神",
+   "quote": "十干就支神为禄，谓禄随旺行，所以甲禄寅，乙禄卯，庚禄申，辛禄酉，壬禄亥，癸禄子",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.魁罡",
+   "quote": "此格有四日：庚辰、壬辰、戊戌、庚戌",
+   "found": true,
+   "volume": 6
+  },
+  {
+   "ruleId": "bz.shensha.魁罡",
+   "quote": "身值天罡地魁，衰则彻骨贫寒，强则绝伦贵显",
+   "found": true,
+   "volume": 6
+  },
+  {
+   "ruleId": "bz.shensha.日德",
+   "quote": "此格止有五日：甲寅、丙辰、戊辰、庚辰、壬戌",
+   "found": true,
+   "volume": 6
+  },
+  {
+   "ruleId": "bz.shensha.日贵",
+   "quote": "此格只有四日：丁酉、丁亥、癸巳、癸卯",
+   "found": false
+  },
+  {
+   "ruleId": "bz.shensha.丧门",
+   "quote": "取命前二辰为丧门，命后二辰为吊客",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.吊客",
+   "quote": "取命前二辰为丧门，命后二辰为吊客",
+   "found": true,
+   "volume": 3
   }
  ]
 }

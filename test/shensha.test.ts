@@ -147,7 +147,7 @@ describe('神煞第二批：表格对照《三命通会》文字（手写期望�
     const r = { year: st(0, 1), month: st(0, 2), day: st(0, 9), hour: st(0, 0) };
     expect(computeShenSha(r).some((h) => h.name === '三奇贵人')).toBe(false);
   });
-  it('与 bazi-lite 比对 1200 盘：月德、月德合、德秀（当月德/秀干）、元辰、灾煞、勾绞、十恶大败、禄神、魁罡、丧门、吊客的四柱分布一致；三奇按“是否成立”比对', () => {
+  it('与 bazi-lite 比对 1200 盘：月德、月德合、德秀（当月德/秀干）、元辰、灾煞、勾绞、十恶大败、天罗地网、禄神、魁罡、丧门、吊客的四柱分布一致；三奇按“是否成立”比对', () => {
     const r = rng(4242);
     const MAP: Record<string, string> = { 月德贵人: '月德贵人', 月德合: '月德合', 德秀贵人: '德秀贵人', 元辰: '元辰', 灾煞: '灾煞', 勾煞: '勾煞', 绞煞: '绞煞', 十恶大败: '十恶大败', 禄神: '禄神', 魁罡: '魁罡', 丧门: '丧门', 吊客: '吊客' };
     const bad: string[] = [];
@@ -161,6 +161,7 @@ describe('神煞第二批：表格对照《三命通会》文字（手写期望�
         const theirs = new Set(shenShaNames(o[pk]));
         const mine = new Set(c.shensha.filter((x) => x.pillar === pk).map((x) => x.name as string));
         for (const [mn, tn] of Object.entries(MAP)) if (mine.has(mn) !== theirs.has(tn)) bad.push(`${y}-${m}-${d} ${h} ${g} ${pk} ${mn}`);
+        if ((mine.has('天罗') || mine.has('地网')) !== theirs.has('天罗地网')) bad.push(`${y}-${m}-${d} ${h} ${g} ${pk} 天罗地网`); // bazi-lite 把天罗、地网合为一项
       }
       const mySanQi = c.shensha.some((x) => x.name === '三奇贵人');
       const theirSanQi = ['三奇贵人（天）', '三奇贵人（地）', '三奇贵人（人）'].some((n) => new Set(shenShaNames(o.day)).has(n));

@@ -23,7 +23,7 @@
   "smtht": {
     "book": "三命通会",
     "author": "明·万民英",
-    "edition": "维基文库转录本（卷一至卷九），底本未标明；引文已与 Kanripo 文渊阁四库全书本机械核对（105/110 条一致，5 条存在文字差异，见 docs/sources/crosscheck.json），仍须对照影印本核对",
+    "edition": "维基文库转录本：卷一至卷九（底本未标明）＋卷十至十二（“三命通會 (四庫全書本)”页面，未附影印本）；引文已与 Kanripo 文渊阁四库全书本机械核对（见 docs/sources/crosscheck.json），仍须对照影印本核对",
     "verified": false,
     "note": "引文取自维基文库转录本（CC BY-SA 4.0）；转述已尽量忠实，但引用前须由审核人对照影印本核对。"
   },

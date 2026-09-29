@@ -24,15 +24,19 @@
     },
     {
       "id": "smtht-sk",
-      "book": "三命通会（四库全书本）",
+      "book": "三命通会",
       "site": "zh.wikisource.org",
       "title": "三命通會 (四庫全書本)",
       "includeSubpages": true,
-      "license": "",
-      "licenseVerified": false,
-      "edition": "文渊阁四库全书本",
+      "license": "原典为明代著作，属公有领域；转录文本 © 维基文库贡献者，依 CC BY-SA 4.0 授权（署名、相同方式共享；2026-09-29 经 MediaWiki API siteinfo 核对站点授权）",
+      "licenseVerified": true,
+      "edition": "维基文库“三命通會 (四庫全書本)”转录本（页面标题标明为四库全书本；未附影印本链接）；仅取卷10–12以补主文缺卷；引用前须对照影印本核对",
       "joinLines": true,
-      "_note": "下载被限流中断，未下载；如需卷十至十二再做"
+      "onlyPages": [
+        "卷10",
+        "卷11",
+        "卷12"
+      ]
     },
     {
       "id": "dts",

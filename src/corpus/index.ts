@@ -6,6 +6,8 @@ import type { CorpusEntry, Rule } from '../rules';
 /** 维基文本 → 纯文本：去模板、注释、脚注、HTML 标签，保留链接文字；标题行保留为“== 标题 ==”以便分节。 */
 export function wikitextToPlain(src: string): string {
   let t = src.replace(/<!--[\s\S]*?-->/g, '');
+  // 四库全书本模板：锚点当作小节标题；注文保留文字；缺字占位记为□
+  t = t.replace(/\{\{SK anchor\|([^{}|]*)\}\}/g, '\n=== $1 ===\n').replace(/\{\{SK notes\|([^{}]*)\}\}/g, '$1').replace(/\{\{SKchar\|[^{}]*\}\}/g, '□');
   t = t.replace(/<ref[^>]*\/>/g, '').replace(/<ref[^>]*>[\s\S]*?<\/ref>/g, '');
   for (let i = 0; i < 5; i++) t = t.replace(/\{\{[^{}]*\}\}/g, '');
   t = t.replace(/\[\[(?:File|Image|文件|檔案|分類|Category)[^\]]*\]\]/gi, '');

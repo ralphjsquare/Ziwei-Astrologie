@@ -13,7 +13,7 @@ import { RULES, validateRules, type CorpusEntry, type Rule } from '../src/rules'
 
 const MANIFEST = 'docs/sources/manifest.json';
 const RAW = 'docs/sources/raw';
-interface ManifestItem { joinLines?: boolean; id: string; book: string; site: string; title: string; includeSubpages: boolean; license: string; licenseVerified: boolean; edition: string }
+interface ManifestItem { joinLines?: boolean; onlyPages?: string[]; id: string; book: string; site: string; title: string; includeSubpages: boolean; license: string; licenseVerified: boolean; edition: string }
 interface RawMeta { id: string; page: string; url: string; revid: number; timestamp: string; retrievedAt: string; siteRights: string; file: string }
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -39,7 +39,7 @@ async function fetchAll() {
     let titles = [it.title];
     if (it.includeSubpages) {
       const sub = await api(it.site, { action: 'query', list: 'allpages', apprefix: it.title + '/', aplimit: '500' });
-      titles = titles.concat(sub.query.allpages.map((p: { title: string }) => p.title).filter((t: string) => !/\/全覽\d*$/.test(t)));
+      titles = titles.concat(sub.query.allpages.map((p: { title: string }) => p.title).filter((t: string) => !/\/全覽\d*$/.test(t) && (!it.onlyPages || it.onlyPages.some((x) => t.endsWith('/' + x)))));
     }
     const dir = join(RAW, it.id);
     mkdirSync(dir, { recursive: true });
@@ -72,6 +72,7 @@ function importCorpus() {
     if (!existsSync(join(dir, 'meta.json'))) continue;
     if (!it.licenseVerified) { console.warn(`跳过 ${it.id}：许可尚未核对（licenseVerified=false）`); continue; }
     for (const m of readJson<RawMeta[]>(join(dir, 'meta.json'))) {
+      if (it.onlyPages && !it.onlyPages.some((x) => m.page.endsWith('/' + x))) continue;
       const meta: CorpusSourceMeta = { id: it.id, book: it.book, url: m.url, license: it.license, retrievedAt: m.retrievedAt, licenseVerified: it.licenseVerified, edition: it.edition || undefined, joinLines: it.joinLines, page: m.page.includes('/') ? m.page.slice(m.page.indexOf('/') + 1) : undefined };
       Object.assign(corpus, buildCorpusEntries(meta, wikitextToPlain(readFileSync(join(dir, m.file), 'utf8'))));
     }
