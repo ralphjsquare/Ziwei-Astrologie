@@ -1,0 +1,3847 @@
+{
+ "generatedBy": "tools/gen-golden.ts",
+ "note": "期望值来自独立实现，非本引擎输出；humanVerifiedBy 为 null 表示尚未人工签字（见 docs/golden/HUMAN_REVIEW_SHEET.md）",
+ "divergences": [],
+ "cases": [
+  {
+   "id": "G01",
+   "category": "闰月（闰月8日）",
+   "input": {
+    "calendar": "solar",
+    "year": 1903,
+    "month": 7,
+    "day": 2,
+    "hour": 10,
+    "minute": 15,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "丑",
+     "bodyBranch": "亥",
+     "majorStars": {
+      "寅": "天机太阴",
+      "卯": "紫微贪狼",
+      "辰": "巨门",
+      "巳": "天相",
+      "午": "天梁",
+      "未": "廉贞七杀",
+      "申": "",
+      "酉": "",
+      "戌": "天同",
+      "亥": "武曲破军",
+      "子": "太阳",
+      "丑": "天府"
+     },
+     "transforms": {
+      "太阴": "科",
+      "贪狼": "忌",
+      "巨门": "权",
+      "破军": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "癸卯 戊午 辛卯 癸巳",
+     "luckStart": [
+      8,
+      4,
+      20
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G02",
+   "category": "闰月（闰月22日）",
+   "input": {
+    "calendar": "solar",
+    "year": 1906,
+    "month": 6,
+    "day": 13,
+    "hour": 13,
+    "minute": 15,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "木三局",
+     "mingBranch": "亥",
+     "bodyBranch": "丑",
+     "majorStars": {
+      "寅": "",
+      "卯": "廉贞破军",
+      "辰": "",
+      "巳": "天府",
+      "午": "天同太阴",
+      "未": "武曲贪狼",
+      "申": "太阳巨门",
+      "酉": "天相",
+      "戌": "天机天梁",
+      "亥": "紫微七杀",
+      "子": "",
+      "丑": ""
+     },
+     "transforms": {
+      "廉贞": "忌",
+      "文昌": "科",
+      "天同": "禄",
+      "天机": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "丙午 甲午 戊子 己未",
+     "luckStart": [
+      2,
+      2,
+      7
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G03",
+   "category": "闰月（闰月8日）",
+   "input": {
+    "calendar": "solar",
+    "year": 1917,
+    "month": 3,
+    "day": 30,
+    "hour": 10,
+    "minute": 15,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "戌",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "天机太阴",
+      "卯": "紫微贪狼",
+      "辰": "巨门",
+      "巳": "天相",
+      "午": "天梁",
+      "未": "廉贞七杀",
+      "申": "",
+      "酉": "",
+      "戌": "天同",
+      "亥": "武曲破军",
+      "子": "太阳",
+      "丑": "天府"
+     },
+     "transforms": {
+      "天机": "科",
+      "太阴": "禄",
+      "巨门": "忌",
+      "天同": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "丁巳 癸卯 辛未 癸巳",
+     "luckStart": [
+      7,
+      11,
+      24
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G04",
+   "category": "闰月（闰月22日）",
+   "input": {
+    "calendar": "solar",
+    "year": 1919,
+    "month": 9,
+    "day": 15,
+    "hour": 13,
+    "minute": 15,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "寅",
+     "bodyBranch": "辰",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天梁": "科",
+      "武曲": "禄",
+      "贪狼": "权",
+      "文曲": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "己未 癸酉 庚午 癸未",
+     "luckStart": [
+      8,
+      0,
+      16
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G05",
+   "category": "闰月（闰月8日）",
+   "input": {
+    "calendar": "solar",
+    "year": 1933,
+    "month": 6,
+    "day": 30,
+    "hour": 12,
+    "minute": 15,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "子",
+     "bodyBranch": "子",
+     "majorStars": {
+      "寅": "天机太阴",
+      "卯": "紫微贪狼",
+      "辰": "巨门",
+      "巳": "天相",
+      "午": "天梁",
+      "未": "廉贞七杀",
+      "申": "",
+      "酉": "",
+      "戌": "天同",
+      "亥": "武曲破军",
+      "子": "太阳",
+      "丑": "天府"
+     },
+     "transforms": {
+      "太阴": "科",
+      "贪狼": "忌",
+      "巨门": "权",
+      "破军": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "癸酉 戊午 丁卯 丙午",
+     "luckStart": [
+      7,
+      11,
+      29
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G06",
+   "category": "闰月（闰月22日）",
+   "input": {
+    "calendar": "solar",
+    "year": 1941,
+    "month": 8,
+    "day": 14,
+    "hour": 14,
+    "minute": 15,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "丑",
+     "bodyBranch": "卯",
+     "majorStars": {
+      "寅": "天机太阴",
+      "卯": "紫微贪狼",
+      "辰": "巨门",
+      "巳": "天相",
+      "午": "天梁",
+      "未": "廉贞七杀",
+      "申": "",
+      "酉": "",
+      "戌": "天同",
+      "亥": "武曲破军",
+      "子": "太阳",
+      "丑": "天府"
+     },
+     "transforms": {
+      "文昌": "忌",
+      "巨门": "禄",
+      "文曲": "科",
+      "太阳": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "辛巳 丙申 甲午 辛未",
+     "luckStart": [
+      8,
+      3,
+      5
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G07",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 1985,
+    "month": 3,
+    "day": 9,
+    "hour": 23,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "寅",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "天机": "禄",
+      "紫微": "科",
+      "天梁": "权",
+      "太阴": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "乙丑 己卯 戊申 壬子",
+     "luckStart": [
+      1,
+      3,
+      28
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G08",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 1985,
+    "month": 3,
+    "day": 9,
+    "hour": 23,
+    "minute": 59,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "寅",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "天机": "禄",
+      "紫微": "科",
+      "天梁": "权",
+      "太阴": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "乙丑 己卯 戊申 壬子",
+     "luckStart": [
+      8,
+      8,
+      21
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G09",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 1985,
+    "month": 3,
+    "day": 9,
+    "hour": 0,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "寅",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天梁": "权",
+      "天机": "禄",
+      "紫微": "科",
+      "太阴": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "乙丑 己卯 丁未 庚子",
+     "luckStart": [
+      1,
+      0,
+      3
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G10",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 1985,
+    "month": 3,
+    "day": 9,
+    "hour": 0,
+    "minute": 59,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "寅",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天梁": "权",
+      "天机": "禄",
+      "紫微": "科",
+      "太阴": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "乙丑 己卯 丁未 庚子",
+     "luckStart": [
+      9,
+      0,
+      16
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G11",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 2001,
+    "month": 8,
+    "day": 20,
+    "hour": 23,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "申",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "",
+      "卯": "廉贞破军",
+      "辰": "",
+      "巳": "天府",
+      "午": "天同太阴",
+      "未": "武曲贪狼",
+      "申": "太阳巨门",
+      "酉": "天相",
+      "戌": "天机天梁",
+      "亥": "紫微七杀",
+      "子": "",
+      "丑": ""
+     },
+     "transforms": {
+      "文曲": "科",
+      "太阳": "权",
+      "巨门": "禄",
+      "文昌": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "辛巳 丙申 丙辰 戊子",
+     "luckStart": [
+      4,
+      4,
+      20
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G12",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 2001,
+    "month": 8,
+    "day": 20,
+    "hour": 23,
+    "minute": 59,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "申",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "",
+      "卯": "廉贞破军",
+      "辰": "",
+      "巳": "天府",
+      "午": "天同太阴",
+      "未": "武曲贪狼",
+      "申": "太阳巨门",
+      "酉": "天相",
+      "戌": "天机天梁",
+      "亥": "紫微七杀",
+      "子": "",
+      "丑": ""
+     },
+     "transforms": {
+      "文曲": "科",
+      "太阳": "权",
+      "巨门": "禄",
+      "文昌": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "辛巳 丙申 丙辰 戊子",
+     "luckStart": [
+      5,
+      11,
+      18
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G13",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 2001,
+    "month": 8,
+    "day": 20,
+    "hour": 0,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "申",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "太阳": "权",
+      "文曲": "科",
+      "文昌": "忌",
+      "巨门": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "辛巳 丙申 乙卯 丙子",
+     "luckStart": [
+      4,
+      0,
+      25
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G14",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 2001,
+    "month": 8,
+    "day": 20,
+    "hour": 0,
+    "minute": 59,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "申",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "太阳": "权",
+      "文曲": "科",
+      "文昌": "忌",
+      "巨门": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "辛巳 丙申 乙卯 丙子",
+     "luckStart": [
+      6,
+      3,
+      13
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G15",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 1972,
+    "month": 11,
+    "day": 5,
+    "hour": 0,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "戌",
+     "bodyBranch": "戌",
+     "majorStars": {
+      "寅": "",
+      "卯": "廉贞破军",
+      "辰": "",
+      "巳": "天府",
+      "午": "天同太阴",
+      "未": "武曲贪狼",
+      "申": "太阳巨门",
+      "酉": "天相",
+      "戌": "天机天梁",
+      "亥": "紫微七杀",
+      "子": "",
+      "丑": ""
+     },
+     "transforms": {
+      "武曲": "忌",
+      "天梁": "禄",
+      "紫微": "权",
+      "左辅": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "壬子 庚戌 庚子 丙子",
+     "luckStart": [
+      0,
+      10,
+      18
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G16",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 1972,
+    "month": 11,
+    "day": 5,
+    "hour": 0,
+    "minute": 59,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "戌",
+     "bodyBranch": "戌",
+     "majorStars": {
+      "寅": "",
+      "卯": "廉贞破军",
+      "辰": "",
+      "巳": "天府",
+      "午": "天同太阴",
+      "未": "武曲贪狼",
+      "申": "太阳巨门",
+      "酉": "天相",
+      "戌": "天机天梁",
+      "亥": "紫微七杀",
+      "子": "",
+      "丑": ""
+     },
+     "transforms": {
+      "武曲": "忌",
+      "天梁": "禄",
+      "紫微": "权",
+      "左辅": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "壬子 庚戌 庚子 丙子",
+     "luckStart": [
+      9,
+      2,
+      1
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G17",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 2015,
+    "month": 5,
+    "day": 17,
+    "hour": 0,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "辰",
+     "bodyBranch": "辰",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "天梁": "权",
+      "天机": "禄",
+      "紫微": "科",
+      "太阴": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "乙未 辛巳 癸巳 壬子",
+     "luckStart": [
+      3,
+      7,
+      10
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G18",
+   "category": "子时边界",
+   "input": {
+    "calendar": "solar",
+    "year": 2015,
+    "month": 5,
+    "day": 17,
+    "hour": 0,
+    "minute": 59,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "辰",
+     "bodyBranch": "辰",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "天梁": "权",
+      "天机": "禄",
+      "紫微": "科",
+      "太阴": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "乙未 辛巳 癸巳 壬子",
+     "luckStart": [
+      6,
+      9,
+      4
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G19",
+   "category": "立春前后",
+   "input": {
+    "calendar": "solar",
+    "year": 1984,
+    "month": 2,
+    "day": 4,
+    "hour": 23,
+    "minute": 16,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "寅",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "廉贞": "禄",
+      "破军": "权",
+      "武曲": "科",
+      "太阳": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "癸亥 乙丑 己巳 甲子",
+     "luckStart": [
+      9,
+      9,
+      27
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G20",
+   "category": "立春前后",
+   "input": {
+    "calendar": "solar",
+    "year": 1984,
+    "month": 2,
+    "day": 4,
+    "hour": 23,
+    "minute": 20,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "寅",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "廉贞": "禄",
+      "破军": "权",
+      "武曲": "科",
+      "太阳": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "甲子 丙寅 己巳 甲子",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G21",
+   "category": "立春前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2000,
+    "month": 2,
+    "day": 4,
+    "hour": 20,
+    "minute": 38,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "卯",
+     "bodyBranch": "亥",
+     "majorStars": {
+      "寅": "太阳巨门",
+      "卯": "天相",
+      "辰": "天机天梁",
+      "巳": "紫微七杀",
+      "午": "",
+      "未": "",
+      "申": "",
+      "酉": "廉贞破军",
+      "戌": "",
+      "亥": "天府",
+      "子": "天同太阴",
+      "丑": "武曲贪狼"
+     },
+     "transforms": {
+      "文曲": "忌",
+      "天梁": "科",
+      "武曲": "禄",
+      "贪狼": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "己卯 丁丑 壬辰 庚戌",
+     "luckStart": [
+      9,
+      9,
+      28
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G22",
+   "category": "立春前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2000,
+    "month": 2,
+    "day": 4,
+    "hour": 20,
+    "minute": 42,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "卯",
+     "bodyBranch": "亥",
+     "majorStars": {
+      "寅": "太阳巨门",
+      "卯": "天相",
+      "辰": "天机天梁",
+      "巳": "紫微七杀",
+      "午": "",
+      "未": "",
+      "申": "",
+      "酉": "廉贞破军",
+      "戌": "",
+      "亥": "天府",
+      "子": "天同太阴",
+      "丑": "武曲贪狼"
+     },
+     "transforms": {
+      "文曲": "忌",
+      "天梁": "科",
+      "武曲": "禄",
+      "贪狼": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "庚辰 戊寅 壬辰 庚戌",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G23",
+   "category": "立春前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2024,
+    "month": 2,
+    "day": 4,
+    "hour": 16,
+    "minute": 25,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "巳",
+     "bodyBranch": "酉",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "破军": "禄",
+      "太阴": "科",
+      "贪狼": "忌",
+      "巨门": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "癸卯 乙丑 戊戌 庚申",
+     "luckStart": [
+      9,
+      9,
+      27
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G24",
+   "category": "立春前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2024,
+    "month": 2,
+    "day": 4,
+    "hour": 16,
+    "minute": 29,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "巳",
+     "bodyBranch": "酉",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "破军": "禄",
+      "太阴": "科",
+      "贪狼": "忌",
+      "巨门": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "甲辰 丙寅 戊戌 庚申",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G25",
+   "category": "立春前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2050,
+    "month": 2,
+    "day": 3,
+    "hour": 23,
+    "minute": 41,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "寅",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "武曲": "权",
+      "太阳": "禄",
+      "太阴": "科",
+      "天同": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "己巳 丁丑 乙卯 丙子",
+     "luckStart": [
+      9,
+      9,
+      27
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G26",
+   "category": "立春前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2050,
+    "month": 2,
+    "day": 3,
+    "hour": 23,
+    "minute": 45,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "寅",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "武曲": "权",
+      "太阳": "禄",
+      "太阴": "科",
+      "天同": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "庚午 戊寅 乙卯 丙子",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G27",
+   "category": "立春与春节之间/之前",
+   "input": {
+    "calendar": "solar",
+    "year": 2024,
+    "month": 2,
+    "day": 6,
+    "hour": 12,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "未",
+     "bodyBranch": "未",
+     "majorStars": {
+      "寅": "天机太阴",
+      "卯": "紫微贪狼",
+      "辰": "巨门",
+      "巳": "天相",
+      "午": "天梁",
+      "未": "廉贞七杀",
+      "申": "",
+      "酉": "",
+      "戌": "天同",
+      "亥": "武曲破军",
+      "子": "太阳",
+      "丑": "天府"
+     },
+     "transforms": {
+      "太阴": "科",
+      "贪狼": "忌",
+      "巨门": "权",
+      "破军": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "甲辰 丙寅 庚子 壬午",
+     "luckStart": [
+      9,
+      3,
+      21
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G28",
+   "category": "立春与春节之间/之前",
+   "input": {
+    "calendar": "solar",
+    "year": 2019,
+    "month": 2,
+    "day": 5,
+    "hour": 12,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "申",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "",
+      "卯": "廉贞破军",
+      "辰": "",
+      "巳": "天府",
+      "午": "天同太阴",
+      "未": "武曲贪狼",
+      "申": "太阳巨门",
+      "酉": "天相",
+      "戌": "天机天梁",
+      "亥": "紫微七杀",
+      "子": "",
+      "丑": ""
+     },
+     "transforms": {
+      "武曲": "禄",
+      "贪狼": "权",
+      "天梁": "科",
+      "文曲": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "己亥 丙寅 癸酉 戊午",
+     "luckStart": [
+      0,
+      4,
+      3
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G29",
+   "category": "立春与春节之间/之前",
+   "input": {
+    "calendar": "solar",
+    "year": 2023,
+    "month": 1,
+    "day": 25,
+    "hour": 12,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "木三局",
+     "mingBranch": "申",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "太阳巨门",
+      "卯": "天相",
+      "辰": "天机天梁",
+      "巳": "紫微七杀",
+      "午": "",
+      "未": "",
+      "申": "",
+      "酉": "廉贞破军",
+      "戌": "",
+      "亥": "天府",
+      "子": "天同太阴",
+      "丑": "武曲贪狼"
+     },
+     "transforms": {
+      "巨门": "权",
+      "破军": "禄",
+      "太阴": "科",
+      "贪狼": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "壬寅 癸丑 癸未 戊午",
+     "luckStart": [
+      3,
+      3,
+      23
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G30",
+   "category": "立春与春节之间/之前",
+   "input": {
+    "calendar": "solar",
+    "year": 2010,
+    "month": 2,
+    "day": 13,
+    "hour": 12,
+    "minute": 0,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "未",
+     "bodyBranch": "未",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天梁": "科",
+      "武曲": "禄",
+      "文曲": "忌",
+      "贪狼": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "庚寅 戊寅 甲午 庚午",
+     "luckStart": [
+      6,
+      10,
+      3
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G31",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 1965,
+    "month": 3,
+    "day": 6,
+    "hour": 3,
+    "minute": 2,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "丑",
+     "bodyBranch": "巳",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "天机": "禄",
+      "紫微": "科",
+      "天梁": "权",
+      "太阴": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "乙巳 己卯 己未 丙寅",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G32",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 1978,
+    "month": 4,
+    "day": 5,
+    "hour": 11,
+    "minute": 37,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "木三局",
+     "mingBranch": "酉",
+     "bodyBranch": "酉",
+     "majorStars": {
+      "寅": "",
+      "卯": "天府",
+      "辰": "太阴",
+      "巳": "廉贞贪狼",
+      "午": "巨门",
+      "未": "天相",
+      "申": "天同天梁",
+      "酉": "武曲七杀",
+      "戌": "太阳",
+      "亥": "",
+      "子": "天机",
+      "丑": "紫微破军"
+     },
+     "transforms": {
+      "太阴": "权",
+      "贪狼": "禄",
+      "右弼": "科",
+      "天机": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "戊午 乙卯 丁酉 丙午",
+     "luckStart": [
+      10,
+      0,
+      24
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G33",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 1993,
+    "month": 5,
+    "day": 5,
+    "hour": 20,
+    "minute": 3,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "午",
+     "bodyBranch": "寅",
+     "majorStars": {
+      "寅": "七杀",
+      "卯": "天同",
+      "辰": "武曲",
+      "巳": "太阳",
+      "午": "破军",
+      "未": "天机",
+      "申": "紫微天府",
+      "酉": "太阴",
+      "戌": "贪狼",
+      "亥": "巨门",
+      "子": "廉贞天相",
+      "丑": "天梁"
+     },
+     "transforms": {
+      "破军": "禄",
+      "太阴": "科",
+      "贪狼": "忌",
+      "巨门": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "癸酉 丁巳 丙戌 戊戌",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G34",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2002,
+    "month": 6,
+    "day": 6,
+    "hour": 4,
+    "minute": 43,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "卯",
+     "bodyBranch": "未",
+     "majorStars": {
+      "寅": "廉贞",
+      "卯": "",
+      "辰": "破军",
+      "巳": "天同",
+      "午": "武曲天府",
+      "未": "太阳太阴",
+      "申": "贪狼",
+      "酉": "天机巨门",
+      "戌": "紫微天相",
+      "亥": "天梁",
+      "子": "七杀",
+      "丑": ""
+     },
+     "transforms": {
+      "武曲": "忌",
+      "左辅": "科",
+      "紫微": "权",
+      "天梁": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "壬午 乙巳 乙巳 戊寅",
+     "luckStart": [
+      10,
+      4,
+      20
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G35",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2011,
+    "month": 7,
+    "day": 7,
+    "hour": 18,
+    "minute": 43,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "木三局",
+     "mingBranch": "戌",
+     "bodyBranch": "辰",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "太阳": "权",
+      "巨门": "禄",
+      "文昌": "忌",
+      "文曲": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "辛卯 乙未 癸亥 辛酉",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G36",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2020,
+    "month": 8,
+    "day": 7,
+    "hour": 9,
+    "minute": 4,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "寅",
+     "bodyBranch": "子",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天同": "忌",
+      "武曲": "权",
+      "太阳": "禄",
+      "太阴": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "庚子 癸未 壬午 乙巳",
+     "luckStart": [
+      10,
+      5,
+      19
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G37",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 1955,
+    "month": 9,
+    "day": 8,
+    "hour": 18,
+    "minute": 33,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "亥",
+     "bodyBranch": "巳",
+     "majorStars": {
+      "寅": "天机太阴",
+      "卯": "紫微贪狼",
+      "辰": "巨门",
+      "巳": "天相",
+      "午": "天梁",
+      "未": "廉贞七杀",
+      "申": "",
+      "酉": "",
+      "戌": "天同",
+      "亥": "武曲破军",
+      "子": "太阳",
+      "丑": "天府"
+     },
+     "transforms": {
+      "天机": "禄",
+      "太阴": "忌",
+      "紫微": "科",
+      "天梁": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "乙未 乙酉 壬申 己酉",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G38",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 1998,
+    "month": 10,
+    "day": 8,
+    "hour": 19,
+    "minute": 54,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "水二局",
+     "mingBranch": "亥",
+     "bodyBranch": "未",
+     "majorStars": {
+      "寅": "廉贞",
+      "卯": "",
+      "辰": "破军",
+      "巳": "天同",
+      "午": "武曲天府",
+      "未": "太阳太阴",
+      "申": "贪狼",
+      "酉": "天机巨门",
+      "戌": "紫微天相",
+      "亥": "天梁",
+      "子": "七杀",
+      "丑": ""
+     },
+     "transforms": {
+      "右弼": "科",
+      "太阴": "权",
+      "贪狼": "禄",
+      "天机": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "戊寅 辛酉 戊子 壬戌",
+     "luckStart": [
+      10,
+      2,
+      18
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G39",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2033,
+    "month": 11,
+    "day": 7,
+    "hour": 10,
+    "minute": 42,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "午",
+     "bodyBranch": "辰",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "破军": "禄",
+      "太阴": "科",
+      "贪狼": "忌",
+      "巨门": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "癸丑 癸亥 壬戌 乙巳",
+     "luckStart": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G40",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2066,
+    "month": 12,
+    "day": 7,
+    "hour": 3,
+    "minute": 47,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "酉",
+     "bodyBranch": "丑",
+     "majorStars": {
+      "寅": "紫微天府",
+      "卯": "太阴",
+      "辰": "贪狼",
+      "巳": "巨门",
+      "午": "廉贞天相",
+      "未": "天梁",
+      "申": "七杀",
+      "酉": "天同",
+      "戌": "武曲",
+      "亥": "太阳",
+      "子": "破军",
+      "丑": "天机"
+     },
+     "transforms": {
+      "廉贞": "忌",
+      "文昌": "科",
+      "天同": "禄",
+      "天机": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "丙戌 己亥 乙酉 戊寅",
+     "luckStart": [
+      9,
+      10,
+      25
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G41",
+   "category": "节令交接前后",
+   "input": {
+    "calendar": "solar",
+    "year": 2087,
+    "month": 1,
+    "day": 5,
+    "hour": 11,
+    "minute": 44,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "未",
+     "bodyBranch": "未",
+     "majorStars": {
+      "寅": "",
+      "卯": "廉贞破军",
+      "辰": "",
+      "巳": "天府",
+      "午": "天同太阴",
+      "未": "武曲贪狼",
+      "申": "太阳巨门",
+      "酉": "天相",
+      "戌": "天机天梁",
+      "亥": "紫微七杀",
+      "子": "",
+      "丑": ""
+     },
+     "transforms": {
+      "廉贞": "忌",
+      "文昌": "科",
+      "天同": "禄",
+      "天机": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "丙午 辛丑 己亥 庚午",
+     "luckStart": [
+      9,
+      9,
+      27
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G42",
+   "category": "范围两端",
+   "input": {
+    "calendar": "solar",
+    "year": 1901,
+    "month": 1,
+    "day": 1,
+    "hour": 9,
+    "minute": 30,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "木三局",
+     "mingBranch": "未",
+     "bodyBranch": "巳",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "天同": "忌",
+      "武曲": "权",
+      "太阳": "禄",
+      "太阴": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "庚子 戊子 己卯 己巳",
+     "luckStart": [
+      1,
+      7,
+      21
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G43",
+   "category": "范围两端",
+   "input": {
+    "calendar": "solar",
+    "year": 1901,
+    "month": 2,
+    "day": 19,
+    "hour": 9,
+    "minute": 30,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "酉",
+     "bodyBranch": "未",
+     "majorStars": {
+      "寅": "",
+      "卯": "",
+      "辰": "天同",
+      "巳": "武曲破军",
+      "午": "太阳",
+      "未": "天府",
+      "申": "天机太阴",
+      "酉": "紫微贪狼",
+      "戌": "巨门",
+      "亥": "天相",
+      "子": "天梁",
+      "丑": "廉贞七杀"
+     },
+     "transforms": {
+      "文昌": "忌",
+      "太阳": "权",
+      "文曲": "科",
+      "巨门": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "辛丑 庚寅 戊辰 丁巳",
+     "luckStart": [
+      4,
+      10,
+      9
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G44",
+   "category": "范围两端",
+   "input": {
+    "calendar": "solar",
+    "year": 2100,
+    "month": 12,
+    "day": 31,
+    "hour": 9,
+    "minute": 30,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "水二局",
+     "mingBranch": "申",
+     "bodyBranch": "午",
+     "majorStars": {
+      "寅": "",
+      "卯": "天府",
+      "辰": "太阴",
+      "巳": "廉贞贪狼",
+      "午": "巨门",
+      "未": "天相",
+      "申": "天同天梁",
+      "酉": "武曲七杀",
+      "戌": "太阳",
+      "亥": "",
+      "子": "天机",
+      "丑": "紫微破军"
+     },
+     "transforms": {
+      "太阴": "科",
+      "天同": "忌",
+      "武曲": "权",
+      "太阳": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "庚申 戊子 丁未 乙巳",
+     "luckStart": [
+      1,
+      9,
+      28
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G45",
+   "category": "范围两端",
+   "input": {
+    "calendar": "solar",
+    "year": 2100,
+    "month": 1,
+    "day": 1,
+    "hour": 9,
+    "minute": 30,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "未",
+     "bodyBranch": "巳",
+     "majorStars": {
+      "寅": "廉贞",
+      "卯": "",
+      "辰": "破军",
+      "巳": "天同",
+      "午": "武曲天府",
+      "未": "太阳太阴",
+      "申": "贪狼",
+      "酉": "天机巨门",
+      "戌": "紫微天相",
+      "亥": "天梁",
+      "子": "七杀",
+      "丑": ""
+     },
+     "transforms": {
+      "武曲": "禄",
+      "贪狼": "权",
+      "文曲": "忌",
+      "天梁": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "己未 丙子 癸卯 丁巳",
+     "luckStart": [
+      8,
+      4,
+      27
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G46",
+   "category": "农历三十",
+   "input": {
+    "calendar": "solar",
+    "year": 1930,
+    "month": 1,
+    "day": 29,
+    "hour": 14,
+    "minute": 20,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "午",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天梁": "科",
+      "武曲": "禄",
+      "贪狼": "权",
+      "文曲": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "己巳 丁丑 己卯 辛未",
+     "luckStart": [
+      7,
+      8,
+      26
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G47",
+   "category": "农历三十",
+   "input": {
+    "calendar": "solar",
+    "year": 1935,
+    "month": 6,
+    "day": 30,
+    "hour": 14,
+    "minute": 20,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "亥",
+     "bodyBranch": "丑",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天梁": "权",
+      "天机": "禄",
+      "紫微": "科",
+      "太阴": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "乙亥 壬午 丁丑 丁未",
+     "luckStart": [
+      2,
+      7,
+      8
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G48",
+   "category": "农历三十",
+   "input": {
+    "calendar": "solar",
+    "year": 1938,
+    "month": 3,
+    "day": 1,
+    "hour": 14,
+    "minute": 20,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "未",
+     "bodyBranch": "酉",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "天机": "忌",
+      "右弼": "科",
+      "太阴": "权",
+      "贪狼": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "戊寅 甲寅 壬辰 丁未",
+     "luckStart": [
+      1,
+      7,
+      26
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G49",
+   "category": "农历三十",
+   "input": {
+    "calendar": "solar",
+    "year": 1940,
+    "month": 10,
+    "day": 30,
+    "hour": 14,
+    "minute": 20,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "卯",
+     "bodyBranch": "巳",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天同": "忌",
+      "武曲": "权",
+      "太阳": "禄",
+      "太阴": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "庚辰 丙戌 丙午 乙未",
+     "luckStart": [
+      7,
+      3,
+      8
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G50",
+   "category": "夏令时",
+   "input": {
+    "calendar": "solar",
+    "year": 1986,
+    "month": 7,
+    "day": 1,
+    "hour": 13,
+    "minute": 30,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 540,
+     "dstMinutes": 60
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "子",
+     "bodyBranch": "子",
+     "majorStars": {
+      "寅": "武曲天相",
+      "卯": "太阳天梁",
+      "辰": "七杀",
+      "巳": "天机",
+      "午": "紫微",
+      "未": "",
+      "申": "破军",
+      "酉": "",
+      "戌": "廉贞天府",
+      "亥": "太阴",
+      "子": "贪狼",
+      "丑": "天同巨门"
+     },
+     "transforms": {
+      "文昌": "科",
+      "天机": "权",
+      "廉贞": "忌",
+      "天同": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "丙寅 甲午 丙午 甲午",
+     "luckStart": [
+      2,
+      0,
+      27
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "库输入为扣除夏令时后的标准时间",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G51",
+   "category": "夏令时",
+   "input": {
+    "calendar": "solar",
+    "year": 1988,
+    "month": 6,
+    "day": 15,
+    "hour": 8,
+    "minute": 30,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 540,
+     "dstMinutes": 60
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "水二局",
+     "mingBranch": "寅",
+     "bodyBranch": "戌",
+     "majorStars": {
+      "寅": "紫微天府",
+      "卯": "太阴",
+      "辰": "贪狼",
+      "巳": "巨门",
+      "午": "廉贞天相",
+      "未": "天梁",
+      "申": "七杀",
+      "酉": "天同",
+      "戌": "武曲",
+      "亥": "太阳",
+      "子": "破军",
+      "丑": "天机"
+     },
+     "transforms": {
+      "太阴": "权",
+      "贪狼": "禄",
+      "右弼": "科",
+      "天机": "忌"
+     }
+    },
+    "bazi": {
+     "pillars": "戊辰 戊午 辛丑 壬辰",
+     "luckStart": [
+      7,
+      3,
+      20
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "库输入为扣除夏令时后的标准时间",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G52",
+   "category": "夏令时",
+   "input": {
+    "calendar": "solar",
+    "year": 1990,
+    "month": 8,
+    "day": 2,
+    "hour": 20,
+    "minute": 30,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 540,
+     "dstMinutes": 60
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "水二局",
+     "mingBranch": "酉",
+     "bodyBranch": "巳",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天同": "忌",
+      "武曲": "权",
+      "太阳": "禄",
+      "太阴": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "庚午 癸未 己亥 甲戌",
+     "luckStart": [
+      1,
+      9,
+      6
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "库输入为扣除夏令时后的标准时间",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G53",
+   "category": "夏令时",
+   "input": {
+    "calendar": "solar",
+    "year": 1991,
+    "month": 5,
+    "day": 20,
+    "hour": 0,
+    "minute": 30,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 540,
+     "dstMinutes": 60
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "水二局",
+     "mingBranch": "巳",
+     "bodyBranch": "巳",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "巨门": "禄",
+      "文曲": "科",
+      "文昌": "忌",
+      "太阳": "权"
+     }
+    },
+    "bazi": {
+     "pillars": "辛未 癸巳 庚寅 丙子",
+     "luckStart": [
+      4,
+      6,
+      15
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "库输入为扣除夏令时后的标准时间",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G54",
+   "category": "覆盖矩阵",
+   "input": {
+    "calendar": "solar",
+    "year": 2031,
+    "month": 8,
+    "day": 24,
+    "hour": 13,
+    "minute": 21,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "丑",
+     "bodyBranch": "卯",
+     "majorStars": {
+      "寅": "破军",
+      "卯": "",
+      "辰": "廉贞天府",
+      "巳": "太阴",
+      "午": "贪狼",
+      "未": "天同巨门",
+      "申": "武曲天相",
+      "酉": "太阳天梁",
+      "戌": "七杀",
+      "亥": "天机",
+      "子": "紫微",
+      "丑": ""
+     },
+     "transforms": {
+      "文昌": "忌",
+      "巨门": "禄",
+      "太阳": "权",
+      "文曲": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "辛亥 丙申 丙申 乙未",
+     "luckStart": [
+      4,
+      10,
+      12
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G55",
+   "category": "覆盖矩阵",
+   "input": {
+    "calendar": "solar",
+    "year": 2095,
+    "month": 5,
+    "day": 6,
+    "hour": 19,
+    "minute": 38,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "木三局",
+     "mingBranch": "未",
+     "bodyBranch": "卯",
+     "majorStars": {
+      "寅": "紫微天府",
+      "卯": "太阴",
+      "辰": "贪狼",
+      "巳": "巨门",
+      "午": "廉贞天相",
+      "未": "天梁",
+      "申": "七杀",
+      "酉": "天同",
+      "戌": "武曲",
+      "亥": "太阳",
+      "子": "破军",
+      "丑": "天机"
+     },
+     "transforms": {
+      "紫微": "科",
+      "太阴": "忌",
+      "天梁": "权",
+      "天机": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "乙卯 辛巳 壬午 庚戌",
+     "luckStart": [
+      0,
+      5,
+      6
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G56",
+   "category": "覆盖矩阵",
+   "input": {
+    "calendar": "solar",
+    "year": 1956,
+    "month": 10,
+    "day": 6,
+    "hour": 20,
+    "minute": 46,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "子",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "天机": "权",
+      "廉贞": "忌",
+      "天同": "禄",
+      "文昌": "科"
+     }
+    },
+    "bazi": {
+     "pillars": "丙申 丁酉 丙午 戊戌",
+     "luckStart": [
+      9,
+      7,
+      12
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G57",
+   "category": "覆盖矩阵",
+   "input": {
+    "calendar": "solar",
+    "year": 2037,
+    "month": 2,
+    "day": 26,
+    "hour": 8,
+    "minute": 16,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "戌",
+     "bodyBranch": "午",
+     "majorStars": {
+      "寅": "贪狼",
+      "卯": "天机巨门",
+      "辰": "紫微天相",
+      "巳": "天梁",
+      "午": "七杀",
+      "未": "",
+      "申": "廉贞",
+      "酉": "",
+      "戌": "破军",
+      "亥": "天同",
+      "子": "武曲天府",
+      "丑": "太阳太阴"
+     },
+     "transforms": {
+      "天机": "科",
+      "巨门": "忌",
+      "天同": "权",
+      "太阴": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "丁巳 壬寅 己巳 戊辰",
+     "luckStart": [
+      7,
+      6,
+      0
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G58",
+   "category": "覆盖矩阵",
+   "input": {
+    "calendar": "solar",
+    "year": 2030,
+    "month": 3,
+    "day": 8,
+    "hour": 9,
+    "minute": 3,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "土五局",
+     "mingBranch": "戌",
+     "bodyBranch": "申",
+     "majorStars": {
+      "寅": "紫微天府",
+      "卯": "太阴",
+      "辰": "贪狼",
+      "巳": "巨门",
+      "午": "廉贞天相",
+      "未": "天梁",
+      "申": "七杀",
+      "酉": "天同",
+      "戌": "武曲",
+      "亥": "太阳",
+      "子": "破军",
+      "丑": "天机"
+     },
+     "transforms": {
+      "太阴": "科",
+      "天同": "忌",
+      "武曲": "权",
+      "太阳": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "庚戌 己卯 壬寅 乙巳",
+     "luckStart": [
+      0,
+      9,
+      29
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G59",
+   "category": "覆盖矩阵",
+   "input": {
+    "calendar": "solar",
+    "year": 1918,
+    "month": 9,
+    "day": 4,
+    "hour": 3,
+    "minute": 53,
+    "gender": "M",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "火六局",
+     "mingBranch": "午",
+     "bodyBranch": "戌",
+     "majorStars": {
+      "寅": "太阳巨门",
+      "卯": "天相",
+      "辰": "天机天梁",
+      "巳": "紫微七杀",
+      "午": "",
+      "未": "",
+      "申": "",
+      "酉": "廉贞破军",
+      "戌": "",
+      "亥": "天府",
+      "子": "天同太阴",
+      "丑": "武曲贪狼"
+     },
+     "transforms": {
+      "天机": "忌",
+      "右弼": "科",
+      "太阴": "权",
+      "贪狼": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "戊午 庚申 甲寅 丙寅",
+     "luckStart": [
+      1,
+      6,
+      18
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  },
+  {
+   "id": "G60",
+   "category": "覆盖矩阵",
+   "input": {
+    "calendar": "solar",
+    "year": 2008,
+    "month": 6,
+    "day": 27,
+    "hour": 12,
+    "minute": 43,
+    "gender": "F",
+    "place": {
+     "utcOffsetMinutes": 480,
+     "dstMinutes": 0
+    }
+   },
+   "expected": {
+    "ziwei": {
+     "bureau": "金四局",
+     "mingBranch": "子",
+     "bodyBranch": "子",
+     "majorStars": {
+      "寅": "天同天梁",
+      "卯": "武曲七杀",
+      "辰": "太阳",
+      "巳": "",
+      "午": "天机",
+      "未": "紫微破军",
+      "申": "",
+      "酉": "天府",
+      "戌": "太阴",
+      "亥": "廉贞贪狼",
+      "子": "巨门",
+      "丑": "天相"
+     },
+     "transforms": {
+      "天机": "忌",
+      "右弼": "科",
+      "太阴": "权",
+      "贪狼": "禄"
+     }
+    },
+    "bazi": {
+     "pillars": "戊子 戊午 戊戌 戊午",
+     "luckStart": [
+      7,
+      3,
+      17
+     ]
+    }
+   },
+   "oracle": {
+    "ziwei": {
+     "type": "independent-implementation",
+     "source": "iztro@2.6.1"
+    },
+    "bazi": {
+     "type": "independent-implementation",
+     "source": "tyme4ts@1.5.2"
+    },
+    "note": "",
+    "humanVerifiedBy": null
+   }
+  }
+ ]
+}

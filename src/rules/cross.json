@@ -1,0 +1,126 @@
+[
+ {
+  "id": "cr.year-stem",
+  "topic": "cross-year",
+  "when": {
+   "kind": "cross-year"
+  },
+  "title": "年柱口径",
+  "plain": "紫微斗数按农历正月初一换年，八字按立春换年。两者在“立春与春节之间”出生的人，年干支可能不同，这是两套体系的口径差异，并非计算错误。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-004",
+    "note": "年界口径由体系定义"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "cr.element",
+  "topic": "cross-element",
+  "when": {
+   "kind": "cross-element"
+  },
+  "title": "五行并列",
+  "plain": "紫微的五行局取自命宫干支的纳音五行，八字的日主五行取自日干。两者来自不同的取法，这里只并列展示，不表示相互印证。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-010、ADR-011",
+    "note": "各自的取法为算法定义"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "cr.direction",
+  "topic": "cross-direction",
+  "when": {
+   "kind": "cross-direction"
+  },
+  "title": "大限与大运方向",
+  "plain": "紫微大限与八字大运都按“阳男阴女顺行、阴男阳女逆行”定方向，但阴阳分别取自农历年干与立春年干，两者可能不同。起运年龄的算法也不同（紫微按五行局数起限，八字按节令距离折算）。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-010、ADR-011",
+    "note": "方向与起运为算法定义"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "cr.sihua",
+  "topic": "cross-sihua",
+  "when": {
+   "kind": "cross-sihua"
+  },
+  "title": "四化与年干十神",
+  "plain": "紫微的四化取自年干，这里同时列出该年干相对八字日主的十神，仅作并列参考。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-010",
+    "note": "年干四化为算法定义"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "cr.flow-year",
+  "topic": "cross-flow-year",
+  "when": {
+   "kind": "cross-flow-year"
+  },
+  "title": "流年并列",
+  "plain": "同一公历年份，紫微看流年命宫与流年四化，八字看流年干支与原局、大运的关系。二者角度不同，这里只并列展示。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "note": "并列展示为产品设计，非命理断语"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ }
+]

@@ -1,0 +1,1597 @@
+[
+ {
+  "id": "bz.stem.甲",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "甲"
+  },
+  "title": "日主甲（阳木）",
+  "plain": "日主甲属阳木，传统取象：如参天大树，正直向上、有开拓与担当，重原则，但有时显得固执、不善变通。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.乙",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "乙"
+  },
+  "title": "日主乙（阴木）",
+  "plain": "日主乙属阴木，传统取象：如花草藤蔓，柔韧灵活、善于适应与协调，重人际，但有时缺乏主见。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.丙",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "丙"
+  },
+  "title": "日主丙（阳火）",
+  "plain": "日主丙属阳火，传统取象：如太阳，热情开朗、光明磊落、乐于付出，但有时性急、耐性不足。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.丁",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "丁"
+  },
+  "title": "日主丁（阴火）",
+  "plain": "日主丁属阴火，传统取象：如灯烛之火，细腻温暖、心思缜密、有内在的热情，但容易多虑。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.戊",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "戊"
+  },
+  "title": "日主戊（阳土）",
+  "plain": "日主戊属阳土，传统取象：如高山厚土，稳重厚道、包容守信，但有时行动偏慢、不善表达。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.己",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "己"
+  },
+  "title": "日主己（阴土）",
+  "plain": "日主己属阴土，传统取象：如田园之土，内敛务实、善于培育与包容，但有时想得多、显得优柔。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.庚",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "庚"
+  },
+  "title": "日主庚（阳金）",
+  "plain": "日主庚属阳金，传统取象：如刀剑顽铁，刚毅果断、重义气，但有时过于强硬、直来直去。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.辛",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "辛"
+  },
+  "title": "日主辛（阴金）",
+  "plain": "日主辛属阴金，传统取象：如珠玉首饰，精致敏锐、重品质与面子，但有时敏感、易挑剔。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.壬",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "壬"
+  },
+  "title": "日主壬（阳水）",
+  "plain": "日主壬属阳水，传统取象：如江河大水，聪明灵活、胸襟开阔、行动力强，但有时不够稳定。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.stem.癸",
+  "topic": "day-master",
+  "when": {
+   "kind": "day-master",
+   "stem": "癸"
+  },
+  "title": "日主癸（阴水）",
+  "plain": "日主癸属阴水，传统取象：如雨露细泉，细腻聪慧、善于思考与感受，但有时偏内向、易忧虑。这是八字对日主性格的取象说法，只是一种参考。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "十干取象的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.比肩",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "比肩"
+  },
+  "title": "比肩",
+  "plain": "与日主同类同性，代表朋友、同辈与自我；助力自立，也可能带来竞争与分财。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.劫财",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "劫财"
+  },
+  "title": "劫财",
+  "plain": "与日主同类异性，代表竞争者、伙伴；主动进取，但需留意破财与冲动。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.食神",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "食神"
+  },
+  "title": "食神",
+  "plain": "日主所生、同性，代表才华、表达与享受；性格随和，重生活情趣。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.伤官",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "伤官"
+  },
+  "title": "伤官",
+  "plain": "日主所生、异性，代表才气、创意与叛逆；表达力强，也容易与规则、权威冲突。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.偏财",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "偏财"
+  },
+  "title": "偏财",
+  "plain": "日主所克、同性，代表流动之财、人脉与机会；擅长把握机遇，花销也较大。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.正财",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "正财"
+  },
+  "title": "正财",
+  "plain": "日主所克、异性，代表稳定收入、务实与责任；重踏实与积累。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.七杀",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "七杀"
+  },
+  "title": "七杀",
+  "plain": "克日主、同性，代表压力、挑战与魄力；有魄力与冲劲，也意味着承受压力。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.正官",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "正官"
+  },
+  "title": "正官",
+  "plain": "克日主、异性，代表规范、职位与责任；重秩序与名誉，行事守规矩。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.偏印",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "偏印"
+  },
+  "title": "偏印",
+  "plain": "生日主、同性，代表偏门学问、灵感与独处；思维独特，但容易孤僻多疑。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.god.正印",
+  "topic": "ten-god",
+  "when": {
+   "kind": "ten-god",
+   "tenGod": "正印"
+  },
+  "title": "正印",
+  "plain": "生日主、异性，代表学业、长辈庇护与名誉；重学习与涵养，也可能过于依赖。十神由各干支与日主的生克关系与阴阳异同得出。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论十神各章（如论正官、论财、论印绶、论食神、论偏官、论伤官）",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.strength.偏强",
+  "topic": "strength",
+  "when": {
+   "kind": "strength",
+   "value": "偏强"
+  },
+  "title": "日主偏强（候选）",
+  "plain": "日主的助力（比劫、印）在盘中占优，传统上称“身强”，宜以泄、耗、克（食伤、财、官杀）来平衡。本项目的旺衰判断是基于十神加权的简化候选，不是唯一结论。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "note": "旺衰与扶抑的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.strength.偏弱",
+  "topic": "strength",
+  "when": {
+   "kind": "strength",
+   "value": "偏弱"
+  },
+  "title": "日主偏弱（候选）",
+  "plain": "日主的助力较少，泄耗克的力量较多，传统上称“身弱”，宜以印、比劫来扶助。本项目的旺衰判断是基于十神加权的简化候选，不是唯一结论。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "note": "旺衰与扶抑的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.strength.中和",
+  "topic": "strength",
+  "when": {
+   "kind": "strength",
+   "value": "中和"
+  },
+  "title": "日主中和（候选）",
+  "plain": "日主与泄耗克的力量较为均衡，传统上称“中和”，需要结合格局与调候进一步判断。本项目的旺衰判断是基于十神加权的简化候选，不是唯一结论。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "note": "旺衰与扶抑的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.正官格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "正官格"
+  },
+  "title": "正官格",
+  "plain": "月令透出或藏有正官。传统上重官星清纯，喜财、印相辅，忌伤官、七杀混杂。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.七杀格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "七杀格"
+  },
+  "title": "七杀格",
+  "plain": "月令透出或藏有七杀。传统上喜食神制杀或印化杀，忌财星过旺助杀。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.正财格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "正财格"
+  },
+  "title": "正财格",
+  "plain": "月令透出或藏有正财。传统上喜官星、食伤生财，忌比劫夺财。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.偏财格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "偏财格"
+  },
+  "title": "偏财格",
+  "plain": "月令透出或藏有偏财。传统上喜食伤生财，忌比劫争夺。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.正印格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "正印格"
+  },
+  "title": "正印格",
+  "plain": "月令透出或藏有正印。传统上喜官杀生印，忌财星坏印。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.偏印格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "偏印格"
+  },
+  "title": "偏印格",
+  "plain": "月令透出或藏有偏印。传统上须留意偏印夺食，喜有制化。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.食神格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "食神格"
+  },
+  "title": "食神格",
+  "plain": "月令透出或藏有食神。传统上喜生财，忌偏印夺食。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.伤官格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "伤官格"
+  },
+  "title": "伤官格",
+  "plain": "月令透出或藏有伤官。传统上分伤官生财、伤官配印等取法，忌伤官见官。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.建禄格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "建禄格"
+  },
+  "title": "建禄格",
+  "plain": "月令为日主临官（禄）。传统上以官杀、财、食伤为用，忌比劫过重。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.pattern.月刃格",
+  "topic": "pattern",
+  "when": {
+   "kind": "pattern",
+   "key": "月刃格"
+  },
+  "title": "月刃格",
+  "plain": "阳干日主，月令为帝旺（阳刃）。传统上喜官杀制刃，忌刃旺无制。格局按“月令取格”的简化实现给出候选，不同流派取格并不相同。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "section": "论正官、论财、论印绶、论食神、论偏官、论伤官、论阳刃、论建禄月劫",
+    "note": "篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.天干五合",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "天干五合"
+  },
+  "title": "天干五合",
+  "plain": "两干相合，传统上表示亲近、牵引与合化的倾向；是否真正“化”需结合月令等条件。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.天干相冲",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "天干相冲"
+  },
+  "title": "天干相冲",
+  "plain": "两干相克相冲，传统上表示对立、冲突的力量。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.地支六合",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "地支六合"
+  },
+  "title": "地支六合",
+  "plain": "两支相合，传统上表示亲和、牵制与合作。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.地支六冲",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "地支六冲"
+  },
+  "title": "地支六冲",
+  "plain": "两支相冲，传统上表示变动、冲击与对立，常与迁移、变化相联系。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.地支六害",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "地支六害"
+  },
+  "title": "地支六害",
+  "plain": "两支相害，传统上表示暗中的伤耗与人际的摩擦。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.三刑",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "三刑"
+  },
+  "title": "三刑",
+  "plain": "三支成刑，传统上表示纠缠、压力与反复。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.无恩之刑（不全）",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "无恩之刑（不全）"
+  },
+  "title": "无恩之刑（不全）",
+  "plain": "寅巳申中见其二，传统上称“无恩之刑”的一部分，提示人际中恩怨纠缠。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.恃势之刑（不全）",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "恃势之刑（不全）"
+  },
+  "title": "恃势之刑（不全）",
+  "plain": "丑戌未中见其二，传统上称“恃势之刑”的一部分。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.无礼之刑",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "无礼之刑"
+  },
+  "title": "无礼之刑",
+  "plain": "子卯相刑，传统上称“无礼之刑”，提示人际中的礼节与摩擦。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.自刑",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "自刑"
+  },
+  "title": "自刑",
+  "plain": "同支重见（辰、午、酉、亥），传统上称“自刑”，提示自我纠结与内耗。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.地支三合",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "地支三合"
+  },
+  "title": "地支三合",
+  "plain": "三支合局，力量集中于某一五行，传统上表示合力与聚合。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.地支半合",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "地支半合"
+  },
+  "title": "地支半合",
+  "plain": "三合局中缺一，力量较弱的合局。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.rel.地支三会",
+  "topic": "relation",
+  "when": {
+   "kind": "relation",
+   "type": "地支三会"
+  },
+  "title": "地支三会",
+  "plain": "三支同方成会，同一五行力量强大而集中。刑冲合害的具体吉凶应结合喜忌与位置判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "刑冲合害的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.长生",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "长生"
+  },
+  "title": "十二长生：长生",
+  "plain": "如人初生，充满生机。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.沐浴",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "沐浴"
+  },
+  "title": "十二长生：沐浴",
+  "plain": "如婴儿沐浴，易变动、不稳定。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.冠带",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "冠带"
+  },
+  "title": "十二长生：冠带",
+  "plain": "如少年成长，渐有形象与追求。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.临官",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "临官"
+  },
+  "title": "十二长生：临官",
+  "plain": "如壮年任职，力量强盛。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.帝旺",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "帝旺"
+  },
+  "title": "十二长生：帝旺",
+  "plain": "如鼎盛之期，力量最强。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.衰",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "衰"
+  },
+  "title": "十二长生：衰",
+  "plain": "如力量转衰。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.病",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "病"
+  },
+  "title": "十二长生：病",
+  "plain": "如带病之身，力量不足。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.死",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "死"
+  },
+  "title": "十二长生：死",
+  "plain": "如生机停止。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.墓",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "墓"
+  },
+  "title": "十二长生：墓",
+  "plain": "如入库收藏。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.绝",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "绝"
+  },
+  "title": "十二长生：绝",
+  "plain": "如断绝，等待更新。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.胎",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "胎"
+  },
+  "title": "十二长生：胎",
+  "plain": "如受孕成胎，酝酿新生。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.ls.养",
+  "topic": "long-sheng",
+  "when": {
+   "kind": "long-sheng",
+   "value": "养"
+  },
+  "title": "十二长生：养",
+  "plain": "如胎儿成形、待出生。十二长生表示日主（或某干）在各地支上的旺衰状态，是象征性的比喻。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "十二长生的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.kongwang",
+  "topic": "kong-wang",
+  "when": {
+   "kind": "kong-wang"
+  },
+  "title": "空亡",
+  "plain": "以日柱所在的旬，缺少的两个地支称“空亡”。传统上认为落在空亡的宫位，其所代表的事物力量偏虚、不易着力。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "smtht",
+    "note": "空亡的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.luck.direction",
+  "topic": "luck-direction",
+  "when": {
+   "kind": "luck-direction"
+  },
+  "title": "大运顺逆与起运",
+  "plain": "阳年生男、阴年生女大运顺排，阴年生男、阳年生女逆排；顺排数到下一个节令，逆排数到上一个节令，三天折合一岁推算起运时间。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-011",
+    "note": "大运顺逆与起运换算为算法定义"
+   },
+   {
+    "ref": "yhzp",
+    "note": "大运排法的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.flow.luck",
+  "topic": "flow-luck",
+  "when": {
+   "kind": "flow-luck"
+  },
+  "title": "当前大运",
+  "plain": "目前行运“{luck}”（天干十神：{god}），传统上认为这十年的主题受“{godTrait}”的影响。大运以十年为一个阶段，天干管前五年、地支管后五年是常见的看法之一。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "大运的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.flow.year",
+  "topic": "flow-year",
+  "when": {
+   "kind": "flow-year"
+  },
+  "title": "流年",
+  "plain": "流年“{year}”（天干十神：{god}），传统上认为这一年受“{godTrait}”的影响；并与原局、大运形成相应的合冲刑害关系（见下）。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "note": "流年的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "bz.yongshen.fuyi",
+  "topic": "yongshen",
+  "when": {
+   "kind": "yongshen"
+  },
+  "title": "用神候选（扶抑法）",
+  "plain": "扶抑法给出的用神五行候选：{elements}。{note}用神的取法很多（扶抑、调候、通关、病药等），这里仅给出扶抑一种候选，并非唯一结论。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zpzq",
+    "note": "用神与扶抑的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ }
+]

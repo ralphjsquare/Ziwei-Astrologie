@@ -1,0 +1,1860 @@
+[
+ {
+  "id": "zw.star.紫微",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "紫微"
+  },
+  "title": "紫微（帝星，阴土）",
+  "plain": "传统上以「紫微」为帝星，阴土。尊贵、有领导与统筹意识，重视被尊重，适合居于主导位置；若缺少辅佐，容易显得孤高。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "尊贵、有领导与统筹意识，重视被尊重，适合居于主导位置；若缺少辅佐，容易显得孤高。"
+  }
+ },
+ {
+  "id": "zw.star.天机",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "天机"
+  },
+  "title": "天机（智星，阴木）",
+  "plain": "传统上以「天机」为智星，阴木。思维敏捷、善于谋划与分析，点子多、反应快；也容易思虑过多、情绪多变。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "思维敏捷、善于谋划与分析，点子多、反应快；也容易思虑过多、情绪多变。"
+  }
+ },
+ {
+  "id": "zw.star.太阳",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "太阳"
+  },
+  "title": "太阳（官禄之星，阳火）",
+  "plain": "传统上以「太阳」为官禄之星，阳火。热情外向、乐于付出，重名声与公众形象；容易操心过多，需注意精力分配。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "热情外向、乐于付出，重名声与公众形象；容易操心过多，需注意精力分配。"
+  }
+ },
+ {
+  "id": "zw.star.武曲",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "武曲"
+  },
+  "title": "武曲（财星，阴金）",
+  "plain": "传统上以「武曲」为财星，阴金。刚毅果断、务实重执行，对钱财与效率敏感；表达偏直接，有时显得刚硬。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "刚毅果断、务实重执行，对钱财与效率敏感；表达偏直接，有时显得刚硬。"
+  }
+ },
+ {
+  "id": "zw.star.天同",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "天同"
+  },
+  "title": "天同（福星，阳水）",
+  "plain": "传统上以「天同」为福星，阳水。温和随和、知足常乐，重视生活品质与人际和谐；冲劲相对不足，需要外力推动。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "温和随和、知足常乐，重视生活品质与人际和谐；冲劲相对不足，需要外力推动。"
+  }
+ },
+ {
+  "id": "zw.star.廉贞",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "廉贞"
+  },
+  "title": "廉贞（次桃花之星，阴火）",
+  "plain": "传统上以「廉贞」为次桃花之星，阴火。个性鲜明、原则性强，感情与事业上都较投入；内心复杂，容易在情理之间纠结。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "个性鲜明、原则性强，感情与事业上都较投入；内心复杂，容易在情理之间纠结。"
+  }
+ },
+ {
+  "id": "zw.star.天府",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "天府"
+  },
+  "title": "天府（南斗令星（库星），阳土）",
+  "plain": "传统上以「天府」为南斗令星（库星），阳土。稳重踏实、善于守成与理财，重视安全感；有时偏保守，不愿冒险。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "稳重踏实、善于守成与理财，重视安全感；有时偏保守，不愿冒险。"
+  }
+ },
+ {
+  "id": "zw.star.太阴",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "太阴"
+  },
+  "title": "太阴（财星（田宅主），阴水）",
+  "plain": "传统上以「太阴」为财星（田宅主），阴水。细腻内敛、重感受与家庭，善于积累；情绪起伏时容易内耗。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "细腻内敛、重感受与家庭，善于积累；情绪起伏时容易内耗。"
+  }
+ },
+ {
+  "id": "zw.star.贪狼",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "贪狼"
+  },
+  "title": "贪狼（桃花星，阴木兼阳水）",
+  "plain": "传统上以「贪狼」为桃花星，阴木兼阳水。多才多艺、欲望与好奇心强，善交际，应变灵活；兴趣广泛，需要避免分散。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "多才多艺、欲望与好奇心强，善交际，应变灵活；兴趣广泛，需要避免分散。"
+  }
+ },
+ {
+  "id": "zw.star.巨门",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "巨门"
+  },
+  "title": "巨门（暗星，阴水）",
+  "plain": "传统上以「巨门」为暗星，阴水。口才与分析力强，善于探究是非；也容易多疑、言语引起误会。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "口才与分析力强，善于探究是非；也容易多疑、言语引起误会。"
+  }
+ },
+ {
+  "id": "zw.star.天相",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "天相"
+  },
+  "title": "天相（印星，阳水）",
+  "plain": "传统上以「天相」为印星，阳水。谨慎周到、重形象与规矩，善于协调与辅佐他人；有时缺乏主见，容易受他人影响。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "谨慎周到、重形象与规矩，善于协调与辅佐他人；有时缺乏主见，容易受他人影响。"
+  }
+ },
+ {
+  "id": "zw.star.天梁",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "天梁"
+  },
+  "title": "天梁（荫星（寿星），阳土）",
+  "plain": "传统上以「天梁」为荫星（寿星），阳土。稳重老成、有照顾他人的倾向，遇事常有转机；有时爱说教，显得过于清高。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "稳重老成、有照顾他人的倾向，遇事常有转机；有时爱说教，显得过于清高。"
+  }
+ },
+ {
+  "id": "zw.star.七杀",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "七杀"
+  },
+  "title": "七杀（将星，阴金）",
+  "plain": "传统上以「七杀」为将星，阴金。冲劲足、独立果决，敢于挑战；人生起伏与变动往往较大，需要学会缓冲。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "冲劲足、独立果决，敢于挑战；人生起伏与变动往往较大，需要学会缓冲。"
+  }
+ },
+ {
+  "id": "zw.star.破军",
+  "topic": "star",
+  "when": {
+   "kind": "star",
+   "star": "破军"
+  },
+  "title": "破军（耗星，阴水）",
+  "plain": "传统上以「破军」为耗星，阴水。勇于开创、破旧立新，不喜循规蹈矩；变动多，容易“先破后立”，需要注意稳定根基。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜性质的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "trait": "勇于开创、破旧立新，不喜循规蹈矩；变动多，容易“先破后立”，需要注意稳定根基。"
+  }
+ },
+ {
+  "id": "zw.palace.命宫",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "命宫"
+  },
+  "title": "命宫宫",
+  "plain": "命宫代表一个人的性格特质、基本气质与人生主线，是整张命盘的核心。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "性格、先天格局与人生主线"
+  }
+ },
+ {
+  "id": "zw.palace.兄弟",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "兄弟"
+  },
+  "title": "兄弟宫",
+  "plain": "兄弟宫看手足关系、同辈往来与合作伙伴的缘分。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "手足、同辈与合作伙伴"
+  }
+ },
+ {
+  "id": "zw.palace.夫妻",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "夫妻"
+  },
+  "title": "夫妻宫",
+  "plain": "夫妻宫看感情观、婚姻状态与伴侣的特质。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "婚姻、感情与伴侣特质"
+  }
+ },
+ {
+  "id": "zw.palace.子女",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "子女"
+  },
+  "title": "子女宫",
+  "plain": "子女宫看与子女、晚辈的关系，也常联系到创造力与投资。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "子女缘、创造力与晚辈"
+  }
+ },
+ {
+  "id": "zw.palace.财帛",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "财帛"
+  },
+  "title": "财帛宫",
+  "plain": "财帛宫看赚钱的方式、理财的习惯与金钱观。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "赚钱方式与理财习惯"
+  }
+ },
+ {
+  "id": "zw.palace.疾厄",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "疾厄"
+  },
+  "title": "疾厄宫",
+  "plain": "疾厄宫传统上看体质与健康倾向，仅作生活提醒，不能替代医疗判断。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "体质与健康倾向"
+  }
+ },
+ {
+  "id": "zw.palace.迁移",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "迁移"
+  },
+  "title": "迁移宫",
+  "plain": "迁移宫看在外的表现、环境变化与外部人际机遇。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "外出、外部环境与机遇"
+  }
+ },
+ {
+  "id": "zw.palace.交友",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "交友"
+  },
+  "title": "交友宫",
+  "plain": "交友宫（古称仆役）看朋友、同事、下属关系与人脉。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "朋友、同事与下属"
+  }
+ },
+ {
+  "id": "zw.palace.官禄",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "官禄"
+  },
+  "title": "官禄宫",
+  "plain": "官禄宫看事业方向、工作态度与成就方式。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "事业与职业方向"
+  }
+ },
+ {
+  "id": "zw.palace.田宅",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "田宅"
+  },
+  "title": "田宅宫",
+  "plain": "田宅宫看居住环境、不动产与家庭根基。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "家宅、不动产与家庭环境"
+  }
+ },
+ {
+  "id": "zw.palace.福德",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "福德"
+  },
+  "title": "福德宫",
+  "plain": "福德宫看内心的满足感、兴趣爱好与精神状态。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "精神生活、兴趣与内心世界"
+  }
+ },
+ {
+  "id": "zw.palace.父母",
+  "topic": "palace",
+  "when": {
+   "kind": "palace",
+   "palace": "父母"
+  },
+  "title": "父母宫",
+  "plain": "父母宫看与父母、长辈、上司的关系，也涉及证件文书与学业。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "十二宫含义的传统说法，具体篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "domain": "父母缘、长辈与文书"
+  }
+ },
+ {
+  "id": "zw.transform.禄",
+  "topic": "transform",
+  "when": {
+   "kind": "transform",
+   "transform": "禄"
+  },
+  "title": "化禄",
+  "plain": "化禄传统上代表顺利、有资源与人缘，星曜的特质容易得到发挥，但也提示不宜过度贪求。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "四化含义的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "meaning": "顺遂、资源与缘分"
+  }
+ },
+ {
+  "id": "zw.transform.权",
+  "topic": "transform",
+  "when": {
+   "kind": "transform",
+   "transform": "权"
+  },
+  "title": "化权",
+  "plain": "化权传统上代表主动、掌控与进取，星曜的特质变得更强势，需留意用力过猛。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "四化含义的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "meaning": "掌控、主动与行动力"
+  }
+ },
+ {
+  "id": "zw.transform.科",
+  "topic": "transform",
+  "when": {
+   "kind": "transform",
+   "transform": "科"
+  },
+  "title": "化科",
+  "plain": "化科传统上代表声誉、条理与贵人相助，倾向于以平和、有序的方式呈现星曜特质。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "四化含义的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "meaning": "声誉、条理与贵人"
+  }
+ },
+ {
+  "id": "zw.transform.忌",
+  "topic": "transform",
+  "when": {
+   "kind": "transform",
+   "transform": "忌"
+  },
+  "title": "化忌",
+  "plain": "化忌传统上代表执着、牵挂与阻滞，是提醒“需要多留意或调整”的地方，并不等于必然不利。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "四化含义的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "data": {
+   "meaning": "执着、阻滞与需要留意之处"
+  }
+ },
+ {
+  "id": "zw.bureau.2",
+  "topic": "bureau",
+  "when": {
+   "kind": "bureau",
+   "number": 2
+  },
+  "title": "五行局：水二局",
+  "plain": "水二局：起限较早（2 岁起限），传统上认为格局节奏偏快。五行局由命宫干支的纳音五行决定，并用来推算紫微星位置与大限起始年龄。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-010",
+    "note": "五行局与起限年龄由算法直接得出"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.bureau.3",
+  "topic": "bureau",
+  "when": {
+   "kind": "bureau",
+   "number": 3
+  },
+  "title": "五行局：木三局",
+  "plain": "木三局：3 岁起限。五行局由命宫干支的纳音五行决定，并用来推算紫微星位置与大限起始年龄。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-010",
+    "note": "五行局与起限年龄由算法直接得出"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.bureau.4",
+  "topic": "bureau",
+  "when": {
+   "kind": "bureau",
+   "number": 4
+  },
+  "title": "五行局：金四局",
+  "plain": "金四局：4 岁起限。五行局由命宫干支的纳音五行决定，并用来推算紫微星位置与大限起始年龄。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-010",
+    "note": "五行局与起限年龄由算法直接得出"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.bureau.5",
+  "topic": "bureau",
+  "when": {
+   "kind": "bureau",
+   "number": 5
+  },
+  "title": "五行局：土五局",
+  "plain": "土五局：5 岁起限。五行局由命宫干支的纳音五行决定，并用来推算紫微星位置与大限起始年龄。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-010",
+    "note": "五行局与起限年龄由算法直接得出"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.bureau.6",
+  "topic": "bureau",
+  "when": {
+   "kind": "bureau",
+   "number": 6
+  },
+  "title": "五行局：火六局",
+  "plain": "火六局：起限较晚（6 岁起限），传统上认为大限推进偏慢。五行局由命宫干支的纳音五行决定，并用来推算紫微星位置与大限起始年龄。",
+  "evidenceType": "structural",
+  "sources": [
+   {
+    "ref": "adr",
+    "section": "ADR-010",
+    "note": "五行局与起限年龄由算法直接得出"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.body",
+  "topic": "body",
+  "when": {
+   "kind": "body"
+  },
+  "title": "身宫",
+  "plain": "身宫传统上代表后天的重心与中年以后的发展方向，与命宫（先天）相互参看。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "身宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.紫微",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "紫微",
+   "palace": "命宫"
+  },
+  "title": "紫微坐命宫",
+  "plain": "命宫见紫微，传统上主人有领导气质与自尊心，适合担任统筹角色；若同宫有辅佐星曜，格局更稳。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.天机",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "天机",
+   "palace": "命宫"
+  },
+  "title": "天机坐命宫",
+  "plain": "命宫见天机，传统上主人机敏多思、善谋划，适合需要分析与策划的工作；需要留意想得多做得少。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.太阳",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "太阳",
+   "palace": "命宫"
+  },
+  "title": "太阳坐命宫",
+  "plain": "命宫见太阳，传统上主人热情大方、乐于付出，重名声；需留意操劳过度。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.武曲",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "武曲",
+   "palace": "命宫"
+  },
+  "title": "武曲坐命宫",
+  "plain": "命宫见武曲，传统上主人刚毅务实、执行力强，与财务、管理相关的事务较有缘；表达宜柔和。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.天同",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "天同",
+   "palace": "命宫"
+  },
+  "title": "天同坐命宫",
+  "plain": "命宫见天同，传统上主人温和随缘、重享受与和谐；宜主动培养进取心。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.廉贞",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "廉贞",
+   "palace": "命宫"
+  },
+  "title": "廉贞坐命宫",
+  "plain": "命宫见廉贞，传统上主人个性鲜明、情感丰富，事业心与原则性并存；需要平衡情与理。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.天府",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "天府",
+   "palace": "命宫"
+  },
+  "title": "天府坐命宫",
+  "plain": "命宫见天府，传统上主人稳重、善守成与理财，重视安全感；宜适度尝试新事物。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.太阴",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "太阴",
+   "palace": "命宫"
+  },
+  "title": "太阴坐命宫",
+  "plain": "命宫见太阴，传统上主人细腻内敛、重家庭，善于积累；需关注情绪的自我调节。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.贪狼",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "贪狼",
+   "palace": "命宫"
+  },
+  "title": "贪狼坐命宫",
+  "plain": "命宫见贪狼，传统上主人多才多艺、好奇心强、善交际；需要专注，避免兴趣过散。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.巨门",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "巨门",
+   "palace": "命宫"
+  },
+  "title": "巨门坐命宫",
+  "plain": "命宫见巨门，传统上主人善于分析、口才好，也易在言语上引起是非；宜多沟通、少猜疑。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.天相",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "天相",
+   "palace": "命宫"
+  },
+  "title": "天相坐命宫",
+  "plain": "命宫见天相，传统上主人谨慎周到、重形象，善于协调；宜培养自己的主见。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.天梁",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "天梁",
+   "palace": "命宫"
+  },
+  "title": "天梁坐命宫",
+  "plain": "命宫见天梁，传统上主人稳重、有担当，愿意照顾他人，遇事常有贵人；宜避免说教。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.七杀",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "七杀",
+   "palace": "命宫"
+  },
+  "title": "七杀坐命宫",
+  "plain": "命宫见七杀，传统上主人独立果决、有冲劲，人生变动较大；宜学会缓冲与蓄力。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.sip.命宫.破军",
+  "topic": "star-in-palace",
+  "when": {
+   "kind": "star-in-palace",
+   "star": "破军",
+   "palace": "命宫"
+  },
+  "title": "破军坐命宫",
+  "plain": "命宫见破军，传统上主人勇于开创、不喜守旧，变动多；宜在变动中保持稳定的根基。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "诸星问答论",
+    "note": "星曜入命宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.compose.star-in-palace",
+  "topic": "star-in-palace-template",
+  "when": {
+   "kind": "star-in-palace-template"
+  },
+  "title": "主星入宫（组合说明）",
+  "plain": "「{star}」落在{palace}宫：{star}的特质是“{trait}”；{palace}宫主管“{domain}”。因此在“{domain}”方面，容易呈现“{starShort}”的倾向。此为按星性与宫位自动组合的说明，仅作理解参考。",
+  "evidenceType": "modern",
+  "sources": [
+   {
+    "ref": "modern",
+    "note": "由星性与宫位含义机械组合的说明，非古籍断语"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.命宫",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "命宫"
+  },
+  "title": "流年命宫落本命命宫宫",
+  "plain": "本年流年命宫落在本命的命宫宫，传统上认为这一年的注意力与变动容易集中在“性格、先天格局与人生主线”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.兄弟",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "兄弟"
+  },
+  "title": "流年命宫落本命兄弟宫",
+  "plain": "本年流年命宫落在本命的兄弟宫，传统上认为这一年的注意力与变动容易集中在“手足、同辈与合作伙伴”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.夫妻",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "夫妻"
+  },
+  "title": "流年命宫落本命夫妻宫",
+  "plain": "本年流年命宫落在本命的夫妻宫，传统上认为这一年的注意力与变动容易集中在“婚姻、感情与伴侣特质”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.子女",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "子女"
+  },
+  "title": "流年命宫落本命子女宫",
+  "plain": "本年流年命宫落在本命的子女宫，传统上认为这一年的注意力与变动容易集中在“子女缘、创造力与晚辈”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.财帛",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "财帛"
+  },
+  "title": "流年命宫落本命财帛宫",
+  "plain": "本年流年命宫落在本命的财帛宫，传统上认为这一年的注意力与变动容易集中在“赚钱方式与理财习惯”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.疾厄",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "疾厄"
+  },
+  "title": "流年命宫落本命疾厄宫",
+  "plain": "本年流年命宫落在本命的疾厄宫，传统上认为这一年的注意力与变动容易集中在“体质与健康倾向”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.迁移",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "迁移"
+  },
+  "title": "流年命宫落本命迁移宫",
+  "plain": "本年流年命宫落在本命的迁移宫，传统上认为这一年的注意力与变动容易集中在“外出、外部环境与机遇”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.交友",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "交友"
+  },
+  "title": "流年命宫落本命交友宫",
+  "plain": "本年流年命宫落在本命的交友宫，传统上认为这一年的注意力与变动容易集中在“朋友、同事与下属”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.官禄",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "官禄"
+  },
+  "title": "流年命宫落本命官禄宫",
+  "plain": "本年流年命宫落在本命的官禄宫，传统上认为这一年的注意力与变动容易集中在“事业与职业方向”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.田宅",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "田宅"
+  },
+  "title": "流年命宫落本命田宅宫",
+  "plain": "本年流年命宫落在本命的田宅宫，传统上认为这一年的注意力与变动容易集中在“家宅、不动产与家庭环境”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.福德",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "福德"
+  },
+  "title": "流年命宫落本命福德宫",
+  "plain": "本年流年命宫落在本命的福德宫，传统上认为这一年的注意力与变动容易集中在“精神生活、兴趣与内心世界”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.ming.父母",
+  "topic": "flow-ming",
+  "when": {
+   "kind": "flow-ming",
+   "palace": "父母"
+  },
+  "title": "流年命宫落本命父母宫",
+  "plain": "本年流年命宫落在本命的父母宫，传统上认为这一年的注意力与变动容易集中在“父母缘、长辈与文书”方面。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年以太岁所在宫为流年命宫，说法待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.transform.禄",
+  "topic": "flow-transform",
+  "when": {
+   "kind": "flow-transform",
+   "transform": "禄"
+  },
+  "title": "流年化禄",
+  "plain": "流年「{star}」{transformName}，落在本命{palace}宫（主管“{domain}”）：{meaning}。可理解为这一年“{domain}”方面较容易出现相关的课题。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年四化的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.transform.权",
+  "topic": "flow-transform",
+  "when": {
+   "kind": "flow-transform",
+   "transform": "权"
+  },
+  "title": "流年化权",
+  "plain": "流年「{star}」{transformName}，落在本命{palace}宫（主管“{domain}”）：{meaning}。可理解为这一年“{domain}”方面较容易出现相关的课题。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年四化的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.transform.科",
+  "topic": "flow-transform",
+  "when": {
+   "kind": "flow-transform",
+   "transform": "科"
+  },
+  "title": "流年化科",
+  "plain": "流年「{star}」{transformName}，落在本命{palace}宫（主管“{domain}”）：{meaning}。可理解为这一年“{domain}”方面较容易出现相关的课题。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年四化的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.transform.忌",
+  "topic": "flow-transform",
+  "when": {
+   "kind": "flow-transform",
+   "transform": "忌"
+  },
+  "title": "流年化忌",
+  "plain": "流年「{star}」{transformName}，落在本命{palace}宫（主管“{domain}”）：{meaning}。可理解为这一年“{domain}”方面较容易出现相关的课题。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "流年四化的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.flow.decade",
+  "topic": "flow-decade",
+  "when": {
+   "kind": "flow-decade"
+  },
+  "title": "当前大限",
+  "plain": "目前行运至本命{palace}宫的大限（{startAge}–{endAge} 岁，虚岁），传统上认为这十年的主题倾向于“{domain}”。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "大限的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ },
+ {
+  "id": "zw.empty-ming",
+  "topic": "empty-ming",
+  "when": {
+   "kind": "empty-ming"
+  },
+  "title": "命宫无主星",
+  "plain": "命宫没有主星时，传统上称“命无正曜”，以对宫（迁移宫）的主星借来参看（借星安宫），并结合三方四正（对宫与三合方）的星曜综合观察。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "note": "借星安宫的传统说法，篇目待核"
+   }
+  ],
+  "classical": [],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  }
+ }
+]

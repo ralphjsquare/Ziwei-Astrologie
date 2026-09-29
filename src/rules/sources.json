@@ -1,0 +1,44 @@
+{
+ "zwqs": {
+  "book": "紫微斗数全书",
+  "author": "题陈希夷（传统署名，本项目不断言作者）",
+  "edition": "待核（公版数字文本入库后填写）",
+  "verified": false,
+  "note": "书名与篇目级引用，来自开发者所知的传统说法；原文尚未入库核对，不构成逐字引文。"
+ },
+ "zpzq": {
+  "book": "子平真诠",
+  "author": "清·沈孝瞻",
+  "edition": "待核",
+  "verified": false,
+  "note": "同上，篇目级引用，待核。"
+ },
+ "yhzp": {
+  "book": "渊海子平",
+  "author": "宋·徐子平（传）",
+  "edition": "待核",
+  "verified": false,
+  "note": "同上，篇目级引用，待核。"
+ },
+ "smtht": {
+  "book": "三命通会",
+  "author": "明·万民英",
+  "edition": "待核",
+  "verified": false,
+  "note": "同上，篇目级引用，待核。"
+ },
+ "adr": {
+  "book": "本项目算法规格与决策记录",
+  "author": "ziwei-astrologie",
+  "edition": "docs/adr",
+  "verified": true,
+  "note": "结构性事实，由算法定义直接得出，无须古籍原文。"
+ },
+ "modern": {
+  "book": "现代通行整理",
+  "author": "—",
+  "edition": "—",
+  "verified": false,
+  "note": "现代命理书籍与软件的通行说法，非古籍原文，仅供参考。"
+ }
+}
