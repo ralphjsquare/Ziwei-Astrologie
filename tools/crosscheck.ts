@@ -10,10 +10,10 @@ const BASE = 'https://raw.githubusercontent.com/kanripo/KR3g0042/master/';
 const t2s = OpenCC.Converter({ from: 'tw', to: 'cn' });
 
 // 异体字折叠（四库本多用异体；己巳已在写本里常混，折叠后只做"字形无关"的比对，并在结果里注明）
-const FOLD: Record<string, string> = { 隂: '阴', 夀: '寿', 䕃: '荫', 㤀: '忘', 刼: '劫', 逄: '逢', 髙: '高', 寛: '宽', 恵: '惠', 惟: '唯', 徳: '德', 巳: '己', 已: '己', 戍: '戌', 冝: '宜', 麤: '粗', 槩: '概', 竒: '奇', 㓙: '凶', 㡬: '几', 㸔: '看', 乗: '乘', 㑹: '会', 葢: '盖', 毋: '母' };
+const FOLD: Record<string, string> = { 隂: '阴', 夀: '寿', 䕃: '荫', 㤀: '忘', 刼: '劫', 逄: '逢', 髙: '高', 寛: '宽', 恵: '惠', 惟: '唯', 徳: '德', 巳: '己', 已: '己', 戍: '戌', 冝: '宜', 麤: '粗', 𢎞: '弘', 絶: '绝', 槩: '概', 竒: '奇', 㓙: '凶', 㡬: '几', 㸔: '看', 乗: '乘', 㑹: '会', 葢: '盖', 毋: '母' };
 const fold = (s: string) => s.replace(/./gu, (c) => FOLD[c] ?? c);
 function norm(s: string): string {
-  const plain = s.replace(/<pb:[^>]*>/g, '').replace(/｛[^｝]*｝/g, '').replace(/[¶\s]/g, '').replace(/[^㐀-鿿]/g, '');
+  const plain = s.replace(/<pb:[^>]*>/g, '').replace(/｛[^｝]*｝/g, '').replace(/[¶\s]/g, '').replace(/[^㐀-鿿\u{20000}-\u{2ffff}]/gu, '');
   return fold(t2s(plain).replace(/煞/g, "杀"));
 }
 
@@ -41,6 +41,18 @@ async function main() {
   }
   const ok = rows.filter((r) => r.found).length;
   writeFileSync('docs/sources/crosscheck.json', JSON.stringify({ book: '三命通会', secondSource: 'Kanripo KR3g0042（文渊阁四库全书本 WYG）', total: rows.length, found: ok, rows }, null, 1) + '\n');
+  // 应用人工裁决（docs/sources/crosscheck-decisions.json）：保留的异文写入规则的 classical[].variant；一致的引文清除旧注记
+  const decisions = JSON.parse(readFileSync('docs/sources/crosscheck-decisions.json', 'utf8')) as { quote: string; decision: 'keep' | 'drop'; note: string }[];
+  for (const f of ['ziwei', 'bazi', 'cross']) {
+    const path = `src/rules/${f}.json`;
+    const rules = JSON.parse(readFileSync(path, 'utf8')) as { id: string; classical: { quote: string; variant?: string }[] }[];
+    for (const r of rules) for (const q of r.classical) {
+      const row = rows.find((x) => x.ruleId === r.id && x.quote === q.quote);
+      const d = decisions.find((x) => x.quote === q.quote);
+      if (row && !row.found && d?.decision === 'keep') q.variant = d.note; else delete q.variant;
+    }
+    writeFileSync(path, JSON.stringify(rules, null, 1) + '\n');
+  }
   console.log(`三命通会引文 ${rows.length} 条，第二来源命中 ${ok} 条`);
   for (const r of rows.filter((x) => !x.found)) console.log(`  未命中 ${r.ruleId}: ${r.quote}`);
 }

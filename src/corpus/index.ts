@@ -123,7 +123,7 @@ export function applyGrounding(rules: Rule[], corpus: Record<string, CorpusEntry
     }
     if (!ok) continue;
     r.plain = it.plain;
-    r.classical = found;
+    r.classical = found.map((f) => { const old = r.classical.find((o) => o.quote === f.quote && o.variant); return old ? { ...f, variant: old.variant } : f; });
     const sections = [...new Set(found.map((f) => corpus[f.corpusRef].section))];
     r.sources = sections.map((sec) => ({ ref: bookRefs[it.book] ?? it.book, section: sec, note: it.book === 'zpzq' || it.book === 'yhzp' ? '【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对' : it.book === 'dts' ? '引文来自维基文库《滴天髓輯要》转录本，页面未附影印本，须对照影印本核对' : '引文来自维基文库转录本，底本未标明，须对照影印本核对' }));
     r.basis = 'quoted';

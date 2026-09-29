@@ -12,7 +12,7 @@ export interface InterpItem {
   ruleId: string; title: string; text: string; context: string;
   evidenceType: EvidenceType; evidenceLabel: string; basisLabel: string; reviewStatus: ReviewStatus; reviewLabel: string;
   sources: InterpSource[];
-  classical: { quote: string; source: string }[];
+  classical: { quote: string; source: string; variant?: string }[];
   composed?: boolean;
 }
 export interface InterpSection { id: string; heading: string; items: InterpItem[] }
@@ -28,7 +28,7 @@ function toItem(R: RuleSet, rule: Rule, text: string, context: string, composed 
       const e = R.sources[s.ref];
       return { book: e.book, section: s.section, note: s.note ?? e.note, edition: e.edition, verified: e.verified };
     }),
-    classical: rule.classical.map((q) => ({ quote: q.quote, source: `${R.corpus[q.corpusRef]?.book ?? ''}·${R.corpus[q.corpusRef]?.section ?? ''}` })),
+    classical: rule.classical.map((q) => ({ quote: q.quote, source: `${R.corpus[q.corpusRef]?.book ?? ''}·${R.corpus[q.corpusRef]?.section ?? ''}`, ...(q.variant ? { variant: q.variant } : {}) })),
     ...(composed ? { composed } : {}),
   };
 }

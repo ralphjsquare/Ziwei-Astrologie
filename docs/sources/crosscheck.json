@@ -2,7 +2,7 @@
  "book": "三命通会",
  "secondSource": "Kanripo KR3g0042（文渊阁四库全书本 WYG）",
  "total": 110,
- "found": 105,
+ "found": 106,
  "rows": [
   {
    "ruleId": "bz.stem.甲",
@@ -181,7 +181,8 @@
   {
    "ruleId": "bz.god.食神",
    "quote": "主人财厚食丰，福量宽弘",
-   "found": false
+   "found": true,
+   "volume": 5
   },
   {
    "ruleId": "bz.god.伤官",

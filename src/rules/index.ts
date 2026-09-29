@@ -24,7 +24,7 @@ export interface Rule {
   plain: string;
   evidenceType: EvidenceType;
   sources: RuleSourceRef[];
-  classical: { quote: string; corpusRef: string }[];
+  classical: { quote: string; corpusRef: string; /** 与第二来源（如文渊阁四库本）的异文说明；不改变证据等级 */ variant?: string }[];
   /** 依据类型：算法定义 / 模板组合 / 篇目指引 / 通行说法 */
   basis: Basis;
   review: ReviewRecord;

@@ -4,9 +4,9 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import * as OpenCC from 'opencc-js';
 
 const t2s = OpenCC.Converter({ from: 'tw', to: 'cn' });
-const FOLD: Record<string, string> = { 隂: '阴', 夀: '寿', 䕃: '荫', 㤀: '忘', 刼: '劫', 逄: '逢', 髙: '高', 寛: '宽', 恵: '惠', 惟: '唯', 徳: '德', 巳: '己', 已: '己', 戍: '戌', 冝: '宜', 麤: '粗', 槩: '概', 竒: '奇', 㓙: '凶', 㡬: '几', 㸔: '看', 乗: '乘', 㑹: '会', 葢: '盖', 毋: '母' };
+const FOLD: Record<string, string> = { 隂: '阴', 夀: '寿', 䕃: '荫', 㤀: '忘', 刼: '劫', 逄: '逢', 髙: '高', 寛: '宽', 恵: '惠', 惟: '唯', 徳: '德', 巳: '己', 已: '己', 戍: '戌', 冝: '宜', 麤: '粗', 𢎞: '弘', 絶: '绝', 槩: '概', 竒: '奇', 㓙: '凶', 㡬: '几', 㸔: '看', 乗: '乘', 㑹: '会', 葢: '盖', 毋: '母' };
 const fold = (s: string) => s.replace(/./gu, (c) => FOLD[c] ?? c);
-const norm = (s: string) => fold(t2s(s.replace(/<pb:[^>]*>/g, '').replace(/｛[^｝]*｝/g, '').replace(/[¶\s]/g, '').replace(/[^㐀-鿿]/g, '')).replace(/煞/g, '杀'));
+const norm = (s: string) => fold(t2s(s.replace(/<pb:[^>]*>/g, '').replace(/｛[^｝]*｝/g, '').replace(/[¶\s]/g, '').replace(/[^㐀-鿿\u{20000}-\u{2ffff}]/gu, '')).replace(/煞/g, '杀'));
 
 const cc = JSON.parse(readFileSync('docs/sources/crosscheck.json', 'utf8')) as { rows: { ruleId: string; quote: string; found: boolean }[] };
 const corpus = JSON.parse(readFileSync('src/rules/corpus.json', 'utf8')) as Record<string, { text: string; section: string }>;
@@ -18,7 +18,7 @@ const byQuote = new Map<string, string[]>();
 for (const r of bad) byQuote.set(r.quote, [...(byQuote.get(r.quote) ?? []), r.ruleId]);
 
 const L = ['# 《三命通会》引文差异确认表', '',
-  '维基文库转录本（本项目语料）与 Kanripo 文渊阁四库全书本逐条核对，110 条引文里 105 条一致（已忽略繁简、异体字、己/巳误刻），下面 4 处文字确有不同（其中一处被两条规则共用，共涉及 5 条规则引文）。请在每条下选一项，把 `[ ]` 改成 `[x]`，再发回给我，我来落地。',
+  '维基文库转录本（本项目语料）与 Kanripo 文渊阁四库全书本逐条核对，一致的已忽略繁简、异体字、己/巳误刻；下面是文字确有不同的引文。已裁决的结果记在 `crosscheck-decisions.json`。',
   '', '- **保留**：仍用维基文库文字，但在规则里标注“与四库本有异文”。',
   '- **删除引文**：这条规则不再带这句引文（规则本身保留，降回“流派观点”）。',
   '- 两个版本都是转录本，都不等于影印本；无法判断谁对时，建议选“保留”并保持 draft。', '', '---', ''];
