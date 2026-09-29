@@ -32,7 +32,7 @@ export interface ZiweiChart {
   fourTransforms: { stem: number; lu: string; quan: string; ke: string; ji: string };
   decadeDirection: 1 | -1;
   /** 本盘采用的版本选项（流年四化等后续计算沿用） */
-  variants: { kuiYueXin: 'hu-ma' | 'ma-hu'; sihua: Partial<Record<string, number>> };
+  variants: { kuiYueXin: 'hu-ma' | 'ma-hu'; sihua: Partial<Record<string, number>>; decadeStart: 'ming' | 'literal'; leapMonthRule: 'midMonth' | 'currentMonth' | 'nextMonth' };
   steps: ZiweiStep[];
   rulesVersion: string;
 }

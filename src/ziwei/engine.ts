@@ -93,12 +93,14 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
   const dir: 1 | -1 = (yang && gender === 'M') || (!yang && gender === 'F') ? 1 : -1;
   steps.push({ id: 'decade', text: `${yang ? '阳' : '阴'}${gender === 'M' ? '男' : '女'}，大限${dir === 1 ? '顺' : '逆'}行，${BUREAU_NAME[bureau]}${bureau}岁起限` });
 
+  const decadeFirst = opt.decadeStart === 'literal' ? mod(ming + dir, 12) : ming; // 首个大限所在宫的地支
+  if (opt.decadeStart === 'literal') steps.push({ id: 'decade-start', text: `大限起宫=古籍字面法：从命宫${dir === 1 ? '前' : '后'}一宫（${PALACE_NAMES[dir === 1 ? 11 : 1]}）起限` });
   const palaces: Palace[] = [];
   for (let b = 0; b < 12; b++) {
     const k = mod(ming - b, 12); // 该地支宫是第 k 个宫（命宫=0），宫序逆地支排列
     const stars: StarPlacement[] = [];
     for (const name of STAR_ORDER) if (at[name] === b) stars.push({ name, kind: KIND[name], ...(tmap[name] ? { transform: tmap[name] } : {}) });
-    const j = mod((b - ming) * dir, 12); // 大限序号
+    const j = mod((b - decadeFirst) * dir, 12); // 大限序号
     palaces.push({
       branch: b, stem: stemOf(b), name: PALACE_NAMES[k], stars, isBody: b === body,
       decade: { startAge: bureau + 10 * j, endAge: bureau + 10 * j + 9 },
@@ -112,6 +114,6 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
     fiveElementBureau: { name: BUREAU_NAME[bureau], number: bureau as 2 | 3 | 4 | 5 | 6, nayin: nayinName(mingJz) },
     mingBranch: ming, bodyBranch: body, ziweiBranch: zw, tianfuBranch: tf,
     palaces, fourTransforms: { stem: yearStem, lu, quan, ke, ji }, decadeDirection: dir,
-    variants: { kuiYueXin: opt.kuiYueXin, sihua: { ...opt.sihua } }, steps, rulesVersion: RULES_VERSION,
+    variants: { kuiYueXin: opt.kuiYueXin, sihua: { ...opt.sihua }, decadeStart: opt.decadeStart, leapMonthRule: opt.leapMonthRule }, steps, rulesVersion: RULES_VERSION,
   };
 }

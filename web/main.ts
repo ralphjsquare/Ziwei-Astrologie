@@ -44,7 +44,8 @@ app.innerHTML = `
     <div class="form" style="margin-top:8px">
       <label>八字日柱换日<select id="bb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
       <label>紫微生日换日<select id="zb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
-      <label>闰月取月（紫微）<select id="lr"><option value="midMonth">月中分界（默认）</option><option value="currentMonth">按本月</option><option value="nextMonth">按下月</option></select></label>
+      <label>闰月规则（仅紫微；八字按节令，不受影响）<select id="lr"><option value="midMonth">前后半月法（现代通行，默认）：闰四月初十按四月，二十按五月</option><option value="currentMonth">全作本月：闰四月一律按四月</option><option value="nextMonth">全作下月（古籍字面法）：闰四月一律按五月</option></select></label>
+      <label>大限起宫（仅紫微）<select id="ds"><option value="ming">命宫起限（通行法，默认）</option><option value="literal">命前/命后一宫起限（古籍字面法）</option></select></label>
       <label>辛年天魁天钺<select id="ky"><option value="hu-ma">魁寅钺午（六辛逢虎马，《全书》，默认）</option><option value="ma-hu">魁午钺寅（六辛逢马虎，iztro 等）</option></select></label>
       <label>戊年四化<select id="sh-wu"><option value="1">贪阴弼机（默认）</option><option value="2">贪阴阳机</option></select></label>
       <label>庚年四化<select id="sh-geng"><option value="1">阳武阴同（默认）</option><option value="2">阳武同阴</option><option value="3">阳武府同</option><option value="4">阳武同相</option></select></label>
@@ -99,7 +100,7 @@ function readInput(): { input: BirthInput; options: Partial<Options>; warnings: 
   const input: BirthInput = { calendar: cal, year: y, month: m, day: d, ...(cal === 'lunar' ? { leap: chk('leap') } : {}), hour: hh, minute: mm, gender: val('g') as 'M' | 'F', place };
   const options: Partial<Options> = {
     trueSolarTime: chk('tst'), baziDayBoundary: val('bb') as Options['baziDayBoundary'], ziweiDayBoundary: val('zb') as Options['ziweiDayBoundary'],
-    leapMonthRule: val('lr') as Options['leapMonthRule'], kuiYueXin: val('ky') as Options['kuiYueXin'],
+    leapMonthRule: val('lr') as Options['leapMonthRule'], kuiYueXin: val('ky') as Options['kuiYueXin'], decadeStart: val('ds') as Options['decadeStart'],
     sihua: { 戊: num('sh-wu'), 庚: num('sh-geng'), 壬: num('sh-ren'), 癸: num('sh-gui') },
   };
   return { input, options, warnings };
@@ -147,6 +148,8 @@ function chartHtml(b: ChartBundle): string {
     <div>公历 ${r.clock.y}-${r.clock.m}-${r.clock.d} ${String(r.clock.hh).padStart(2, '0')}:${String(r.clock.mm).padStart(2, '0')} · ${i.gender === 'M' ? '男' : '女'}</div>
     <div>农历 ${r.clockLunar.year}年${r.clockLunar.leap ? '闰' : ''}${r.clockLunar.month}月${r.clockLunar.day}日 · ${STEMS[z.yearStem]}${BRANCHES[z.yearBranch]}年 · ${BRANCHES[z.input.hourBranch]}时</div>
     <div>${z.fiveElementBureau.name}（${z.fiveElementBureau.nayin}）· 大限${z.decadeDirection === 1 ? '顺' : '逆'}行</div>
+    ${z.input.lunarLeap ? `<div class="warn">当前出生日期为闰${z.input.lunarMonth}月，受闰月规则影响（现按“${{ midMonth: '前后半月法', currentMonth: '全作本月', nextMonth: '全作下月' }[z.variants.leapMonthRule]}”，起命宫月份取${z.input.effectiveMonth}月）；切换规则可能导致命宫及后续宫位发生变化。</div>` : ''}
+    ${z.variants.decadeStart === 'literal' ? '<div class="warn">大限起宫：古籍字面法（命前/命后一宫起限），与通行排盘软件不同。</div>' : ''}
     <div>四化：${z.fourTransforms.lu}禄 ${z.fourTransforms.quan}权 ${z.fourTransforms.ke}科 ${z.fourTransforms.ji}忌</div>
     <div>八字：${pil}</div><div class="note">点击星曜或宫位查看解释</div></div>`;
   return `<div class="chart">${cells}${center}</div>`;
