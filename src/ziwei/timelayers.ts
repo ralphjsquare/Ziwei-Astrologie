@@ -10,6 +10,8 @@ export interface ZiweiYearLayer {
   year: number; age: number; // 虚岁（以农历年计）
   yearStem: number; yearBranch: number;
   decade: { branch: number; palaceName: PalaceName; startAge: number; endAge: number } | null; // 起限前为 null
+  /** 小限：依《全书》安小限诀，出生年支定起宫（虚岁1岁），男顺女逆，每年一宫 */
+  minorLimit: { branch: number; palaceName: PalaceName; startBranch: number; direction: 1 | -1 };
   flowMingBranch: number;
   flowPalaces: { name: PalaceName; branch: number; natalName: PalaceName }[]; // 以流年命宫重排的十二宫
   transforms: FlowStarTransform[];
@@ -33,6 +35,10 @@ export function ziweiYearLayer(c: ZiweiChart, year: number): ZiweiYearLayer {
     return { name, branch: b, natalName: c.palaces[b].name };
   });
   steps.push(`流年命宫：太岁${BRANCHES[branch]}宫入命，即本命${c.palaces[branch].name}`);
+  const startBranch = ([[4, [2, 6, 10]], [10, [8, 0, 4]], [7, [5, 9, 1]], [1, [11, 3, 7]]] as [number, number[]][]).find(([, g]) => g.includes(c.yearBranch))![0];
+  const direction: 1 | -1 = c.input.gender === 'M' ? 1 : -1;
+  const xb = mod(startBranch + direction * (age - 1), 12);
+  steps.push(`小限：${BRANCHES[c.yearBranch]}年生人虚岁1岁起${BRANCHES[startBranch]}宫，${direction === 1 ? '男顺' : '女逆'}行，虚岁${age}岁落${BRANCHES[xb]}宫（本命${c.palaces[xb].name}）`);
   const t: Transform[] = ['禄', '权', '科', '忌'];
   const transforms: FlowStarTransform[] = [];
   const sh = sihuaFor(stem, c.variants.sihua);
@@ -51,6 +57,7 @@ export function ziweiYearLayer(c: ZiweiChart, year: number): ZiweiYearLayer {
   return {
     year, age, yearStem: stem, yearBranch: branch,
     decade: dec ? { branch: dec.branch, palaceName: dec.name, startAge: dec.decade.startAge, endAge: dec.decade.endAge } : null,
+    minorLimit: { branch: xb, palaceName: c.palaces[xb].name, startBranch, direction },
     flowMingBranch: branch, flowPalaces, transforms, douJunBranch: dou, months, steps,
   };
 }

@@ -155,6 +155,11 @@ export function interpretYear(b: ChartBundle, year: number, R: RuleSet): InterpS
     const pr = need(R, `zw.palace.${zl.decade.palaceName}`);
     zi.push(toItem(R, dr, fill(dr.plain, { palace: zl.decade.palaceName, startAge: zl.decade.startAge, endAge: zl.decade.endAge, domain: pr.data!.domain }), `大限：${BRANCHES[zl.decade.branch]}宫（${zl.decade.palaceName}）`));
   }
+  {
+    const mr = need(R, 'zw.flow.minor');
+    const pr = need(R, `zw.palace.${zl.minorLimit.palaceName}`);
+    zi.push(toItem(R, mr, fill(mr.plain, { palace: zl.minorLimit.palaceName, domain: pr.data!.domain }), `小限：${BRANCHES[zl.minorLimit.branch]}宫（${zl.minorLimit.palaceName}）`));
+  }
   for (const tr of zl.transforms) {
     const rr = need(R, `zw.flow.transform.${tr.transform}`);
     const tRule = need(R, `zw.transform.${tr.transform}`);

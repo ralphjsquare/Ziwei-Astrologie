@@ -2290,5 +2290,36 @@
    "history": []
   },
   "basis": "textbook"
+ },
+ {
+  "id": "zw.flow.minor",
+  "topic": "flow-minor",
+  "when": {
+   "kind": "flow-minor"
+  },
+  "title": "当年小限",
+  "plain": "小限是每年移动一宫的“年限”。《全书》的安小限诀按出生年支决定虚岁1岁起在哪一宫，男顺女逆；今年小限落在本命{palace}宫，传统上认为这一年的关注点倾向于“{domain}”。以上是传统说法，仅作文化理解，并不代表现实中一定如此。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "zwqs",
+    "section": "卷二·安身命例",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#1",
+    "quote": "寅午戌人起辰宫，申子辰人自戌宫，巳酉丑人起未宫，亥卯未人起丑宫"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
  }
 ]
