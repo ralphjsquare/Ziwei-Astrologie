@@ -101,7 +101,7 @@ for (const c of cases) {
     expected.bazi.pillars === mine.bazi.pillars && JSON.stringify(expected.bazi.luckStart) === JSON.stringify(mine.bazi.luckStart);
   if (!same) divergences.push(c.id);
   out.push({ id: c.id, category: c.category, input: c.input, expected,
-    oracle: { ziwei: { type: 'independent-implementation', source: `iztro@${iztroVersion}` }, bazi: { type: 'independent-implementation', source: `tyme4ts@${tymeVersion}` }, note: c.input.place.dstMinutes ? '库输入为扣除夏令时后的标准时间' : '', humanVerifiedBy: prev.get(c.id) && JSON.stringify(prev.get(c.id)!.input) === JSON.stringify(c.input) ? prev.get(c.id)!.oracle.humanVerifiedBy : null } });
+    oracle: { ziwei: { type: 'independent-implementation', source: `iztro@${iztroVersion}` }, bazi: { type: 'independent-implementation', source: `tyme4ts@${tymeVersion}` }, note: c.input.place.dstMinutes ? '库输入为扣除夏令时后的标准时间' : '', humanVerifiedBy: prev.get(c.id) && JSON.stringify(prev.get(c.id)!.input) === JSON.stringify(c.input) ? prev.get(c.id)!.oracle.humanVerifiedBy : null, ...(prev.get(c.id) && JSON.stringify(prev.get(c.id)!.input) === JSON.stringify(c.input) && (prev.get(c.id)!.oracle as { aiPrecheck?: unknown }).aiPrecheck ? { aiPrecheck: (prev.get(c.id)!.oracle as { aiPrecheck?: unknown }).aiPrecheck } : {}) } });
 }
 mkdirSync('test/fixtures', { recursive: true });
 writeFileSync('test/fixtures/golden.json', JSON.stringify({ generatedBy: 'tools/gen-golden.ts', note: '期望值来自独立实现，非本引擎输出；humanVerifiedBy 为 null 表示尚未人工签字（见 docs/golden/HUMAN_REVIEW_SHEET.md）', divergences, cases: out }, null, 1) + '\n', 'utf8');

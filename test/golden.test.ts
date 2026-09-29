@@ -45,4 +45,12 @@ describe('黄金盘（紫微 60 + 八字 60，独立实现为标准）', () => {
     expect(Object.keys(cases)).toHaveLength(60);
     for (const c of golden.cases) expect(cases[c.id].pillars, c.id).toBe(c.expected.bazi.pillars);
   });
+
+  it('AI 预核与人工核对分开记录：AI 记录不得冒充人工签字', () => {
+    for (const c of golden.cases as { id: string; oracle: { humanVerifiedBy: { role?: string } | null; aiPrecheck?: { role: string } } }[]) {
+      if (c.oracle.aiPrecheck) expect(c.oracle.aiPrecheck.role).toBe('AI_INDEPENDENT_PRECHECK');
+      if (c.oracle.humanVerifiedBy) expect(c.oracle.humanVerifiedBy.role).not.toMatch(/AI/);
+    }
+  });
 });
+

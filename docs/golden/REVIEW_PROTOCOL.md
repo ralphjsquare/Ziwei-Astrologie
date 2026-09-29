@@ -24,3 +24,8 @@
 - 通过后运行：`npm run golden:sign -- G01 G02 … --by 姓名`，签字会写入 `test/fixtures/golden.json`（重新生成固件时会保留）。
 - 完成 20 个代表盘的核对后，才可在 README 中把“黄金盘人工核对”标为完成。
 - 工时估计：每盘 10–20 分钟，20 盘约 4–6 小时（不计入 API 预算）。
+
+## 四、AI 预核与人工核对的区别（2026-09-29）
+- `oracle.aiPrecheck`（role=`AI_INDEPENDENT_PRECHECK`）：AI 依独立资料与规则的预核记录，见 `AI_PRECHECK_SHEET.md`；20/20 通过，未发现需要修改期望值的项目。我方对该记录做过抽查，结论一致；其所称的外部站点是否被实际查阅无法证实。
+- `oracle.humanVerifiedBy`（role=“本人（非专业）”）：只有人自己用外部工具核对并勾选 `INTERACTIVE_REVIEW.md` 后才写入。目前 0/20。
+- 二者互不替代；README 与解读页不得把 AI 预核写成“人工核对完成”。

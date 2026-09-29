@@ -1,6 +1,7 @@
 // 生成“可勾选”的黄金盘核对表 docs/golden/INTERACTIVE_REVIEW.md，并可把勾选结果导回签字。
 //   npm run golden:sheet                          生成核对表（20 个代表盘）
-//   npm run golden:sheet -- import <文件> [--date 2026-10-01]   读取你勾选并填写“核对人”的表，把两项都勾选的盘签字
+//   npm run golden:sheet -- import <文件> [--date 2026-10-01]   读取你勾选并填写“核对人”的表，把两项都勾选的盘记为“本人（非专业）核对”
+//   npm run golden:sheet -- import <文件> --provenance ai       AI 独立预核的记录：写入 oracle.aiPrecheck（role=AI_INDEPENDENT_PRECHECK），不写 humanVerifiedBy
 // 表中“独立来源期望值”来自 iztro / tyme4ts / sxtwl，不来自本引擎；本工具不会替你勾选或签字。
 import { readFileSync, writeFileSync } from 'node:fs';
 import { astro } from 'iztro';
@@ -78,11 +79,13 @@ function importSheet(file: string) {
     const bz = new RegExp(`- \\[x\\] 八字：[^\\n]*（${id}-bazi）`, 'i').test(md);
     const zw = new RegExp(`- \\[x\\] 紫微：[^\\n]*（${id}-ziwei）`, 'i').test(md);
     if (!(bz && zw)) continue;
-    gold.cases.find((c) => c.id === id)!.oracle.humanVerifiedBy = { name, date, role: '本人（非专业）', sheet: 'INTERACTIVE_REVIEW.md' };
+    const o = gold.cases.find((c) => c.id === id)!.oracle as Record<string, unknown>;
+    if (args.includes('--provenance') && args[args.indexOf('--provenance') + 1] === 'ai') o.aiPrecheck = { name, date, role: 'AI_INDEPENDENT_PRECHECK', sheet: file.split('/').pop() };
+    else o.humanVerifiedBy = { name, date, role: '本人（非专业）', sheet: file.split('/').pop() };
     signed.push(id);
   }
   writeFileSync(GOLD, JSON.stringify(gold, null, 1) + '\n', 'utf8');
-  console.log(`已记录 ${signed.length}/${IDS.length} 个盘的本人核对：${signed.join(' ') || '（无）'}`);
+  console.log(`已记录 ${signed.length}/${IDS.length} 个盘的${args.includes('--provenance') ? 'AI 预核' : '本人核对'}：${signed.join(' ') || '（无）'}`);
 }
 
 const a = process.argv.slice(2);
