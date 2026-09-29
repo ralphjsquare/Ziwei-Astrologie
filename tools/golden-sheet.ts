@@ -3,6 +3,7 @@
 //   npm run golden:sheet -- import <文件> [--date 2026-10-01]   读取你勾选并填写“核对人”的表，把两项都勾选的盘签字
 // 表中“独立来源期望值”来自 iztro / tyme4ts / sxtwl，不来自本引擎；本工具不会替你勾选或签字。
 import { readFileSync, writeFileSync } from 'node:fs';
+import { astro } from 'iztro';
 import { computeCharts, BRANCHES, STEMS } from '../src/index';
 import type { BirthInput } from '../src/core/types';
 
@@ -37,6 +38,15 @@ function generate() {
     const trans = Object.entries(e.ziwei.transforms).map(([s, t]) => `${s}化${t}`).join('、');
     const luck = b.bazi.luck.start;
     const cl = b.resolved.clockLunar;
+    const dec = (pl: { name: string; decade: { startAge: number; endAge: number } }[], dir: number) => {
+      const f = pl.reduce((m, p) => (p.decade.startAge < m.decade.startAge ? p : m));
+      const sec = pl.find((p) => p.decade.startAge === f.decade.startAge + 10)!;
+      return `${dir === 1 ? '顺' : '逆'}行；首限${f.name}${f.decade.startAge}–${f.decade.endAge}；第二限${sec.name}${sec.decade.startAge}–${sec.decade.endAge}`;
+    };
+    const ti = i.hour === 23 ? 12 : Math.floor(((i.hour + 1) % 24) / 2);
+    const iz = astro.bySolar(`${i.year}-${i.month}-${i.day}`, ti, i.gender === 'M' ? '男' : '女', true, 'zh-CN');
+    const izDir = (z.yearStem % 2 === 0) === (i.gender === 'M') ? 1 : -1;
+    const izDec = dec(iz.palaces.map((p) => ({ name: p.name === '仆役' ? '交友' : p.name, decade: { startAge: p.decadal.range[0], endAge: p.decadal.range[1] } })), izDir);
     L.push(`## ${id}｜${c.category}`, '',
       `**出生**：公历 ${i.year}-${i.month}-${i.day} ${String(i.hour).padStart(2, '0')}:${String(i.minute).padStart(2, '0')}，${i.gender === 'M' ? '男' : '女'}，UTC${i.place.utcOffsetMinutes >= 0 ? '+' : ''}${i.place.utcOffsetMinutes / 60}${i.place.dstMinutes ? '（含夏令时，钟表时间）' : ''}　农历：${cl.year}年${cl.leap ? '闰' : ''}${cl.month}月${cl.day}日`, '',
       '| 项目 | 本软件 | 独立来源期望值 |', '|---|---|---|',
@@ -45,9 +55,10 @@ function generate() {
       `| 命宫／身宫 | ${BRANCHES[z.mingBranch]}／${BRANCHES[z.bodyBranch]} | ${e.ziwei.mingBranch}／${e.ziwei.bodyBranch}（iztro） |`,
       `| 五行局 | ${z.fiveElementBureau.name} | ${e.ziwei.bureau} |`,
       `| 十二宫主星 | ${stars(mine)} | ${stars(e.ziwei.majorStars)} |`,
+      `| 大限（首限自命宫起） | ${dec(z.palaces, z.decadeDirection)} | ${izDec}（iztro） |`,
       `| 年干四化 | ${Object.entries({ [z.fourTransforms.lu]: '禄', [z.fourTransforms.quan]: '权', [z.fourTransforms.ke]: '科', [z.fourTransforms.ji]: '忌' }).map(([s, t]) => `${s}化${t}`).join('、')} | ${trans} |`, '',
       `- [ ] 八字：四柱与起运，我用外部工具查过，与上表一致（${id}-bazi）`,
-      `- [ ] 紫微：命宫、身宫、五行局、主星与四化，我用外部工具查过，与上表一致（${id}-ziwei）`,
+      `- [ ] 紫微：命宫、身宫、五行局、主星、大限与四化，我用外部工具查过，与上表一致（${id}-ziwei）`,
       '- 我用的工具：`__________`',
       '- 备注：', '', '---', '');
   }
