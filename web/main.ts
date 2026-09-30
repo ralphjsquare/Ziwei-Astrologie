@@ -3,7 +3,7 @@ import {
   SUPPORTED_MAX_YEAR, SUPPORTED_MIN_YEAR, type BirthInput, type ChartBundle, type Options, type Place,
 } from '../src/index';
 import { chinaDstState } from '../src/calendar/china-dst';
-import { RULES, REVIEW_LABEL, rulesContentHash, type ReviewStatus } from '../src/rules';
+import { RULES, REVIEW_LABEL, SOURCE_CLASS_LABEL, rulesContentHash, type ReviewStatus } from '../src/rules';
 import { interpretNatal, interpretYear, ruleItem, DISCLAIMER, type InterpItem, type InterpSection } from '../src/interpret';
 import { crossReference, CROSS_DISCLAIMER } from '../src/crossref';
 import { synastry, SYNASTRY_DISCLAIMER } from '../src/synastry';
@@ -47,6 +47,7 @@ app.innerHTML = `
       <label>紫微生日换日<select id="zb"><option value="zi23">23:00 起算次日（默认）</option><option value="zi00">00:00 起算次日</option></select></label>
       <label>闰月规则（仅紫微；八字按节令，不受影响）<select id="lr"><option value="midMonth">前后半月法（现代通行，默认）：闰四月初十按四月，二十按五月</option><option value="currentMonth">全作本月：闰四月一律按四月</option><option value="nextMonth">全作下月（古籍字面法）：闰四月一律按五月</option></select></label>
       <label>文昌贵人取法（八字神煞）<select id="wc"><option value="sanming">《三命通会》歌诀表（默认）</option><option value="common">通行表</option></select></label>
+      <label>红艳煞取法（八字神煞）<select id="hy"><option value="sanming">《三命通会》原文表（默认）</option><option value="common">通行表</option></select></label>
       <label class="inline"><input id="yinren" type="checkbox"> 阴干也定羊刃（另一流派，默认关闭）</label>
       <label>辛年天魁天钺<select id="ky"><option value="hu-ma">魁寅钺午（六辛逢虎马，《全书》，默认）</option><option value="ma-hu">魁午钺寅（六辛逢马虎，iztro 等）</option></select></label>
       <label>戊年四化<select id="sh-wu"><option value="1">贪阴弼机（默认）</option><option value="2">贪阴阳机</option></select></label>
@@ -102,7 +103,7 @@ function readInput(): { input: BirthInput; options: Partial<Options>; warnings: 
   const input: BirthInput = { calendar: cal, year: y, month: m, day: d, ...(cal === 'lunar' ? { leap: chk('leap') } : {}), hour: hh, minute: mm, gender: val('g') as 'M' | 'F', place };
   const options: Partial<Options> = {
     trueSolarTime: chk('tst'), baziDayBoundary: val('bb') as Options['baziDayBoundary'], ziweiDayBoundary: val('zb') as Options['ziweiDayBoundary'],
-    leapMonthRule: val('lr') as Options['leapMonthRule'], kuiYueXin: val('ky') as Options['kuiYueXin'], wenchangMode: val('wc') as Options['wenchangMode'], yinStemYangRen: chk('yinren'),
+    leapMonthRule: val('lr') as Options['leapMonthRule'], kuiYueXin: val('ky') as Options['kuiYueXin'], wenchangMode: val('wc') as Options['wenchangMode'], yinStemYangRen: chk('yinren'), hongyanMode: val('hy') as Options['hongyanMode'],
     sihua: { 戊: num('sh-wu'), 庚: num('sh-geng'), 壬: num('sh-ren'), 癸: num('sh-gui') },
   };
   return { input, options, warnings };
@@ -127,7 +128,7 @@ function buildWarnings(b: ChartBundle, extra: string[]): string[] {
 // ---------- 渲染 ----------
 function itemHtml(it: InterpItem): string {
   const src = it.sources.map((s) => `<li>${esc(s.book)}${s.section ? '·' + esc(s.section) : ''}${s.verified ? '' : '（底本未核对）'}${s.note ? ' — ' + esc(s.note) : ''}</li>`).join('');
-  const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}${q.variant ? `<br><span class="note">版本异文：${esc(q.variant)}</span>` : ''}</li>`).join('') + '<li class="note">引文来自电子转录本（维基文库或用户提供的电子书，见各条出处的版本说明，部分“版本未核实”），须对照影印本核对。</li>' : '<li>本条暂无古籍引文（属通行说法或算法结构）。</li>';
+  const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}${q.variant ? `<br><span class="note">版本异文：${esc(q.variant)}</span>` : ''}</li>`).join('') + '<li class="note">引文来自电子转录本（维基文库或用户提供的电子书，见各条出处的版本说明，部分“版本未核实”），须对照影印本核对。</li>' : `<li class="note">本条没有古籍引文：${it.evidenceType === 'structural' ? '属算法结构，无需古籍原文' : `<b>${esc(it.sourceClass ? SOURCE_CLASS_LABEL[it.sourceClass as keyof typeof SOURCE_CLASS_LABEL] : '流派／现代说法')}</b>，仅作参考`}。</li>`;
   return `<article class="item ev-${it.evidenceType}"><h4>${esc(it.title)} <span class="badge">${esc(it.evidenceLabel)}</span><span class="badge ${it.reviewStatus}">${esc(it.reviewLabel)}</span>${it.composed ? '<span class="badge">模板组合</span>' : ''}${it.classical.length ? '<span class="badge quoted">附古籍引文</span>' : ''}</h4>
   ${it.context ? `<p class="ctx">${esc(it.context)}</p>` : ''}<p>${esc(it.text)}</p>
   <details><summary>出处与古籍原文</summary><p>依据类型：${esc(it.basisLabel)}</p><ul>${src}</ul><p>古籍原文：</p><ul>${cls}</ul></details></article>`;

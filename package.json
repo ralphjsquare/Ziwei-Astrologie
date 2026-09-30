@@ -1,6 +1,6 @@
 {
   "name": "ziwei-astrologie",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "紫微斗数 + 八字 本地排盘与解读（可溯源、可复现）",
@@ -13,6 +13,7 @@
     "review:import": "tsx tools/review-import.ts",
     "dev": "vite --config web/vite.config.ts",
     "build": "vite build --config web/vite.config.ts",
+    "build:html": "node tools/build-html.mjs",
     "pack:shensha": "tsx tools/shensha-pack.ts",
     "desktop:win": "node tools/desktop.mjs",
     "verify": "npm run typecheck && npm run check:purity && npm run check:sources && npm test",

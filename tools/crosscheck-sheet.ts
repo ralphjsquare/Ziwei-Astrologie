@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import * as OpenCC from 'opencc-js';
 
 const t2s = OpenCC.Converter({ from: 'tw', to: 'cn' });
-const FOLD: Record<string, string> = { 隂: '阴', 夀: '寿', 䕃: '荫', 㤀: '忘', 刼: '劫', 逄: '逢', 髙: '高', 寛: '宽', 恵: '惠', 惟: '唯', 徳: '德', 巳: '己', 已: '己', 戍: '戌', 冝: '宜', 麤: '粗', 𢎞: '弘', 絶: '绝', 槩: '概', 竒: '奇', 㓙: '凶', 㡬: '几', 㸔: '看', 乗: '乘', 㑹: '会', 葢: '盖', 毋: '母', 㐫: '凶', 轝: '舆', 覊: '羁', 値: '值', 尅: '克' };
+const FOLD: Record<string, string> = { 隂: '阴', 夀: '寿', 䕃: '荫', 㤀: '忘', 刼: '劫', 逄: '逢', 髙: '高', 寛: '宽', 恵: '惠', 惟: '唯', 徳: '德', 巳: '己', 已: '己', 戍: '戌', 冝: '宜', 麤: '粗', 𢎞: '弘', 絶: '绝', 槩: '概', 竒: '奇', 㓙: '凶', 㡬: '几', 㸔: '看', 乗: '乘', 㑹: '会', 葢: '盖', 毋: '母', 㐫: '凶', 轝: '舆', 覊: '羁', 値: '值', 尅: '克', 専: '专', 湏: '须', 艶: '艳' };
 const fold = (s: string) => s.replace(/./gu, (c) => FOLD[c] ?? c);
 const norm = (s: string) => fold(t2s(s.replace(/<pb:[^>]*>/g, '').replace(/｛[^｝]*｝/g, '').replace(/[¶\s]/g, '').replace(/[^㐀-鿿\u{20000}-\u{2ffff}]/gu, '')).replace(/煞/g, '杀'));
 

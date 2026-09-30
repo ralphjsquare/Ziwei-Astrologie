@@ -1,7 +1,8 @@
 // 审核导出与导入（纯函数）。CLI 与网页共用。
-import { BASIS_LABEL, EVIDENCE_LABEL, REVIEW_LABEL, type ReviewStatus, type Rule, type RuleSet } from '../rules';
+import { SOURCE_CLASS_LABEL, BASIS_LABEL, EVIDENCE_LABEL, REVIEW_LABEL, type ReviewStatus, type Rule, type RuleSet } from '../rules';
 import type { InterpSection } from '../interpret';
 
+export { SOURCE_CLASS_LABEL };
 export type ReviewScope = 'ziwei' | 'bazi' | 'cross' | 'all';
 export type ReviewFormat = 'md' | 'json' | 'csv';
 
@@ -12,7 +13,6 @@ export function selectRules(rs: RuleSet, scope: ReviewScope, status: ReviewStatu
 
 const srcText = (rs: RuleSet, r: Rule) =>
   r.sources.map((s) => `${rs.sources[s.ref].book}${s.section ? '·' + s.section : ''}${rs.sources[s.ref].verified ? '' : '（底本未核对）'}`).join('；');
-export const SOURCE_CLASS_LABEL: Record<string, string> = { PRIMARY_TEXT: '原文明确', TEXTUAL_VARIANT: '转录异文（经其他传本校读）', CLASSICAL_SECONDARY: '古籍二手引述', MODERN_COMMON: '现代通行整理', IMPLEMENTATION_ONLY: '仅软件实现支持', DERIVED_FROM_TEXT: '原文只给例子、判据反推' };
 const cond = (r: Rule) => Object.entries(r.when).map(([k, v]) => `${k}=${v}`).join(' ');
 
 const csvCell = (v: string) => (/[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v);

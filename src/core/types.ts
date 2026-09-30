@@ -39,6 +39,8 @@ export interface Options {
   wenchangMode: 'sanming' | 'common';
   /** 阴干是否也定羊刃（后世/其他流派，取禄后一位；《三命通会》明言五阴干无刃，默认关闭）。 */
   yinStemYangRen: boolean;
+  /** 红艳煞取法：'sanming' 据《三命通会》原文（戊子、壬巳，默认）；'common' 通行表（戊辰、壬子）。 */
+  hongyanMode: 'sanming' | 'common';
 }
 
 export const DEFAULT_OPTIONS: Options = {
@@ -50,6 +52,7 @@ export const DEFAULT_OPTIONS: Options = {
   sihua: {},
   wenchangMode: 'sanming',
   yinStemYangRen: false,
+  hongyanMode: 'sanming',
 };
 
 export const CHINA_STANDARD_PLACE: Place = { utcOffsetMinutes: 480, dstMinutes: 0 };

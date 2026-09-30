@@ -64,6 +64,8 @@ describe.skipIf(!CHROME)('端到端：浏览器中排盘、解读、存档、导
     const t = await page.innerText('#out');
     expect(t).toContain('紫微·命宫');
     expect(t).toContain('八字·旺衰、格局、用神（候选）');
+    expect(t).toContain('八字·神煞');
+    expect(await page.content()).toContain('本条没有古籍引文'); // 无引文的规则明确标注为流派／现代说法
     expect(await page.locator('.item').count()).toBeGreaterThan(30);
   });
 

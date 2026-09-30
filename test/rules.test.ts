@@ -9,7 +9,7 @@ import { MAJOR_ORDER } from '../src/ziwei/tables';
 import { rng, solarInput } from './helpers';
 
 const mk = (over: Partial<Rule>): Rule => ({
-  id: 't.1', topic: 't', when: { kind: 'x' }, title: 't', plain: 'p', evidenceType: 'school',
+  id: 't.1', topic: 't', when: { kind: 'x' }, title: 't', plain: 'p', evidenceType: 'school', sourceClass: 'MODERN_COMMON',
   sources: [{ ref: 'zwqs' }], classical: [], basis: 'textbook', review: { status: 'draft', reviewer: null, date: null, note: null, history: [] }, ...over,
 });
 const rs = (rules: Rule[], corpus = {}) => makeRuleSet(rules, [], [], RULES.sources, corpus as never);
@@ -139,5 +139,16 @@ describe('紫微×八字并列对照（仅结构性）', () => {
     expect(c.find((x) => x.ruleId === 'cr.year-stem')!.relation).toBe('agree');
     expect(c.some((x) => x.ruleId === 'cr.flow-year')).toBe(true);
     for (const it of c) expect(Object.keys(it)).not.toContain('score');
+  });
+});
+
+describe('无引文规则的来源分级标注', () => {
+  it('没有古籍引文的非结构类规则必须标注 sourceClass；真实规则集全部满足', () => {
+    const noClass = mk({ sourceClass: undefined });
+    expect(validateRules(rs([noClass]))[0]).toMatch(/必须标注来源分级/);
+    expect(validateRules(RULES)).toEqual([]);
+    const quoteless = [...RULES.ziwei, ...RULES.bazi, ...RULES.cross].filter((r) => !r.classical.length && r.evidenceType !== 'structural' && r.id !== 'bz.tiaohou');
+    expect(quoteless.length).toBeGreaterThan(30);
+    for (const r of quoteless) expect(['MODERN_COMMON', 'IMPLEMENTATION_ONLY'], r.id).toContain(r.sourceClass);
   });
 });

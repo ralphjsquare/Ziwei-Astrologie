@@ -46,3 +46,6 @@ npm run verify         # 类型检查 + 纯度检查 + 出处检查 + 全部测�
 ## 桌面版与审阅包
 - Windows 桌面版：`npm run desktop:win`，说明见 `docs/DESKTOP.md`。
 - 神煞规则审阅包：`npm run pack:shensha`，输出 `docs/packages/神煞规则包.zip`。
+
+## 1.0.0 收尾
+发布说明、已知限制与冻结口径见 `docs/RELEASE.md`。单文件 HTML：`npm run build:html`。

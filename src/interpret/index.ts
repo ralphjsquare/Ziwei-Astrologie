@@ -14,6 +14,8 @@ export interface InterpItem {
   evidenceType: EvidenceType; evidenceLabel: string; basisLabel: string; reviewStatus: ReviewStatus; reviewLabel: string;
   sources: InterpSource[];
   classical: { quote: string; source: string; variant?: string }[];
+  /** 来源分级（神煞等）；无引文的规则据此在界面标明“流派／现代说法” */
+  sourceClass?: string;
   composed?: boolean;
 }
 export interface InterpSection { id: string; heading: string; items: InterpItem[] }
@@ -30,6 +32,7 @@ function toItem(R: RuleSet, rule: Rule, text: string, context: string, composed 
       return { book: e.book, section: s.section, note: s.note ?? e.note, edition: e.edition, verified: e.verified };
     }),
     classical: rule.classical.map((q) => ({ quote: q.quote, source: `${R.corpus[q.corpusRef]?.book ?? ''}·${R.corpus[q.corpusRef]?.section ?? ''}`, ...(q.variant ? { variant: q.variant } : {}) })),
+    ...(rule.sourceClass ? { sourceClass: rule.sourceClass } : {}),
     ...(composed ? { composed } : {}),
   };
 }

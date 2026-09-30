@@ -1312,15 +1312,30 @@
    "kind": "body"
   },
   "title": "身宫",
-  "plain": "身宫传统上代表后天的重心与中年以后的发展方向，与命宫（先天）相互参看。",
+  "plain": "身宫的位置由出生月与时辰推得（《全书》“安身命例”），传统上与命宫并看，《全书》有“身命俱吉富贵双全”的说法，也说身命一强一弱时各有讲究。以上是传统说法，仅作文化理解，并不代表现实中一定如此。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "身宫的传统说法，篇目待核"
+    "section": "卷二·安身命例",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   },
+   {
+    "ref": "zwqs",
+    "section": "卷三·论诸星同垣各司所宜分别富贵贫贱夭寿",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷二#1",
+    "quote": "又自人生月起子时逆至本生时安命，顺至本生时安身"
+   },
+   {
+    "corpusRef": "zwqs/卷三#20",
+    "quote": "身命俱吉富贵双全"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -1328,7 +1343,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.sip.命宫.紫微",
@@ -1812,7 +1827,7 @@
   "sources": [
    {
     "ref": "modern",
-    "note": "由星性与宫位含义机械组合的说明，非古籍断语"
+    "note": "【流派／现代说法，无古籍引文】由星性与宫位含义机械组合的说明，非古籍断语"
    }
   ],
   "classical": [],
@@ -1823,7 +1838,8 @@
    "note": null,
    "history": []
   },
-  "basis": "template"
+  "basis": "template",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.命宫",
@@ -1838,7 +1854,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -1849,7 +1865,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.兄弟",
@@ -1864,7 +1881,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -1875,7 +1892,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.夫妻",
@@ -1890,7 +1908,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -1901,7 +1919,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.子女",
@@ -1916,7 +1935,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -1927,7 +1946,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.财帛",
@@ -1942,7 +1962,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -1953,7 +1973,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.疾厄",
@@ -1968,7 +1989,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -1979,7 +2000,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.迁移",
@@ -1994,7 +2016,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -2005,7 +2027,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.交友",
@@ -2020,7 +2043,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -2031,7 +2054,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.官禄",
@@ -2046,7 +2070,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -2057,7 +2081,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.田宅",
@@ -2072,7 +2097,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -2083,7 +2108,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.福德",
@@ -2098,7 +2124,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -2109,7 +2135,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.ming.父母",
@@ -2124,7 +2151,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年以太岁所在宫为流年命宫，说法待核"
+    "note": "【流派／现代说法，无古籍引文】流年以太岁所在宫为流年命宫，说法待核"
    }
   ],
   "classical": [],
@@ -2135,7 +2162,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.transform.禄",
@@ -2150,7 +2178,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年四化的传统说法，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】流年四化的传统说法，篇目待核"
    }
   ],
   "classical": [],
@@ -2161,7 +2189,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.transform.权",
@@ -2176,7 +2205,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年四化的传统说法，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】流年四化的传统说法，篇目待核"
    }
   ],
   "classical": [],
@@ -2187,7 +2216,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.transform.科",
@@ -2202,7 +2232,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年四化的传统说法，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】流年四化的传统说法，篇目待核"
    }
   ],
   "classical": [],
@@ -2213,7 +2243,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.transform.忌",
@@ -2228,7 +2259,7 @@
   "sources": [
    {
     "ref": "zwqs",
-    "note": "流年四化的传统说法，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】流年四化的传统说法，篇目待核"
    }
   ],
   "classical": [],
@@ -2239,7 +2270,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.flow.decade",
@@ -2248,15 +2280,21 @@
    "kind": "flow-decade"
   },
   "title": "当前大限",
-  "plain": "目前行运至本命{palace}宫的大限（{startAge}–{endAge} 岁，虚岁），传统上认为这十年的主题倾向于“{domain}”。",
+  "plain": "目前行运至本命{palace}宫的大限（{startAge}–{endAge} 岁，虚岁），传统上认为这十年的主题倾向于“{domain}”。《全书》说大限的好坏要看限内吉星与煞星的多少，并不只看宫位本身。以上是传统说法，并不代表现实中一定如此。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "大限的传统说法，篇目待核"
+    "section": "卷三·论大限十年祸福何如",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷三#11",
+    "quote": "大限将出，有吉众者无灾悔，少者灾多，损人破财不利"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -2264,7 +2302,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.empty-ming",
@@ -2273,15 +2311,30 @@
    "kind": "empty-ming"
   },
   "title": "命宫无主星",
-  "plain": "命宫没有主星时，传统上称“命无正曜”，以对宫（迁移宫）的主星借来参看（借星安宫），并结合三方四正（对宫与三合方）的星曜综合观察。",
+  "plain": "命宫没有主星时，《全书》称“命无正曜”，说要看财帛、官禄两宫是否有吉星拱照，也要看三方有没有恶星冲照，不能一概而论；实际排盘时常借对宫（迁移宫）的主星参看。以上是传统说法，仅作文化理解，并不代表现实中一定如此。",
   "evidenceType": "school",
   "sources": [
    {
     "ref": "zwqs",
-    "note": "借星安宫的传统说法，篇目待核"
+    "section": "卷一·斗数骨髓赋",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
+   },
+   {
+    "ref": "zwqs",
+    "section": "卷三·谈星要论",
+    "note": "引文来自维基文库转录本，底本未标明，须对照影印本核对"
    }
   ],
-  "classical": [],
+  "classical": [
+   {
+    "corpusRef": "zwqs/卷一#46",
+    "quote": "命无正曜，夭折孤贫"
+   },
+   {
+    "corpusRef": "zwqs/卷三#1",
+    "quote": "若命宫无正曜者，财官二宫有吉星拱照，富贵全美"
+   }
+  ],
   "review": {
    "status": "draft",
    "reviewer": null,
@@ -2289,7 +2342,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "quoted"
  },
  {
   "id": "zw.flow.minor",
@@ -2336,7 +2389,7 @@
    {
     "ref": "zwqs",
     "section": "卷二·诸星庙旺利陷表",
-    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】亮度等级取自该表；等级含义为通行整理，篇目待核"
    }
   ],
   "classical": [],
@@ -2347,7 +2400,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.brightness.旺",
@@ -2363,7 +2417,7 @@
    {
     "ref": "zwqs",
     "section": "卷二·诸星庙旺利陷表",
-    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】亮度等级取自该表；等级含义为通行整理，篇目待核"
    }
   ],
   "classical": [],
@@ -2374,7 +2428,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.brightness.得地",
@@ -2390,7 +2445,7 @@
    {
     "ref": "zwqs",
     "section": "卷二·诸星庙旺利陷表",
-    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】亮度等级取自该表；等级含义为通行整理，篇目待核"
    }
   ],
   "classical": [],
@@ -2401,7 +2456,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.brightness.利益",
@@ -2417,7 +2473,7 @@
    {
     "ref": "zwqs",
     "section": "卷二·诸星庙旺利陷表",
-    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】亮度等级取自该表；等级含义为通行整理，篇目待核"
    }
   ],
   "classical": [],
@@ -2428,7 +2484,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.brightness.平和",
@@ -2444,7 +2501,7 @@
    {
     "ref": "zwqs",
     "section": "卷二·诸星庙旺利陷表",
-    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】亮度等级取自该表；等级含义为通行整理，篇目待核"
    }
   ],
   "classical": [],
@@ -2455,7 +2512,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.brightness.不得地",
@@ -2471,7 +2529,7 @@
    {
     "ref": "zwqs",
     "section": "卷二·诸星庙旺利陷表",
-    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】亮度等级取自该表；等级含义为通行整理，篇目待核"
    }
   ],
   "classical": [],
@@ -2482,7 +2540,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "zw.brightness.落陷",
@@ -2498,7 +2557,7 @@
    {
     "ref": "zwqs",
     "section": "卷二·诸星庙旺利陷表",
-    "note": "亮度等级取自该表；等级含义为通行整理，篇目待核"
+    "note": "【流派／现代说法，无古籍引文】亮度等级取自该表；等级含义为通行整理，篇目待核"
    }
   ],
   "classical": [],
@@ -2509,6 +2568,7 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  }
 ]

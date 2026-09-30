@@ -79,14 +79,14 @@ describe('神煞：规则与解读', () => {
     const sec = interpretNatal(b, RULES).find((x) => x.id === 'bz-shensha');
     if (b.bazi.shensha.length) {
       expect(sec).toBeDefined();
-      for (const it of sec!.items) { expect(it.classical.length).toBeGreaterThan(0); expect(it.reviewStatus).toBe('draft'); }
+      for (const it of sec!.items) { if (it.ruleId.startsWith('bz.shensha.')) expect(it.classical.length, it.ruleId).toBeGreaterThan(0); expect(it.reviewStatus).toBe('draft'); }
     }
   });
   it('没有绝对化措辞：每条神煞解读都含“传统”与“并不代表”', () => {
     for (const n0 of SHENSHA_NAMES) {
       const key = n0.replace(/（.*）/, '');
       const r = (RULES.byId.get(`bz.shensha.${key}`) ?? RULES.byId.get(`modern_shensha.${key}`))!;
-      expect(r.plain).toContain(r.id.startsWith('modern_') ? '现代通行' : '传统');
+      expect(r.plain).toContain(r.id.startsWith('modern_') ? '通行' : '传统');
       expect(r.plain).toContain('并不代表');
     }
   });
@@ -241,9 +241,9 @@ describe('神煞第三批（ADR-017）：天德、文昌、太极、红鸾天喜
   });
   it('来源分级：所有神煞规则都有 sourceClass；modern_shensha 无引文；文昌、太极有异文注记', () => {
     const all = [...RULES.bazi].filter((r) => r.id.startsWith('bz.shensha.') || r.id.startsWith('modern_shensha.'));
-    expect(all.length).toBe(41);
+    expect(all.length).toBe(78);
     for (const r of all) expect(r.sourceClass, r.id).toBeDefined();
-    for (const r of all.filter((x) => x.id.startsWith('modern_shensha.'))) { expect(r.sourceClass).toBe('MODERN_COMMON'); expect(r.classical).toHaveLength(0); }
+    for (const r of all.filter((x) => x.id.startsWith('modern_shensha.'))) { expect(['MODERN_COMMON', 'IMPLEMENTATION_ONLY']).toContain(r.sourceClass); expect(r.classical).toHaveLength(0); }
     const wc = RULES.byId.get('bz.shensha.文昌贵人')!, tj = RULES.byId.get('bz.shensha.太极贵人')!;
     expect(wc.classical.some((q) => q.variant?.includes('甲人蛇口'))).toBe(true);
     expect(tj.classical.some((q) => q.variant?.includes('先得申而生'))).toBe(true);

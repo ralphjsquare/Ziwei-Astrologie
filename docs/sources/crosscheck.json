@@ -1,8 +1,8 @@
 {
  "book": "三命通会",
  "secondSource": "Kanripo KR3g0042（文渊阁四库全书本 WYG）",
- "total": 175,
- "found": 165,
+ "total": 199,
+ "found": 186,
  "rows": [
   {
    "ruleId": "bz.stem.甲",
@@ -1041,6 +1041,147 @@
   {
    "ruleId": "bz.shensha.学堂会贵",
    "quote": "凡学堂词馆，切不要犯空亡及冲破，支干纳音不要见克，方为得用",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.天赦日",
+   "quote": "有天赦日，春戊寅，夏甲午，秋戊申，冬甲子，乃四时专气，生育万物，宥罪赦过",
+   "found": false
+  },
+  {
+   "ruleId": "bz.shensha.八专日",
+   "quote": "八专乃甲寅、乙卯、己未、丁未、庚申、辛酉、戊戌、癸丑是也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.九丑日",
+   "quote": "九丑乃壬子、壬午、戊子、戊午、己酉、己卯、乙卯、辛酉、辛卯是也",
+   "found": false
+  },
+  {
+   "ruleId": "bz.shensha.孤鸾煞",
+   "quote": "乃乙巳、丁巳、辛亥、戊申、甲寅，又丙午、戊午、壬子等日",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.阴阳差错",
+   "quote": "乃丙子、丁丑、戊寅、辛卯、壬辰、癸巳、丙午、丁未、戊申、辛酉、壬戌、癸亥十二日也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.红艳煞",
+   "quote": "甲乙逢午、丙寅、丁未、戊子、己辰、庚戌、辛酉、壬巳、癸申，为红艳煞，女命最忌之",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.六厄",
+   "quote": "常居马前一辰，劫后二辰，死而不生谓之厄",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.六厄",
+   "quote": "申子辰水局，水死在卯；寅午戌火局，火死在酉；亥卯未木局，木死在午；巳酉丑金局，金死在子，所以为厄",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.暗金煞",
+   "quote": "子午卯酉在巳，寅申巳亥在酉，辰戌丑未在丑",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.暗金煞",
+   "quote": "故总名曰暗金的煞也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.破煞",
+   "quote": "卯与午，丑与辰，子与酉，未与戌，皆相破",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.拱禄",
+   "quote": "拱禄有五日五时，癸亥、癸丑，癸丑、癸亥拱子禄：丁巳、丁未，己未、己巳拱午禄；戊辰、戊午拱巳禄",
+   "found": true,
+   "volume": 6
+  },
+  {
+   "ruleId": "bz.shensha.拱禄",
+   "quote": "凡拱格，须日时同干",
+   "found": true,
+   "volume": 6
+  },
+  {
+   "ruleId": "bz.shensha.拱贵",
+   "quote": "拱贵有五日五时，甲申、甲戌拱酉，乙未、乙酉拱申，是官贵；甲寅、甲子拱丑，戊申、戊午拱未，辛丑、辛卯拱寅，官贵兼天乙贵",
+   "found": true,
+   "volume": 6
+  },
+  {
+   "ruleId": "bz.shensha.拱贵",
+   "quote": "凡拱格，须日时同干",
+   "found": true,
+   "volume": 6
+  },
+  {
+   "ruleId": "bz.shensha.天福贵人",
+   "quote": "甲生人以辛为官，辛禄在酉，是以甲人见酉，乙人见申之例",
+   "found": true,
+   "volume": 5
+  },
+  {
+   "ruleId": "bz.shensha.自缢煞",
+   "quote": "戌人巳，巳人戌，辰人亥，亥人辰，寅人未，未人寅，卯人申，申人卯，午人丑，丑人午，子人酉，酉人子是也",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.挂剑煞",
+   "quote": "此煞取巳酉丑申四柱纯全者是，或重带巳酉丑亦是",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.天火煞",
+   "quote": "此煞取寅午戌全而天干有丙丁五位中全不见水者是，有水则非",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.宅墓煞",
+   "quote": "命前五辰为灾，命后五辰为墓",
+   "found": false
+  },
+  {
+   "ruleId": "bz.shensha.天屠煞",
+   "quote": "亥日丑时，寅日戌时，戌日寅时，卯日酉时，酉日卯时，辰日申时，申日辰时，巳日未时，未日巳时",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.阴阳煞",
+   "quote": "女属阴而喜阳，命得戊午旺火为正阳。男属阳而喜阴，命得丙子旺水为正阴",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.戟锋煞",
+   "quote": "正月起甲，二月乙，三月戊，四月丙，五月丁，六月己，七月庚，八月辛，九月戊，十月壬，十一月癸，十二月巳，逐月旺干加临，日时带两重者，凶",
+   "found": true,
+   "volume": 3
+  },
+  {
+   "ruleId": "bz.shensha.水溺煞",
+   "quote": "此煞取丙子、癸未、癸丑上带咸池、金刃、羊刃",
    "found": true,
    "volume": 3
   }

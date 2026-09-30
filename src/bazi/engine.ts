@@ -118,7 +118,7 @@ export function buildBazi(_input: BirthInput, r: ResolvedBirth, _opt: Options, g
     },
     luck: { direction: dir, start: { years, months, days, hours }, startDate, referenceJie: refJie.name, diffMinutes: Math.round(diffSec / 60), cycles },
     relations: computeRelations(units),
-    shensha: computeShenSha(pillars, gender, { wenchangMode: _opt.wenchangMode, yinStemYangRen: _opt.yinStemYangRen }),
+    shensha: computeShenSha(pillars, gender, { wenchangMode: _opt.wenchangMode, yinStemYangRen: _opt.yinStemYangRen, hongyanMode: _opt.hongyanMode }),
     strength, patterns: analyzePatterns(dStem, pillars), yongshen: analyzeYongshen(dStem, strength),
     steps, rulesVersion: RULES_VERSION,
   };

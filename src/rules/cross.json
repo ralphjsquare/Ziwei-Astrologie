@@ -140,7 +140,7 @@
   "sources": [
    {
     "ref": "modern",
-    "note": "现代通行的合盘整理，非古籍原文"
+    "note": "【流派／现代说法，无古籍引文】现代通行的合盘整理，非古籍原文"
    }
   ],
   "classical": [],
@@ -151,7 +151,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "sy.bz.daybranch",
@@ -165,7 +166,7 @@
   "sources": [
    {
     "ref": "modern",
-    "note": "现代通行的合盘整理，非古籍原文"
+    "note": "【流派／现代说法，无古籍引文】现代通行的合盘整理，非古籍原文"
    }
   ],
   "classical": [],
@@ -176,7 +177,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "sy.bz.yearbranch",
@@ -190,7 +192,7 @@
   "sources": [
    {
     "ref": "modern",
-    "note": "现代通行的合盘整理，非古籍原文"
+    "note": "【流派／现代说法，无古籍引文】现代通行的合盘整理，非古籍原文"
    }
   ],
   "classical": [],
@@ -201,7 +203,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "sy.bz.cross-relations",
@@ -267,7 +270,7 @@
   "sources": [
    {
     "ref": "modern",
-    "note": "现代通行的合盘整理，非古籍原文"
+    "note": "【流派／现代说法，无古籍引文】现代通行的合盘整理，非古籍原文"
    }
   ],
   "classical": [],
@@ -278,7 +281,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "sy.zw.spouse",
@@ -292,7 +296,7 @@
   "sources": [
    {
     "ref": "modern",
-    "note": "现代通行的合盘整理，非古籍原文"
+    "note": "【流派／现代说法，无古籍引文】现代通行的合盘整理，非古籍原文"
    }
   ],
   "classical": [],
@@ -303,7 +307,8 @@
    "note": null,
    "history": []
   },
-  "basis": "textbook"
+  "basis": "textbook",
+  "sourceClass": "MODERN_COMMON"
  },
  {
   "id": "sy.zw.sihua",

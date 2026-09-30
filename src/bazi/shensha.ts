@@ -1,5 +1,6 @@
 // 神煞（v1.1 选取十一种，表格均来自《三命通会》卷二、卷三、卷六的文字；只列出“出现在哪一柱”，不打分）。
 // 三合局分组：申子辰、寅午戌、巳酉丑、亥卯未。地支以子=0 计。
+import { addExtra, EXTRA_NAMES, type ExtraName } from './shensha-extra';
 import { BRANCHES, STEMS, STEM_ELEMENT, jiaziIndex, nayinElement, type Element } from '../core/ganzhi';
 
 /** 出生年支/日支所属三合局的下标：0 申子辰，1 寅午戌，2 巳酉丑，3 亥卯未 */
@@ -33,11 +34,11 @@ const JIN_YU = LU.map((b) => (b + 2) % 12);
 export type ShenShaName = '天乙贵人' | '驿马' | '咸池（桃花）' | '劫煞' | '亡神' | '将星' | '华盖' | '羊刃' | '金舆' | '孤辰' | '寡宿'
   | '月德贵人' | '月德合' | '德秀贵人' | '元辰' | '灾煞' | '勾煞' | '绞煞' | '十恶大败' | '天罗' | '地网' | '三奇贵人' | '禄神' | '魁罡' | '日德' | '日贵' | '丧门' | '吊客'
   | '天德贵人' | '天德合' | '文昌贵人' | '太极贵人' | '红鸾' | '天喜'
-  | '正学堂' | '正词馆' | '官贵学堂' | '官贵词馆' | '官星学堂' | '食神学堂' | '学堂会贵';
+  | '正学堂' | '正词馆' | '官贵学堂' | '官贵词馆' | '官星学堂' | '食神学堂' | '学堂会贵' | ExtraName;
 export const SHENSHA_NAMES: ShenShaName[] = ['天乙贵人', '驿马', '咸池（桃花）', '劫煞', '亡神', '将星', '华盖', '羊刃', '金舆', '孤辰', '寡宿',
   '月德贵人', '月德合', '德秀贵人', '元辰', '灾煞', '勾煞', '绞煞', '十恶大败', '天罗', '地网', '三奇贵人', '禄神', '魁罡', '日德', '日贵', '丧门', '吊客',
   '天德贵人', '天德合', '文昌贵人', '太极贵人', '红鸾', '天喜',
-  '正学堂', '正词馆', '官贵学堂', '官贵词馆', '官星学堂', '食神学堂', '学堂会贵'];
+  '正学堂', '正词馆', '官贵学堂', '官贵词馆', '官星学堂', '食神学堂', '学堂会贵', ...EXTRA_NAMES];
 /** 月德：月支所在三合局的月德天干（申子辰壬、寅午戌丙、巳酉丑庚、亥卯未甲）；月德合为其五合之干 */
 const YUE_DE = [8, 2, 6, 0];
 /** 德秀：[德干, 秀干]，按月支所在三合局（申子辰、寅午戌、巳酉丑、亥卯未），据卷三“论德秀” */
@@ -142,7 +143,7 @@ export const QUALIFIED_MEANING: Partial<Record<ShenShaName, string>> = { 德秀�
 
 interface P { stem: number; branch: number }
 /** 计算命中的神煞。三合类（驿马等）分别以年支、日支为基准；天乙贵人以日干、年干为基准；羊刃、金舆以日干为基准；孤辰寡宿以年支为基准；基准柱自身也算（如日支即为华盖）。 */
-export interface ShenShaOptions { wenchangMode: 'sanming' | 'common'; yinStemYangRen: boolean }
+export interface ShenShaOptions { wenchangMode: 'sanming' | 'common'; yinStemYangRen: boolean; hongyanMode?: 'sanming' | 'common' }
 export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M', opt: ShenShaOptions = { wenchangMode: 'sanming', yinStemYangRen: false }): ShenShaHit[] {
   const out: ShenShaHit[] = [];
   const keys: PillarKey[] = ['year', 'month', 'day', 'hour'];
@@ -243,6 +244,7 @@ export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M',
     if (ds % 2 === 1) for (const k of keys) if ((LU[ds] + 11) % 12 === p[k].branch) add('羊刃', k, `${base}${STEMS[ds]}（阴干，另一流派）`);
   }
   addXueTang(p, keys, add);
+  addExtra(p, gender, { hongyanMode: opt.hongyanMode ?? 'sanming' }, add);
   for (const k of keys) if (LU[p.day.stem] === p[k].branch) add('禄神', k, `日干${STEMS[p.day.stem]}`);
   return out;
 }

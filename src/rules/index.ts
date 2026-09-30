@@ -8,6 +8,7 @@ import corpusJson from './corpus.json';
 /** 来源分级（神煞等结构化规则）：原文明确／转录异文经其他传本校读／古籍二手引述／现代通行整理／仅有软件实现支持／原文只给例子、判据由例子反推 */
 export type SourceClass = 'PRIMARY_TEXT' | 'TEXTUAL_VARIANT' | 'CLASSICAL_SECONDARY' | 'MODERN_COMMON' | 'IMPLEMENTATION_ONLY' | 'DERIVED_FROM_TEXT';
 export const SOURCE_CLASSES: SourceClass[] = ['PRIMARY_TEXT', 'TEXTUAL_VARIANT', 'CLASSICAL_SECONDARY', 'MODERN_COMMON', 'IMPLEMENTATION_ONLY', 'DERIVED_FROM_TEXT'];
+export const SOURCE_CLASS_LABEL: Record<SourceClass, string> = { PRIMARY_TEXT: '原文明确', TEXTUAL_VARIANT: '转录异文（经其他传本校读）', CLASSICAL_SECONDARY: '古籍二手引述', MODERN_COMMON: '现代通行整理', IMPLEMENTATION_ONLY: '仅软件实现支持', DERIVED_FROM_TEXT: '原文只给例子、判据反推' };
 export type EvidenceType = 'classical' | 'school' | 'modern' | 'structural';
 export type ReviewStatus = 'draft' | 'reviewed' | 'approved' | 'rejected';
 export const EVIDENCE_LABEL: Record<EvidenceType, string> = { classical: '古籍原文', school: '流派观点', modern: '现代整理', structural: '算法结构' };
@@ -115,6 +116,7 @@ export function validateRules(rs: RuleSet): string[] {
     if ((r.review.status === 'reviewed' || r.review.status === 'approved') && !r.review.reviewer) errs.push(`${at}: 已审核状态必须记录审核人`);
     if (r.review.status === 'approved' && r.evidenceType !== 'structural' && !r.classical.length) errs.push(`${at}: “已确认”需要古籍原文引用（或为算法结构类）；无原文的解释最高只能到“已审核”`);
     if (r.sourceClass !== undefined && !SOURCE_CLASSES.includes(r.sourceClass)) errs.push(`${at}: sourceClass 非法`);
+    if (!r.classical.length && r.evidenceType !== 'structural' && r.id !== 'bz.tiaohou' && !r.sourceClass) errs.push(`${at}: 没有古籍引文的规则必须标注来源分级（流派／现代说法）`);
     if (r.id.startsWith('bz.shensha.') || r.id.startsWith('modern_shensha.')) {
       if (!r.sourceClass) errs.push(`${at}: 神煞规则必须标明 sourceClass`);
       if (r.id.startsWith('modern_shensha.') && r.classical.length) errs.push(`${at}: 现代整理类神煞不得附古籍引文`);
