@@ -292,7 +292,7 @@ describe('学堂词馆专题（ADR-018）', () => {
     const cl = computeShenSha(chart('壬子', '丁巳', '甲午', '己亥')).filter((x) => x.name === '正学堂' && x.pillar === 'hour'); // 月支巳冲亥
     expect(cl[0].qualified).toBe(false); expect(cl[0].basis).toContain('逢冲');
   });
-  it('与 bazi-lite 比对 1500 盘：正学堂、正词馆（年柱纳音）一致；官贵学堂、官贵词馆（日干基准）一致；学堂会贵（日、时柱）一致', () => {
+  it('与 bazi-lite 比对 1500 盘：正学堂、正词馆（年柱纳音）一致；官贵学堂、官贵词馆（日干基准）一致；学堂会贵（日、时柱）我方是其子集，且差异只来自“仅日干天乙”', () => {
     const r = rng(1234);
     const bad: string[] = [];
     for (let k = 0; k < 1500; k++) {
@@ -307,7 +307,14 @@ describe('学堂词馆专题（ADR-018）', () => {
         const has2 = (n: string, dayOnly = false) => mine.some((x) => x.name === n && (!dayOnly || x.basis.startsWith('日干')));
         for (const n of ['正学堂', '正词馆']) if (has2(n) !== theirs.has(n)) bad.push(`${y}-${m}-${d} ${h} ${pk} ${n}`);
         for (const n of ['官贵学堂', '官贵词馆']) if (has2(n, true) !== theirs.has(n)) bad.push(`${y}-${m}-${d} ${h} ${pk} ${n}`);
-        if (pk === 'day' || pk === 'hour') if (has2('学堂会贵') !== theirs.has('学堂会贵')) bad.push(`${y}-${m}-${d} ${h} ${pk} 学堂会贵`);
+        if (pk === 'day' || pk === 'hour') {
+          // 本项目只认年干的天乙（P0 修正），bazi-lite 认年干或日干：本项目命中必为其子集，多出来的必须是“仅日干天乙”造成的
+          const mineHit = has2('学堂会贵'), theirHit = theirs.has('学堂会贵');
+          const brn = c.pillars[pk].branch;
+          const yearTY = [[1, 7], [0, 8], [11, 9], [11, 9], [1, 7], [0, 8], [1, 7], [2, 6], [3, 5], [3, 5]][c.pillars.year.stem].includes(brn);
+          if (mineHit && !theirHit) bad.push(`${y}-${m}-${d} ${h} ${pk} 学堂会贵（我方多出）`);
+          if (!mineHit && theirHit && yearTY) bad.push(`${y}-${m}-${d} ${h} ${pk} 学堂会贵（漏报）`);
+        }
       }
     }
     expect(bad.slice(0, 5)).toEqual([]);
@@ -320,6 +327,48 @@ describe('学堂词馆专题（ADR-018）', () => {
     }
     for (const n of ['官星学堂', '食神学堂', '学堂会贵']) expect(RULES.byId.get(`bz.shensha.${n}`)!.sourceClass).toBe('DERIVED_FROM_TEXT');
     expect(validateRules(RULES)).toEqual([]);
+  });
+});
+
+describe('第二轮计算审计修正（P0/P1）与回归夹具', () => {
+  const S = (c: string) => STEMS.indexOf(c as (typeof STEMS)[number]);
+  const P = (gz: string) => st(B(gz[1]), S(gz[0]));
+  const chart = (y: string, m: string, d: string, h: string) => ({ year: P(y), month: P(m), day: P(d), hour: P(h) });
+  it('P0 学堂会贵：只认年干的天乙；日干自身的天乙不得额外命中', () => {
+    // 壬午年（杨柳木，木帝旺卯）：壬的天乙为卯巳，日柱辛卯 → 命中
+    expect(computeShenSha(chart('壬午', '甲辰', '辛卯', '丙申')).some((h) => h.name === '学堂会贵' && h.pillar === 'day')).toBe(true);
+    // 丙寅年（炉中火，火帝旺午）：年干丙的天乙为亥酉，不含午；日干辛的天乙含午（午寅）——旧规则会误报，新规则不得命中
+    const fp = computeShenSha(chart('丙寅', '甲辰', '辛卯', '甲午'));
+    expect(fp.some((h) => h.name === '学堂会贵')).toBe(false);
+  });
+  it('元辰、勾煞、绞煞夹具：甲子男 → 元辰未、勾卯、绞酉；乙丑男 → 元辰午、勾戌、绞辰', () => {
+    const a = computeShenSha(chart('甲子', '丙寅', '丁未', '乙卯'), 'M'); // 未、卯在日、时
+    expect(a.some((h) => h.name === '元辰' && h.pillar === 'day')).toBe(true);
+    expect(a.some((h) => h.name === '勾煞' && h.pillar === 'hour')).toBe(true);
+    const a2 = computeShenSha(chart('甲子', '丙寅', '乙酉', '丁未'), 'M');
+    expect(a2.some((h) => h.name === '绞煞' && h.pillar === 'day')).toBe(true); // 酉
+    const b = computeShenSha(chart('乙丑', '丙午', '甲戌', '戊辰'), 'M'); // 午月、戌日、辰时
+    expect(b.some((h) => h.name === '元辰' && h.pillar === 'month')).toBe(true);
+    expect(b.some((h) => h.name === '勾煞' && h.pillar === 'day')).toBe(true);
+    expect(b.some((h) => h.name === '绞煞' && h.pillar === 'hour')).toBe(true);
+  });
+  it('P1 三奇：detected 只看三干是否齐全；qualified 仅当年月日或月日时连续依序', () => {
+    const seq = (a: string, b: string, c: string, d: string) => computeShenSha({ year: st(0, S(a)), month: st(0, S(b)), day: st(0, S(c)), hour: st(0, S(d)) }).filter((h) => h.name === '三奇贵人');
+    const cases: [string[], boolean][] = [[['乙', '丙', '丁', '壬'], true], [['壬', '乙', '丙', '丁'], true], [['乙', '壬', '丙', '丁'], false], [['丁', '丙', '乙', '壬'], false],
+      [['甲', '戊', '庚', '壬'], true], [['壬', '辛', '壬', '癸'], true], [['辛', '壬', '癸', '甲'], true], [['辛', '癸', '壬', '甲'], false], [['乙', '丙', '壬', '丁'], false]];
+    for (const [c, q] of cases) {
+      const h = seq(c[0], c[1], c[2], c[3]);
+      const complete = [[1, 2, 3], [0, 4, 6], [7, 8, 9]].some((t) => t.every((x) => c.map(S).includes(x)));
+      expect(h.length > 0, c.join('')).toBe(complete);
+      if (h.length) { expect(h.every((x) => x.qualified === q), `${c.join('')} qualified=${q}`).toBe(true); expect(h[0].qualifiedMeaning).toBe('依序顺布'); }
+    }
+  });
+  it('P1 德秀：qualified 只表示“德秀同见”，并带 qualifiedMeaning，不等同完整成立', () => {
+    const p = { year: st(0, S('丙')), month: st(2, S('戊')), day: st(0, S('庚')), hour: st(0, S('庚')) }; // 寅月：德丙丁、秀戊癸
+    const h = computeShenSha(p).filter((x) => x.name === '德秀贵人');
+    expect(h.length).toBeGreaterThan(0);
+    for (const x of h) { expect(x.qualified).toBe(true); expect(x.qualifiedMeaning).toBe('德秀同见'); }
+    expect(RULES.byId.get('bz.shensha.德秀贵人')!.plain).toContain('不等同于原文');
   });
 });
 

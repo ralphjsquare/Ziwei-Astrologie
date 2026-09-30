@@ -127,16 +127,18 @@ function addXueTang(p: Record<PillarKey, P>, keys: PillarKey[], add: AddFn): voi
     const [fs, fb, derived] = SHI_SHEN_XUE_TANG[p.day.stem];
     for (const k of keys) if (p[k].stem === fs && p[k].branch === fb) { const q = quality(k); add('食神学堂', k, `日干${STEMS[p.day.stem]}食神${STEMS[fs]}，${STEMS[fs]}${BRANCHES[fb]}${derived ? '（原文未列，据例子反推）' : ''}${q.text}`, q.ok); }
   }
-  // 学堂会贵：年柱纳音的帝旺位，且该位是年干或日干的天乙贵人；据原文例子只看日柱、时柱
+  // 学堂会贵：年柱纳音的帝旺位，且该位是年干（本命干）的天乙贵人——不得用日干的天乙（目标日、时柱的干不参与基准）；据原文例子只看日柱、时柱
   const dw = DI_WANG[yearEl];
-  if (TIAN_YI_BR[p.year.stem].includes(dw) || TIAN_YI_BR[p.day.stem].includes(dw)) {
-    for (const k of ['day', 'hour'] as PillarKey[]) if (p[k].branch === dw) { const q = quality(k); add('学堂会贵', k, `年柱纳音${yearEl}，帝旺在${BRANCHES[dw]}且为天乙贵人${q.text}`, q.ok); }
+  if (TIAN_YI_BR[p.year.stem].includes(dw)) {
+    for (const k of ['day', 'hour'] as PillarKey[]) if (p[k].branch === dw) { const q = quality(k); add('学堂会贵', k, `年柱纳音${yearEl}，帝旺在${BRANCHES[dw]}且为年干${STEMS[p.year.stem]}的天乙贵人${q.text}`, q.ok); }
   }
 }
 
 export type PillarKey = 'year' | 'month' | 'day' | 'hour';
 /** detected 层：出现即列出；qualified 层：满足更完整的成立条件（德秀＝德、秀同见；三奇＝依序顺布）。其余神煞不区分，qualified 缺省。 */
-export interface ShenShaHit { name: ShenShaName; pillar: PillarKey; basis: string; qualified?: boolean }
+export interface ShenShaHit { name: ShenShaName; pillar: PillarKey; basis: string; qualified?: boolean; /** qualified 的含义（不同神煞不同，界面据此措辞，避免把“同见”“顺布”说成古籍意义上的完整成立） */ qualifiedMeaning?: string }
+/** qualified 字段的语义：德秀＝德、秀两类干都出现（不含原文另有的“无破冲克压”条件）；三奇＝三干在年月日或月日时连续并依序；学堂类＝未落空亡、未逢冲 */
+export const QUALIFIED_MEANING: Partial<Record<ShenShaName, string>> = { 德秀贵人: '德秀同见', 三奇贵人: '依序顺布' };
 
 interface P { stem: number; branch: number }
 /** 计算命中的神煞。三合类（驿马等）分别以年支、日支为基准；天乙贵人以日干、年干为基准；羊刃、金舆以日干为基准；孤辰寡宿以年支为基准；基准柱自身也算（如日支即为华盖）。 */
@@ -144,7 +146,7 @@ export interface ShenShaOptions { wenchangMode: 'sanming' | 'common'; yinStemYan
 export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M', opt: ShenShaOptions = { wenchangMode: 'sanming', yinStemYangRen: false }): ShenShaHit[] {
   const out: ShenShaHit[] = [];
   const keys: PillarKey[] = ['year', 'month', 'day', 'hour'];
-  const add = (name: ShenShaName, pillar: PillarKey, basis: string, qualified?: boolean) => { if (!out.some((h) => h.name === name && h.pillar === pillar && h.basis === basis)) out.push({ name, pillar, basis, ...(qualified === undefined ? {} : { qualified }) }); };
+  const add = (name: ShenShaName, pillar: PillarKey, basis: string, qualified?: boolean) => { if (!out.some((h) => h.name === name && h.pillar === pillar && h.basis === basis)) out.push({ name, pillar, basis, ...(qualified === undefined ? {} : { qualified, qualifiedMeaning: QUALIFIED_MEANING[name] ?? '未落空亡、未逢冲' }) }); };
   const groupTables: [ShenShaName, number[]][] = [['驿马', YI_MA], ['咸池（桃花）', XIAN_CHI], ['劫煞', JIE_SHA], ['亡神', WANG_SHEN], ['将星', JIANG_XING], ['华盖', HUA_GAI]];
   for (const [base, bk] of [['年支', 'year'], ['日支', 'day']] as const) {
     const g = GROUP_OF[p[bk].branch];

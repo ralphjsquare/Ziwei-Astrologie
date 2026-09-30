@@ -144,7 +144,7 @@ export function interpretNatal(b: ChartBundle, R: RuleSet): InterpSection[] {
       if (!hits.length) continue;
       const key = name.replace(/（.*）/, '');
       const rule = R.byId.get(`bz.shensha.${key}`) ?? need(R, `modern_shensha.${key}`);
-      ss.push(toItem(R, rule, rule.plain, hits.map((h) => `${PN[h.pillar]}（以${h.basis}为准${h.qualified === undefined ? '' : h.qualified ? (name === '三奇贵人' ? '，顺布成立' : name === '德秀贵人' ? '，德秀同见' : '，未犯空亡冲破') : (name === '三奇贵人' ? '，仅检测到组合、未顺布' : name === '德秀贵人' ? '，仅单见德或秀' : '，成色有疑：见说明')}）`).join('、')));
+      ss.push(toItem(R, rule, rule.plain, hits.map((h) => `${PN[h.pillar]}（以${h.basis}为准${h.qualified === undefined ? '' : h.qualified ? `，${h.qualifiedMeaning}` : `，未满足“${h.qualifiedMeaning}”（仅检测到）`}）`).join('、')));
     }
     if (ss.length) sections.push({ id: 'bz-shensha', heading: '八字·神煞（仅列位置）', items: ss });
   }
