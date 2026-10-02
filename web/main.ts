@@ -150,7 +150,7 @@ function chartHtml(b: ChartBundle): string {
   const center = `<div class="center"><h3>${esc(st.savedName || '命盘')}</h3>
     <div>公历 ${r.clock.y}-${r.clock.m}-${r.clock.d} ${String(r.clock.hh).padStart(2, '0')}:${String(r.clock.mm).padStart(2, '0')} · ${i.gender === 'M' ? '男' : '女'}</div>
     <div>农历 ${r.clockLunar.year}年${r.clockLunar.leap ? '闰' : ''}${r.clockLunar.month}月${r.clockLunar.day}日 · ${STEMS[z.yearStem]}${BRANCHES[z.yearBranch]}年 · ${BRANCHES[z.input.hourBranch]}时</div>
-    <div>${z.fiveElementBureau.name}（${z.fiveElementBureau.nayin}）· 大限${z.decadeDirection === 1 ? '顺' : '逆'}行</div>
+    <div>${z.fiveElementBureau.name}（${z.fiveElementBureau.nayin}）· 命主${z.mingZhu} · 身主${z.shenZhu}· 大限${z.decadeDirection === 1 ? '顺' : '逆'}行</div>
     ${z.input.lunarLeap ? `<div class="warn">当前出生日期为闰${z.input.lunarMonth}月，受闰月规则影响（现按“${{ midMonth: '前后半月法', currentMonth: '全作本月', nextMonth: '全作下月' }[z.variants.leapMonthRule]}”，起命宫月份取${z.input.effectiveMonth}月）；切换规则可能导致命宫及后续宫位发生变化。</div>` : ''}
     <div>四化：${z.fourTransforms.lu}禄 ${z.fourTransforms.quan}权 ${z.fourTransforms.ke}科 ${z.fourTransforms.ji}忌</div>
     <div>八字：${pil}</div><div class="note">点击星曜或宫位查看解释</div></div>`;
@@ -165,7 +165,7 @@ function baziHtml(b: ChartBundle): string {
   const table = `<div class="scroll"><table><tr><th></th>${nm.map((n) => `<th>${n}</th>`).join('')}</tr>
     ${row('十神（天干）', (k) => P[k].stemTenGod ?? '日主')}${row('天干', (k) => STEMS[P[k].stem])}${row('地支', (k) => BRANCHES[P[k].branch])}
     ${row('藏干（十神）', (k) => P[k].hidden.map((h) => `${STEMS[h.stem]}(${h.tenGod})`).join(' '))}
-    ${row('纳音', (k) => P[k].nayin)}${row('十二长生（日主）', (k) => P[k].longSheng)}</table></div>`;
+    ${row('旬空', (k) => bz.kongWangByPillar[k].map((x) => BRANCHES[x]).join(''))}${row('纳音', (k) => P[k].nayin)}${row('十二长生（日主）', (k) => P[k].longSheng)}</table></div>`;
   const kong = bz.kongWang.map((x) => BRANCHES[x]).join('');
   return `<div class="card"><h3>八字四柱</h3>${table}<p class="note">日柱旬空：${kong}；神煞：${bz.shensha.length ? [...new Set(bz.shensha.map((h) => h.name))].map((n) => n + '（' + [...new Set(bz.shensha.filter((h) => h.name === n).map((h) => ({ year: '年', month: '月', day: '日', hour: '时' })[h.pillar]))].join('') + '）').join('、') : '无'}；节令：${bz.boundaries.monthJie}之后；旺衰候选：${bz.strength.candidate}（${bz.strength.method}）；格局候选：${bz.patterns.slice(0, 2).map((p) => p.name).join('、') || '—'}</p></div>`;
 }

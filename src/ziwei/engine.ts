@@ -20,6 +20,11 @@ export function ziweiPosition(bureau: number, day: number): number {
 }
 export const tianfuPosition = (ziwei: number): number => mod(4 - ziwei, 12);
 
+/** 安命主诀：贪狼子、巨门丑亥、禄存寅戌、文曲卯酉、廉贞辰申、武曲巳未、破军午（按命宫地支，子=0） */
+export const MING_ZHU = ['贪狼', '巨门', '禄存', '文曲', '廉贞', '武曲', '破军', '武曲', '廉贞', '文曲', '禄存', '巨门'];
+/** 安身主诀：子午火星（玲星）、丑未天相、寅申天梁、卯酉天同、辰戌文昌、巳亥天机（按出生年支，子=0）；火星即全书所称“玲星”，本项目星名取“火星” */
+export const SHEN_ZHU = ['火星', '天相', '天梁', '天同', '文昌', '天机', '火星', '天相', '天梁', '天同', '文昌', '天机'];
+
 export function effectiveLunarMonth(month: number, leap: boolean, day: number, rule: Options['leapMonthRule']): number {
   if (!leap) return month;
   if (rule === 'currentMonth') return month;
@@ -112,7 +117,7 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
     input: { lunarYear: L.year, lunarMonth: L.month, lunarLeap: L.leap, lunarDay: L.day, effectiveMonth: em, hourBranch: h, gender },
     yearStem, yearBranch,
     fiveElementBureau: { name: BUREAU_NAME[bureau], number: bureau as 2 | 3 | 4 | 5 | 6, nayin: nayinName(mingJz) },
-    mingBranch: ming, bodyBranch: body, ziweiBranch: zw, tianfuBranch: tf,
+    mingBranch: ming, bodyBranch: body, mingZhu: MING_ZHU[ming], shenZhu: SHEN_ZHU[yearBranch], ziweiBranch: zw, tianfuBranch: tf,
     palaces, fourTransforms: { stem: yearStem, lu, quan, ke, ji }, decadeDirection: dir,
     variants: { kuiYueXin: opt.kuiYueXin, sihua: { ...opt.sihua }, leapMonthRule: opt.leapMonthRule }, steps, rulesVersion: RULES_VERSION,
   };

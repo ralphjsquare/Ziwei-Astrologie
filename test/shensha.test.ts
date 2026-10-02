@@ -64,6 +64,14 @@ describe('神煞：与独立实现 bazi-lite 比对', () => {
         const mine = new Set(c.shensha.filter((x) => x.pillar === pk).map((x) => x.name as string));
         for (const name of SHENSHA_NAMES.slice(0, 11)) {
           if (name === '羊刃' && c.dayMaster.stem % 2 === 1) continue;
+          // 将星、华盖：本项目不计“基准柱自身”（年支基准不落年柱、日支基准不落日柱，与成熟排盘软件一致，ADR-020），bazi-lite 计入——只在此种情形下允许差异
+          if ((name === '将星' || name === '华盖') && theirs.has(name) && !mine.has(name) && (pk === 'year' || pk === 'day')) {
+            const T = name === '将星' ? [0, 6, 9, 3] : [4, 10, 1, 7]; // 申子辰、寅午戌、巳酉丑、亥卯未
+            const G = [0, 2, 1, 3, 0, 2, 1, 3, 0, 2, 1, 3];
+            const other = pk === 'year' ? 'day' : 'year';
+            const selfOnly = c.pillars[pk].branch === T[G[c.pillars[pk].branch]] && c.pillars[pk].branch !== T[G[c.pillars[other].branch]];
+            if (selfOnly) continue;
+          }
           if (mine.has(name) !== theirs.has(name)) bad.push(`${y}-${m}-${d} ${h}:${mi} ${pk} ${name}`);
         }
       }

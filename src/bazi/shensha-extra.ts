@@ -83,7 +83,7 @@ export function addExtra(p: Record<PK, P>, gender: 'M' | 'F', opt: ExtraOptions,
     const b = p[bk].branch;
     for (const k of keys) {
       if (p[k].branch === LIU_E[GROUP[b]]) add('六厄', k, `${base}${BRANCHES[b]}`);
-      if (p[k].branch === AN_JIN[b]) add('暗金煞', k, `${base}${BRANCHES[b]}`);
+      if (p[k].branch === AN_JIN[b] && k !== bk) add('暗金煞', k, `${base}${BRANCHES[b]}`);
     }
   }
   // 破煞：任意两柱地支相破（卯午、丑辰、子酉、未戌）

@@ -32,6 +32,8 @@ export interface BaziChart {
   pillars: { year: Pillar; month: Pillar; day: Pillar; hour: Pillar };
   dayMaster: { stem: number; element: string; yang: boolean };
   kongWang: number[]; // 日柱旬空地支
+  /** 各柱自己的旬空地支（年柱旬空、日柱旬空常用于看空亡；其余供对照） */
+  kongWangByPillar: Record<'year' | 'month' | 'day' | 'hour', number[]>;
   boundaries: { yearStartName: '立春'; yearStartEpochSec: number; monthJie: string; monthStartEpochSec: number; nextJieEpochSec: number; prevJieEpochSec: number };
   luck: {
     direction: 1 | -1;

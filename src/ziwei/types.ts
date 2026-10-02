@@ -29,6 +29,8 @@ export interface ZiweiChart {
   yearStem: number; yearBranch: number;
   fiveElementBureau: { name: string; number: 2 | 3 | 4 | 5 | 6; nayin: string };
   mingBranch: number; bodyBranch: number;
+  /** 命主（按命宫地支）、身主（按出生年支），据《全书》安命主、安身主诀 */
+  mingZhu: string; shenZhu: string;
   ziweiBranch: number; tianfuBranch: number;
   palaces: Palace[]; // 按地支 0..11 排列
   fourTransforms: { stem: number; lu: string; quan: string; ke: string; ji: string };

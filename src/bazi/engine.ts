@@ -112,6 +112,7 @@ export function buildBazi(_input: BirthInput, r: ResolvedBirth, _opt: Options, g
     schema: 'bazi-chart/1', school: 'ziping', gender, pillars,
     dayMaster: { stem: dStem, element: STEM_ELEMENT[dStem], yang: stemIsYang(dStem) },
     kongWang: kong,
+    kongWangByPillar: Object.fromEntries((['year', 'month', 'day', 'hour'] as const).map((k) => { const s = pillars[k].jiazi - (pillars[k].jiazi % 10); return [k, [mod(s + 10, 12), mod(s + 11, 12)]]; })) as BaziChart['kongWangByPillar'],
     boundaries: {
       yearStartName: '立春', yearStartEpochSec: lichun.epochSec, monthJie: curJie.name, monthStartEpochSec: curJie.epochSec,
       nextJieEpochSec: nextJie.epochSec, prevJieEpochSec: prevJie.epochSec,

@@ -105,8 +105,11 @@ export function interpretNatal(b: ChartBundle, R: RuleSet): InterpSection[] {
   const dmR = need(R, `bz.stem.${STEMS[dm]}`);
   items1.push(toItem(R, dmR, dmR.plain, `日主${STEMS[dm]}（${bz.dayMaster.element}，${bz.dayMaster.yang ? '阳' : '阴'}）`));
   const kong = bz.kongWang.map((x) => BRANCHES[x]).join('');
-  const hit = (['year', 'month', 'day', 'hour'] as const).filter((k) => k !== 'day' && bz.kongWang.includes(bz.pillars[k].branch)).map((k) => ({ year: '年', month: '月', day: '日', hour: '时' })[k] + '支');
-  items1.push(toItem(R, need(R, 'bz.kongwang'), need(R, 'bz.kongwang').plain, `日柱旬空：${kong}${hit.length ? `；${hit.join('、')}落空亡` : '；原局其余地支未落空亡'}`));
+  const yKong = bz.kongWangByPillar.year.map((x) => BRANCHES[x]).join('');
+  const PN2 = { year: '年', month: '月', day: '日', hour: '时' } as const;
+  const hitDay = (['year', 'month', 'hour'] as const).filter((k) => bz.kongWang.includes(bz.pillars[k].branch)).map((k) => PN2[k] + '支');
+  const hitYear = (['month', 'day', 'hour'] as const).filter((k) => bz.kongWangByPillar.year.includes(bz.pillars[k].branch)).map((k) => PN2[k] + '支');
+  items1.push(toItem(R, need(R, 'bz.kongwang'), need(R, 'bz.kongwang').plain, `日柱旬空：${kong}${hitDay.length ? `；${hitDay.join('、')}落日柱空亡` : '；其余地支未落日柱空亡'}；年柱旬空：${yKong}${hitYear.length ? `；${hitYear.join('、')}落年柱空亡` : '；其余地支未落年柱空亡'}`));
   const nm = { year: '年', month: '月', day: '日', hour: '时' };
   for (const k of ['year', 'month', 'hour'] as const) {
     const g = bz.pillars[k].stemTenGod!;

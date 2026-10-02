@@ -142,7 +142,7 @@ export interface ShenShaHit { name: ShenShaName; pillar: PillarKey; basis: strin
 export const QUALIFIED_MEANING: Partial<Record<ShenShaName, string>> = { 德秀贵人: '德秀同见', 三奇贵人: '依序顺布' };
 
 interface P { stem: number; branch: number }
-/** 计算命中的神煞。三合类（驿马等）分别以年支、日支为基准；天乙贵人以日干、年干为基准；羊刃、金舆以日干为基准；孤辰寡宿以年支为基准；基准柱自身也算（如日支即为华盖）。 */
+/** 计算命中的神煞。三合类（驿马等）分别以年支、日支为基准；天乙贵人以日干、年干为基准；羊刃、金舆以日干为基准；孤辰寡宿以年支为基准；以年支、日支为基准的“将星”“华盖”“暗金煞”不计基准柱自身（与成熟排盘软件一致，ADR-020）；以天干为基准的（天乙、太极、文昌等）仍可落在同一柱的地支上。 */
 export interface ShenShaOptions { wenchangMode: 'sanming' | 'common'; yinStemYangRen: boolean; hongyanMode?: 'sanming' | 'common' }
 export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M', opt: ShenShaOptions = { wenchangMode: 'sanming', yinStemYangRen: false }): ShenShaHit[] {
   const out: ShenShaHit[] = [];
@@ -151,7 +151,7 @@ export function computeShenSha(p: Record<PillarKey, P>, gender: 'M' | 'F' = 'M',
   const groupTables: [ShenShaName, number[]][] = [['驿马', YI_MA], ['咸池（桃花）', XIAN_CHI], ['劫煞', JIE_SHA], ['亡神', WANG_SHEN], ['将星', JIANG_XING], ['华盖', HUA_GAI]];
   for (const [base, bk] of [['年支', 'year'], ['日支', 'day']] as const) {
     const g = GROUP_OF[p[bk].branch];
-    for (const [name, tab] of groupTables) for (const k of keys) if (p[k].branch === tab[g]) add(name, k, `${base}${BRANCHES[p[bk].branch]}`);
+    for (const [name, tab] of groupTables) for (const k of keys) if (p[k].branch === tab[g] && !(k === bk && (name === '将星' || name === '华盖'))) add(name, k, `${base}${BRANCHES[p[bk].branch]}`);
   }
   for (const [base, bk] of [['日干', 'day'], ['年干', 'year']] as const) {
     for (const k of keys) if (TIAN_YI[p[bk].stem].includes(p[k].branch)) add('天乙贵人', k, `${base}${STEMS[p[bk].stem]}`);
