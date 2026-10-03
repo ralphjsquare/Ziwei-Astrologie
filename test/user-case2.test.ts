@@ -64,3 +64,26 @@ describe('第二个盘：与问真八字对照', () => {
     expect(f('common')).toBe(true);
   });
 });
+
+// 大运（问真八字“专业细盘”，截图转录 2026-10-03）。软件按其显示的真太阳时起算：本盘 16:06、上一个盘 07:55。
+describe('大运与起运：与问真八字对照', () => {
+  const luck = (y: number, mo: number, d: number, h: number, mi: number, g: 'M' | 'F') =>
+    (computeCharts({ calendar: 'solar', year: y, month: mo, day: d, hour: h, minute: mi, gender: g, place: { utcOffsetMinutes: 480, dstMinutes: 0 } } as any) as any).bazi.luck;
+  const gz = (l: any) => l.cycles.slice(0, 10).map((c: any) => STEMS[c.stem] + BRANCHES[c.branch]);
+  it('1993 女命：起运5年3月2天7时，1999年（己卯，立春后19天）交运，甲子起顺行', () => {
+    const l = luck(1993, 11, 21, 16, 6, 'F');
+    expect(l.direction).toBe(1);
+    expect(l.start).toMatchObject({ years: 5, months: 3, days: 2, hours: 7 });
+    expect(l.startDate).toMatchObject({ y: 1999, m: 2, d: 23 });
+    expect(gz(l)).toEqual(['甲子', '乙丑', '丙寅', '丁卯', '戊辰', '己巳', '庚午', '辛未', '壬申', '癸酉']);
+    expect(l.cycles.slice(0, 4).map((c: any) => c.startYear)).toEqual([1999, 2009, 2019, 2029]);
+  });
+  it('1988 男命：起运0年10月8天16时，1989年（己巳，立春后6天）交运，丙辰起顺行', () => {
+    const l = luck(1988, 4, 2, 7, 55, 'M');
+    expect(l.direction).toBe(1);
+    expect(l.start).toMatchObject({ years: 0, months: 10, days: 8, hours: 16 });
+    expect(l.startDate).toMatchObject({ y: 1989, m: 2, d: 10 });
+    expect(gz(l)).toEqual(['丙辰', '丁巳', '戊午', '己未', '庚申', '辛酉', '壬戌', '癸亥', '甲子', '乙丑']);
+    expect(l.cycles.slice(0, 4).map((c: any) => c.startYear)).toEqual([1989, 1999, 2009, 2019]);
+  });
+});
