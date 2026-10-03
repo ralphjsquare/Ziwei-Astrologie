@@ -5,6 +5,11 @@ import {
 import { chinaDstState } from '../src/calendar/china-dst';
 import { RULES, REVIEW_LABEL, SOURCE_CLASS_LABEL, rulesContentHash, type ReviewStatus } from '../src/rules';
 import { interpretNatal, interpretYear, ruleItem, DISCLAIMER, type InterpItem, type InterpSection } from '../src/interpret';
+import { GLOSSARY, glossaryFor, type GlossaryGroup } from '../src/rules/glossary';
+import { summarize } from '../src/interpret/summary';
+import { ELEMENTS, elementCounts, lifeTimeline, tenGodCounts } from '../src/interpret/stats';
+import { TEN_GODS } from '../src/bazi/tables';
+import { barChart, timelineChart } from './charts';
 import { crossReference, CROSS_DISCLAIMER } from '../src/crossref';
 import { synastry, SYNASTRY_DISCLAIMER } from '../src/synastry';
 import { exportChartReview, exportRules, selectRules, type ReviewFormat, type ReviewScope } from '../src/review';
@@ -12,7 +17,7 @@ import { IndexedDbStorage, exportArchive, importArchive, makeRecord, openRecord,
 
 const $ = <T extends HTMLElement>(sel: string, root: ParentNode = document) => root.querySelector(sel) as T;
 const esc = (s: unknown) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
-const TABS: [string, string][] = [['chart', '命盘'], ['time', '时间层'], ['cross', '对照'], ['syn', '合盘'], ['read', '解读'], ['archive', '存档'], ['settings', '设置与导出']];
+const TABS: [string, string][] = [['chart', '命盘'], ['time', '时间层'], ['cross', '对照'], ['syn', '合盘'], ['sum', '一页读懂'], ['read', '解读'], ['gloss', '名词'], ['archive', '存档'], ['settings', '设置与导出']];
 
 interface State {
   partner: ChartBundle | null; partnerError: string; pv: Record<string, string>; bundle: ChartBundle | null; tab: string; year: number; onlyReviewed: boolean;
@@ -126,6 +131,31 @@ function buildWarnings(b: ChartBundle, extra: string[]): string[] {
 }
 
 // ---------- 渲染 ----------
+const g = (term: string, group?: GlossaryGroup, shown?: string) => {
+  const e = glossaryFor(term, group);
+  return e ? `<span class="g" title="${esc(e.plain)}">${esc(shown ?? term)}</span>` : esc(shown ?? term);
+};
+function sumHtml(b: ChartBundle): string {
+  const blocks = summarize(b, RULES, clampYear(b)).map((s) => {
+    const pts = s.points.filter((p) => keepItem(p.item)).map((p) => `<div class="pt"><p><b>${esc(p.label)}</b>${esc(p.text.startsWith(p.label) ? p.text.slice(p.label.length).replace(/^[，、：]/, '') : p.text)} <span class="badge">${esc(p.tag)}</span></p>
+      <details><summary>这一条的依据、出处与审核状态</summary>${itemHtml(p.item)}</details></div>`).join('');
+    return `<section class="card"><h3>${esc(s.heading)}</h3><p>${esc(s.lead)}</p>${pts}</section>`;
+  }).join('');
+  const ec = elementCounts(b.bazi), tc = tenGodCounts(b.bazi);
+  const el = (c: Record<string, number>) => ELEMENTS.map((e) => ({ label: e, value: c[e] }));
+  const graphics = `<section class="card"><h3>图形一览</h3><div class="figs">
+    ${barChart('五行数量（四天干＋四地支）', el(ec.eight), '统计八个字各自所属的五行，只是数量，不是强弱。')}
+    ${barChart('五行数量（四天干＋全部藏干）', el(ec.withHidden), '地支改按其藏干计。统计口径不同，所以与左图不同属正常。')}
+    ${barChart('十神数量', TEN_GODS.map((t) => ({ label: t, value: tc[t] })), '其余三个天干＋全部藏干；日主本身不计。')}</div>
+    ${timelineChart(lifeTimeline(b.ziwei, b.bazi, clampYear(b)))}</section>`;
+  return `<div class="warn">${esc(DISCLAIMER)} 这一页只是把命盘里已有的内容用白话归拢，没有新增断语，也没有“综合评分”。每一条都可展开看出处与审核状态。</div>${blocks}${graphics}`;
+}
+function glossHtml(): string {
+  const groups: GlossaryGroup[] = ['通用', '紫微', '八字'];
+  return `<div class="card"><h3>名词小词典</h3><p class="note">只解释“这个词在排盘里指什么”，不含吉凶断语。命盘页里带虚线下划线的词，鼠标停留（手机上长按）即可看到同样的解释。</p>
+    <label>搜索<input id="gq" type="search" placeholder="输入名词，如：十神"></label>
+    ${groups.map((gr) => `<div class="gl-group"><h4>${gr}</h4>${GLOSSARY.filter((e) => e.group === gr).map((e) => `<div class="gl-item" data-t="${esc(e.term + e.plain)}"><b>${esc(e.term)}</b>${esc(e.plain)}</div>`).join('')}</div>`).join('')}</div>`;
+}
 function itemHtml(it: InterpItem): string {
   const src = it.sources.map((s) => `<li>${esc(s.book)}${s.section ? '·' + esc(s.section) : ''}${s.verified ? '' : '（底本未核对）'}${s.note ? ' — ' + esc(s.note) : ''}</li>`).join('');
   const cls = it.classical.length ? it.classical.map((q) => `<li>「${esc(q.quote)}」 — ${esc(q.source)}${q.variant ? `<br><span class="note">版本异文：${esc(q.variant)}</span>` : ''}</li>`).join('') + '<li class="note">引文来自电子转录本（维基文库或用户提供的电子书，见各条出处的版本说明，部分“版本未核实”），须对照影印本核对。</li>' : `<li class="note">本条没有古籍引文：${it.evidenceType === 'structural' ? '属算法结构，无需古籍原文' : `<b>${esc(it.sourceClass ? SOURCE_CLASS_LABEL[it.sourceClass as keyof typeof SOURCE_CLASS_LABEL] : '流派／现代说法')}</b>，仅作参考`}。</li>`;
@@ -140,9 +170,9 @@ const sectionsHtml = (secs: InterpSection[]) =>
 function chartHtml(b: ChartBundle): string {
   const z = b.ziwei;
   const cells = z.palaces.map((p) => {
-    const stars = p.stars.map((s) => `<span class="star ${s.kind}" data-star="${esc(s.name)}" data-tf="${s.transform ?? ''}">${esc(s.name)}${s.brightness ? `<i class="br">${{ 庙: '庙', 旺: '旺', 得地: '得', 利益: '利', 平和: '平', 不得地: '不', 落陷: '陷' }[s.brightness]}</i>` : ''}${s.transform ? `<i class="tf ${s.transform}">${s.transform}</i>` : ''}</span>`).join('');
+    const stars = p.stars.map((s) => `<span class="star ${s.kind}" title="${esc(RULES.byId.get(`zw.star.${s.name}`)?.data?.trait ?? '')}" data-star="${esc(s.name)}" data-tf="${s.transform ?? ''}">${esc(s.name)}${s.brightness ? `<i class="br">${{ 庙: '庙', 旺: '旺', 得地: '得', 利益: '利', 平和: '平', 不得地: '不', 落陷: '陷' }[s.brightness]}</i>` : ''}${s.transform ? `<i class="tf ${s.transform}">${s.transform}</i>` : ''}</span>`).join('');
     return `<div class="pal${p.isBody ? ' body' : ''}" data-branch="${p.branch}" data-palace="${p.name}" style="grid-area:b${p.branch}">
-      <div class="pal-head"><span class="pname">${p.name}${p.isBody ? '·身' : ''}</span><span>${STEMS[p.stem]}${BRANCHES[p.branch]}</span></div>
+      <div class="pal-head"><span class="pname" title="${esc(RULES.byId.get(`zw.palace.${p.name}`)?.data?.domain ?? '')}">${p.name}${p.isBody ? '·身' : ''}</span><span>${STEMS[p.stem]}${BRANCHES[p.branch]}</span></div>
       <div class="stars">${stars}</div><div class="pal-foot"><span>大限 ${p.decade.startAge}–${p.decade.endAge}</span></div></div>`;
   }).join('');
   const r = b.resolved, i = b.input;
@@ -150,9 +180,9 @@ function chartHtml(b: ChartBundle): string {
   const center = `<div class="center"><h3>${esc(st.savedName || '命盘')}</h3>
     <div>公历 ${r.clock.y}-${r.clock.m}-${r.clock.d} ${String(r.clock.hh).padStart(2, '0')}:${String(r.clock.mm).padStart(2, '0')} · ${i.gender === 'M' ? '男' : '女'}</div>
     <div>农历 ${r.clockLunar.year}年${r.clockLunar.leap ? '闰' : ''}${r.clockLunar.month}月${r.clockLunar.day}日 · ${STEMS[z.yearStem]}${BRANCHES[z.yearBranch]}年 · ${BRANCHES[z.input.hourBranch]}时</div>
-    <div>${z.fiveElementBureau.name}（${z.fiveElementBureau.nayin}）· 命主${z.mingZhu} · 身主${z.shenZhu}· 大限${z.decadeDirection === 1 ? '顺' : '逆'}行</div>
+    <div>${g('五行局', '紫微', z.fiveElementBureau.name)}（${z.fiveElementBureau.nayin}）· ${g('命主', '紫微')}${z.mingZhu} · ${g('身主', '紫微')}${z.shenZhu}· ${g('大限', '紫微')}${z.decadeDirection === 1 ? '顺' : '逆'}行</div>
     ${z.input.lunarLeap ? `<div class="warn">当前出生日期为闰${z.input.lunarMonth}月，受闰月规则影响（现按“${{ midMonth: '前后半月法', currentMonth: '全作本月', nextMonth: '全作下月' }[z.variants.leapMonthRule]}”，起命宫月份取${z.input.effectiveMonth}月）；切换规则可能导致命宫及后续宫位发生变化。</div>` : ''}
-    <div>四化：${z.fourTransforms.lu}禄 ${z.fourTransforms.quan}权 ${z.fourTransforms.ke}科 ${z.fourTransforms.ji}忌</div>
+    <div>${g('四化', '紫微')}：${z.fourTransforms.lu}禄 ${z.fourTransforms.quan}权 ${z.fourTransforms.ke}科 ${z.fourTransforms.ji}忌</div>
     <div>八字：${pil}</div><div class="note">点击星曜或宫位查看解释</div></div>`;
   return `<div class="chart">${cells}${center}</div>`;
 }
@@ -163,9 +193,9 @@ function baziHtml(b: ChartBundle): string {
   const row = (label: string, f: (k: (typeof cols)[number]) => string) => `<tr><th>${label}</th>${cols.map((k) => `<td>${f(k)}</td>`).join('')}</tr>`;
   const P = bz.pillars;
   const table = `<div class="scroll"><table><tr><th></th>${nm.map((n) => `<th>${n}</th>`).join('')}</tr>
-    ${row('十神（天干）', (k) => P[k].stemTenGod ?? '日主')}${row('天干', (k) => STEMS[P[k].stem])}${row('地支', (k) => BRANCHES[P[k].branch])}
-    ${row('藏干（十神）', (k) => P[k].hidden.map((h) => `${STEMS[h.stem]}(${h.tenGod})`).join(' '))}
-    ${row('旬空', (k) => bz.kongWangByPillar[k].map((x) => BRANCHES[x]).join(''))}${row('纳音', (k) => P[k].nayin)}${row('十二长生（日主）', (k) => P[k].longSheng)}</table></div>`;
+    ${row(g('十神', '八字'), (k) => P[k].stemTenGod ? g(P[k].stemTenGod!, '八字') : g('日主', '八字'))}${row('天干', (k) => STEMS[P[k].stem])}${row('地支', (k) => BRANCHES[P[k].branch])}
+    ${row(g('藏干', '八字') + '（十神）', (k) => P[k].hidden.map((h) => `${STEMS[h.stem]}(${h.tenGod})`).join(' '))}
+    ${row(g('旬空', '八字'), (k) => bz.kongWangByPillar[k].map((x) => BRANCHES[x]).join(''))}${row(g('纳音', '八字'), (k) => P[k].nayin)}${row(g('十二长生', '八字') + '（日主）', (k) => g(P[k].longSheng, '八字'))}</table></div>`;
   const kong = bz.kongWang.map((x) => BRANCHES[x]).join('');
   return `<div class="card"><h3>八字四柱</h3>${table}<p class="note">日柱旬空：${kong}；神煞：${bz.shensha.length ? [...new Set(bz.shensha.map((h) => h.name))].map((n) => n + '（' + [...new Set(bz.shensha.filter((h) => h.name === n).map((h) => ({ year: '年', month: '月', day: '日', hour: '时' })[h.pillar]))].join('') + '）').join('、') : '无'}；节令：${bz.boundaries.monthJie}之后；旺衰候选：${bz.strength.candidate}（${bz.strength.method}）；格局候选：${bz.patterns.slice(0, 2).map((p) => p.name).join('、') || '—'}</p></div>`;
 }
@@ -245,13 +275,15 @@ function settingsHtml(b: ChartBundle | null): string {
 async function render() {
   $('#msg').innerHTML = (st.error ? `<div class="err">${esc(st.error)}</div>` : '') + st.warnings.map((w) => `<div class="warn">${esc(w)}</div>`).join('');
   const out = $('#out');
-  if (!st.bundle && st.tab !== 'archive' && st.tab !== 'settings') { out.innerHTML = '<div class="card">请输入出生信息后点击“排盘”。</div>' + tabsHtml(); bindTabs(); return; }
+  if (!st.bundle && st.tab !== 'archive' && st.tab !== 'settings' && st.tab !== 'gloss') { out.innerHTML = '<div class="card">请输入出生信息后点击“排盘”。</div>' + tabsHtml(); bindTabs(); return; }
   const b = st.bundle;
   let body = '';
   if (st.tab === 'chart' && b) body = `<div class="card">${chartHtml(b)}<div id="detail">${st.selected.map(itemHtml).join('')}</div></div>${baziHtml(b)}`;
   else if (st.tab === 'time' && b) body = timeHtml(b);
   else if (st.tab === 'cross' && b) body = crossHtml(b);
   else if (st.tab === 'syn' && b) body = synHtml(b);
+  else if (st.tab === 'sum' && b) body = sumHtml(b);
+  else if (st.tab === 'gloss') body = glossHtml();
   else if (st.tab === 'read' && b) body = sectionsHtml([...interpretNatal(b, RULES), ...interpretYear(b, clampYear(b), RULES)]);
   else if (st.tab === 'archive') body = await archiveHtml();
   else if (st.tab === 'settings') body = settingsHtml(b);
@@ -310,6 +342,7 @@ function bindTab() {
       void render();
     });
   }
+  if (st.tab === 'gloss') $('#gq').addEventListener('input', (e) => { const q = (e.target as HTMLInputElement).value.trim(); document.querySelectorAll<HTMLElement>('.gl-item').forEach((el) => { el.hidden = q !== '' && !el.dataset.t!.includes(q); }); });
   if (st.tab === 'time') $('#yr').addEventListener('change', () => { st.year = Number(($('#yr') as HTMLInputElement).value); void render(); });
   if (st.tab === 'settings') {
     $('#onlyrev').addEventListener('change', (e) => { st.onlyReviewed = (e.target as HTMLInputElement).checked; });

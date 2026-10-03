@@ -72,3 +72,14 @@ details ul { margin: 4px 0; padding-left: 18px; }
 [hidden] { display: none !important; }
 .badge.quoted { color: var(--lu); border-color: var(--lu); }
 .br { font-style: normal; font-size: 10px; margin-left: 2px; padding: 0 2px; border: 1px solid var(--line, #999); border-radius: 3px; opacity: .8; }
+.fig { margin: 8px 0; } .fig figcaption { font-weight: 600; margin-bottom: 4px; }
+.figs { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 24px; }
+.fig svg { width: 100%; height: auto; max-width: 640px; display: block; }
+.fig .cl { fill: var(--fg); font-size: 12px; } .fig .cs { fill: var(--muted); font-size: 11px; } .fig .cv { fill: var(--fg); font-size: 12px; font-weight: 600; }
+.fig .ct { fill: color-mix(in srgb, var(--line) 55%, transparent); } .fig .cb { fill: var(--accent); }
+.fig .tl { fill: color-mix(in srgb, var(--accent) 10%, var(--card)); stroke: var(--line); } .fig .tl-cur { fill: var(--accent); } .fig .tl-curt { fill: #fff; font-size: 12px; }
+.fig .tl-mark { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.fig table { margin: 6px 0; width: auto; }
+.pt { border-left: 3px solid var(--line); padding: 2px 0 2px 10px; margin: 8px 0; } .pt b { margin-right: 6px; } .pt p { margin: 2px 0; }
+.g { border-bottom: 1px dotted var(--muted); cursor: help; }
+.gl-group h4 { margin: 14px 0 4px; } .gl-item { margin: 4px 0; } .gl-item b { margin-right: 6px; }
