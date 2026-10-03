@@ -4,7 +4,7 @@ import { ziweiYearLayer } from '../src/ziwei/timelayers';
 import { computeShenSha } from '../src/bazi/shensha';
 
 // 外部成熟软件对照（第二个盘）：吉真紫微＋问真八字，1993-11-21 北京时间16:15（真太阳时16:06），申时，农历癸酉年十月初八（截图转录，2026-10-03）。
-// 紫微截图为“阴女”，八字截图标“乾造”，两处性别不一致；紫微按女（大限顺行 2~11 乙卯→丙辰）比对，期望值来自软件，不来自本引擎。
+// 女命（紫微“阴女”；问真八字重新输入后为“坤造”，首次截图误输入为男）。期望值来自软件，不来自本引擎。
 const b: any = computeCharts({ calendar: 'solar', year: 1993, month: 11, day: 21, hour: 16, minute: 15, gender: 'F', place: { utcOffsetMinutes: 480, dstMinutes: 0 } } as any);
 const z = b.ziwei, bz = b.bazi;
 const palace = (gz: string) => z.palaces.find((p: any) => STEMS[p.stem] + BRANCHES[p.branch] === gz);
