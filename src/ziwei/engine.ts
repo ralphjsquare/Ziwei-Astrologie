@@ -20,6 +20,16 @@ export function ziweiPosition(bureau: number, day: number): number {
 }
 export const tianfuPosition = (ziwei: number): number => mod(4 - ziwei, 12);
 
+/** 四组十二神的名称序列（按排布顺序） */
+export const CHANG_SHENG_12 = ['长生', '沐浴', '冠带', '临官', '帝旺', '衰', '病', '死', '墓', '绝', '胎', '养'];
+export const BO_SHI_12 = ['博士', '力士', '青龙', '小耗', '将军', '奏书', '飞廉', '喜神', '病符', '大耗', '伏兵', '官府'];
+export const JIANG_QIAN_12 = ['将星', '攀鞍', '岁驿', '息神', '华盖', '劫煞', '灾煞', '天煞', '指背', '咸池', '月煞', '亡神'];
+export const SUI_QIAN_12 = ['岁建', '晦气', '丧门', '贯索', '官符', '小耗', '岁破', '龙德', '白虎', '天德', '吊客', '病符'];
+/** 长生起宫（按五行局数）：水二局、土五局申，木三局亥，金四局巳，火六局寅 */
+const CHANG_SHENG_START: Record<number, number> = { 2: 8, 5: 8, 3: 11, 4: 5, 6: 2 };
+/** 将前十二神起宫（按年支 mod 4）：申子辰起子，巳酉丑起酉，寅午戌起午，亥卯未起卯 */
+const JIANG_QIAN_START = [0, 9, 6, 3];
+
 /** 安命主诀：贪狼子、巨门丑亥、禄存寅戌、文曲卯酉、廉贞辰申、武曲巳未、破军午（按命宫地支，子=0） */
 export const MING_ZHU = ['贪狼', '巨门', '禄存', '文曲', '廉贞', '武曲', '破军', '武曲', '廉贞', '文曲', '禄存', '巨门'];
 /** 安身主诀：子午火星（玲星）、丑未天相、寅申天梁、卯酉天同、辰戌文昌、巳亥天机（按出生年支，子=0）；火星即全书所称“玲星”，本项目星名取“火星” */
@@ -99,6 +109,10 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
   const dir: 1 | -1 = (yang && gender === 'M') || (!yang && gender === 'F') ? 1 : -1;
   steps.push({ id: 'decade', text: `${yang ? '阳' : '阴'}${gender === 'M' ? '男' : '女'}，首限自命宫起，${BUREAU_NAME[bureau]}${bureau}岁起限；${yang ? '阳' : '阴'}${gender === 'M' ? '男' : '女'}大限${dir === 1 ? '顺' : '逆'}行，第二限起逐宫移动` });
 
+  const ziDou = mod(-(em - 1) + h, 12);
+  steps.push({ id: 'zidou', text: `子斗：以子宫为正月，逆数至生月（${em}月），再顺数至生时，落${BRANCHES[ziDou]}宫` });
+  steps.push({ id: 'twelve-gods', text: `长生十二神自${BRANCHES[CHANG_SHENG_START[bureau]]}宫起长生、博士十二神自禄存（${BRANCHES[at['禄存']]}宫）起，均按${dir === 1 ? '顺' : '逆'}行；岁前十二神自岁建（${BRANCHES[yearBranch]}宫）、将前十二神自将星（${BRANCHES[JIANG_QIAN_START[yearBranch % 4]]}宫）起，均顺行` });
+
   // 首个大限固定落命宫（ADR-013）；此后阳男阴女顺行、阴男阳女逆行，每十年一宫
   const palaces: Palace[] = [];
   for (let b = 0; b < 12; b++) {
@@ -109,6 +123,12 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
     palaces.push({
       branch: b, stem: stemOf(b), name: PALACE_NAMES[k], stars, isBody: b === body,
       decade: { startAge: bureau + 10 * j, endAge: bureau + 10 * j + 9 },
+      gods: {
+        changSheng: CHANG_SHENG_12[mod((b - CHANG_SHENG_START[bureau]) * dir, 12)],
+        boShi: BO_SHI_12[mod((b - at['禄存']) * dir, 12)],
+        jiangQian: JIANG_QIAN_12[mod(b - JIANG_QIAN_START[yearBranch % 4], 12)],
+        suiQian: SUI_QIAN_12[mod(b - yearBranch, 12)],
+      },
     });
   }
 
@@ -117,7 +137,7 @@ export function buildZiwei(_input: BirthInput, r: ResolvedBirth, opt: Options, g
     input: { lunarYear: L.year, lunarMonth: L.month, lunarLeap: L.leap, lunarDay: L.day, effectiveMonth: em, hourBranch: h, gender },
     yearStem, yearBranch,
     fiveElementBureau: { name: BUREAU_NAME[bureau], number: bureau as 2 | 3 | 4 | 5 | 6, nayin: nayinName(mingJz) },
-    mingBranch: ming, bodyBranch: body, mingZhu: MING_ZHU[ming], shenZhu: SHEN_ZHU[yearBranch], ziweiBranch: zw, tianfuBranch: tf,
+    mingBranch: ming, bodyBranch: body, mingZhu: MING_ZHU[ming], shenZhu: SHEN_ZHU[yearBranch], ziDou, ziweiBranch: zw, tianfuBranch: tf,
     palaces, fourTransforms: { stem: yearStem, lu, quan, ke, ji }, decadeDirection: dir,
     variants: { kuiYueXin: opt.kuiYueXin, sihua: { ...opt.sihua }, leapMonthRule: opt.leapMonthRule }, steps, rulesVersion: RULES_VERSION,
   };

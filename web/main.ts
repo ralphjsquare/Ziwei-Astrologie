@@ -173,7 +173,7 @@ function chartHtml(b: ChartBundle): string {
     const stars = p.stars.map((s) => `<span class="star ${s.kind}" title="${esc(RULES.byId.get(`zw.star.${s.name}`)?.data?.trait ?? '')}" data-star="${esc(s.name)}" data-tf="${s.transform ?? ''}">${esc(s.name)}${s.brightness ? `<i class="br">${{ 庙: '庙', 旺: '旺', 得地: '得', 利益: '利', 平和: '平', 不得地: '不', 落陷: '陷' }[s.brightness]}</i>` : ''}${s.transform ? `<i class="tf ${s.transform}">${s.transform}</i>` : ''}</span>`).join('');
     return `<div class="pal${p.isBody ? ' body' : ''}" data-branch="${p.branch}" data-palace="${p.name}" style="grid-area:b${p.branch}">
       <div class="pal-head"><span class="pname" title="${esc(RULES.byId.get(`zw.palace.${p.name}`)?.data?.domain ?? '')}">${p.name}${p.isBody ? '·身' : ''}</span><span>${STEMS[p.stem]}${BRANCHES[p.branch]}</span></div>
-      <div class="stars">${stars}</div><div class="pal-foot"><span>大限 ${p.decade.startAge}–${p.decade.endAge}</span></div></div>`;
+      <div class="stars">${stars}</div><div class="gods" title="博士十二神·将前十二神·岁前十二神">${p.gods.boShi}·${p.gods.jiangQian}·${p.gods.suiQian}</div><div class="pal-foot"><span>大限 ${p.decade.startAge}–${p.decade.endAge}</span><span title="长生十二神">${p.gods.changSheng}</span></div></div>`;
   }).join('');
   const r = b.resolved, i = b.input;
   const pil = (['year', 'month', 'day', 'hour'] as const).map((k) => STEMS[b.bazi.pillars[k].stem] + BRANCHES[b.bazi.pillars[k].branch]).join(' ');
@@ -182,6 +182,7 @@ function chartHtml(b: ChartBundle): string {
     <div>农历 ${r.clockLunar.year}年${r.clockLunar.leap ? '闰' : ''}${r.clockLunar.month}月${r.clockLunar.day}日 · ${STEMS[z.yearStem]}${BRANCHES[z.yearBranch]}年 · ${BRANCHES[z.input.hourBranch]}时</div>
     <div>${g('五行局', '紫微', z.fiveElementBureau.name)}（${z.fiveElementBureau.nayin}）· ${g('命主', '紫微')}${z.mingZhu} · ${g('身主', '紫微')}${z.shenZhu}· ${g('大限', '紫微')}${z.decadeDirection === 1 ? '顺' : '逆'}行</div>
     ${z.input.lunarLeap ? `<div class="warn">当前出生日期为闰${z.input.lunarMonth}月，受闰月规则影响（现按“${{ midMonth: '前后半月法', currentMonth: '全作本月', nextMonth: '全作下月' }[z.variants.leapMonthRule]}”，起命宫月份取${z.input.effectiveMonth}月）；切换规则可能导致命宫及后续宫位发生变化。</div>` : ''}
+    <div>${g('子斗', '紫微')}：${BRANCHES[z.ziDou]}宫</div>
     <div>${g('四化', '紫微')}：${z.fourTransforms.lu}禄 ${z.fourTransforms.quan}权 ${z.fourTransforms.ke}科 ${z.fourTransforms.ji}忌</div>
     <div>八字：${pil}</div><div class="note">点击星曜或宫位查看解释</div></div>`;
   return `<div class="chart">${cells}${center}</div>`;

@@ -14,6 +14,8 @@ export interface Palace {
   stars: StarPlacement[];
   isBody: boolean; // 身宫所在
   decade: { startAge: number; endAge: number }; // 大限（虚岁）
+  /** 四组十二神（只是按位置依次排布的名称，随盘显示，不参与解读规则） */
+  gods: { changSheng: string; boShi: string; jiangQian: string; suiQian: string };
 }
 
 export interface ZiweiStep { id: string; text: string }
@@ -31,6 +33,8 @@ export interface ZiweiChart {
   mingBranch: number; bodyBranch: number;
   /** 命主（按命宫地支）、身主（按出生年支），据《全书》安命主、安身主诀 */
   mingZhu: string; shenZhu: string;
+  /** 子斗：以子宫为正月，逆数至生月，再顺数至生时所落之宫（地支序号） */
+  ziDou: number;
   ziweiBranch: number; tianfuBranch: number;
   palaces: Palace[]; // 按地支 0..11 排列
   fourTransforms: { stem: number; lu: string; quan: string; ke: string; ji: string };
