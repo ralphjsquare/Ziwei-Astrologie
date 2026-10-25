@@ -4905,5 +4905,1666 @@
    "history": []
   },
   "basis": "textbook"
+ },
+ {
+  "id": "bz.yhzp.frame",
+  "topic": "frame",
+  "when": {
+   "kind": "yhzp",
+   "topic": "frame"
+  },
+  "title": "渊海子平：以日干为主",
+  "plain": "《渊海子平》「论日为主」说，宋代起才有“子平之说”：以日干为主，把年比作根、月比作苗、日比作花、时比作果，再看五行的生旺死绝、休囚制化。另一句概括是“以日为主，年为本，月为提纲，时为辅佐”，所以先看日主，再看月令。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论日为主",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论日为主#1",
+    "quote": "取日干为主，以年为根，以月为苗，以日为花，以时为果"
+   },
+   {
+    "corpusRef": "yhzp/论日为主#1",
+    "quote": "以日为主，年为本，月为提纲，时为辅佐"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.yueling",
+  "topic": "yueling",
+  "when": {
+   "kind": "yhzp",
+   "topic": "yueling"
+  },
+  "title": "渊海子平：年月时各主一端",
+  "plain": "《渊海子平》「论月令」把四柱分成几个位置来看：月为提纲，月令带官星、印綬，书中称其人“慷慨聪明、见识高人”；月令有用神，说是“得父母力”，年有用神得祖宗之力，时有用神得子孙之力，反之则“不得力”。这是把位置与六亲、助力对应起来的传统看法。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论月令",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论月令#1",
+    "quote": "月为提纲，带官星印綬，则慷慨聪明、见识高人"
+   },
+   {
+    "corpusRef": "yhzp/论月令#1",
+    "quote": "年有用神，得祖宗力；时有用神，得子孙力；反此则不得力"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.甲",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "甲"
+  },
+  "title": "渊海子平：日主甲的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于甲：把甲木比作排在天干之首的大树，说它像栋梁之材，要靠金来裁用，遇火则烧成灰炭。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·甲",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·甲#1",
+    "quote": "断就栋樑金得用，化成灰炭火为灾"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.乙",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "乙"
+  },
+  "title": "渊海子平：日主乙的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于乙：把乙木比作根扎得深的花草藤蔓，说它只宜向阳之地，最怕水多使其漂浮，也怕金的刻削。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·乙",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·乙#1",
+    "quote": "乙木根荄种得深，只宜阳地不宜阴"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.丙",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "丙"
+  },
+  "title": "渊海子平：日主丙的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于丙：把丙火比作光明正大的太阳，说它光焰遍照；水泽一般的“死水”也奈何不了它，只担心木多成林。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·丙",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·丙#1",
+    "quote": "丙火明明一太阳，原从正大立纲常"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.丁",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "丁"
+  },
+  "title": "渊海子平：日主丁的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于丁：把丁火比作烛灯：遇到太阳就被夺去光亮；得时令能熔铸金铁，失令则难熔；旺时像一座炉，衰时只像一盏灯。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·丁",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·丁#1",
+    "quote": "丁火其形一烛灯，太阳相见夺光明"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.戊",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "戊"
+  },
+  "title": "渊海子平：日主戊的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于戊：把戊土比作城墙与堤岸，要根基厚重才能镇住江河；柱中有合则形势壮实，日下虚弱则容易崩塌。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·戊",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·戊#1",
+    "quote": "戊土城墙堤岸同，振江河海要根重"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.己",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "己"
+  },
+  "title": "渊海子平：日主己的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于己：把己土比作田园，是大地中培育万物的根基；水、金旺则身弱，火土相成则格局最奇。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·己",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·己#1",
+    "quote": "己土田园属四维，坤深能为万物基"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.庚",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "庚"
+  },
+  "title": "渊海子平：日主庚的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于庚：把庚金比作顽钝刚硬的金属，要经火锻炼才成器，怕水多；夏天出生锻炼过度，秋天出生则有光芒。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·庚",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·庚#1",
+    "quote": "庚金顽钝性偏刚，火制功成怕水乡"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.辛",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "辛"
+  },
+  "title": "渊海子平：日主辛的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于辛：把辛金比作珠玉，灵秀通透，最爱阳和之气与清水；不需猛火煅炼，喜湿土相生，天寒水冷时要丙丁来暖。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·辛",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·辛#1",
+    "quote": "辛金珠玉性通灵，最爱阳和沙水清"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.壬",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "壬"
+  },
+  "title": "渊海子平：日主壬的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于壬：把壬水比作汪洋与百川，流布无边；干支水太多会漂荡，火土重重则水源干涸。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·壬",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·壬#1",
+    "quote": "壬水汪洋併百川，漫流天下总无边"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.stem.癸",
+  "topic": "day-master-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "day-master-xiang",
+   "stem": "癸"
+  },
+  "title": "渊海子平：日主癸的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写天干。关于癸：把癸水比作雨露，根通亥子才成江河；柱中没有水根则偏弱，有财官也不宜太多。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·癸",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·癸#1",
+    "quote": "癸水应非雨露麼，根通亥子即江河"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.子",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "子"
+  },
+  "title": "渊海子平：子月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于子：子月水旺，像溪涧大水；冬至阳气始回；柱中若有申、辰与它合成水局，水势便成江海。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·子",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·子#1",
+    "quote": "月支子水占魁名，溪涧汪洋不尽清"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.丑",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "丑"
+  },
+  "title": "渊海子平：丑月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于丑：严冬丑月寒气未尽，但阳气已在回转；丑是湿暖之土，能生万物，也能收藏寒金。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·丑",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·丑#1",
+    "quote": "隆冬建丑怯冰霜，谁识天时转二阳"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.寅",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "寅"
+  },
+  "title": "渊海子平：寅月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于寅：寅属艮宫之木，立春前后阳气渐聚，火也长生于寅；诗中提醒火多时嫌再行火地，燥木不宜向南。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·寅",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·寅#1",
+    "quote": "艮宫之木建于春，气聚三阳火在寅"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.卯",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "卯"
+  },
+  "title": "渊海子平：卯月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于卯：卯木在仲春繁茂，禀气深厚，但忌金多（庚辛申酉），水多（亥子癸壬）也忌；逢冲如落叶，逢三合则成林。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·卯",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·卯#1",
+    "quote": "卯木繁华稟气深，仲春难道不嫌金"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.辰",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "辰"
+  },
+  "title": "渊海子平：辰月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于辰：辰在三月，是湿润温和之土，能培养万木之根；甲木渐衰，乙木有余气，癸水入墓后仍可复起；需冲开才是“开库”。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·辰",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·辰#1",
+    "quote": "辰当三月水泥温，长养堪培万木根"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.巳",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "巳"
+  },
+  "title": "渊海子平：巳月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于巳：巳在初夏，火势渐盛，正当六阳之月；庚金长生于巳，戊土的禄也在巳。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·巳",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·巳#1",
+    "quote": "巳当初夏火增光，造化流行正六阳"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.午",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "午"
+  },
+  "title": "渊海子平：午月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于午：午月火正旺，六阳之后一阴初生；庚金在此失位，己土得位而有成。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·午",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·午#1",
+    "quote": "午月炎炎火正升，六阳气续一阴生"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.未",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "未"
+  },
+  "title": "渊海子平：未月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于未：未月火势渐衰，阴气渐深；诗中说“藏官藏印不藏财”，并提醒用神喜忌要分晓，原文对此没有展开，此处不替它多解释。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·未",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·未#1",
+    "quote": "未月阴深火渐衰，藏官藏印不藏财"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.申",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "申"
+  },
+  "title": "渊海子平：申月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于申：申金刚健，水与土长生于申；见巳午之火可炼成剑戟，与子辰合成水局则锋利有光。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·申",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·申#1",
+    "quote": "申金刚健月支逢，水土长生在此宫"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.酉",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "酉"
+  },
+  "title": "渊海子平：酉月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于酉：酉在八月，金白水清；火多的人行东方（寅卯）愁，木旺的人行南方怕火。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·酉",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·酉#1",
+    "quote": "八月从魁已得名，羡他金白水流清"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.戌",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "戌"
+  },
+  "title": "渊海子平：戌月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于戌：戌在九月，性最刚，是万物收藏之时；洪炉大火能成就顽金钝铁，火命逢之则另有说法。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·戌",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·戌#1",
+    "quote": "九月河魁性最刚，漫云于此物收藏"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.branch.亥",
+  "topic": "month-branch-xiang",
+  "when": {
+   "kind": "yhzp",
+   "topic": "month-branch-xiang",
+   "branch": "亥"
+  },
+  "title": "渊海子平：亥月的取象",
+  "plain": "《渊海子平》「干支体象」用诗来描写地支（月令）。关于亥：亥月水源深，天寒雨雪，正当六阴；后文讲亥月与哪些干支相逢的利弊，此处从略。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "干支体象·亥",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/干支体象·亥#1",
+    "quote": "登明之位水源深，雨雪生寒值六阴"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.xingqing.木",
+  "topic": "wuxing-xingqing",
+  "when": {
+   "kind": "yhzp",
+   "topic": "wuxing-xingqing",
+   "element": "木"
+  },
+  "title": "渊海子平：五行性情（木）",
+  "plain": "《渊海子平》「论性情」把五行配上性情与“五常”。日主五行属木：木主仁：有恻隐之心、慈祥和气、济物利民、恬静清高；“木盛多仁”，但太过则易折、执着偏性，不及则少仁、易生嫉妒。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论性情",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论性情#1",
+    "quote": "木曰曲直，味酸，主仁"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.xingqing.火",
+  "topic": "wuxing-xingqing",
+  "when": {
+   "kind": "yhzp",
+   "topic": "wuxing-xingqing",
+   "element": "火"
+  },
+  "title": "渊海子平：五行性情（火）",
+  "plain": "《渊海子平》「论性情」把五行配上性情与“五常”。日主五行属火：火主礼：有辞让之心、恭敬有威仪、质朴；言语急、心思急；太过则过分恭敬而性燥，不及则尖巧、有始无终。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论性情",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论性情#1",
+    "quote": "火曰炎上，味苦，主礼"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.xingqing.土",
+  "topic": "wuxing-xingqing",
+  "when": {
+   "kind": "yhzp",
+   "topic": "wuxing-xingqing",
+   "element": "土"
+  },
+  "title": "渊海子平：五行性情（土）",
+  "plain": "《渊海子平》「论性情」把五行配上性情与“五常”。日主五行属土：土主信：诚实敦厚、言行相顾、处事不轻、度量宽厚；太过则愚朴固执，不及则忧郁、固执。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论性情",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论性情#1",
+    "quote": "土曰稼穡勾陈，味甘，主信"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.xingqing.金",
+  "topic": "wuxing-xingqing",
+  "when": {
+   "kind": "yhzp",
+   "topic": "wuxing-xingqing",
+   "element": "金"
+  },
+  "title": "渊海子平：五行性情（金）",
+  "plain": "《渊海子平》「论性情」把五行配上性情与“五常”。日主五行属金：金主义：有羞恶之心、仗义疏财、勇敢刚毅、知廉耻；太过则缺仁心而好争，不及则多思虑、少果决、吝啬。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论性情",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论性情#1",
+    "quote": "金曰从革，味辛辣也，主义"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.xingqing.水",
+  "topic": "wuxing-xingqing",
+  "when": {
+   "kind": "yhzp",
+   "topic": "wuxing-xingqing",
+   "element": "水"
+  },
+  "title": "渊海子平：五行性情（水）",
+  "plain": "《渊海子平》「论性情」把五行配上性情与“五常”。日主五行属水：水主智：有是非之心、多谋、文学聪明、机变深远；太过则孤僻硬吝、不得人心，不及则胆小少谋。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论性情",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论性情#1",
+    "quote": "水曰润下，味咸，主智"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.伤官",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "伤官"
+  },
+  "title": "渊海子平：论伤官",
+  "plain": "《渊海子平》「论伤官」说伤官是“我生彼之谓”，主人多才艺、气高傲物；并反复强调“伤官见官”（四柱或岁运遇到官星）是此格的大忌，又说用伤官格要“见财方可用”，伤官伤尽反为奇。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论伤官",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论伤官#1",
+    "quote": "伤官者，我生彼之谓也"
+   },
+   {
+    "corpusRef": "yhzp/论伤官#1",
+    "quote": "伤官主人多才艺、傲物气高"
+   },
+   {
+    "corpusRef": "yhzp/论伤官#1",
+    "quote": "用伤官格局，见财方可用"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.食神",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "食神"
+  },
+  "title": "渊海子平：论食神",
+  "plain": "《渊海子平》「论食神」说食神是“生我财神”的一方，命中带此，主人财厚食丰、胸怀宽洪、优游自足；不喜官星和倒食（偏印），喜财神相生，也喜身旺。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论食神",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论食神#1",
+    "quote": "食神者，生我财神之谓也"
+   },
+   {
+    "corpusRef": "yhzp/论食神#1",
+    "quote": "恒不喜见官星，忌倒食，恐伤其食神；喜财神相生"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.正财",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "正财"
+  },
+  "title": "渊海子平：论正财",
+  "plain": "《渊海子平》「论正财」说财要“得时”而不要太多：身要健旺才担得起财，财多身弱则担不住；并说“财者，起争之端”，用财时最好不见官星。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论正财",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论正财#1",
+    "quote": "故财要得时，不要财多"
+   },
+   {
+    "corpusRef": "yhzp/论正财#1",
+    "quote": "盖，财者，起争之端也"
+   },
+   {
+    "corpusRef": "yhzp/论正财#1",
+    "quote": "凡用财，不见官星为妙"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.偏财",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "偏财"
+  },
+  "title": "渊海子平：论偏财",
+  "plain": "《渊海子平》「论偏财」说偏财是“众人之财”，怕兄弟姊妹分夺；偏财主人慷慨、不甚吝财；财盛而身弱时要小心，财与日主强弱相当才好。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论偏财",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论偏财#1",
+    "quote": "偏财者，乃众人之财也，只恐兄弟姊妹有夺之，则福不全"
+   },
+   {
+    "corpusRef": "yhzp/论偏财#1",
+    "quote": "偏财主人慷慨、不甚吝财"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.正官",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "正官"
+  },
+  "title": "渊海子平：论正官",
+  "plain": "《渊海子平》「论正官」说正官是“贵气之物”，要得月令，忌刑冲破害；多了反而不好，因为人命“宜得中和之气，太过与不及同”；官星须得印綬、身旺才发。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "正官论",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/正官论#1",
+    "quote": "正官乃贵气之物，大忌刑冲破害"
+   },
+   {
+    "corpusRef": "yhzp/正官论#1",
+    "quote": "正官或多，反不为福"
+   },
+   {
+    "corpusRef": "yhzp/正官论#1",
+    "quote": "大率官星须得印綬、身旺则发"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.七杀",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "七杀"
+  },
+  "title": "渊海子平：论偏官七杀",
+  "plain": "《渊海子平》「论偏官」「论七杀」说偏官就是七杀，要制伏；身旺有气叫偏官，身弱无制叫七杀；见到七杀“不可便言凶”，身旺而有制伏反而可能成大格局。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论偏官",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   },
+   {
+    "ref": "yhzp",
+    "section": "论七杀",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论偏官#1",
+    "quote": "偏官即七杀，要制伏"
+   },
+   {
+    "corpusRef": "yhzp/论七杀#1",
+    "quote": "身旺有气为偏官，身弱无制为七杀"
+   },
+   {
+    "corpusRef": "yhzp/论偏官#1",
+    "quote": "大抵偏官七杀，最喜身旺、有制伏为妙"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.印绶",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "印绶"
+  },
+  "title": "渊海子平：论印綬",
+  "plain": "《渊海子平》「论印綬」说印綬是“生我者”，主人智虑、少病、享现成禄；最忌财来乘旺，印要官星相生、官印两全为贵；月上的印最紧要。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论印綬",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论印綬#1",
+    "quote": "夫印綬者，生我之谓也，亦名生气"
+   },
+   {
+    "corpusRef": "yhzp/论印綬#1",
+    "quote": "印綬之人智虑、一生少病、能饱食丰厚、享见成财禄"
+   },
+   {
+    "corpusRef": "yhzp/论印綬#1",
+    "quote": "最忌财来乘旺，必生淹滞"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.倒食",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "倒食"
+  },
+  "title": "渊海子平：论倒食",
+  "plain": "《渊海子平》「论倒食」说倒食（即偏印）会冲坏食神、财神，所以用食神、财神时最忌见它，书中称其为“吞啗煞”；并说命带倒食者做事容易进退犹豫、有始无终。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论倒食",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论倒食#1",
+    "quote": "夫倒食者，冲财神之谓也；一名『吞啗煞』"
+   },
+   {
+    "corpusRef": "yhzp/论倒食#1",
+    "quote": "用财神大忌见之，用食神亦忌见之"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.劫财",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "劫财"
+  },
+  "title": "渊海子平：论劫财",
+  "plain": "《渊海子平》「论劫财」说劫财（又名败财、逆刃）是同类五行而分夺财的一方，主要提示破耗和防小人；并说财是人人想要的，兄弟之间遇到财多有争竞。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论劫财",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论劫财#1",
+    "quote": "亦名『逆刃』，如乙见甲为劫财"
+   },
+   {
+    "corpusRef": "yhzp/论劫财#1",
+    "quote": "五阴见五阳为劫财，主破耗、防小人，不剋妻"
+   },
+   {
+    "corpusRef": "yhzp/论劫财#1",
+    "quote": "财者，人之所欲，方令弟兄见之，多有争竞"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.官杀混杂",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "官杀混杂"
+  },
+  "title": "渊海子平：论官杀混杂",
+  "plain": "《渊海子平》「论官杀混杂要制伏」「论官星太过」说官星要纯、不要杂；官星多了就杂，要设法除而清之，混杂时要行火乡等制伏之运才好。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论官杀混杂要制伏",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   },
+   {
+    "ref": "yhzp",
+    "section": "论官星太过",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论官杀混杂要制伏#1",
+    "quote": "官星要纯，不要杂"
+   },
+   {
+    "corpusRef": "yhzp/论官星太过#1",
+    "quote": "大凡官星多则杂，务要除而清之，乃可发福"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.god.阳刃",
+  "topic": "ten-god",
+  "when": {
+   "kind": "yhzp",
+   "topic": "ten-god",
+   "god": "阳刃"
+  },
+  "title": "渊海子平：论阳刃",
+  "plain": "《渊海子平》「论阳刃」说阳刃是“禄前一位”，称它是“天上之凶星、人间之恶杀”，但又说有刃不可便言凶，与七杀相似，喜偏官七杀与印綬，忌反吟伏吟、魁罡、三合；身要旺，“杀无刃不显，刃无杀不威”。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论阳刃",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论阳刃#1",
+    "quote": "夫阳刃者，号天上之凶星，作人间之恶杀，以禄前一位是也"
+   },
+   {
+    "corpusRef": "yhzp/论阳刃#1",
+    "quote": "如命中有刃，不可便言凶，大率与七杀相似"
+   },
+   {
+    "corpusRef": "yhzp/论阳刃#1",
+    "quote": "喜偏官七杀，喜印綬；忌反吟伏吟，忌魁罡，忌三合"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.pillar.日贵",
+  "topic": "special-pillar",
+  "when": {
+   "kind": "yhzp",
+   "topic": "special-pillar",
+   "pillar": "日贵"
+  },
+  "title": "渊海子平：日贵",
+  "plain": "《渊海子平》「论日贵」说日贵只有四个日子：丁酉、丁亥、癸巳、癸卯，最怕刑冲破害；说其人纯粹、有仁德、不傲物；并说“贵人怕三刑六害”。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论日贵",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论日贵#1",
+    "quote": "止有四日：丁酉、丁亥、癸巳、癸卯耳"
+   },
+   {
+    "corpusRef": "yhzp/论日贵#1",
+    "quote": "主人纯粹、有仁德、有姿色，不傲物"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.pillar.日德",
+  "topic": "special-pillar",
+  "when": {
+   "kind": "yhzp",
+   "topic": "special-pillar",
+   "pillar": "日德"
+  },
+  "title": "渊海子平：日德",
+  "plain": "《渊海子平》「论日德」说日德有五日：甲寅、戊辰、丙辰、庚辰、壬戌；福要多，但忌刑冲破害、官星、财旺和魁罡；大抵主人性格慈善。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论日德",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论日德#1",
+    "quote": "日德有五：甲寅、戊辰、丙辰、庚辰、壬戌日是也"
+   },
+   {
+    "corpusRef": "yhzp/论日德#1",
+    "quote": "大抵日德，主人性格慈善"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.pillar.魁罡",
+  "topic": "special-pillar",
+  "when": {
+   "kind": "yhzp",
+   "topic": "special-pillar",
+   "pillar": "魁罡"
+  },
+  "title": "渊海子平：魁罡",
+  "plain": "《渊海子平》「论魁罡」说魁罡有四日：壬辰、庚戌、戊戌、庚辰；其人聪明、文章振发、临事有断，但性格刚猛；运行身旺则发福，一见财官则要特别谨慎。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论魁罡",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论魁罡#1",
+    "quote": "夫魁罡者有四：壬辰、庚戌、戊戌、庚辰日是也"
+   },
+   {
+    "corpusRef": "yhzp/论魁罡#1",
+    "quote": "主人性格聪明、文章振发、临事有断，惟是好杀"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.pillar.日刃",
+  "topic": "special-pillar",
+  "when": {
+   "kind": "yhzp",
+   "topic": "special-pillar",
+   "pillar": "日刃"
+  },
+  "title": "渊海子平：日刃",
+  "plain": "《渊海子平》「论日刃」说日刃有戊午、丙午、壬子三日，按阳刃同样的办法看；不喜刑冲破害，不喜会合、兼受七杀，要行官乡才为贵命。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论日刃",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论日刃#1",
+    "quote": "日刃有戊午、丙午、壬子也，与阳刃同法"
+   },
+   {
+    "corpusRef": "yhzp/论日刃#1",
+    "quote": "不喜刑冲破害，不喜会合、兼受七杀，要行官乡，便为贵命"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.pillar.金神",
+  "topic": "special-pillar",
+  "when": {
+   "kind": "yhzp",
+   "topic": "special-pillar",
+   "pillar": "金神"
+  },
+  "title": "渊海子平：金神",
+  "plain": "《渊海子平》「论金神」说金神只有三个时辰：癸酉、己巳、乙丑；金神是“破败之神”，要制伏，入火乡才为胜；运行火乡、四柱有火局为贵命，怕水乡。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论金神",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论金神#1",
+    "quote": "夫金神者，止有三时：癸酉、己巳、乙丑"
+   },
+   {
+    "corpusRef": "yhzp/论金神#1",
+    "quote": "金神乃破败之神，要制伏，入火乡为胜"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.zheng",
+  "topic": "zheng",
+  "when": {
+   "kind": "yhzp",
+   "topic": "zheng"
+  },
+  "title": "渊海子平：征太岁",
+  "plain": "《渊海子平》「论征太岁」把日干支与流年（太岁）的冲克称为“征”，征是“战”的意思，如同臣子触犯君主；大运的干支伤冲太岁、太岁干支冲日干支也叫征，但“看八字有无救助”，要结合全局来看。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论征太岁",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论征太岁#1",
+    "quote": "征者，战也；如臣触其君，乃下犯上之意"
+   },
+   {
+    "corpusRef": "yhzp/论征太岁#1",
+    "quote": "日干支冲剋太岁曰征，运支干伤冲太岁亦曰征，太岁干支冲日干支者亦曰征；但看八字有无救助"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
+ },
+ {
+  "id": "bz.yhzp.hui",
+  "topic": "hui",
+  "when": {
+   "kind": "yhzp",
+   "topic": "hui"
+  },
+  "title": "渊海子平：晦（合太岁）",
+  "plain": "《渊海子平》「论征太岁」把日干支与流年干支相合称为“晦”，岁运合岁干也一样；书中说遇到“晦”主晦气，一年里事情反覆、欲速不达。以上是传统说法，并不代表现实中一定如此；电子本版本未核实。",
+  "evidenceType": "school",
+  "sources": [
+   {
+    "ref": "yhzp",
+    "section": "论征太岁",
+    "note": "【版本未核实】引文来自第三方电子书转录本，整理者与底本不明，须对照影印本核对"
+   }
+  ],
+  "classical": [
+   {
+    "corpusRef": "yhzp/论征太岁#1",
+    "quote": "日干支合太岁干支曰晦，岁运合岁干亦然；遇此者主晦气，一年反覆、欲速不达"
+   }
+  ],
+  "review": {
+   "status": "draft",
+   "reviewer": null,
+   "date": null,
+   "note": null,
+   "history": []
+  },
+  "basis": "quoted"
  }
 ]

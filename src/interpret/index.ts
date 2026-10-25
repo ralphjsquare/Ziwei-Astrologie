@@ -6,6 +6,7 @@ import { ziweiYearLayer } from '../ziwei/timelayers';
 import { baziYearLayer } from '../bazi/timelayers';
 import { PALACE_NAMES } from '../ziwei/types';
 import { tenGodOf } from '../bazi/engine-util';
+import { yhzpNatal, yhzpYear } from './yhzp';
 import { BASIS_LABEL, EVIDENCE_LABEL, REVIEW_LABEL, fill, type EvidenceType, type ReviewStatus, type Rule, type RuleSet } from '../rules';
 
 export interface InterpSource { book: string; section?: string; note?: string; edition: string; verified: boolean }
@@ -143,6 +144,11 @@ export function interpretNatal(b: ChartBundle, R: RuleSet): InterpSection[] {
   }
 
   {
+    const its = yhzpNatal(bz, (id, context) => toItem(R, need(R, id), need(R, id).plain, context));
+    sections.push({ id: 'bz-yhzp', heading: '八字·《渊海子平》参照（电子本版本未核实）', items: its });
+  }
+
+  {
     const PN = { year: '年柱', month: '月柱', day: '日柱', hour: '时柱' };
     const ss: InterpItem[] = [];
     for (const name of SHENSHA_NAMES) {
@@ -222,6 +228,7 @@ export function interpretYear(b: ChartBundle, year: number, R: RuleSet): InterpS
     const rr = R.byId.get(`bz.rel.${rel.type}`);
     if (rr) bi.push(toItem(R, rr, rr.plain, rel.members.map((m) => `${m.pos}${m.char}`).join('、') + (rel.element ? `（${rel.element}）` : '')));
   }
+  bi.push(...yhzpYear(b.bazi, bl.stem, bl.branch, bl.activeLuck, (id, context) => toItem(R, need(R, id), need(R, id).plain, context)));
   secs.push({ id: 'bz-year', heading: `八字·${year}年流年`, items: bi });
   return secs;
 }
