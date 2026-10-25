@@ -7,6 +7,7 @@ import { RULES, REVIEW_LABEL, SOURCE_CLASS_LABEL, rulesContentHash, type ReviewS
 import { interpretNatal, interpretYear, ruleItem, DISCLAIMER, type InterpItem, type InterpSection } from '../src/interpret';
 import { GLOSSARY, glossaryFor, type GlossaryGroup } from '../src/rules/glossary';
 import { summarize } from '../src/interpret/summary';
+import { buildReport, reportToMarkdown, TAG_LABEL } from '../src/interpret/report';
 import { ELEMENTS, elementCounts, lifeTimeline, tenGodCounts } from '../src/interpret/stats';
 import { TEN_GODS } from '../src/bazi/tables';
 import { barChart, timelineChart } from './charts';
@@ -17,7 +18,7 @@ import { IndexedDbStorage, exportArchive, importArchive, makeRecord, openRecord,
 
 const $ = <T extends HTMLElement>(sel: string, root: ParentNode = document) => root.querySelector(sel) as T;
 const esc = (s: unknown) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
-const TABS: [string, string][] = [['chart', '命盘'], ['time', '时间层'], ['cross', '对照'], ['syn', '合盘'], ['sum', '一页读懂'], ['read', '解读'], ['gloss', '名词'], ['archive', '存档'], ['settings', '设置与导出']];
+const TABS: [string, string][] = [['chart', '命盘'], ['report', '白话报告'], ['time', '时间层'], ['cross', '对照'], ['syn', '合盘'], ['sum', '一页读懂'], ['read', '解读'], ['gloss', '名词'], ['archive', '存档'], ['settings', '设置与导出']];
 
 interface State {
   partner: ChartBundle | null; partnerError: string; pv: Record<string, string>; bundle: ChartBundle | null; tab: string; year: number; onlyReviewed: boolean;
@@ -150,6 +151,33 @@ function sumHtml(b: ChartBundle): string {
     ${timelineChart(lifeTimeline(b.ziwei, b.bazi, clampYear(b)))}</section>`;
   return `<div class="warn">${esc(DISCLAIMER)} 这一页只是把命盘里已有的内容用白话归拢，没有新增断语，也没有“综合评分”。每一条都可展开看出处与审核状态。</div>${blocks}${graphics}`;
 }
+// ---- 白话报告 ----
+let fontScale = 1;
+try { const v = Number(localStorage.getItem('zw-font')); if (v >= 0.85 && v <= 1.5) fontScale = v; } catch { /* 无本地存储时用默认字号 */ }
+const GTERMS = GLOSSARY.filter((e) => e.term.length >= 2);
+const GRE = new RegExp([...new Set(GTERMS.map((e) => e.term))].sort((a, c) => c.length - a.length).join('|'), 'g');
+/** 把文字里第一次出现的术语加上虚线下划线与悬停解释（只处理已转义的纯文本） */
+function linkTerms(plain: string, seen: Set<string>): string {
+  return esc(plain).replace(GRE, (t) => {
+    if (seen.has(t)) return t;
+    seen.add(t);
+    const e = glossaryFor(t);
+    return e ? `<span class="g" title="${esc(e.plain)}">${t}</span>` : t;
+  });
+}
+function reportHtml(b: ChartBundle): string {
+  const rep = buildReport(b, RULES, clampYear(b), st.savedName);
+  const seen = new Set<string>();
+  const toc = rep.sections.map((s) => `<a href="#rp-${s.id}">${esc(s.heading.replace(/（.*）/, ''))}</a>`).join('');
+  const secs = rep.sections.map((s) => `<section id="rp-${s.id}"><h3>${esc(s.heading)}</h3>${s.paras.map((p) => `<p class="rp rp-${p.tag}">${linkTerms(p.text, seen)}${p.tag === 'note' ? '' : ` <span class="tg tg-${p.tag}">${TAG_LABEL[p.tag]}</span>`}</p>${p.ruleId ? `<details class="src"><summary>出处与审核状态</summary>${itemHtml(ruleItem(RULES, p.ruleId, undefined, ''))}</details>` : ''}`).join('')}</section>`).join('');
+  return `<div class="card rp-tools"><div class="row">
+      <label class="inline">查看年份 <input id="ryr" type="number" min="${SUPPORTED_MIN_YEAR}" max="${SUPPORTED_MAX_YEAR}" value="${clampYear(b)}" style="width:6em"></label>
+      <span class="note">字号</span><button type="button" class="secondary" id="fsm" aria-label="缩小字号">A−</button><button type="button" class="secondary" id="fsp" aria-label="放大字号">A＋</button>
+      <button type="button" id="rpmd">导出 Markdown</button><button type="button" class="secondary" id="rppr">打印／存为 PDF</button></div>
+    <nav class="rp-toc">${toc}</nav></div>
+    <article class="card report" style="font-size:${(17 * fontScale).toFixed(1)}px">${secs}</article>`;
+}
+
 function glossHtml(): string {
   const groups: GlossaryGroup[] = ['通用', '紫微', '八字'];
   return `<div class="card"><h3>名词小词典</h3><p class="note">只解释“这个词在排盘里指什么”，不含吉凶断语。命盘页里带虚线下划线的词，鼠标停留（手机上长按）即可看到同样的解释。</p>
@@ -283,6 +311,7 @@ async function render() {
   else if (st.tab === 'time' && b) body = timeHtml(b);
   else if (st.tab === 'cross' && b) body = crossHtml(b);
   else if (st.tab === 'syn' && b) body = synHtml(b);
+  else if (st.tab === 'report' && b) body = reportHtml(b);
   else if (st.tab === 'sum' && b) body = sumHtml(b);
   else if (st.tab === 'gloss') body = glossHtml();
   else if (st.tab === 'read' && b) body = sectionsHtml([...interpretNatal(b, RULES), ...interpretYear(b, clampYear(b), RULES)]);
@@ -342,6 +371,15 @@ function bindTab() {
       } catch (e) { st.partner = null; st.partnerError = (e as Error).message; }
       void render();
     });
+  }
+  if (st.tab === 'report' && st.bundle) {
+    const b = st.bundle;
+    const setFs = (d: number) => { fontScale = Math.min(1.5, Math.max(0.85, +(fontScale + d).toFixed(2))); try { localStorage.setItem('zw-font', String(fontScale)); } catch { /* 忽略 */ } void render(); };
+    $('#fsm').addEventListener('click', () => setFs(-0.1));
+    $('#fsp').addEventListener('click', () => setFs(0.1));
+    $('#ryr').addEventListener('change', () => { st.year = Number(($('#ryr') as HTMLInputElement).value); void render(); });
+    $('#rpmd').addEventListener('click', () => download('白话解读报告.md', reportToMarkdown(buildReport(b, RULES, clampYear(b), st.savedName), today()), 'text/markdown'));
+    $('#rppr').addEventListener('click', () => window.print());
   }
   if (st.tab === 'gloss') $('#gq').addEventListener('input', (e) => { const q = (e.target as HTMLInputElement).value.trim(); document.querySelectorAll<HTMLElement>('.gl-item').forEach((el) => { el.hidden = q !== '' && !el.dataset.t!.includes(q); }); });
   if (st.tab === 'time') $('#yr').addEventListener('change', () => { st.year = Number(($('#yr') as HTMLInputElement).value); void render(); });

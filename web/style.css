@@ -84,3 +84,13 @@ details ul { margin: 4px 0; padding-left: 18px; }
 .g { border-bottom: 1px dotted var(--muted); cursor: help; }
 .gl-group h4 { margin: 14px 0 4px; } .gl-item { margin: 4px 0; } .gl-item b { margin-right: 6px; }
 .gods { font-size: 10.5px; color: var(--muted); margin-bottom: 2px; }
+
+.rp-tools .row { margin: 0 0 8px; } .rp-toc { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; } .rp-toc a { color: var(--accent); text-decoration: none; }
+.report { max-width: 44em; margin-left: auto; margin-right: auto; line-height: 1.95; padding: 20px 24px; }
+.report h3 { margin: 28px 0 8px; font-size: 1.15em; padding-bottom: 4px; border-bottom: 1px solid var(--line); } .report section:first-child h3 { margin-top: 0; }
+.report .rp { margin: 0 0 10px; padding-left: 10px; border-left: 3px solid var(--line); }
+.report .rp-fact { border-color: var(--other); } .report .rp-trad { border-color: var(--ke); } .report .rp-modern { border-color: var(--quan); } .report .rp-note { border-left-style: dotted; color: var(--muted); }
+.tg { font-size: .68em; padding: 0 6px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); white-space: nowrap; vertical-align: .1em; }
+.report .src { margin: -4px 0 12px 13px; }
+@media (max-width: 700px) { .report { padding: 14px 12px; } }
+@media print { .rp-tools, .report .src { display: none !important; } .report { border: 0; max-width: none; } .tg { border-color: #999; color: #555; } }
