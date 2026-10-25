@@ -169,7 +169,7 @@ function reportHtml(b: ChartBundle): string {
   const rep = buildReport(b, RULES, clampYear(b), st.savedName);
   const seen = new Set<string>();
   const toc = rep.sections.map((s) => `<a href="#rp-${s.id}">${esc(s.heading.replace(/（.*）/, ''))}</a>`).join('');
-  const secs = rep.sections.map((s) => `<section id="rp-${s.id}"><h3>${esc(s.heading)}</h3>${s.paras.map((p) => `<p class="rp rp-${p.tag}">${linkTerms(p.text, seen)}${p.tag === 'note' ? '' : ` <span class="tg tg-${p.tag}">${TAG_LABEL[p.tag]}</span>`}</p>${p.ruleId ? `<details class="src"><summary>出处与审核状态</summary>${itemHtml(ruleItem(RULES, p.ruleId, undefined, ''))}</details>` : ''}`).join('')}</section>`).join('');
+  const secs = rep.sections.map((s) => `<section id="rp-${s.id}"><h3>${esc(s.heading)}</h3>${s.paras.map((p) => `<p class="rp rp-${p.tag}">${linkTerms(p.text, seen)}${p.tag === 'note' ? '' : ` <span class="tg tg-${p.tag}">${TAG_LABEL[p.tag]}</span>`}</p>${p.ruleId ? `<details class="src"><summary>${p.tag === 'modern' ? '相关的古籍条目（本段文字是现代整理，不是这条的原文）' : '出处与审核状态'}</summary>${itemHtml(ruleItem(RULES, p.ruleId, undefined, ''))}</details>` : ''}`).join('')}</section>`).join('');
   return `<div class="card rp-tools"><div class="row">
       <label class="inline">查看年份 <input id="ryr" type="number" min="${SUPPORTED_MIN_YEAR}" max="${SUPPORTED_MAX_YEAR}" value="${clampYear(b)}" style="width:6em"></label>
       <span class="note">字号</span><button type="button" class="secondary" id="fsm" aria-label="缩小字号">A−</button><button type="button" class="secondary" id="fsp" aria-label="放大字号">A＋</button>
