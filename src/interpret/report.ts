@@ -10,7 +10,7 @@ import type { RuleSet } from '../rules';
 import { DISCLAIMER, ruleItem } from './index';
 import { tenGodCounts } from './stats';
 import { yhzpNatal, yhzpYear } from './yhzp';
-import { COMBO_READING, ELEMENT_NOTE, GOD_ABSENT, GOD_PHASE, GOD_READING, JI_CHONG, MULTI_TRANSFORM, PALACE_FRAME, PATTERN_READING, PILLAR_DOMAIN, PILLAR_NAME, POS_DOMAIN, REL_MEANING, SPOUSE_GOD, STAR_ORDER_FOR_COMBO, STAR_READING, TAG_LABEL_ZH, TRANSFORM_PHASE, type Tag } from './reading-data';
+import { HEALTH_ACTION, COMBO_READING, ELEMENT_PRACTICE, GOD_ABSENT_PRACTICE, GOD_PRACTICE, PALACE_PRACTICE, SPOUSE_TIP, STAR_PRACTICE, TRANSFORM_ACTION, ELEMENT_NOTE, GOD_ABSENT, GOD_PHASE, GOD_READING, JI_CHONG, MULTI_TRANSFORM, PALACE_FRAME, PATTERN_READING, PILLAR_DOMAIN, PILLAR_NAME, POS_DOMAIN, REL_MEANING, SPOUSE_GOD, STAR_ORDER_FOR_COMBO, STAR_READING, TAG_LABEL_ZH, TRANSFORM_PHASE, type Tag } from './reading-data';
 import { sihuaFor } from '../ziwei/tables';
 import { elementCounts } from './stats';
 
@@ -277,6 +277,58 @@ export function buildReport(b: ChartBundle, R: RuleSet, year: number, name = '')
     for (const it of yhzpYear(bz, bl.stem, bl.branch, bl.activeLuck, mk)) nowP.push({ tag: 'trad', text: `${it.context}。${stripTail(it.text)}`, ruleId: it.ruleId });
   } catch { nowP.push({ tag: 'note', text: `${year} 年超出支持范围，无法显示这一部分。` }); }
   sections.push({ id: 'now', heading: `眼下：${year} 年`, paras: nowP });
+
+  // 生活中怎么用
+  {
+    const ap: ReportPara[] = [{ tag: 'note', text: '前面讲的是“盘里有什么”，这一节讲“放到日常里可以怎么用”。这里的做法都是自我观察和日常习惯层面的参考，不是替你做决定；涉及健康、财务、婚姻、法律等重要事项，请以现实中的信息和专业意见为准。' }];
+    const ming = mingSeen.stars.slice(0, 2);
+    const act = (palace: string, t: string) => (palace === '疾厄' ? HEALTH_ACTION[t] : TRANSFORM_ACTION[t]);
+    // 1 发挥优势
+    const use: string[] = ming.map((st) => `命宫的${st}：${STAR_PRACTICE[st].use}`);
+    const luPal = starPalace(z.fourTransforms.lu);
+    if (luPal) use.push(`出生年的化禄（${z.fourTransforms.lu}）落在${pnm(luPal.name)}，这方面较容易有机会，可以多把精力放在“${PALACE_PRACTICE[luPal.name]}”上`);
+    if (use.length) ap.push({ tag: 'modern', text: `先说怎么发挥优势。${use.join('；')}。` });
+    // 2 补盲点
+    const habit: string[] = ming.map((st) => `命宫的${st}：${STAR_PRACTICE[st].habit}`);
+    if (jiPal) habit.push(`出生年的化忌（${jiStar}）落在${pnm(jiPal.name)}，在“${PALACE_PRACTICE[jiPal.name]}”上，${act(jiPal.name, '忌')}`);
+    ap.push({ tag: 'modern', text: `再说怎么补盲点。${habit.join('；')}。` });
+    // 3 八字的缺与多
+    const el2: string[] = [...manyEl.map((e) => `${e}偏多：${ELEMENT_PRACTICE[e].many}`), ...lackEl.map((e) => `缺${e}：${ELEMENT_PRACTICE[e].none}`)];
+    const gp: string[] = [];
+    if (grp0(['比肩', '劫财']) === 0) gp.push(`没有比劫：${GOD_ABSENT_PRACTICE.比劫}`);
+    if (grp0(['食神', '伤官']) === 0) gp.push(`没有食伤：${GOD_ABSENT_PRACTICE.食伤}`);
+    if (grp0(['正财', '偏财']) === 0) gp.push(`没有财星：${GOD_ABSENT_PRACTICE.财}`);
+    if (grp0(['正官', '七杀']) === 0) gp.push(`没有官杀：${GOD_ABSENT_PRACTICE.官杀}`);
+    if (grp0(['正印', '偏印']) === 0) gp.push(`没有印星：${GOD_ABSENT_PRACTICE.印}`);
+    const topPr = GOD_PRACTICE[topGod];
+    if (el2.length || gp.length) ap.push({ tag: 'modern', text: `八字的偏多与缺失，也可以变成日常的小习惯。${[...el2, ...gp].join('；')}。` });
+    ap.push({ tag: 'modern', text: `八字里${topGod}最突出，把它的长处用好：${topPr.focus}；同时留意：${topPr.watch}。` });
+    // 4 与伴侣相处
+    const sg = P.day.hidden[0].tenGod;
+    ap.push({ tag: 'modern', text: `和伴侣相处：从配偶宫看，${SPOUSE_GOD[sg]}。可以参考的相处方式：${SPOUSE_TIP[sg]}。这只是一个角度，真实的关系要看两个人的实际沟通。` });
+    // 5 眼下怎么安排
+    try {
+      const zl = ziweiYearLayer(z, year), bl = baziYearLayer(bz, year);
+      const now: string[] = [];
+      if (bl.activeLuck) { const g = GOD_PRACTICE[bl.activeLuck.stemTenGod]; now.push(`这十年的大运偏向“${GOD_PHASE[bl.activeLuck.stemTenGod]}”，较适合把重心放在${g.focus}；要留意${g.watch}`); }
+      if (zl.decade) now.push(`紫微大限的重点领域是“${PALACE_PRACTICE[zl.decade.palaceName]}”，这十年里不妨在这方面多花一点心思`);
+      const yg = GOD_PRACTICE[bl.stemTenGod];
+      now.push(`${year} 年的主题偏向“${GOD_PHASE[bl.stemTenGod]}”，较适合${yg.focus}；要留意${yg.watch}`);
+      ap.push({ tag: 'modern', text: `眼下怎么安排。${now.join('；')}。` });
+      const fl = zl.transforms.map((t) => `${t.star}化${t.transform}落在${pnm(t.natalPalace)}（${PALACE_PRACTICE[t.natalPalace]}）：${act(t.natalPalace, t.transform)}`);
+      ap.push({ tag: 'modern', text: `${year} 年流年四化给出的几个关注点。${fl.join('；')}。` });
+      // 6 小练习
+      const q: string[] = [];
+      if (jiPal) q.push(`在“${PALACE_PRACTICE[jiPal.name]}”上，最近最让你费心的事是什么？有没有一个可以先动手改的小细节？`);
+      const fj = zl.transforms.find((t) => t.transform === '忌');
+      if (fj) q.push(`今年在“${PALACE_PRACTICE[fj.natalPalace]}”上，有没有可以提前留出缓冲、提前沟通的安排？`);
+      const fl2 = zl.transforms.find((t) => t.transform === '禄');
+      if (fl2) q.push(`今年在“${PALACE_PRACTICE[fl2.natalPalace]}”上较容易有机会，你想把哪一件事做成？`);
+      q.push('回头看过去三年，哪些做法让你比较顺，哪些做法反复卡住？这些和上面讲的取象有没有对得上的地方？');
+      ap.push({ tag: 'modern', text: `最后给几个可以自己想一想的问题：${q.map((x, i) => `（${i + 1}）${x}`).join('')}` });
+    } catch { /* 年份超出范围时略过 */ }
+    sections.push({ id: 'apply', heading: '生活中怎么用', paras: ap });
+  }
 
   // 延伸阅读：渊海子平
   const ext = yhzpNatal(bz, (id, context) => ruleItem(R, id, undefined, context));

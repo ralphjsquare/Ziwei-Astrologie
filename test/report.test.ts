@@ -10,7 +10,7 @@ describe('白话解读报告', () => {
     for (const inp of cases) {
       const b = computeCharts(inp);
       const rep = buildReport(b, RULES, b.ziwei.input.lunarYear + 25);
-      expect(rep.sections.map((s) => s.id)).toEqual(['how', 'overview', 'keys', 'glance', 'character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'life', 'now', 'ext', 'limits']);
+      expect(rep.sections.map((s) => s.id)).toEqual(['how', 'overview', 'keys', 'glance', 'character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'life', 'now', 'apply', 'ext', 'limits']);
       for (const s of rep.sections) for (const p of s.paras) {
         expect(lintText(p.text), `${s.id}: ${p.text}`).toEqual([]);
         expect(p.text, `${s.id}: ${p.text}`).not.toMatch(/undefined|NaN|\{\w+\}/);
@@ -42,6 +42,12 @@ describe('白话解读报告', () => {
     expect(all('bazideep')).toContain('没有金');
     expect(all('life').split('\n').filter((l) => /^\d+–\d+ 岁/.test(l)).length).toBe(9);
     expect(all('now')).toContain('这十年的大限天干是甲，大限四化');
+  });
+  it('生活中怎么用：用户盘的要点齐全，且不下指令、不涉及具体投资医疗婚姻决定', () => {
+    const b = computeCharts(cases[0]);
+    const ap = buildReport(b, RULES, 2026).sections.find((x) => x.id === 'apply')!.paras.map((p) => p.text).join('\n');
+    for (const t of ['先说怎么发挥优势', '命宫的天相', '再说怎么补盲点', '化忌（天机）落在子女宫', '缺金', '和伴侣相处', '眼下怎么安排', '最后给几个可以自己想一想的问题']) expect(ap).toContain(t);
+    expect(ap).not.toMatch(/应该|必须|一定要|务必|买入|卖出|结婚|离婚|服药|手术|辞职/);
   });
   it('Markdown 导出包含标题、各节标题与来源标记', () => {
     const b = computeCharts(cases[1]);
