@@ -94,3 +94,5 @@ details ul { margin: 4px 0; padding-left: 18px; }
 .report .src { margin: -4px 0 12px 13px; }
 @media (max-width: 700px) { .report { padding: 14px 12px; } }
 @media print { .rp-tools, .report .src { display: none !important; } .report { border: 0; max-width: none; } .tg { border-color: #999; color: #555; } }
+.report .rp-apply { border-color: var(--lu); background: color-mix(in srgb, var(--lu) 7%, var(--card)); padding: 6px 10px; margin-left: 14px; border-radius: 0 6px 6px 0; }
+.tg-apply { color: var(--lu); border-color: var(--lu); }

@@ -10,7 +10,7 @@ describe('白话解读报告', () => {
     for (const inp of cases) {
       const b = computeCharts(inp);
       const rep = buildReport(b, RULES, b.ziwei.input.lunarYear + 25);
-      expect(rep.sections.map((s) => s.id)).toEqual(['how', 'overview', 'keys', 'glance', 'character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'life', 'now', 'apply', 'ext', 'limits']);
+      expect(rep.sections.map((s) => s.id)).toEqual(['how', 'overview', 'keys', 'glance', 'character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'life', 'now', 'ask', 'ext', 'limits']);
       for (const s of rep.sections) for (const p of s.paras) {
         expect(lintText(p.text), `${s.id}: ${p.text}`).toEqual([]);
         expect(p.text, `${s.id}: ${p.text}`).not.toMatch(/undefined|NaN|\{\w+\}/);
@@ -43,11 +43,25 @@ describe('白话解读报告', () => {
     expect(all('life').split('\n').filter((l) => /^\d+–\d+ 岁/.test(l)).length).toBe(9);
     expect(all('now')).toContain('这十年的大限天干是甲，大限四化');
   });
-  it('生活中怎么用：用户盘的要点齐全，且不下指令、不涉及具体投资医疗婚姻决定', () => {
+  it('“怎么用”紧跟在解读后面：用户盘各处都有，且不下指令、不涉及具体投资医疗婚姻决定', () => {
     const b = computeCharts(cases[0]);
-    const ap = buildReport(b, RULES, 2026).sections.find((x) => x.id === 'apply')!.paras.map((p) => p.text).join('\n');
-    for (const t of ['先说怎么发挥优势', '命宫的天相', '再说怎么补盲点', '化忌（天机）落在子女宫', '缺金', '和伴侣相处', '眼下怎么安排', '最后给几个可以自己想一想的问题']) expect(ap).toContain(t);
-    expect(ap).not.toMatch(/应该|必须|一定要|务必|买入|卖出|结婚|离婚|服药|手术|辞职/);
+    const rep = buildReport(b, RULES, 2026);
+    const get = (id: string) => rep.sections.find((x) => x.id === id)!.paras;
+    // 每个有解读的小节里都有“怎么用”，并且紧跟在对应解读之后
+    for (const id of ['character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'now']) expect(get(id).some((p) => p.tag === 'apply'), id).toBe(true);
+    const ch = get('character');
+    expect(ch[0].text).toContain('紫微命宫在亥宫');
+    expect(ch[1].tag).toBe('apply');
+    expect(ch[1].text).toContain('天相的长处可以这样用');
+    const career = get('career');
+    expect(career[0].text).toContain('事业上');
+    expect(career[1].tag).toBe('apply');
+    expect(get('love').some((p) => p.tag === 'apply' && p.text.includes('言而有信'))).toBe(true);
+    expect(get('sihua').some((p) => p.tag === 'apply' && p.text.includes('疾厄') === false)).toBe(true);
+    expect(get('life').some((p) => p.text.includes('较适合'))).toBe(true);
+    const all = rep.sections.flatMap((s) => s.paras).filter((p) => p.tag === 'apply').map((p) => p.text).join('\n');
+    expect(all).not.toMatch(/应该|必须|一定要|务必|买入|卖出|结婚|离婚|服药|手术|辞职/);
+    expect(all).toContain('身体有不适时请咨询专业医生');
   });
   it('Markdown 导出包含标题、各节标题与来源标记', () => {
     const b = computeCharts(cases[1]);
