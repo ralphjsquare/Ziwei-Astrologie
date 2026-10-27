@@ -10,11 +10,12 @@ describe('白话解读报告', () => {
     for (const inp of cases) {
       const b = computeCharts(inp);
       const rep = buildReport(b, RULES, b.ziwei.input.lunarYear + 25);
-      expect(rep.sections.map((s) => s.id)).toEqual(['how', 'overview', 'glance', 'character', 'career', 'love', 'mind', 'sihua', 'now', 'ext', 'limits']);
+      expect(rep.sections.map((s) => s.id)).toEqual(['how', 'overview', 'keys', 'glance', 'character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'life', 'now', 'ext', 'limits']);
       for (const s of rep.sections) for (const p of s.paras) {
         expect(lintText(p.text), `${s.id}: ${p.text}`).toEqual([]);
         expect(p.text, `${s.id}: ${p.text}`).not.toMatch(/undefined|NaN|\{\w+\}/);
         expect(p.text).not.toMatch(/评分|总分|综合运势|运势指数/);
+        expect(p.text, p.text).not.toContain('宫宫');
         if (p.ruleId) expect(RULES.byId.has(p.ruleId), p.ruleId).toBe(true);
       }
     }
@@ -28,6 +29,19 @@ describe('白话解读报告', () => {
     const now = r1.sections.find((s) => s.id === 'now')!.paras.map((p) => p.text).join('\n');
     expect(now).toContain('2026 年');
     expect(now).toContain('廉贞化忌落在福德宫');
+  });
+  it('用户盘的深入内容：三方四正、同宫组合、化忌对宫、配偶宫、十年一页、大限四化', () => {
+    const b = computeCharts(cases[0]);
+    const all = (id: string) => buildReport(b, RULES, 2026).sections.find((x) => x.id === id)!.paras.map((p) => p.text).join('\n');
+    expect(all('character')).toContain('三方四正');
+    expect(all('character')).toContain('命宫（亥，天相）');
+    expect(all('career')).toContain('紫微、贪狼同宫的组合');
+    expect(all('sihua')).toContain('化忌的对宫：天机化忌在子女宫，它的对宫是田宅宫');
+    expect(all('sihua')).toContain('子女宫里同时有天机化忌、太阴化权');
+    expect(all('love')).toContain('日支亥是配偶宫，本气是正官');
+    expect(all('bazideep')).toContain('没有金');
+    expect(all('life').split('\n').filter((l) => /^\d+–\d+ 岁/.test(l)).length).toBe(9);
+    expect(all('now')).toContain('这十年的大限天干是甲，大限四化');
   });
   it('Markdown 导出包含标题、各节标题与来源标记', () => {
     const b = computeCharts(cases[1]);

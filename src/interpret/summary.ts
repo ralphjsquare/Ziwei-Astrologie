@@ -11,6 +11,7 @@ import type { RuleSet } from '../rules';
 import { ruleItem, type InterpItem } from './index';
 import { tenGodCounts } from './stats';
 
+const pnm = (n: string) => (n.endsWith('宫') ? n : n + '宫');
 export interface SummaryPoint { label: string; text: string; /** 文字里“传统取象”部分的性质，供界面标注 */ tag: string; item: InterpItem }
 export interface SummaryBlock { id: string; heading: string; lead: string; points: SummaryPoint[] }
 
@@ -63,7 +64,7 @@ export function summarize(b: ChartBundle, R: RuleSet, year: number): SummaryBloc
   const tf: SummaryPoint[] = [];
   for (const p of z.palaces) for (const s of p.stars.filter((x) => x.transform)) {
     const t = s.transform!, meaning = R.byId.get(`zw.transform.${t}`)!.data!.meaning;
-    tf.push({ label: `${s.name}化${t}`, text: `${s.name}化${t}，落在${p.name}宫（管“${R.byId.get(`zw.palace.${p.name}`)!.data!.domain}”）。化${t}的传统取象是“${meaning}”，传统上把它放在这个宫所管的方面来理解。`, tag: TAG_TRAD, item: ruleItem(R, `zw.transform.${t}`, undefined, `${s.name}化${t}在${p.name}宫`) });
+    tf.push({ label: `${s.name}化${t}`, text: `${s.name}化${t}，落在${pnm(p.name)}（管“${R.byId.get(`zw.palace.${p.name}`)!.data!.domain}”）。化${t}的传统取象是“${meaning}”，传统上把它放在这个宫所管的方面来理解。`, tag: TAG_TRAD, item: ruleItem(R, `zw.transform.${t}`, undefined, `${s.name}化${t}在${pnm(p.name)}`) });
   }
   out.push({ id: 'sum-sihua', heading: '出生年带来的四化', lead: `${STEMS[z.yearStem]}年生，四化是 ${z.fourTransforms.lu}化禄、${z.fourTransforms.quan}化权、${z.fourTransforms.ke}化科、${z.fourTransforms.ji}化忌。`, points: tf });
 
