@@ -10,8 +10,9 @@ import type { RuleSet } from '../rules';
 import { DISCLAIMER, ruleItem } from './index';
 import { tenGodCounts } from './stats';
 import { yhzpNatal, yhzpYear } from './yhzp';
-import { STRENGTH_PRACTICE, HEALTH_ACTION, COMBO_READING, ELEMENT_PRACTICE, GOD_ABSENT_PRACTICE, GOD_PRACTICE, PALACE_PRACTICE, SPOUSE_TIP, STAR_PRACTICE, TRANSFORM_ACTION, ELEMENT_NOTE, GOD_ABSENT, GOD_PHASE, GOD_READING, JI_CHONG, MULTI_TRANSFORM, PALACE_FRAME, PATTERN_READING, PILLAR_DOMAIN, PILLAR_NAME, POS_DOMAIN, REL_MEANING, SPOUSE_GOD, STAR_ORDER_FOR_COMBO, STAR_READING, TAG_LABEL_ZH, TRANSFORM_PHASE, type Tag } from './reading-data';
+import { GROUP_NOTE, STRENGTH_PRACTICE, HEALTH_ACTION, COMBO_READING, ELEMENT_PRACTICE, GOD_ABSENT_PRACTICE, GOD_PRACTICE, PALACE_PRACTICE, SPOUSE_TIP, STAR_PRACTICE, TRANSFORM_ACTION, ELEMENT_NOTE, GOD_ABSENT, GOD_PHASE, GOD_READING, JI_CHONG, MULTI_TRANSFORM, PALACE_FRAME, PATTERN_READING, PILLAR_DOMAIN, PILLAR_NAME, POS_DOMAIN, REL_MEANING, SPOUSE_GOD, STAR_ORDER_FOR_COMBO, STAR_READING, TAG_LABEL_ZH, TRANSFORM_PHASE, type Tag } from './reading-data';
 import { sihuaFor } from '../ziwei/tables';
+import { PALACE_NAMES } from '../ziwei/types';
 import { elementCounts } from './stats';
 
 const pnm = (n: string) => (n.endsWith('宫') ? n : n + '宫');
@@ -119,7 +120,7 @@ export function buildReport(b: ChartBundle, R: RuleSet, year: number, name = '')
   const char: ReportPara[] = [];
   if (mingStar) {
     const r = STAR_READING;
-    char.push({ tag: 'modern', ruleId: `zw.star.${mingStar}`, text: `紫微命宫在${BRANCHES[z.mingBranch]}宫，${mingSeen.borrowed ? '没有主星，传统上借对宫（' + mingSeen.borrowed + '宫）的' : '主星是'}${mingSeen.stars.join('、')}。${mingSeen.stars.slice(0, 2).map((s) => `${s}的特点：做事较有可能${r[s].style}。优势是${r[s].gift}；需要留意的是${r[s].watch}。`).join('')}` });
+    char.push({ tag: 'modern', ruleId: `zw.star.${mingStar}`, text: `紫微命宫在${BRANCHES[z.mingBranch]}宫，${mingSeen.borrowed ? '没有主星，传统上借对宫（' + pnm(mingSeen.borrowed) + '）的' : '主星是'}${mingSeen.stars.join('、')}。${mingSeen.stars.slice(0, 2).map((s) => `${s}的特点：做事较有可能${r[s].style}。优势是${r[s].gift}；需要留意的是${r[s].watch}。`).join('')}` });
   if (mingStar) char.push(A(`${mingSeen.stars.slice(0, 2).map((st) => `${st}的长处可以这样用——${STAR_PRACTICE[st].use}；要留意的地方，日常里可以这样调整——${STAR_PRACTICE[st].habit}`).join('。另外，')}。`));
   }
   {
@@ -169,7 +170,6 @@ export function buildReport(b: ChartBundle, R: RuleSet, year: number, name = '')
   }
   const spouseGod = P.day.hidden[0].tenGod;
   deep.push({ tag: 'modern', ruleId: `bz.god.${spouseGod}`, text: `日柱（${PILLAR_DOMAIN.day}）：日支${BRANCHES[P.day.branch]}叫“配偶宫”，它的本气是${spouseGod}，所以${SPOUSE_GOD[spouseGod]}。` });
-  deep.push(A(`${SPOUSE_TIP[spouseGod]}。这只是一个角度，真实的关系要看两个人的实际沟通。`));
   const patt = bz.patterns[0];
   if (patt && PATTERN_READING[patt.name]) deep.push({ tag: 'modern', ruleId: R.byId.has(`bz.pattern.${patt.key}`) ? `bz.pattern.${patt.key}` : undefined, text: `格局（候选）：${patt.name}。${PATTERN_READING[patt.name]}。格局的判定方法各流派不同，这里只是一种常见的取法。` });
   const elTxt = [...manyEl.map((e) => ELEMENT_NOTE[e].many), ...lackEl.map((e) => ELEMENT_NOTE[e].none)];
@@ -195,7 +195,7 @@ export function buildReport(b: ChartBundle, R: RuleSet, year: number, name = '')
   const palaceReading = (n: string): ReportPara => {
     const v = seen(n);
     const frame = PALACE_FRAME[n];
-    const src = v.borrowed ? `${pnm(n)}没有主星，传统上借对宫（${v.borrowed}宫）的${v.stars.join('、') || '（也无主星）'}来看。` : `${pnm(n)}有${v.stars.join('、')}。`;
+    const src = v.borrowed ? `${pnm(n)}没有主星，传统上借对宫（${pnm(v.borrowed)}）的${v.stars.join('、') || '（也无主星）'}来看。` : `${pnm(n)}有${v.stars.join('、')}。`;
     if (!v.stars.length) return { tag: 'modern', ruleId: `zw.palace.${n}`, text: `${frame}：${pnm(n)}与对宫都没有主星，取象较为平淡，更多取决于四化、辅星以及大限、流年的引动。` };
     const ref = `zw.star.${v.stars[0]}`;
     const tfs = pal(n).stars.filter((s) => s.transform).map((s) => `本宫还有${s.name}化${s.transform}：这方面${TRANSFORM_PHASE[s.transform!]}。`).join('');
@@ -209,26 +209,71 @@ export function buildReport(b: ChartBundle, R: RuleSet, year: number, name = '')
     const cb = n === '疾厄' ? '' : comboPara(v.stars);
     return { tag: 'modern', ruleId: ref, text: `${frame}：${src}${parts.join('')}${cb}${n === '疾厄' ? '这只是生活节奏上的提醒，不是对身体状况的判断。' : ''}${tfs}` };
   };
-  const palaceApply = (n: string): ReportPara => {
-    const v = seen(n);
-    if (!v.stars.length) return A(`${n}宫与对宫都没有主星时，取象主要靠大限、流年来引动，可以在大限或流年走到这方面时，再多花一点心思在“${PALACE_PRACTICE[n]}”上。`);
-    if (n === '疾厄') return A(`在“${PALACE_PRACTICE[n]}”上，可以从规律作息、适度放松开始，把${v.stars.slice(0, 2).map((st) => STAR_READING[st].watch).join('、')}当作自我观察的提醒；身体有不适时请咨询专业医生。`);
-    return A(`在“${PALACE_PRACTICE[n]}”上：${v.stars.slice(0, 2).map((st) => `${st}的长处可以这样用——${STAR_PRACTICE[st].use}；要留意时——${STAR_PRACTICE[st].habit}`).join('。另外，')}。`);
+  // ---- 按生活领域，把相关宫位连起来读 ----
+  let zlY: ReturnType<typeof ziweiYearLayer> | null = null;
+  try { zlY = ziweiYearLayer(z, year); } catch { zlY = null; }
+  const T4 = ['禄', '权', '科', '忌'] as const;
+  type Landing = { layer: string; star: string; t: (typeof T4)[number]; palace: string };
+  const landings: Landing[] = [];
+  const addLayer = (layer: string, stars: string[]) => stars.forEach((st, i) => { const pp = starPalace(st); if (pp) landings.push({ layer, star: st, t: T4[i], palace: pp.name }); });
+  addLayer('本命', [z.fourTransforms.lu, z.fourTransforms.quan, z.fourTransforms.ke, z.fourTransforms.ji]);
+  if (zlY?.decade) addLayer('大限', sihuaFor(z.palaces[zlY.decade.branch].stem, z.variants.sihua));
+  if (zlY) for (const t of zlY.transforms) { const pp = starPalace(t.star); if (pp) landings.push({ layer: `${year}年流年`, star: t.star, t: t.transform, palace: pp.name }); }
+  const triad = (n: string): string[] => { const i = PALACE_NAMES.indexOf(n as never); return [i, (i + 4) % 12, (i + 8) % 12, (i + 6) % 12].map((k) => PALACE_NAMES[k]); };
+  const groupCount = (g: string) => (g === '官杀' ? grp(['正官', '七杀']) : g === '食伤' ? grp(['食神', '伤官']) : g === '财' ? grp(['正财', '偏财']) : g === '印' ? grp(['正印', '偏印']) : grp(['比肩', '劫财']));
+  const groupLine = (g: string) => { const n = groupCount(g), N = GROUP_NOTE[g]; return `${g}${n}个：${n === 0 ? N.none : n >= 3 ? N.many : N.some}`; };
+
+  const integrate = (label: string, primary: string, extras: string[], groups: string[], bazi: string): ReportPara[] => {
+    const names = [...new Set([...triad(primary), ...extras])];
+    const desc = names.map((n) => { const v = seen(n); return `${pnm(n)}（${BRANCHES[pal(n).branch]}，${v.stars.length ? (v.borrowed ? '空，借对宫' + pnm(v.borrowed) + '的' : '') + v.stars.join('、') : '无主星'}）`; });
+    const tally = new Map<Tag, number>();
+    for (const n of names) for (const st of seen(n).stars.slice(0, 2)) for (const t of STAR_READING[st]?.tags ?? []) tally.set(t, (tally.get(t) ?? 0) + 1);
+    const top = [...tally.entries()].sort((a2, c2) => c2[1] - a2[1]).slice(0, 3).map(([t]) => TAG_LABEL_ZH[t]);
+    const paras: ReportPara[] = [];
+    paras.push({ tag: 'modern', ruleId: `zw.palace.${primary}`, text: `把“${label}”相关的几个宫连起来读。传统上看一个方面，不只看对应的那个宫，还要连着它的三方四正（成三角的两个宫和对宫）以及相关的宫位一起读：${desc.join('、')}。这些宫位的主星合起来，取象的重心是：${top.join('、') || '较平淡'}。` });
+    // 四化汇入
+    const inDom = landings.filter((l) => names.includes(l.palace));
+    if (inDom.length) {
+      const good = inDom.filter((l) => l.t !== '忌'), bad = inDom.filter((l) => l.t === '忌');
+      paras.push({ tag: 'modern', ruleId: 'zw.transform.忌', text: `四化在这几个宫里的落点：${inDom.map((l) => `${l.layer}${l.star}化${l.t}在${pnm(l.palace)}`).join('；')}。${good.length ? `化${[...new Set(good.map((l) => l.t))].join('、')}的地方，这方面较有机会或较容易得到助力；` : ''}${bad.length ? `化忌的地方，这方面较容易纠结、值得多留意` : ''}${good.length && bad.length ? '。好处与需要留意的地方同时出现，说明这个领域起伏会比较明显' : ''}。` });
+    } else paras.push({ tag: 'modern', text: '本命、大限和流年的四化目前都没有落在这几个宫里，这个领域的变化较平稳，主要看日常经营。' });
+    // 八字对应
+    paras.push({ tag: 'modern', text: `八字的对应：${bazi}${groups.map(groupLine).join('；')}。` });
+    // 综合怎么用
+    const lead = seen(primary).stars[0] ?? seen('命宫').stars[0];
+    const parts: string[] = [];
+    if (lead) parts.push(`发挥：在“${PALACE_PRACTICE[primary]}”上，可以多展现${lead}的优势——${STAR_READING[lead].gift}`);
+    const badIn = inDom.filter((l) => l.t === '忌');
+    if (badIn.length) parts.push(`留意：${[...new Set(badIn.map((l) => `${l.layer}${l.star}化忌落在${pnm(l.palace)}`))].join('、')}，在“${PALACE_PRACTICE[badIn[0].palace]}”上，${act(badIn[0].palace, '忌')}`);
+    else if (lead) parts.push(`留意：${lead}也带来的盲点是${STAR_READING[lead].watch}，在“${PALACE_PRACTICE[primary]}”上可以这样调整——${STAR_PRACTICE[lead].habit}`);
+    const nowHit: string[] = [];
+    if (zlY?.decade && names.includes(zlY.decade.palaceName)) nowHit.push(`这十年的大限正走到${pnm(zlY.decade.palaceName)}，是这个领域的重点期，不妨在“${PALACE_PRACTICE[zlY.decade.palaceName]}”上多花心思`);
+    const yl = inDom.filter((l) => l.layer.endsWith('流年'));
+    if (yl.length) nowHit.push(`${year}年流年有${yl.map((l) => `${l.star}化${l.t}在${pnm(l.palace)}`).join('、')}，今年在“${PALACE_PRACTICE[yl[0].palace]}”上，${act(yl[0].palace, yl[0].t)}`);
+    parts.push(nowHit.length ? `节奏：${nowHit.join('；')}` : '节奏：近期这个领域没有特别的引动，可以按日常节奏慢慢经营');
+    const gUse = groups.map((g) => ({ g, n: groupCount(g) })).find((x) => x.n === 0);
+    if (gUse) parts.push(`八字上的补充：没有${gUse.g === '财' || gUse.g === '印' ? gUse.g + '星' : gUse.g}，${gUse.g === '官杀' ? GOD_ABSENT_PRACTICE.官杀 : gUse.g === '食伤' ? GOD_ABSENT_PRACTICE.食伤 : gUse.g === '财' ? GOD_ABSENT_PRACTICE.财 : gUse.g === '印' ? GOD_ABSENT_PRACTICE.印 : GOD_ABSENT_PRACTICE.比劫}`);
+    paras.push(A(`综合这几个宫位，${parts.join('。')}。${primary === '疾厄' ? '身体有不适时请咨询专业医生，这里只是日常节奏上的提醒。' : ''}`));
+    return paras;
   };
-  const withApply = (n: string): ReportPara[] => [palaceReading(n), palaceApply(n)];
-  const careerParas = [...withApply('官禄'), ...withApply('财帛')];
+  const spG = b.input.gender === 'M' ? '财' : '官杀';
+  const dayGod = P.day.hidden[0].tenGod;
+  const careerParas = [palaceReading('官禄'), palaceReading('财帛')];
   if (grp(['正财', '偏财']) === 0) careerParas.push({ tag: 'modern', text: GOD_ABSENT.财 });
+  careerParas.push(...integrate('事业', '官禄', ['迁移', '交友', '福德'], ['官杀', '食伤', '财'], `月柱（${PILLAR_DOMAIN.month}）天干是${P.month.stemTenGod}。`));
+  careerParas.push(...integrate('财务', '财帛', ['田宅', '福德'], ['财', '食伤', '比劫'], ''));
   sections.push({ id: 'career', heading: '事业与财务', paras: careerParas });
-  const lovParas = ['夫妻', '子女', '田宅', '父母'].flatMap(withApply);
+  const lovParas = ['夫妻', '子女', '田宅', '父母'].map(palaceReading);
   {
     const refStar = b.input.gender === 'M' ? ['正财', '偏财'] : ['正官', '七杀'];
     const label = b.input.gender === 'M' ? '财星' : '官杀';
     const n1 = tc[refStar[0] as keyof typeof tc], n2 = tc[refStar[1] as keyof typeof tc];
-    lovParas.splice(2, 0, A(`${SPOUSE_TIP[P.day.hidden[0].tenGod]}。这只是一个角度，真实的关系要看两个人的实际沟通。`));
     lovParas.splice(2, 0, { tag: 'modern', ruleId: `bz.god.${P.day.hidden[0].tenGod}`, text: `八字的角度：日支${BRANCHES[P.day.branch]}是配偶宫，本气是${P.day.hidden[0].tenGod}，${SPOUSE_GOD[P.day.hidden[0].tenGod]}。传统上${b.input.gender === 'M' ? '男命以财星' : '女命以官杀'}作为感情的参照，你的八字里${n1 + n2 === 0 ? `没有${label}，感情的缘分较有可能更多由大运、流年来引动，而不是平时就“在场”` : `${label}共有 ${n1 + n2} 个（${refStar[0]} ${n1}、${refStar[1]} ${n2}）`}。` });
   }
+  lovParas.push(...integrate('感情', '夫妻', ['命宫', '福德'], [spG], `日支${BRANCHES[P.day.branch]}是配偶宫，本气${dayGod}，${SPOUSE_GOD[dayGod]}；相处时可以参考：${SPOUSE_TIP[dayGod]}（只是一个角度，真实的关系要看两个人的实际沟通）。`));
+  lovParas.push(...integrate('家庭与晚辈', '田宅', ['子女', '父母', '兄弟'], ['印', '比劫'], `年柱（${PILLAR_DOMAIN.year}）天干是${P.year.stemTenGod}，时柱（${PILLAR_DOMAIN.hour}）天干是${P.hour.stemTenGod}。`));
   sections.push({ id: 'love', heading: '感情与家庭', paras: lovParas });
-  sections.push({ id: 'mind', heading: '内心与身体', paras: ['福德', '疾厄'].flatMap(withApply) });
+  sections.push({ id: 'mind', heading: '内心与身体', paras: [...['福德', '疾厄'].map(palaceReading), ...integrate('身心状态', '疾厄', ['福德', '命宫'], ['印'], `日主${dm}${bz.strength.candidate}（候选）。`)] });
 
   // 出生年四化
   const tfParas: ReportPara[] = [{ tag: 'fact', text: `${STEMS[z.yearStem]}年生，四化是${z.fourTransforms.lu}化禄、${z.fourTransforms.quan}化权、${z.fourTransforms.ke}化科、${z.fourTransforms.ji}化忌。` }];

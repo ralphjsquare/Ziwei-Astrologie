@@ -43,25 +43,31 @@ describe('白话解读报告', () => {
     expect(all('life').split('\n').filter((l) => /^\d+–\d+ 岁/.test(l)).length).toBe(9);
     expect(all('now')).toContain('这十年的大限天干是甲，大限四化');
   });
-  it('“怎么用”紧跟在解读后面：用户盘各处都有，且不下指令、不涉及具体投资医疗婚姻决定', () => {
+  it('“怎么用”结合相关宫位：事业、财务、感情、家庭、身心各有综合解读；用户盘要点正确；不下指令', () => {
     const b = computeCharts(cases[0]);
     const rep = buildReport(b, RULES, 2026);
     const get = (id: string) => rep.sections.find((x) => x.id === id)!.paras;
-    // 每个有解读的小节里都有“怎么用”，并且紧跟在对应解读之后
-    for (const id of ['character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'now']) expect(get(id).some((p) => p.tag === 'apply'), id).toBe(true);
-    const ch = get('character');
-    expect(ch[0].text).toContain('紫微命宫在亥宫');
-    expect(ch[1].tag).toBe('apply');
-    expect(ch[1].text).toContain('天相的长处可以这样用');
-    const career = get('career');
-    expect(career[0].text).toContain('事业上');
-    expect(career[1].tag).toBe('apply');
-    expect(get('love').some((p) => p.tag === 'apply' && p.text.includes('言而有信'))).toBe(true);
-    expect(get('sihua').some((p) => p.tag === 'apply' && p.text.includes('疾厄') === false)).toBe(true);
-    expect(get('life').some((p) => p.text.includes('较适合'))).toBe(true);
+    const txt = (id: string) => get(id).map((p) => p.text).join('\n');
+    // 事业：官禄的三方四正是官禄、命宫、财帛、夫妻（对宫），再加迁移、交友、福德；四化落点来自本命、大限、流年
+    expect(txt('career')).toContain('把“事业”相关的几个宫连起来读');
+    for (const x of ['官禄宫（卯，空，借对宫夫妻宫的紫微、贪狼）', '命宫（亥，天相）', '财帛宫（未，天府）', '夫妻宫（酉，紫微、贪狼）', '迁移宫（巳，武曲、破军）', '交友宫（辰，天同）', '福德宫（丑，廉贞、七杀）']) expect(txt('career'), x).toContain(x);
+    expect(txt('career')).toContain('本命贪狼化禄在夫妻宫');
+    expect(txt('career')).toContain('大限廉贞化禄在福德宫');
+    expect(txt('career')).toContain('2026年流年廉贞化忌在福德宫');
+    expect(txt('career')).toContain('把“财务”相关的几个宫连起来读');
+    expect(txt('career')).toContain('这十年的大限正走到田宅宫');
+    expect(txt('love')).toContain('把“感情”相关的几个宫连起来读');
+    expect(txt('love')).toContain('把“家庭与晚辈”相关的几个宫连起来读');
+    expect(txt('love')).toContain('日支亥是配偶宫，本气正官');
+    expect(txt('mind')).toContain('把“身心状态”相关的几个宫连起来读');
+    expect(txt('mind')).toContain('身体有不适时请咨询专业医生');
+    // 每个领域块末尾是一段“怎么用：综合这几个宫位”
+    for (const id of ['career', 'love', 'mind']) expect(get(id).filter((p) => p.tag === 'apply' && p.text.startsWith('怎么用：综合这几个宫位')).length, id).toBeGreaterThan(0);
+    expect(get('career').filter((p) => p.tag === 'apply').length).toBe(2);
+    expect(get('love').filter((p) => p.tag === 'apply').length).toBe(2);
     const all = rep.sections.flatMap((s) => s.paras).filter((p) => p.tag === 'apply').map((p) => p.text).join('\n');
     expect(all).not.toMatch(/应该|必须|一定要|务必|买入|卖出|结婚|离婚|服药|手术|辞职/);
-    expect(all).toContain('身体有不适时请咨询专业医生');
+    expect(all).not.toMatch(/上可以多把精力|上这方面|上愿意|上较适合多/);
   });
   it('Markdown 导出包含标题、各节标题与来源标记', () => {
     const b = computeCharts(cases[1]);
