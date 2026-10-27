@@ -10,7 +10,7 @@ import type { RuleSet } from '../rules';
 import { DISCLAIMER, ruleItem } from './index';
 import { tenGodCounts } from './stats';
 import { yhzpNatal, yhzpYear } from './yhzp';
-import { GROUP_NOTE, STRENGTH_PRACTICE, HEALTH_ACTION, COMBO_READING, ELEMENT_PRACTICE, GOD_ABSENT_PRACTICE, GOD_PRACTICE, PALACE_PRACTICE, SPOUSE_TIP, STAR_PRACTICE, TRANSFORM_ACTION, ELEMENT_NOTE, GOD_ABSENT, GOD_PHASE, GOD_READING, JI_CHONG, MULTI_TRANSFORM, PALACE_FRAME, PATTERN_READING, PILLAR_DOMAIN, PILLAR_NAME, POS_DOMAIN, REL_MEANING, SPOUSE_GOD, STAR_ORDER_FOR_COMBO, STAR_READING, TAG_LABEL_ZH, TRANSFORM_PHASE, type Tag } from './reading-data';
+import { DOMAIN_DOWN, DOMAIN_UP, GROUP_OF_GOD, LUCK_YEAR_MATRIX, GROUP_NOTE, STRENGTH_PRACTICE, HEALTH_ACTION, COMBO_READING, ELEMENT_PRACTICE, GOD_ABSENT_PRACTICE, GOD_PRACTICE, PALACE_PRACTICE, SPOUSE_TIP, STAR_PRACTICE, TRANSFORM_ACTION, ELEMENT_NOTE, GOD_ABSENT, GOD_PHASE, GOD_READING, JI_CHONG, MULTI_TRANSFORM, PALACE_FRAME, PATTERN_READING, PILLAR_DOMAIN, PILLAR_NAME, POS_DOMAIN, REL_MEANING, SPOUSE_GOD, STAR_ORDER_FOR_COMBO, STAR_READING, TAG_LABEL_ZH, TRANSFORM_PHASE, type Tag } from './reading-data';
 import { sihuaFor } from '../ziwei/tables';
 import { PALACE_NAMES } from '../ziwei/types';
 import { elementCounts } from './stats';
@@ -223,6 +223,7 @@ export function buildReport(b: ChartBundle, R: RuleSet, year: number, name = '')
   const groupCount = (g: string) => (g === '官杀' ? grp(['正官', '七杀']) : g === '食伤' ? grp(['食神', '伤官']) : g === '财' ? grp(['正财', '偏财']) : g === '印' ? grp(['正印', '偏印']) : grp(['比肩', '劫财']));
   const groupLine = (g: string) => { const n = groupCount(g), N = GROUP_NOTE[g]; return `${g}${n}个：${n === 0 ? N.none : n >= 3 ? N.many : N.some}`; };
 
+  const domainSig: Record<string, { names: string[]; primary: string; opp: string[]; tension: string[]; tags: string[] }> = {};
   const integrate = (label: string, primary: string, extras: string[], groups: string[], bazi: string): ReportPara[] => {
     const names = [...new Set([...triad(primary), ...extras])];
     const desc = names.map((n) => { const v = seen(n); return `${pnm(n)}（${BRANCHES[pal(n).branch]}，${v.stars.length ? (v.borrowed ? '空，借对宫' + pnm(v.borrowed) + '的' : '') + v.stars.join('、') : '无主星'}）`; });
@@ -254,6 +255,12 @@ export function buildReport(b: ChartBundle, R: RuleSet, year: number, name = '')
     const gUse = groups.map((g) => ({ g, n: groupCount(g) })).find((x) => x.n === 0);
     if (gUse) parts.push(`八字上的补充：没有${gUse.g === '财' || gUse.g === '印' ? gUse.g + '星' : gUse.g}，${gUse.g === '官杀' ? GOD_ABSENT_PRACTICE.官杀 : gUse.g === '食伤' ? GOD_ABSENT_PRACTICE.食伤 : gUse.g === '财' ? GOD_ABSENT_PRACTICE.财 : gUse.g === '印' ? GOD_ABSENT_PRACTICE.印 : GOD_ABSENT_PRACTICE.比劫}`);
     paras.push(A(`综合这几个宫位，${parts.join('。')}。${primary === '疾厄' ? '身体有不适时请咨询专业医生，这里只是日常节奏上的提醒。' : ''}`));
+    domainSig[label] = {
+      names, primary,
+      opp: [...inDom.filter((l) => l.t !== '忌').map((l) => `${l.layer}${l.star}化${l.t}在${pnm(l.palace)}`), ...(zlY?.decade && names.includes(zlY.decade.palaceName) ? [`大限正走到${pnm(zlY.decade.palaceName)}（重点期）`] : [])],
+      tension: [...badIn.map((l) => `${l.layer}${l.star}化忌在${pnm(l.palace)}`), ...(seen(primary).borrowed ? [`${pnm(primary)}是空宫（要靠借星和引动）`] : []), ...groups.filter((g) => groupCount(g) === 0).map((g) => `八字没有${g === '财' || g === '印' ? g + '星' : g}`)],
+      tags: top,
+    };
     return paras;
   };
   const spG = b.input.gender === 'M' ? '财' : '官杀';
@@ -353,6 +360,47 @@ export function buildReport(b: ChartBundle, R: RuleSet, year: number, name = '')
     for (const it of yhzpYear(bz, bl.stem, bl.branch, bl.activeLuck, mk)) nowP.push({ tag: 'trad', text: `${it.context}。${stripTail(it.text)}`, ruleId: it.ruleId });
   } catch { nowP.push({ tag: 'note', text: `${year} 年超出支持范围，无法显示这一部分。` }); }
   sections.push({ id: 'now', heading: `眼下：${year} 年`, paras: nowP });
+
+  // 各种可能的结合
+  {
+    const pos: ReportPara[] = [{ tag: 'note', text: '前面是一块一块地看。真实的生活里，各种因素是同时起作用的，所以这里把它们结合起来，说几种“较有可能的走法”。每一种都是“如果……较有可能……”的条件式说法，不是预测；现实里往往几种同时存在。遇到“较吃力的走法”时，通用的做法是：放慢一点节奏，把重要的事留出缓冲，多沟通、多核对；遇到“两者交织”时，较稳妥的做法是先稳住牵挂的一端，再去放大有机会的一端。' }];
+    // 1 今年三层叠加：大运 × 流年，大限宫 × 流年命宫
+    try {
+      const bl = baziYearLayer(bz, year), zl = ziweiYearLayer(z, year);
+      if (bl.activeLuck) {
+        const g1 = GROUP_OF_GOD[bl.activeLuck.stemTenGod], g2 = GROUP_OF_GOD[bl.stemTenGod];
+        pos.push({ tag: 'modern', text: `先看${year}年几层叠加的结果。大运的天干是${bl.activeLuck.stemTenGod}（偏“${GOD_PHASE[bl.activeLuck.stemTenGod]}”），流年的天干是${bl.stemTenGod}（偏“${GOD_PHASE[bl.stemTenGod]}”）。两者放在一起，${LUCK_YEAR_MATRIX[g1][g2]}。` });
+      }
+      const fm = z.palaces[zl.flowMingBranch];
+      if (zl.decade) {
+        const dn = zl.decade.palaceName;
+        const rel = fm.name === dn ? `流年命宫与大限落在同一个宫（${pnm(dn)}），这个方面被双重引动，“${PALACE_PRACTICE[dn]}”是今年的重点` : (fm.branch + 6) % 12 === zl.decade.branch ? `流年命宫（${pnm(fm.name)}）与大限宫（${pnm(dn)}）互为对宫，两个方面会相互牵动，“${PALACE_PRACTICE[fm.name]}”与“${PALACE_PRACTICE[dn]}”要兼顾` : `大限的重点是“${PALACE_PRACTICE[dn]}”，今年流年命宫落在${pnm(fm.name)}（“${PALACE_PRACTICE[fm.name]}”），可以先把两件事看成并行的两条线`;
+        pos.push({ tag: 'modern', text: `紫微这边：${rel}。` });
+      }
+    } catch { /* 年份超出范围时略过 */ }
+    // 2 各领域的几种可能走法
+    for (const [label, sg] of Object.entries(domainSig)) {
+      const lines: string[] = [];
+      if (sg.opp.length) lines.push(`较顺的走法：如果${sg.opp.slice(0, 3).join('、')}这些助力被用起来，较有可能${DOMAIN_UP[label]}（主线：“${PALACE_PRACTICE[sg.primary]}”）`);
+      if (sg.tension.length) lines.push(`较吃力的走法：如果${sg.tension.slice(0, 3).join('、')}同时起作用，较有可能${DOMAIN_DOWN[label]}`);
+      if (sg.opp.length && sg.tension.length) lines.push('两者交织：助力与牵挂同时存在，较有可能“既有进展，又有放不下的事”');
+      if (!lines.length) lines.push('较平稳的走法：这个领域没有特别突出的助力或阻力，主要看日常经营的积累');
+      pos.push({ tag: 'modern', ruleId: `zw.palace.${sg.primary}`, text: `${label}：${lines.join('。')}。` });
+    }
+    // 3 关键牵连点：同一个宫同时牵动多个领域
+    const ties: string[] = [];
+    for (const l of landings) {
+      const doms = Object.entries(domainSig).filter(([, sg]) => sg.names.includes(l.palace)).map(([k]) => k);
+      if (doms.length >= 2 && (l.t === '忌' || l.t === '禄')) ties.push(`${l.layer}${l.star}化${l.t}在${pnm(l.palace)}，它同时牵动${doms.join('、')}：${l.t === '忌' ? '这个点处理好了，较有可能同时缓解几个领域的纠结' : '这是一个可以借力的点，用好了较有可能同时带动几个领域'}`);
+    }
+    if (ties.length) pos.push({ tag: 'modern', text: `几个“牵一发动全身”的点：${ties.slice(0, 5).join('；')}。` });
+    // 4 先后顺序
+    const ranked2 = Object.entries(domainSig).map(([k, sg]) => ({ k, t: sg.tension.length, o: sg.opp.length })).sort((a2, c2) => c2.t - a2.t || c2.o - a2.o);
+    const first = ranked2[0], best = [...ranked2].sort((a2, c2) => c2.o - a2.o)[0];
+    if (first && first.t > 0) pos.push(A(`如果要排一个较稳妥的先后顺序：先照顾“${first.k}”（这里需要留意的信号最多），把节奏和沟通稳住；${best && best.o > 0 && best.k !== first.k ? `再把“${best.k}”的助力放大，因为这里的机会信号最多` : '之后再按自己的节奏推进其他方面'}。这只是一个参考顺序，并不是非照着做不可的安排。`));
+    else pos.push(A('各个领域都没有特别突出的需要留意的信号，可以按自己的节奏，把助力较多的方面先做好。'));
+    sections.push({ id: 'possible', heading: '各种可能怎么结合', paras: pos });
+  }
 
   // 几个可以自己想一想的问题
   {

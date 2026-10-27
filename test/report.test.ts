@@ -10,7 +10,7 @@ describe('白话解读报告', () => {
     for (const inp of cases) {
       const b = computeCharts(inp);
       const rep = buildReport(b, RULES, b.ziwei.input.lunarYear + 25);
-      expect(rep.sections.map((s) => s.id)).toEqual(['how', 'overview', 'keys', 'glance', 'character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'life', 'now', 'ask', 'ext', 'limits']);
+      expect(rep.sections.map((s) => s.id)).toEqual(['how', 'overview', 'keys', 'glance', 'character', 'bazideep', 'career', 'love', 'mind', 'sihua', 'life', 'now', 'possible', 'ask', 'ext', 'limits']);
       for (const s of rep.sections) for (const p of s.paras) {
         expect(lintText(p.text), `${s.id}: ${p.text}`).toEqual([]);
         expect(p.text, `${s.id}: ${p.text}`).not.toMatch(/undefined|NaN|\{\w+\}/);
@@ -68,6 +68,21 @@ describe('白话解读报告', () => {
     const all = rep.sections.flatMap((s) => s.paras).filter((p) => p.tag === 'apply').map((p) => p.text).join('\n');
     expect(all).not.toMatch(/应该|必须|一定要|务必|买入|卖出|结婚|离婚|服药|手术|辞职/);
     expect(all).not.toMatch(/上可以多把精力|上这方面|上愿意|上较适合多/);
+  });
+  it('各种可能的结合：今年三层叠加、领域走法、牵连点与先后顺序', () => {
+    const b = computeCharts(cases[0]);
+    const rep = buildReport(b, RULES, 2026);
+    const t = rep.sections.find((x) => x.id === 'possible')!.paras.map((p) => p.text).join('\n');
+    // 大运己未（食神→食伤）× 流年丙午（劫财→比劫）
+    expect(t).toContain('大运的天干是食神');
+    expect(t).toContain('流年的天干是劫财');
+    expect(t).toContain('表达欲旺、同伴竞争也多');
+    expect(t).toContain('事业：较顺的走法');
+    expect(t).toContain('较吃力的走法');
+    expect(t).toContain('两者交织');
+    expect(t).toContain('牵一发动全身');
+    expect(t).toContain('先后顺序');
+    expect(t).not.toMatch(/必然|一定会|应该|务必/);
   });
   it('Markdown 导出包含标题、各节标题与来源标记', () => {
     const b = computeCharts(cases[1]);
